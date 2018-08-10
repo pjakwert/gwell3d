@@ -1,0 +1,12 @@
+base referer
+rect $classToolBar.html#a0 257,7 388,31
+rect $classToolBar.html#a1 263,55 383,79
+rect $classKernel.html#a0 287,127 359,151
+rect $classToolBar.html#a3 256,175 389,199
+rect $classOptions.html#e21 256,222 389,246
+rect $classToolBar.html#a4 252,270 393,294
+rect $classToolBar.html#a5 249,318 396,342
+rect $classToolBar.html#a8 256,366 389,390
+rect $classKernel.html#d1 444,127 593,151
+rect $classKernel.html#d0 642,127 810,151
+rect $classOptions.html#e4 449,222 588,246

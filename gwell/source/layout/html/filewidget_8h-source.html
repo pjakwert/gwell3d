@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: filewidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>filewidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef FILEWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define FILEWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qfiledialog.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qmessagebox.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;qfile.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;qdom.h&gt;</span>
+00012 
+00013 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;workspace.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;fogwidget.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;lightswidget.h&gt;</span>
+00019 
+00020 
+00021 <span class="keyword">class </span>FileWidget : <span class="keyword">public</span> QWidget
+00022 {
+00023   Q_OBJECT
+00024 
+00025   <span class="keyword">public</span>:
+00026     FileWidget(QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0);
+00027     ~FileWidget() {}
+00028 
+00029   <span class="keyword">private</span>:
+00030     QGridLayout *grid;
+00031     QGroupBox   *groupBox;
+00032     QPushButton *newFileButton;
+00033     QPushButton *openFileButton;
+00034     QPushButton *saveFileButton;
+00035     QPushButton *exitButton;
+00036 
+00037   <span class="keyword">private</span> slots:
+00038     <span class="keywordtype">bool</span> newScene();
+00039     <span class="keywordtype">void</span> saveScene();
+00040     <span class="keywordtype">void</span> openScene();
+00041     <span class="keywordtype">void</span> exit();
+00042     <span class="keywordtype">int</span> saveSceneToFile( QString&amp; fileName );
+00043     <span class="keywordtype">int</span> loadSceneFromFile( QString&amp; fileName );
+00044      <span class="keywordtype">int</span> readLighting( QDomElement elem );
+00045      <span class="keywordtype">int</span> readFog( QDomElement elem );
+00046      <span class="comment">//int readShadows( QDomElement elem );</span>
+00047      <span class="keywordtype">int</span> readElements( QDomElement elem );
+00048     
+00049   signals:
+00050     <span class="keywordtype">void</span> addMultiPolyh( <span class="keyword">const</span> <span class="keywordtype">char</span>* fileName, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keyword">const</span> Vector3f&amp; trans, <span class="keyword">const</span> Vector3f&amp; rotDeg, <span class="keyword">const</span> Vector3f&amp; scale );
+00051     <span class="keywordtype">void</span> setScene( ViScene* scene ); <span class="comment">// wysyła sygnał o nowej scenie</span>
+00052     <span class="keywordtype">void</span> setFileCaption( <span class="keyword">const</span> QString&amp; ); <span class="comment">// sygnał zawierający znak tytuł głównego widgetu</span>
+00053     
+00054     <span class="keywordtype">void</span> setLightingEnabled( <span class="keywordtype">bool</span> );
+00055     <span class="keywordtype">void</span> clearAllLights();
+00056     <span class="keywordtype">void</span> addLight( <a class="code" href="classLight.html">Light</a> *light );
+00057     <span class="keywordtype">void</span> updateFog();
+00058 };
+00059 
+00060 
+00061 
+00062 
+00063 
+00064 
+00065 
+00066 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

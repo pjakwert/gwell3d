@@ -1,0 +1,36 @@
+<Scene name="Laboratorium 010">
+<Lighting isEnabled="true">
+	<Light name="¿arówka" isEnabled="true" type="bulb" lightIs="positional" exponent="0.0" cutOff="180.0" movesWithCamera="true">
+		<position x="10.0" y="10.0" z="0.0">
+		<direction x="-1.0" y="-1.0" z="0.0">
+		<attenuation linear="1.0" constant="0.0" quadratic="0.0">
+		<ambientColor red="0.7" green="0.2" blue="0.7" alpha="1.0">
+		<diffuseColor red="0.2" green="0.4" blue="0.2" alpha="0.8">
+		<specularColor red="0.4" green="0.9" blue="0.2" alpha="1.0">
+	</Light>
+	<Light name="latarka" isEnabled="true" type="spotlight" lightIs="directional" exponent="0.0" cutOff="40.0" movesWithCamera="false">
+		<position x="10.0" y="10.0" z="0.0">
+		<direction x="-1.0" y="-1.0" z="0.0">
+		<attenuation linear="1.0" constant="0.0" quadratic="0.0">
+		<ambientColor red="0.7" green="0.2" blue="0.7" alpha="1.0">
+		<diffuseColor red="0.2" green="0.4" blue="0.2" alpha="0.8">
+		<specularColor red="0.4" green="0.9" blue="0.2" alpha="1.0">
+	</Light>
+</Lighting>
+<Fog isEnabled="true" mode="GL_LINEAR" density="0.35">
+	<distance start="0.0" end="50.0">
+	<color red="0.0" green="0.0" blue="0.0" alpha="1.0">
+</Fog>
+<Elements>
+	<Object fileName="mph/hand.mph" name="zaginiona rêka Edwarda No¿ycorêkiego">
+		<translation x="5.0" y="1.0" z="-1.0">
+		<rotation x="0.0" y="45.0" z="0.0">
+		<scale x="1.0" y="1.0" z="1.0">
+	</Object>
+	<Object fileName="mph/leg.mph" name="wy³owiona noga kapitana Ahaba">
+		<translation x="-5.0" y="2.0" z="0.0">
+		<rotation x="30.0" y="0.0" z="0.0">
+		<scale x="1.0" y="2.0" z="1.0">
+	</Object>
+</Elements>
+</Scene>

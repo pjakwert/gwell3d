@@ -1,0 +1,671 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: Texture class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy Texture</h1><code>#include &lt;<a class="el" href="texture_8h-source.html">texture.h</a>&gt;</code>
+<p>
+<a href="classTexture-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a0">decHowManyUsers</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>const QString &amp;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a1">fileName</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>GLuint&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a2">GLTextureID</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a3">howManyUsers</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a4">incHowManyUsers</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a5">isValid</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a6">mipmapingEnabled</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="classTexture.html">Texture</a> &amp;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a7">operator=</a> (<a class="el" href="classTexture.html">Texture</a> &amp;)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a8">operator==</a> (<a class="el" href="classTexture.html">Texture</a> &amp;)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>QPixmap *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a9">preview</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>QImage::ScaleMode&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a10">scaleMode</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a11">setFileName</a> (const QString &amp;fileName)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a12">setMipmapEnabled</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a13">setPreview</a> (QPixmap *pixmap)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a14">setScaleMode</a> (const QImage::ScaleMode mode)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a15">Texture</a> (QString fileName=QString::null, QImage::ScaleMode scaleMode=QImage::ScaleFree, bool mipmapingEnabled=true, GLuint GLTextureID=0, int howManyUsers=0, QPixmap *preview=0L)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#d0">setGLTextureID</a> (GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#d1">setHowManyUsers</a> (int howMany)</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="Texture::_fileName" ></a>
+QString&nbsp;</td><td class="memItemRight" valign=bottom><b>_fileName</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="Texture::_GLTextureID" ></a>
+GLuint&nbsp;</td><td class="memItemRight" valign=bottom><b>_GLTextureID</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="Texture::_howManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>_howManyUsers</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="Texture::_isValid" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_isValid</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r4" doxytag="Texture::_mipmapEnabled" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_mipmapEnabled</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r5" doxytag="Texture::_preview" ></a>
+QPixmap *&nbsp;</td><td class="memItemRight" valign=bottom><b>_preview</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r6" doxytag="Texture::_scaleMode" ></a>
+QImage::ScaleMode&nbsp;</td><td class="memItemRight" valign=bottom><b>_scaleMode</b></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa opisuje pojedynczą teksturę (bez parametrów). 
+<p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="a15" doxytag="Texture::Texture" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Texture::Texture           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QString&nbsp;</td>
+          <td class="mdname" nowrap> <em>fileName</em> = <code>QString::null</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>QImage::ScaleMode&nbsp;</td>
+          <td class="mdname" nowrap> <em>scaleMode</em> = <code>QImage::ScaleFree</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>mipmapingEnabled</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>GLuint&nbsp;</td>
+          <td class="mdname" nowrap> <em>GLTextureID</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>howManyUsers</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>QPixmap *&nbsp;</td>
+          <td class="mdname" nowrap> <em>preview</em> = <code>0L</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<ul>
+<li>nie porównuje pól howManyUsers (ale przepisuje je) </li></ul>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a15_cgraph.png" border="0" usemap="#classTexture_a15_cgraph_map" alt=""></center>
+<map name="classTexture_a15_cgraph_map">
+<area href="classTexture.html#a11" shape="rect" coords="190,31,324,55" alt="">
+<area href="classTexture.html#d0" shape="rect" coords="184,103,330,127" alt="">
+<area href="classTexture.html#d1" shape="rect" coords="173,175,341,199" alt="">
+<area href="classTexture.html#a12" shape="rect" coords="170,246,344,270" alt="">
+<area href="classTexture.html#a13" shape="rect" coords="194,318,320,342" alt="">
+<area href="classTexture.html#a14" shape="rect" coords="184,390,330,414" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="a0" doxytag="Texture::decHowManyUsers" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int Texture::decHowManyUsers           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zmniejsza o 1 liczbę obiektów używających tej tekstury.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="Texture::fileName" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> const QString&amp; Texture::fileName           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca ścieżkę do pliku z teksturą.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Texture::GLTextureID" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> GLuint Texture::GLTextureID           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca ID tekstury (adres fizyczny).     </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="Texture::howManyUsers" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int Texture::howManyUsers           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwiększa liczbę elementów używających tekstury.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a4" doxytag="Texture::incHowManyUsers" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int Texture::incHowManyUsers           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwiększa o 1 liczbę obiektów używających tej tekstury.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a5" doxytag="Texture::isValid" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool Texture::isValid           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Czy tekstura jest prawidłowa? (sprawdza czy plik jest poprawny).     </td>
+  </tr>
+</table>
+<a class="anchor" name="a6" doxytag="Texture::mipmapingEnabled" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool Texture::mipmapingEnabled           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Czy mipmapy są stosowane?     </td>
+  </tr>
+</table>
+<a class="anchor" name="a7" doxytag="Texture::operator=" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="classTexture.html">Texture</a> &amp; Texture::operator=           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classTexture.html">Texture</a> &amp;&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>t</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Operator przypisania. Nie przepisuje flagi isValid(). 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a7_cgraph.png" border="0" usemap="#classTexture_a7_cgraph_map" alt=""></center>
+<map name="classTexture_a7_cgraph_map">
+<area href="classTexture.html#a1" shape="rect" coords="212,7,324,31" alt="">
+<area href="classTexture.html#a2" shape="rect" coords="202,55,333,79" alt="">
+<area href="classTexture.html#a3" shape="rect" coords="193,103,342,127" alt="">
+<area href="classTexture.html#a6" shape="rect" coords="181,151,354,175" alt="">
+<area href="classTexture.html#a9" shape="rect" coords="214,199,321,223" alt="">
+<area href="classTexture.html#a10" shape="rect" coords="205,247,330,271" alt="">
+<area href="classTexture.html#a11" shape="rect" coords="201,319,334,343" alt="">
+<area href="classTexture.html#d0" shape="rect" coords="194,390,341,414" alt="">
+<area href="classTexture.html#d1" shape="rect" coords="184,462,352,486" alt="">
+<area href="classTexture.html#a12" shape="rect" coords="181,534,354,558" alt="">
+<area href="classTexture.html#a13" shape="rect" coords="205,606,330,630" alt="">
+<area href="classTexture.html#a14" shape="rect" coords="194,678,341,702" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a8" doxytag="Texture::operator==" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool Texture::operator==           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classTexture.html">Texture</a> &amp;&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>t</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Operator porównania. Nie porównuje: ID tekstury, howManyUsers, isValid. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a8_cgraph.png" border="0" usemap="#classTexture_a8_cgraph_map" alt=""></center>
+<map name="classTexture_a8_cgraph_map">
+<area href="classTexture.html#a1" shape="rect" coords="220,7,332,31" alt="">
+<area href="classTexture.html#a6" shape="rect" coords="189,55,362,78" alt="">
+<area href="classTexture.html#a10" shape="rect" coords="213,102,338,126" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a9" doxytag="Texture::preview" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> QPixmap* Texture::preview           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca podgląd tekstury.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a10" doxytag="Texture::scaleMode" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> QImage::ScaleMode Texture::scaleMode           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap> const<code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca typ skalowania.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a11" doxytag="Texture::setFileName" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int Texture::setFileName           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QString &amp;&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>fileName</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia nazwę pliku tekstury. Sprawdza czy plik graficzny istnieje, nawet jeżeli nie istnieje - ustawia jego nazwę dla tekstury, ale flagę _isValid ustawia na FALSE. <dl compact><dt><b>Zwraca:</b></dt><dd>0 - OK, <p>
+-1 - plik nie istnieje, <p>
+-2 - nieprawidłowy format obrazu (aktualnie nieużywane). </dd></dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a11_cgraph.png" border="0" usemap="#classTexture_a11_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d0" doxytag="Texture::setGLTextureID" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Texture::setGLTextureID           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLuint&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>GLTextureID</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia adres fizyczny tekstury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_d0_cgraph.png" border="0" usemap="#classTexture_d0_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d1" doxytag="Texture::setHowManyUsers" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Texture::setHowManyUsers           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>howMany</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia liczbę obiektów używających tej tekstury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_d1_cgraph.png" border="0" usemap="#classTexture_d1_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a12" doxytag="Texture::setMipmapEnabled" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Texture::setMipmapEnabled           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza stosowanie mipmap. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a12_cgraph.png" border="0" usemap="#classTexture_a12_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a13" doxytag="Texture::setPreview" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Texture::setPreview           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPixmap *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pixmap</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia obrazek podglądu dla tekstury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a13_cgraph.png" border="0" usemap="#classTexture_a13_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a14" doxytag="Texture::setScaleMode" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Texture::setScaleMode           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QImage::ScaleMode&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>mode</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia typ skalowania. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a14_cgraph.png" border="0" usemap="#classTexture_a14_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="texture_8h-source.html">texture.h</a><li>texture.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:27 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

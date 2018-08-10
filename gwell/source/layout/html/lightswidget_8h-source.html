@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: lightswidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>lightswidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef LIGHTSWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define LIGHTSWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qhbox.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qtoolbutton.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qpopupmenu.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;qtable.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;qcombobox.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qcheckbox.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qtabwidget.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qgrid.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qvalidator.h&gt;</span>
+00018 
+00019 <span class="preprocessor">#include &lt;colorwidget.h&gt;</span>
+00020 <span class="preprocessor">#include &lt;cellframe.h&gt;</span>
+00021 <span class="preprocessor">#include &lt;lightstablewidget.h&gt;</span>
+00022 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00023 <span class="preprocessor">#include &lt;m_translightpos.h&gt;</span>
+00024 <span class="preprocessor">#include &lt;m_translightdir.h&gt;</span>
+00025 
+00026 
+00027 <span class="keyword">class </span>LightsWidget : <span class="keyword">public</span> QWidget
+00028 {
+00029   Q_OBJECT
+00030 
+00031   <span class="keyword">public</span>:
+00032     LightsWidget( QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0 );
+00033     ~LightsWidget() {};
+00034     <span class="keyword">static</span> <span class="keywordtype">bool</span> lightingEnabled() { <span class="keywordflow">return</span> _lightingEnabled; }
+00035 
+00036   <span class="keyword">private</span>:
+00037     QPtrList&lt;Light&gt;* _lightsList;
+00038     <a class="code" href="classLight.html">Light</a>*           _currentLight;
+00039     <span class="keywordtype">int</span>              _decimals;
+00040     <span class="keyword">static</span> <span class="keywordtype">bool</span>      _lightingEnabled;
+00041     
+00042     <span class="comment">// modyfikatory</span>
+00043     <a class="code" href="classTranslateLightPosModifier.html">TranslateLightPosModifier</a>* posModifier;
+00044     <a class="code" href="classTranslateLightDirModifier.html">TranslateLightDirModifier</a>* dirModifier;
+00045     
+00046 <span class="comment">//----------------------------------------- GUI    </span>
+00047     QGroupBox*    mainGroupBox;
+00048     QGridLayout*  mainGrid;
+00049     QSpacerItem*  upperSpace;
+00050     
+00051     QHBox*        addAndDeleteBox;
+00052      QToolButton* addLightButton;
+00053       QPopupMenu* addLightPopup;
+00054      QToolButton* deleteLightButton;
+00055     
+00056     LightsTableWidget* lightsTable;
+00057     
+00058     QHBox*        moveButtonsBox;
+00059      QToolButton* transLightButton;
+00060      QToolButton* changeDirectionButton;
+00061     
+00062     QGroupBox*    paramsBox;
+00063     QGridLayout*  paramsGrid;
+00064     QSpacerItem*  pSpacer;
+00065      QLabel*      lightIsLabel;
+00066       QComboBox*  lightTypeCombo;
+00067      QLabel*      positionLabel;
+00068       QHBox*      positionBox;
+00069        QLabel*    xPosLabel;
+00070        QLineEdit* xPosEdit;
+00071        QLabel*    yPosLabel;
+00072        QLineEdit* yPosEdit;
+00073        QLabel*    zPosLabel;
+00074        QLineEdit* zPosEdit;
+00075      QLabel*      directionLabel;
+00076       QHBox*      directionBox;
+00077        QLabel*    xDirLabel;
+00078        QLineEdit* xDirEdit;
+00079        QLabel*    yDirLabel;
+00080        QLineEdit* yDirEdit;
+00081        QLabel*    zDirLabel;
+00082        QLineEdit* zDirEdit; 
+00083      QLabel*      attLabel;
+00084       QGrid*      attGrid;
+00085        QLabel*    linearLabel;
+00086        QLabel*    constLabel;
+00087        QLabel*    quadLabel;
+00088        QLineEdit* linearEdit;
+00089        QLineEdit* constEdit;
+00090        QLineEdit* quadEdit;
+00091      QHBox*       expAndCutOffBox;
+00092       QLabel*     expLabel;
+00093       QLineEdit*  expEdit;
+00094       QLabel*     cutOffLabel;
+00095       QLineEdit*  cutOffEdit;
+00096      QCheckBox*   movingWithCameraCheck;
+00097        
+00098     QTabWidget*   colorsTabWidget;
+00099      <a class="code" href="classColorWidget.html">ColorWidget</a>* ambientWidget;
+00100      <a class="code" href="classColorWidget.html">ColorWidget</a>* diffuseWidget;
+00101      <a class="code" href="classColorWidget.html">ColorWidget</a>* specularWidget;
+00102      
+00103     QSpacerItem*  spacer;
+00104 <span class="comment">//----------------------------------------- GUI   </span>
+00105   
+00106   <span class="keyword">private</span> slots:
+00107     <span class="keywordtype">void</span> lightsToggled( <span class="keywordtype">bool</span> on );
+00108     <span class="keywordtype">void</span> currentLightChanged( <a class="code" href="classLight.html">Light</a>* light );
+00109     <span class="keywordtype">void</span> lightParamsChanged( <a class="code" href="classLight.html">Light</a>* light );
+00110     <span class="keywordtype">void</span> updateLightForWorkspace( <span class="keyword">const</span> QColor&amp;, <span class="keywordtype">int</span> );
+00111     <span class="keywordtype">void</span> setAllParamsEnabled( <span class="keywordtype">bool</span> yes );
+00112     <span class="keywordtype">void</span> updateWorkspace();
+00113     <span class="keywordtype">void</span> setLightTypeFromCombo(<span class="keywordtype">int</span>);
+00114     <span class="keywordtype">void</span> setAllParamsFromEdits();
+00115     <span class="keywordtype">void</span> setMovingWithCamera( <span class="keywordtype">bool</span> yes );
+00116     <span class="keywordtype">void</span> updateData( MModifier::ModifierType mType, Vector3f v );
+00117     <span class="keywordtype">void</span> transLightToggled( <span class="keywordtype">bool</span> );
+00118     <span class="keywordtype">void</span> changeDirToggled( <span class="keywordtype">bool</span> );
+00119     
+00120   <span class="keyword">public</span> slots:
+00121     <span class="keywordtype">void</span> disableModifiers();
+00122     <span class="keywordtype">void</span> turnModifiersButtonsOff();
+00123     <span class="keywordtype">void</span> setModifier( MModifier::ModifierType mType );
+00124     
+00125     <span class="keywordtype">void</span> enableLighting( <span class="keywordtype">bool</span> yes ) { lightsToggled( yes ); }
+00126     <span class="keywordtype">void</span> clearAllLights() { lightsTable-&gt;deleteAllLights(); }
+00127     <span class="keywordtype">void</span> addLight( <a class="code" href="classLight.html">Light</a>* light ) { lightsTable-&gt;addLight( light ); }
+00128     
+00129   <span class="keyword">protected</span>:
+00130     <span class="comment">//virtual void showEvent( QShowEvent* );</span>
+00131     <span class="comment">//virtual void hideEvent( QHideEvent* );</span>
+00132     
+00133   signals:
+00134     <span class="keywordtype">void</span> setLightingEnabled( <span class="keywordtype">bool</span> yes );
+00135     <span class="keywordtype">void</span> setLightEnabled( GLenum light, <span class="keywordtype">bool</span> yes );
+00136     <span class="keywordtype">void</span> setLight( <a class="code" href="classLight.html">Light</a>* );
+00137     <span class="keywordtype">void</span> setLightsList( QPtrList&lt;Light&gt;* );
+00138     <span class="keywordtype">void</span> updateLightColor( GLenum GLwhichColor, <a class="code" href="classLight.html">Light</a>* _currentLight );
+00139     <span class="comment">//void showLightShapes( bool yes );</span>
+00140     
+00141     <span class="keywordtype">void</span> sendModifier( MModifier *modifier );
+00142     <span class="keywordtype">void</span> setDefaultModifier();
+00143 };
+00144 
+00145 
+00146 
+00147 
+00148 
+00149 
+00150 
+00151 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:59 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

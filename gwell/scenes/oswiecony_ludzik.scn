@@ -1,0 +1,47 @@
+<Scene name="" >
+ <Lighting isEnabled="true" >
+  <Light exponent="0" lightIs="directional" movesWithCamera="true" isEnabled="true" type="spotlight" name="GL_LIGHT0" cutOff="22.5" >
+   <position x="0" y="0" z="1" />
+   <direction x="0" y="0" z="-1" />
+   <attenuation linear="0" quadratic="0" constant="1" />
+   <ambientColor alpha="1" blue="0" red="0" green="0" />
+   <diffuseColor alpha="1" blue="1" red="1" green="1" />
+   <specularColor alpha="1" blue="1" red="1" green="1" />
+  </Light>
+  <Light exponent="0" lightIs="positional" movesWithCamera="false" isEnabled="true" type="bulb" name="GL_LIGHT1" cutOff="180" >
+   <position x="0" y="2.65432" z="-1.20768" />
+   <direction x="0" y="0" z="-1" />
+   <attenuation linear="0" quadratic="0" constant="1" />
+   <ambientColor alpha="1" blue="0" red="0" green="0" />
+   <diffuseColor alpha="1" blue="1" red="1" green="1" />
+   <specularColor alpha="1" blue="1" red="1" green="1" />
+  </Light>
+  <Light exponent="0" lightIs="positional" movesWithCamera="false" isEnabled="true" type="spotlight" name="GL_LIGHT2" cutOff="22.5" >
+   <position x="0" y="2.0035" z="2.07193" />
+   <direction x="0" y="0" z="-1" />
+   <attenuation linear="0" quadratic="0" constant="1" />
+   <ambientColor alpha="1" blue="0.611765" red="0" green="0.764706" />
+   <diffuseColor alpha="1" blue="0.329412" red="1" green="0.419608" />
+   <specularColor alpha="1" blue="1" red="1" green="1" />
+  </Light>
+  <Light exponent="0" lightIs="positional" movesWithCamera="false" isEnabled="true" type="bulb" name="GL_LIGHT3" cutOff="180" >
+   <position x="0.0511165" y="2.53947" z="-0.228519" />
+   <direction x="0" y="0" z="-1" />
+   <attenuation linear="0" quadratic="0" constant="1" />
+   <ambientColor alpha="1" blue="0" red="1" green="0" />
+   <diffuseColor alpha="1" blue="0" red="1" green="0" />
+   <specularColor alpha="1" blue="0" red="1" green="0" />
+  </Light>
+ </Lighting>
+ <Fog mode="GL_EXP" density="0.249" isEnabled="false" >
+  <distance end="210" start="0" />
+  <color alpha="1" blue="0.498039" red="0.666667" green="0.666667" />
+ </Fog>
+ <Elements>
+  <Object name="ludek" fileName="/home/pjakwert/Work/myViona/mph/postac_steel.mph" >
+   <translation x="0" y="0" z="0" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+ </Elements>
+</Scene>

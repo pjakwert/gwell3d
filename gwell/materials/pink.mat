@@ -1,0 +1,7 @@
+<Material materialName="pink" >
+ <ambientColor alpha="1" blue="0.564706" red="0.243137" green="0.411765" />
+ <diffuseColor alpha="1" blue="0.537255" red="0.34902" green="0.356863" />
+ <specularColor alpha="1" blue="0.0784314" red="0.776471" green="0.0784314" />
+ <emissionColor alpha="1" blue="0.521569" red="0.745098" green="0.164706" />
+ <shininess shininess="0" />
+</Material>

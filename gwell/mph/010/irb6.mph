@@ -1,0 +1,414 @@
+MultiPolyh__Begin
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: MainObject
+     NodeAddress: .MainObject
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViMultiPolyh
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: podstawa
+     NodeAddress: .MainObject.podstawa
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (3.66918, 4.75343, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (40, 11, 40)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: przegub_obrotowy
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 5.389, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CYLINDER_10
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (31.5457, 3, 30)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0" red="1" green="0.356863" />
+             <diffuseColor alpha="1" blue="0" red="1" green="0.376471" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="74" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: dolny_cylinder
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.dolny_cylinder
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 2.941, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CYLINDER_10
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (23.1335, 10.5, 22)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0" red="1" green="0.356863" />
+             <diffuseColor alpha="1" blue="0" red="1" green="0.376471" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="74" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: korpus
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 30.9108, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (25, 35, 22)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0" red="1" green="0.356863" />
+             <diffuseColor alpha="1" blue="0" red="1" green="0.376471" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="74" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: przegub_obrotowy_2
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (-0.223434, 23.7838, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::IRb6DownArm
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.116129, 0.096463, 0.1)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0" red="1" green="0.356863" />
+             <diffuseColor alpha="1" blue="0" red="1" green="0.376471" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="74" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: ramie
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2.ramie
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 40, -3)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::IRb6UpArm
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.1, 0.1, 0.102222)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0" red="1" green="0.356863" />
+             <diffuseColor alpha="1" blue="0" red="1" green="0.376471" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="74" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: efektor
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2.ramie.efektor
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 74)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (2, 6, 6)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0" red="1" green="0.356863" />
+             <diffuseColor alpha="1" blue="0" red="1" green="0.376471" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="74" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: prawa_lapka
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2.ramie.efektor.prawa_lapka
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 90)
+       Translation: (-2, 0, 7)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (6, 2, 19)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: lewa_lapka
+     NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2.ramie.efektor.lewa_lapka
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 90)
+       Translation: (2, 0, 7)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (6, 2, 19)
+     Transf_Eleme2Indiv:
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/Work/gwell/images/tracksandsmlcorner.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+MultiPolyh__End
+CtrlInterface__Begin
+  InterfaceItem__Begin
+    NodeAddress: .MainObject.podstawa.przegub_obrotowy
+    MatrixID: 1
+    KeyID: 24
+    KeyName: 24
+    Comment: obrot podstawy
+    TransfType: Rot__XYZ_Ang
+    TransOrder: TAfterR
+    Unit: Deg
+    CoordNo: 2
+     Max: 360
+     Min: 0
+    Value: 0
+  InterfaceItem__End
+  InterfaceItem__Begin
+    NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2
+    MatrixID: 1
+    KeyID: 1065353217
+    KeyName: 1065353217
+    Comment: q1 - pierwszy
+    TransfType: Rot__XYZ_Ang
+    TransOrder: TAfterR
+    Unit: Deg
+    CoordNo: 1
+     Max: 90
+     Min: -90
+    Value: 0
+  InterfaceItem__End
+  InterfaceItem__Begin
+    NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2.ramie
+    MatrixID: 1
+    KeyID: 1065353218
+    KeyName: 1065353218
+    Comment: q2 - obrot duzego ramienia
+    TransfType: Rot__XYZ_Ang
+    TransOrder: TAfterR
+    Unit: Deg
+    CoordNo: 1
+     Max: 50
+     Min: -50
+    Value: 0
+  InterfaceItem__End
+  InterfaceItem__Begin
+    NodeAddress: .MainObject.podstawa.przegub_obrotowy.korpus.przegub_obrotowy_2.ramie.efektor
+    MatrixID: 1
+    KeyID: 1065353219
+    KeyName: 1065353219
+    Comment: obrot efektora
+    TransfType: Rot__XYZ_Ang
+    TransOrder: TAfterR
+    Unit: Deg
+    CoordNo: 3
+     Max: 180
+     Min: -180
+    Value: 0
+  InterfaceItem__End
+CtrlInterface__End

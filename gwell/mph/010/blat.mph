@@ -1,0 +1,52 @@
+MultiPolyh__Begin
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat
+     NodeAddress: .blat
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViMultiPolyh
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_nr_0
+     NodeAddress: .blat.CUBOID_nr_0
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (580, 2, 76)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.141176" red="0.4" green="0.305882" />
+             <diffuseColor alpha="1" blue="0.141176" red="0.4" green="0.305882" />
+             <specularColor alpha="1" blue="0.141176" red="0.168627" green="0.141176" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+MultiPolyh__End

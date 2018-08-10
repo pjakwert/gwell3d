@@ -1,0 +1,4 @@
+base referer
+rect $classCellFrame.html 65,109 137,133
+rect $classCellWidget.html 6,18 84,42
+rect $classStartWidget.html 117,18 197,42

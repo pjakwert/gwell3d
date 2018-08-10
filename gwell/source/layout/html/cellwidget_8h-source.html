@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: cellwidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>cellwidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef CELLWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define CELLWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qpixmap.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qframe.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qtoolbutton.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qcombobox.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qlayout.h&gt;</span> 
+00010 <span class="preprocessor">#include &lt;qtooltip.h&gt;</span>
+00011 
+00012 <span class="preprocessor">#include &lt;QGLViewer/qglviewer.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00015 
+00016 
+00017 
+00018 <span class="keyword">class </span>CellWidget : <span class="keyword">public</span> QFrame
+00019 {
+00020   Q_OBJECT
+00021 
+00022   <span class="keyword">public</span>:
+00023     CellWidget(QWidget* parent = 0, <span class="keyword">const</span> <span class="keywordtype">char</span>* name = 0, WFlags fl = 0);
+00024     ~CellWidget() {}
+00025 
+00026     QToolButton *showAllButton;
+00027     QToolButton *cameraButton;
+00028     QToolButton *showGridButton;
+00029     QToolButton *showBoxesButton;
+00030     QToolButton *showAxisButton;
+00031     QToolButton *showLightsButton;
+00032     QComboBox   *viewDirCombo;
+00033     QComboBox   *viewTypeCombo;
+00034     QComboBox   *viewProjCombo;
+00035     QToolButton *screenshotButton;
+00036     QToolButton *maximizeButton;
+00037 
+00038   <span class="keyword">public</span> slots:
+00039     <span class="keywordtype">void</span> toggleVisibility();
+00040     <span class="keywordtype">void</span> hidePrivateButtons();
+00041 
+00042   <span class="keyword">private</span> slots:
+00043     <span class="keywordtype">void</span> cameraToggled(<span class="keywordtype">bool</span> on);
+00044     <span class="keywordtype">void</span> showAll();
+00045     <span class="keywordtype">void</span> gridToggled(<span class="keywordtype">bool</span> on);
+00046     <span class="keywordtype">void</span> axisToggled(<span class="keywordtype">bool</span> on);
+00047     <span class="keywordtype">void</span> boxesToggled( <span class="keywordtype">bool</span> on );
+00048     <span class="keywordtype">void</span> lightsToggled( <span class="keywordtype">bool</span> on );
+00049     <span class="keywordtype">void</span> viewDirChanged(<span class="keywordtype">int</span> direction);
+00050     <span class="keywordtype">void</span> viewTypeChanged(<span class="keywordtype">int</span> viewType);
+00051     <span class="keywordtype">void</span> viewProjChanged(<span class="keywordtype">int</span> viewProj);
+00052     <span class="keywordtype">void</span> screenshotClicked();
+00053     <span class="keywordtype">void</span> maximizeClicked();
+00054 
+00055   signals:
+00056     <span class="keywordtype">void</span> moveCamera(<span class="keywordtype">bool</span> on);
+00057     <span class="keywordtype">void</span> showEntireScene();
+00058     <span class="keywordtype">void</span> showGrid(<span class="keywordtype">bool</span> on);
+00059     <span class="keywordtype">void</span> showAxis(<span class="keywordtype">bool</span> on);
+00060     <span class="keywordtype">void</span> showBoxes( <span class="keywordtype">bool</span> on );
+00061     <span class="keywordtype">void</span> showLights( <span class="keywordtype">bool</span> on );
+00062     <span class="keywordtype">void</span> viewDirectionChanged(<span class="keywordtype">int</span> direction);
+00063     <span class="keywordtype">void</span> setViewType( DrawMethod type);
+00064     <span class="keywordtype">void</span> setProjType( qglviewer::Camera::Type type );
+00065     <span class="keywordtype">void</span> makeScreenshot();
+00066     <span class="keywordtype">void</span> maximize();
+00067 };
+00068 
+00069 
+00070 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

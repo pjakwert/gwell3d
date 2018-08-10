@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: cellframe.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>cellframe.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 <span class="preprocessor">#ifndef CELLFRAME_H</span>
+00010 <span class="preprocessor"></span><span class="preprocessor">#define CELLFRAME_H</span>
+00011 <span class="preprocessor"></span>
+00012 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qcursor.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qptrlist.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qsplitter.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;qobjectlist.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;qpopupmenu.h&gt;</span>
+00020 
+00021 <span class="preprocessor">#include &lt;math.h&gt;</span>
+00022 
+00023 <span class="preprocessor">#include &lt;startwidget.h&gt;</span>
+00024 <span class="preprocessor">#include &lt;cellwidget.h&gt;</span>
+00025 <span class="preprocessor">#include &lt;modifiers.h&gt;</span>
+00026 <span class="preprocessor">#include &lt;light.h&gt;</span>
+00027 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00028 <span class="preprocessor">#include &lt;fogwidget.h&gt;</span>
+00029 <span class="preprocessor">#include &lt;kineditorro.h&gt;</span>
+00030 
+00031 <span class="preprocessor">#define INFI 100</span>
+00032 <span class="preprocessor"></span>
+00033 
+00034 <span class="keyword">class </span>CellFrame : <span class="keyword">public</span> QGLViewer
+00035 {
+00036   Q_OBJECT
+00037 
+00038   <span class="keyword">public</span>:
+00039     CellFrame (QWidget *parent, <span class="keyword">const</span> <span class="keywordtype">char</span> *name = 0, QGLWidget *shareWidget=0, WFlags f = 0);
+00040     ~CellFrame() {}
+00041     <span class="keywordtype">bool</span> cameraIsMoving() { <span class="keywordflow">return</span> _cameraIsMoving; }
+00042     <span class="keywordtype">bool</span> lightsAreDrawn() { <span class="keywordflow">return</span> _lightsAreDrawn; }
+00043     <span class="keyword">static</span> <span class="keywordtype">void</span> refresh();
+00044     <span class="keyword">static</span> QPtrList&lt;ViMultiPolyh&gt;* selected();
+00045     <span class="keyword">static</span> QPtrList&lt;Light&gt;* lightsList() { <span class="keywordflow">return</span> _lightsList; }
+00046     <span class="keyword">static</span> ViScene* scene();
+00047     <span class="keyword">static</span> <span class="keywordtype">void</span> computeScene() { _scene-&gt;ComputeGlbVtx(); }
+00048     <span class="keyword">static</span> <span class="keywordtype">bool</span> sceneIsEmpty();
+00049     
+00050     <span class="keyword">static</span> <span class="keywordtype">void</span> setScene( ViScene *scene );
+00051     <span class="keyword">static</span> <span class="keywordtype">void</span> setSelected( QPtrList&lt;ViMultiPolyh&gt; *selectedList );
+00052     <span class="keyword">static</span> <span class="keywordtype">void</span> setLightsList( QPtrList&lt;Light&gt; *lightsList );
+00053     <span class="keyword">static</span> <span class="keywordtype">void</span> setModifier( MModifier *modifier );
+00054     
+00055     <span class="keyword">static</span> <span class="keywordtype">void</span> deleteSelectedObjects();
+00056     
+00057   <span class="keyword">private</span>:
+00058     <span class="keyword">static</span> ViScene                    *_scene;  <span class="comment">// obiekt zlozony do wyswietlania</span>
+00059     <span class="keyword">static</span> QPtrList&lt;ViMultiPolyh&gt;     *_selectedList;
+00060     <span class="keyword">static</span> MModifier                  *_modifier;
+00061     <span class="keyword">static</span> QPtrList&lt;Light&gt;            *_lightsList;
+00062     <span class="keyword">static</span> QPtrList&lt;ViMultiPolyh&gt;  nameList; <span class="comment">// przechowuje wskazniki do obiektow i odpowiadajace im numery</span>
+00063     QPtrList&lt;ViElemePolyhExt&gt; blendedList; <span class="comment">// lista obiektów z przezroczystością do posortowania i  narysowania</span>
+00064     <span class="keywordtype">bool</span> sortBlendedList();
+00065 
+00066     <span class="keyword">static</span> <span class="keyword">const</span> GLfloat no_material[];    <span class="comment">// pusty wektor materiału dla OpenGL (do resetowania)</span>
+00067     <span class="keyword">static</span> <span class="keyword">const</span> GLfloat no_shininess[];   <span class="comment">// pusta jasność - wektor 1-elementowy</span>
+00068     <span class="keyword">static</span> <span class="keyword">const</span> GLfloat white_material[]; <span class="comment">// materiał o max jasności - idealny dla tekstur</span>
+00069 
+00070     StartWidget *startWidget;  <span class="comment">// widgety odpowiadajace za gorne menu</span>
+00071     CellWidget  *cellWidget;
+00072     QPopupMenu  *popupMenu;
+00073     QHBoxLayout *hbox;
+00074 
+00075     QString _info; <span class="comment">// informacje wyswietlane w cellFrame</span>
+00076     DrawMethod  _drawMethod;
+00077     <span class="keywordtype">bool</span>    _boxesAreDrawn;
+00078     <span class="keywordtype">bool</span>    _fogEnabled;
+00079     <span class="keywordtype">bool</span>    _fpsDisplayed;
+00080     <span class="keywordtype">bool</span>    _gridIsDrawn;
+00081     <span class="keywordtype">bool</span>    _grid3DIsDrawn;
+00082     <span class="keywordtype">bool</span>    _axisIsDrawn;
+00083     <span class="keywordtype">bool</span>    _lightsAreDrawn;
+00084     <span class="keywordtype">bool</span>    _cameraIsMoving;
+00085     <span class="keywordtype">int</span>     _infoPosX;
+00086     <span class="keywordtype">int</span>     _infoPosY;
+00087 
+00088     <span class="keywordtype">void</span> drawGridXZ();
+00089     <span class="keywordtype">void</span> drawGrid3D();
+00090     <span class="keywordtype">void</span> drawBoxes();
+00091     <span class="keywordtype">void</span> drawElemAxis( ViElemePolyhExt* extEl );
+00092     <span class="keywordtype">void</span> setShowFPS( <span class="keywordtype">bool</span> on );
+00093     <span class="keywordtype">void</span> drawLightShape( <a class="code" href="classLight.html">Light</a>* light, <span class="keywordtype">float</span> scale = 1.0f );
+00094     <span class="keywordtype">void</span> drawScene( <span class="keywordtype">bool</span> pushID = <span class="keyword">false</span> );
+00095     <span class="keywordtype">void</span> drawWired   ( ViElemePolyhExt* elem, <span class="keywordtype">bool</span> isSelected=<span class="keyword">false</span> );
+00096     <span class="keywordtype">void</span> drawSolid   ( ViElemePolyhExt* elem, <span class="keywordtype">bool</span> isSelected=<span class="keyword">false</span> );
+00097     <span class="keywordtype">void</span> drawTextured( ViElemePolyhExt* elem, <span class="keywordtype">bool</span> isSelected=<span class="keyword">false</span> );
+00098     <span class="keywordtype">void</span> drawInfo();
+00099     <span class="keywordtype">void</span> setInfo( QString s, <span class="keywordtype">int</span> x=-1, <span class="keywordtype">int</span> y=-1 );
+00100 
+00101     <span class="keyword">static</span> GLuint _cubeDL;
+00102     <span class="keyword">static</span> GLuint _squareDL;
+00103     <span class="keyword">static</span> GLuint _hLineDL;
+00104     <span class="keyword">static</span> GLuint _vLineDL;
+00105     <span class="keyword">static</span> <span class="keywordtype">void</span> createDL(); <span class="comment">// tworzy DisplayList dla Boxa</span>
+00106     <span class="keywordtype">void</span> drawCube() { glCallList( _cubeDL ); }
+00107     
+00108     <span class="keywordtype">void</span> castShadow( ViElemePolyhExt* elem, <span class="keyword">const</span> GLfloat* lightPosition );
+00109     <span class="keywordtype">void</span> doShadowPass( ViElemePolyhExt* elem, <span class="keyword">const</span> GLfloat* lightPosition );
+00110     <span class="keywordtype">void</span> castShadows();
+00111     
+00112   <span class="keyword">private</span> slots:
+00113     <span class="keywordtype">void</span> popupAboutToShow();
+00114     <span class="keywordtype">void</span> choosedFromPopup( <span class="keywordtype">int</span> );
+00115     
+00116   <span class="keyword">protected</span>:
+00117     <span class="keyword">virtual</span> <span class="keywordtype">void</span> init();
+00118     <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw();
+00119     <span class="keyword">virtual</span> <span class="keywordtype">void</span> select(<span class="keyword">const</span> QMouseEvent *e);
+00120     <span class="keyword">virtual</span> <span class="keywordtype">void</span> keyPressEvent(QKeyEvent *e);
+00121     <span class="keyword">virtual</span> <span class="keywordtype">void</span> enterEvent(QEvent*);
+00122     <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *e);
+00123     <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseMoveEvent(QMouseEvent *e);
+00124     <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseReleaseEvent(QMouseEvent *e);
+00125     <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent *);
+00126 
+00127   <span class="keyword">public</span> slots:
+00128     <span class="keywordtype">void</span> setLight( <a class="code" href="classLight.html">Light</a>* light );
+00129     <span class="keywordtype">void</span> setAllLights();
+00130     <span class="keywordtype">void</span> turnAllLights( <span class="keywordtype">bool</span> on );
+00131     <span class="keywordtype">void</span> updateColorForLight( GLenum GLcolorChanged, <a class="code" href="classLight.html">Light</a>* light );
+00132     
+00133     <span class="keywordtype">void</span> setFog( <a class="code" href="structFogStruct.html">FogStruct</a>*, FogParamsEnum );
+00134             
+00135     <span class="keywordtype">void</span> selectAll();
+00136     <span class="keywordtype">void</span> setSelectedSlot( QPtrList&lt;ViMultiPolyh&gt; *selectedList );
+00137     <span class="keywordtype">void</span> setCameraMoving( <span class="keywordtype">bool</span> on );
+00138     <span class="keywordtype">void</span> setCameraType( qglviewer::Camera::Type type );
+00139     <span class="keywordtype">void</span> setDrawMethod( DrawMethod drawMethod );
+00140     <span class="keywordtype">void</span> showAllScene();
+00141     <span class="keywordtype">void</span> setViewDirection( <span class="keywordtype">int</span> direction ); <span class="comment">// direction jest jednym z predefiniowanych kierunkow</span>
+00142     <span class="keywordtype">void</span> setDrawAxisXYZ( <span class="keywordtype">bool</span> on );
+00143     <span class="keywordtype">void</span> setDrawGridXZ( <span class="keywordtype">bool</span> on );
+00144     <span class="keywordtype">void</span> setDrawGrid3D( <span class="keywordtype">bool</span> on );
+00145     <span class="keywordtype">void</span> setDrawBoxes( <span class="keywordtype">bool</span> on );
+00146     <span class="keywordtype">void</span> setDrawLights( <span class="keywordtype">bool</span> on );
+00147     <span class="keywordtype">void</span> maximize();
+00148 
+00149   signals:
+00150     <span class="keywordtype">void</span> setModifierFromCellFrame( MModifier::ModifierType mType );
+00151     <span class="keywordtype">void</span> userSelected( QPtrList&lt;ViMultiPolyh&gt; *selectedList );
+00152 };
+00153 
+00154 
+00155 
+00156 
+00157 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

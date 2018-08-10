@@ -1,0 +1,394 @@
+MultiPolyh__Begin
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: biurko
+     NodeAddress: .biurko
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (-1.22048, 30.0649, -0.666733)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViMultiPolyh
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat
+     NodeAddress: .biurko.blat
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (-23.1339, 69.0184, -12.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (45, 2, 45)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat_nizszy
+     NodeAddress: .biurko.blat_nizszy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (-0.633946, 49.0184, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (86, 2, 70)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat_jeszcze_nizszy
+     NodeAddress: .biurko.blat_jeszcze_nizszy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (-0.633946, 42.0184, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (86, 2, 70)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat_prawy
+     NodeAddress: .biurko.blat_prawy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 90)
+       Translation: (43.3661, 19.0184, -12.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (98, 2, 45)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat_lewy
+     NodeAddress: .biurko.blat_lewy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 90)
+       Translation: (-44.6339, 19.0184, -12.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (98, 2, 45)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blacik
+     NodeAddress: .biurko.blacik
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (21.8661, 69.0184, -25)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (45, 2, 20)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: zjazd_prawy
+     NodeAddress: .biurko.zjazd_prawy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 90, 0)
+       Translation: (43.3661, 59.0184, 22.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::SLANTCUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (25, 18, 2)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat_praw_mniejszy
+     NodeAddress: .biurko.blat_praw_mniejszy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 90)
+       Translation: (43.3661, 10.0184, 22.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (80, 2, 25)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: zjazd_lewy
+     NodeAddress: .biurko.zjazd_lewy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 90, 0)
+       Translation: (-44.6372, 59.0184, 22.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::SLANTCUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (25, 18, 2)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: blat_lewy_mniejszy
+     NodeAddress: .biurko.blat_lewy_mniejszy
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 90)
+       Translation: (-44.6372, 10.0184, 22.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (80, 2, 25)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0" red="0" green="0" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/wood.png" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+MultiPolyh__End

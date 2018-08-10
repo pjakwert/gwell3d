@@ -1,0 +1,214 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>EPSInterface</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>EPSInterface</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>202</width>
+            <height>238</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Vectorial rendering</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>5</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>OptionBox</cstring>
+            </property>
+            <property name="title">
+                <string>Output options</string>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>11</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>OptimizeVisibilityCB</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Optimize visibility</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Use an item buffer to determine visible polygons</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Use an item buffer to determine visible polygons</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>BlackAndWhiteCB</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Black and white</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Black and white image</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Black and white image</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>ColorBackgroundCB</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Color background</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Use current background color instead of white</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Use current background color instead of white</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>TightenBBCB</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Tighten bounding box</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Fit image bounding box to scene</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Fit image bounding box to scene</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>Layout5_2</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>sortLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Sort method :</string>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>Z-buffer polygon sorting method</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>Z-buffer polygon sorting method</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox">
+                            <item>
+                                <property name="text">
+                                    <string>No sorting</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>BSP </string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>Optimized BSP</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>SortMethod</cstring>
+                            </property>
+                            <property name="currentItem">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
+            <property name="name">
+                <cstring>Layout4</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>SaveButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Save</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>CancelButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>SaveButton</sender>
+        <signal>clicked()</signal>
+        <receiver>EPSInterface</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>CancelButton</sender>
+        <signal>clicked()</signal>
+        <receiver>EPSInterface</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>OptimizeVisibilityCB</tabstop>
+    <tabstop>BlackAndWhiteCB</tabstop>
+    <tabstop>ColorBackgroundCB</tabstop>
+    <tabstop>TightenBBCB</tabstop>
+    <tabstop>SortMethod</tabstop>
+    <tabstop>SaveButton</tabstop>
+    <tabstop>CancelButton</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

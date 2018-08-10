@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: material.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>material.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 
+00010 
+00011 
+00012 
+00013 <span class="preprocessor">#ifndef MATERIAL_H</span>
+00014 <span class="preprocessor"></span><span class="preprocessor">#define MATERIAL_H</span>
+00015 <span class="preprocessor"></span>
+00016 
+00017 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;qstring.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;QGLViewer/qglviewer.h&gt;</span>
+00020 
+<a name="l00024"></a><a class="code" href="classMaterial.html">00024</a> <span class="keyword">class </span><a class="code" href="classMaterial.html">Material</a>
+00025 {
+00026   <span class="keyword">public</span>:
+00027     <span class="comment">// konstruktor domyślny - inicjuje materiał wartościami zerowymi</span>
+00028     <a class="code" href="classMaterial.html#a11">Material</a>();
+00029     
+00030     <span class="comment">// konstruktor parametryczny QT</span>
+00031     <a class="code" href="classMaterial.html#a11">Material</a>(
+00032               QString   materialName,                 
+00033               QColor    ambientColor,
+00034               <span class="keywordtype">int</span>       ambientAlpha,
+00035               QColor    diffuseColor,
+00036               <span class="keywordtype">int</span>       diffuseAlpha,
+00037               QColor    specularColor,
+00038               <span class="keywordtype">int</span>       specularAlpha,
+00039               QColor    emissionColor,
+00040               <span class="keywordtype">int</span>       emissionAlpha,
+00041               GLint     shininess
+00042             );
+00043     
+00044     <span class="comment">// konstruktor parametryczny OpenGL   </span>
+00045     <a class="code" href="classMaterial.html#a11">Material</a>(
+00046               <span class="keyword">const</span> <span class="keywordtype">char</span>*     materialName,
+00047               <span class="keyword">const</span> GLfloat*  ambientColor4fv,
+00048               <span class="keyword">const</span> GLfloat*  diffuseColor4fv,
+00049               <span class="keyword">const</span> GLfloat*  specularColor4fv,
+00050               <span class="keyword">const</span> GLfloat*  emissionColor4fv,
+00051                     GLint     shininess
+00052             );
+00053                 
+00054     <span class="comment">// destruktor</span>
+00055     ~<a class="code" href="classMaterial.html">Material</a>();
+00056     
+00057     
+00058     <span class="comment">// metody zwracające nazwę i wartości kolorów</span>
+00059     QString materialName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _materialName; }
+00060     
+00061     <span class="keyword">const</span> GLfloat* ambientColor4fv()  <span class="keyword">const</span> { <span class="keywordflow">return</span> &amp;_ambientColor[0];  }
+00062     <span class="keyword">const</span> GLfloat* diffuseColor4fv()  <span class="keyword">const</span> { <span class="keywordflow">return</span> &amp;_diffuseColor[0];  }
+00063     <span class="keyword">const</span> GLfloat* specularColor4fv()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;_specularColor[0]; }
+00064     <span class="keyword">const</span> GLfloat* emissionColor4fv()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _emissionColor; }
+00065   
+00066     <span class="keyword">const</span> QColor&amp; ambientColorQT()  <span class="keyword">const</span> { <span class="keywordflow">return</span> _qAmbientColor;  }
+00067     <span class="keyword">const</span> QColor&amp; diffuseColorQT()  <span class="keyword">const</span> { <span class="keywordflow">return</span> _qDiffuseColor;  }
+00068     <span class="keyword">const</span> QColor&amp; specularColorQT()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _qSpecularColor; }
+00069     <span class="keyword">const</span> QColor&amp; emissionColorQT()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _qEmissionColor; }
+00070     
+00071     <span class="keywordtype">int</span>   ambientAlpha()  <span class="keyword">const</span> { <span class="keywordflow">return</span> _iAmbientAlpha;  }
+00072     <span class="keywordtype">int</span>   diffuseAlpha()  <span class="keyword">const</span> { <span class="keywordflow">return</span> _iDiffuseAlpha;  }
+00073     <span class="keywordtype">int</span>   specularAlpha()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _iSpecularAlpha; }
+00074     <span class="keywordtype">int</span>   emissionAlpha()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _iEmissionAlpha; }
+00075     
+00076     GLint shininess()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _shininess; }
+00077     <span class="comment">// metoda zwraca odpowiedni wektor do wykorzystania w OpenGL</span>
+00078     <span class="keyword">const</span> GLfloat* shininess1fv()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;_shininessf; }
+00079     
+00080     <span class="comment">// metody ustawiające nazwę materiału i kolory                                        </span>
+00081                                         
+00082     <span class="comment">// QT</span>
+00083     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#a22">setMaterialName</a>    ( <span class="keyword">const</span> QString materialName );
+00084     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#a16">setAmbientColor</a>    ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha=-1 );
+00085     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#a18">setDiffuseColor</a>    ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha=-1 );
+00086     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#a25">setSpecularColor</a>   ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha=-1 );
+00087     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#a20">setEmissionColor</a>   ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha=-1 );
+00088       
+00089     <span class="comment">// OpenGL</span>
+00090     <span class="keywordtype">void</span> setMaterialName    ( <span class="keyword">const</span> <span class="keywordtype">char</span>* materialName );
+00091     <span class="keywordtype">void</span> setAmbientColor    ( <span class="keyword">const</span> GLfloat* color );
+00092     <span class="keywordtype">void</span> setDiffuseColor    ( <span class="keyword">const</span> GLfloat* color );
+00093     <span class="keywordtype">void</span> setSpecularColor   ( <span class="keyword">const</span> GLfloat* color );
+00094     <span class="keywordtype">void</span> setEmissionColor   ( <span class="keyword">const</span> GLfloat* color );
+00095     
+00096     <span class="comment">// wspólne</span>
+00097     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#a23">setShininess</a>       ( GLint shininess );                                    
+00098                                         
+00099                                               
+00100     <span class="comment">// operatory porównania i przypisania</span>
+00101     <span class="keywordtype">bool</span> <a class="code" href="classMaterial.html#a14">operator==</a>(<span class="keyword">const</span> <a class="code" href="classMaterial.html">Material</a>&amp; material);
+00102     <a class="code" href="classMaterial.html">Material</a>&amp; <a class="code" href="classMaterial.html#a13">operator=</a>(<span class="keyword">const</span> <a class="code" href="classMaterial.html">Material</a>&amp; material);
+00103     
+00104   <span class="keyword">private</span>:
+00105     <span class="comment">// licznik materiałów utworzonych konstruktorem domyślnym</span>
+00106     <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classMaterial.html#v0">emptyMaterialsCount</a>; 
+00107     <span class="comment">// metody pomocnicze do ustawiania koloru</span>
+00108     <span class="keywordtype">void</span> <a class="code" href="classMaterial.html#d1">setColor</a>( <span class="keyword">const</span> QColor&amp; INcolor, <span class="keywordtype">int</span> INalpha, QColor* OUTcolor, <span class="keywordtype">int</span>* OUTalpha, GLfloat* OUTcolor4fv);
+00109     <span class="keywordtype">void</span> setColor( <span class="keyword">const</span> GLfloat* INcolor4fv, GLfloat* OUTcolor4fv, QColor* OUTcolor, <span class="keywordtype">int</span>* OUTalpha );
+00110     
+00111     QString _materialName;
+00112     GLint   _shininess;
+00113     GLfloat _shininessf;  <span class="comment">// przechowywane ze względu na przyspieszenie operacji dla OpenGL</span>
+00114     <span class="comment">// QT</span>
+00115     QColor  _qAmbientColor;
+00116      <span class="keywordtype">int</span>    _iAmbientAlpha;
+00117     QColor  _qDiffuseColor;
+00118      <span class="keywordtype">int</span>    _iDiffuseAlpha;
+00119     QColor  _qSpecularColor;
+00120      <span class="keywordtype">int</span>    _iSpecularAlpha;
+00121     QColor  _qEmissionColor;
+00122      <span class="keywordtype">int</span>    _iEmissionAlpha;
+00123     <span class="comment">// OpenGL</span>
+00124     GLfloat _ambientColor[4];
+00125     GLfloat _diffuseColor[4];
+00126     GLfloat _specularColor[4];
+00127     GLfloat _emissionColor[4];
+00128 };
+00129 
+00130 
+00131 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:14 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

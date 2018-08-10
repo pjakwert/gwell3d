@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: texture.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>texture.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 <span class="preprocessor">#ifndef TEXTURE_H</span>
+00010 <span class="preprocessor"></span><span class="preprocessor">#define TEXTURE_H</span>
+00011 <span class="preprocessor"></span>
+00012 <span class="preprocessor">#include &lt;qstring.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qimage.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qpixmap.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qfile.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;QGLViewer/qglviewer.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qptrlist.h&gt;</span>
+00018 
+<a name="l00019"></a><a class="code" href="classTexture.html">00019</a> <span class="keyword">class </span><a class="code" href="classTexture.html">Texture</a>
+00020 {
+00021   <span class="keyword">public</span>:
+00022     <a class="code" href="classTexture.html">Texture</a>(
+00023               QString           fileName = QString::null,   <span class="comment">// nazwa (ścieżka do) pliku graficznego</span>
+00024               QImage::ScaleMode scaleMode = QImage::ScaleFree, <span class="comment">// typ skalowania w przypadku wymiarów != 2^n</span>
+00025               <span class="keywordtype">bool</span>              mipmapingEnabled = <span class="keyword">true</span>,
+00026               GLuint            GLTextureID = 0,
+00027               <span class="keywordtype">int</span>               howManyUsers = 0,    <span class="comment">// licznik obiektów, które używają tej tekstury</span>
+00028               QPixmap*          preview = 0L         <span class="comment">// mini podgląd obrazu</span>
+00029            );
+00030 
+00031     ~<a class="code" href="classTexture.html">Texture</a>() { <span class="comment">/* QT */</span> };
+00032     
+00033     <span class="keywordtype">int</span>  setFileName( <span class="keyword">const</span> QString&amp; fileName );
+00034     <span class="keywordtype">void</span> setScaleMode( <span class="keyword">const</span> QImage::ScaleMode mode ) { _scaleMode = mode; }
+00035     <span class="keywordtype">void</span> setMipmapEnabled( <span class="keywordtype">bool</span> yes )                 { _mipmapEnabled = yes; }
+00036     <span class="keywordtype">void</span> setPreview( QPixmap* pixmap )                { _preview = pixmap; }
+00037     <span class="keywordtype">int</span>  incHowManyUsers() { _howManyUsers++; <span class="keywordflow">return</span> _howManyUsers; }
+00038     <span class="keywordtype">int</span>  decHowManyUsers() { _howManyUsers--; <span class="keywordflow">return</span> _howManyUsers; }
+00039     
+00040     <span class="keyword">const</span>   QString&amp; fileName()   <span class="keyword">const</span> { <span class="keywordflow">return</span> _fileName;  }
+00041     QImage::ScaleMode scaleMode()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _scaleMode; }
+00042     <span class="keywordtype">bool</span>    mipmapingEnabled()    <span class="keyword">const</span> { <span class="keywordflow">return</span> _mipmapEnabled; }
+00043     GLuint  GLTextureID()         <span class="keyword">const</span> { <span class="keywordflow">return</span> _GLTextureID; }
+00044     QPixmap* preview()            <span class="keyword">const</span> { <span class="keywordflow">return</span> _preview; }
+00045     <span class="keywordtype">int</span>     howManyUsers()        <span class="keyword">const</span> { <span class="keywordflow">return</span> _howManyUsers; }
+00046     
+00047     <span class="keywordtype">bool</span>    isValid()             <span class="keyword">const</span> { <span class="keywordflow">return</span> _isValid; } <span class="comment">// flaga ustawiana tylko przez setFileName()</span>
+00048     
+00049     <a class="code" href="classTexture.html">Texture</a>&amp; operator=(<a class="code" href="classTexture.html">Texture</a>&amp;);
+00050     <span class="keywordtype">bool</span> operator==(<a class="code" href="classTexture.html">Texture</a>&amp;);
+00051     
+00052   <span class="keyword">private</span>:
+00053     QString   _fileName;
+00054     QImage::ScaleMode _scaleMode;
+00055     <span class="keywordtype">bool</span>      _mipmapEnabled;
+00056     <span class="keywordtype">int</span>       _howManyUsers;
+00057     QPixmap*  _preview;
+00058     
+00059     GLuint    _GLTextureID;
+00060     
+00061     <span class="keywordtype">bool</span>      _isValid;
+00062     
+00063     <span class="keywordtype">void</span> setGLTextureID( GLuint GLTextureID ) { _GLTextureID = GLTextureID; }
+00064     <span class="keywordtype">void</span> setHowManyUsers( <span class="keywordtype">int</span> howMany ) { _howManyUsers = howMany; }
+00065 };
+00066 
+00067 
+00068 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:04 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: workspace.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>workspace.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 <span class="preprocessor">#ifndef WORKSPACE_H</span>
+00010 <span class="preprocessor"></span><span class="preprocessor">#define WORKSPACE_H</span>
+00011 <span class="preprocessor"></span>
+00012 <span class="preprocessor">#include &lt;qsplitter.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qptrlist.h&gt;</span>
+00015 
+00016 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;cellframe.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;texturemanager.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;statusbar.h&gt;</span>
+00020 
+00021 
+<a name="l00022"></a><a class="code" href="classWorkspace.html">00022</a> <span class="keyword">class </span><a class="code" href="classWorkspace.html">Workspace</a> : <span class="keyword">public</span> QWidget
+00023 {
+00024   Q_OBJECT
+00025   
+00026   <span class="keyword">public</span>:
+00027     <a class="code" href="classWorkspace.html">Workspace</a>(QWidget *parent, <span class="keyword">const</span> <span class="keywordtype">char</span> *name = 0, WFlags fl = 0);
+00028     ~<a class="code" href="classWorkspace.html">Workspace</a>();
+00029     <span class="keyword">static</span> <span class="keywordtype">void</span> resetAllFrames();
+00030     CellFrame* currentFrame();
+00031     <span class="keywordtype">void</span> disableCameraInCurrentFrame();
+00032     
+00033   <span class="keyword">private</span>:
+00034     QGridLayout *grid;
+00035     QSplitter *splitV;
+00036     QSplitter *splitH;
+00037     QSplitter *split3;
+00038     
+00039     <span class="keyword">static</span> QPtrList&lt;CellFrame&gt; framesList;
+00040     
+00041   <span class="keyword">private</span> slots:
+00042     <span class="keywordtype">void</span> userSelected( QPtrList&lt;ViMultiPolyh&gt; *selected ); <span class="comment">// wybrane w CellFrame - podaj dalej</span>
+00043     <span class="keywordtype">void</span> modifierChangedFromCellFrame( MModifier::ModifierType mType ); <span class="comment">// CellFrame zmienił modyfikator</span>
+00044   
+00045   <span class="keyword">public</span> slots:
+00046     <span class="keywordtype">void</span> setScene( ViScene *scene );
+00047     <span class="keywordtype">void</span> setLightsList( QPtrList&lt;Light&gt; *lightsList );
+00048     <span class="keywordtype">void</span> setLight( <a class="code" href="classLight.html">Light</a>* light );
+00049     <span class="keywordtype">void</span> setLightingEnabled( <span class="keywordtype">bool</span> yes );
+00050     <span class="keywordtype">void</span> updateLightColor( GLenum, <a class="code" href="classLight.html">Light</a>* );
+00051     <span class="comment">//void showLightShapes( bool );</span>
+00052     
+00053     <span class="keywordtype">void</span> setSelected( QPtrList&lt;ViMultiPolyh&gt; *selected );  <span class="comment">// rozdaj CellFrame-om wybrane obiekty</span>
+00054     <span class="keywordtype">void</span> setModifier( MModifier *modifier ); <span class="comment">// ustaw CellFrame-om modyfikator</span>
+00055     <span class="keywordtype">void</span> refresh();
+00056     
+00057     <span class="comment">// ustawienia z globalnego CellWidget dla wszystkich CellFrames</span>
+00058     <span class="keywordtype">void</span> setCameraIsMovingForAll( <span class="keywordtype">bool</span> yes );
+00059     <span class="keywordtype">void</span> showEntireSceneForAll();
+00060     <span class="keywordtype">void</span> showGridForAll( <span class="keywordtype">bool</span> on );
+00061     <span class="keywordtype">void</span> showBoxesForAll( <span class="keywordtype">bool</span> on );
+00062     <span class="keywordtype">void</span> showAxisForAll( <span class="keywordtype">bool</span> on );
+00063     <span class="keywordtype">void</span> showLightsForAll( <span class="keywordtype">bool</span> on );
+00064     <span class="keywordtype">void</span> viewDirectionChangedForAll(<span class="keywordtype">int</span> direction);
+00065     <span class="keywordtype">void</span> setViewTypeForAll( DrawMethod type );
+00066     <span class="keywordtype">void</span> setProjTypeForAll( qglviewer::Camera::Type type );
+00067     
+00068     <span class="keywordtype">void</span> setFog( <a class="code" href="structFogStruct.html">FogStruct</a>*, FogParamsEnum );
+00069     
+00070   signals:
+00071     <span class="keywordtype">void</span> setModifierFromCellFrame( MModifier::ModifierType mType ); <span class="comment">// CellFrame zmienia modyfikator</span>
+00072     <span class="keywordtype">void</span> userSelectedObject( QPtrList&lt;ViMultiPolyh&gt; *selected );
+00073 };
+00074 
+00075 
+00076 
+00077 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:04 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

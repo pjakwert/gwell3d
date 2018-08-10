@@ -1,0 +1,26 @@
+
+        l i b Q G L V i e w e r   I n s t a l l a t i o n
+
+To compile the library, simply do :
+ > cd QGLViewer
+ > qmake
+ > make
+ > make install
+
+And then compile the examples :
+ > cd ../examples
+ > qmake
+ > make
+
+See doc/download.html and doc/rpm.html for installation details
+(including Win32 installation).
+
+You can configure the installation directories
+(default are /usr/local/include/QGLViewer and /usr/local/lib).
+
+If you didn't "make install" the library, use
+  > qmake INCLUDE_DIR=../.. LIB_DIR=../../QGLViewer
+  > make
+to compile the examples.
+
+See doc/examples/index.html for a description of the examples.

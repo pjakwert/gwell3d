@@ -1,0 +1,660 @@
+MultiPolyh__Begin
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: kratka
+     NodeAddress: .kratka
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (1.7709, 39.4024, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViMultiPolyh
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_nr_0
+     NodeAddress: .kratka.CUBOID_nr_0
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (2.68396, 55.2273, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (120, 0.5, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_6
+     NodeAddress: .kratka.CUBOID_6
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (2.53583, -35.2546, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (120, 0.5, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_nr_1
+     NodeAddress: .kratka.CUBOID_nr_1
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (-57.2259, 10.3307, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_53
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_56
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_59
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_62
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_65
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_69
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65.CUBOID_69
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_72
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65.CUBOID_69.CUBOID_72
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_75
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65.CUBOID_69.CUBOID_72.CUBOID_75
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_78
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65.CUBOID_69.CUBOID_72.CUBOID_75.CUBOID_78
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_81
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65.CUBOID_69.CUBOID_72.CUBOID_75.CUBOID_78.CUBOID_81
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_114
+     NodeAddress: .kratka.CUBOID_nr_1.CUBOID_53.CUBOID_56.CUBOID_59.CUBOID_62.CUBOID_65.CUBOID_69.CUBOID_72.CUBOID_75.CUBOID_78.CUBOID_81.CUBOID_114
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (10, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_20
+     NodeAddress: .kratka.CUBOID_20
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (62.4868, 9.75903, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (0.5, 90, 2.5)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: lewa_nozka
+     NodeAddress: .kratka.lewa_nozka
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (-41.6031, -36.3774, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (4, 2, 20)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: prawa_nozka
+     NodeAddress: .kratka.prawa_nozka
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (43.3206, -36.3774, 4.76837e-07)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (4, 2, 20)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.313726" red="0.313726" green="0.313726" />
+             <specularColor alpha="1" blue="0.156863" red="0.564706" green="0.364706" />
+             <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/metal/bomber_metal1b.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+MultiPolyh__End

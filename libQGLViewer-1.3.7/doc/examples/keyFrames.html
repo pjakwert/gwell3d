@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer keyFrames example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The keyFrames example</h1>
+<center>
+  <img src="../images/keyFrames.jpg" width="300" height="200" alt="keyFrames"/>
+</center>
+
+<p>
+ The <code>KeyFrameInterpolator</code> test example.
+</p>
+<p>
+ KeyFrameInterpolator smoothly interpolate their attached Frame over time on a path defined by
+ Frames. The interpolation can be started/stopped/reset, played in loop, played at a different
+ speed, etc...
+</p>
+<p>
+ In this examples, the path is defined by four ManipulatedFrame which all can be moved with the
+ mouse. The interpolating path is updated accordingly.
+</p>
+<p>
+ The path and the interpolating axis are drawn using KeyFrameInterpolator::drawPath().
+</p>
+<p>
+ By default, the Camera holds 12 KeyFrameInterpolator, binded to the F1-12 keys. Use Alt-Fx to
+ define a new keyFrame for path x, and simply press Fx to play/pause the path x. See the <a
+ href="../shortcuts.html">shortcuts</a> page for details.
+</p>
+
+
+<h2>keyFrames.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">public </span>:
+  Viewer();
+
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>keyPressEvent(QKeyEvent *e);
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+
+<span class="key">private </span>:
+  qglviewer::ManipulatedFrame** keyFrame_;
+  qglviewer::KeyFrameInterpolator kfi_;
+  <span class="typ">const int </span>nbKeyFrames;
+  <span class="typ">int </span>currentKF_;
+};</pre>
+
+
+<h2>keyFrames.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;keyFrames.h&quot;</span><span class="dir">
+</span>
+<span class="key">using namespace </span>qglviewer;
+<span class="key">using namespace </span>std;
+
+Viewer::Viewer()
+  : nbKeyFrames(<span class="num">4</span>)
+{
+  restoreFromFile();
+
+  <span class="com">// myFrame is the Frame that will be interpolated.
+</span>  Frame* myFrame = <span class="key">new </span>Frame();
+
+  <span class="com">// Set myFrame as the KeyFrameInterpolator interpolated Frame.
+</span>  kfi_.setFrame(myFrame);
+  kfi_.setLoopInterpolation();
+
+  <span class="com">// An array of manipulated (key) frames.
+</span>  keyFrame_ = <span class="key">new </span>ManipulatedFrame*[nbKeyFrames];
+
+  <span class="com">// Create an initial path
+</span>  <span class="key">for </span>(<span class="typ">int </span>i=<span class="num">0</span>; i&lt;nbKeyFrames; i++)
+    {
+      keyFrame_[i] = <span class="key">new </span>ManipulatedFrame();
+      keyFrame_[i]-&gt;setPosition(<span class="num">-1.0 </span>+ <span class="num">2.0</span>*i/(nbKeyFrames-1), <span class="num">0.0</span>, <span class="num">0.0</span>);
+      kfi_.addKeyFrame(keyFrame_[i]);
+    }
+
+  connect(&amp;kfi_, SIGNAL(interpolated()), SLOT(updateGL()));
+
+  kfi_.startInterpolation();
+
+  currentKF_ = <span class="num">0</span>;
+  setManipulatedFrame(keyFrame_[currentKF_]);
+
+  <span class="com">// Save CAMERA binding. See setMouseStateKey() documentation.
+</span>  setMouseStateKey(QGLViewer::CAMERA, Qt::AltButton);
+  setMouseStateKey(QGLViewer::FRAME,  Qt::NoButton);
+  setMouseStateKey(QGLViewer::CAMERA, Qt::ControlButton);
+
+  <span class="com">// Enable direct frame manipulation when the mouse hovers.
+</span>  setMouseTracking(<span class="key">true</span>);
+
+  help();
+}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;K e y F r a m e s&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;A frame is animated using a &lt;i&gt;KeyFrameInterpolator&lt;/i&gt;.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Use the left and right arrows to change the manipulated frame.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;&lt;b&gt;+/-&lt;/b&gt; changes the interpolation speed.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;&lt;b&gt;Return&lt;/b&gt; starts-stops the interpolation.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Press &lt;b&gt;Control&lt;/b&gt; to move the camera.&quot;</span>;
+  <span class="key">return </span>text;
+}
+
+<span class="typ">void </span>Viewer::keyPressEvent(QKeyEvent *e)
+{
+  <span class="key">switch </span>(e-&gt;key())
+    {
+    <span class="key">case </span>Qt::Key_Left :
+      currentKF_ = (currentKF_+nbKeyFrames-1) % nbKeyFrames;
+      setManipulatedFrame(keyFrame_[currentKF_]);
+      updateGL();
+      <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_Right :
+      currentKF_ = (currentKF_+<span class="num">1</span>) % nbKeyFrames;
+      setManipulatedFrame(keyFrame_[currentKF_]);
+      updateGL();
+      <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_Return :
+      <span class="key">if </span>(e-&gt;state() != shortcutStateKey(FULL_SCREEN))
+	kfi_.toggleInterpolation();
+      <span class="key">else
+	</span>QGLViewer::keyPressEvent(e);
+      <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_Plus :
+      kfi_.setInterpolationSpeed(kfi_.interpolationSpeed()+<span class="num">0.25</span>);
+      <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_Minus :
+      kfi_.setInterpolationSpeed(kfi_.interpolationSpeed()<span class="num">-0.25</span>);
+      <span class="key">break</span>;
+    <span class="com">// case Qt::Key_C :
+</span>      <span class="com">// kfi_.setClosedPath(!kfi_.closedPath());
+</span>      <span class="com">// break;
+</span>    <span class="key">default</span>:
+      QGLViewer::keyPressEvent(e);
+    }
+}
+
+<span class="typ">void </span>Viewer::draw()
+{
+  glPushMatrix();
+  glMultMatrixd(kfi_.frame()-&gt;matrix());
+  drawAxis(<span class="num">0.3</span>);
+  glPopMatrix();
+
+  kfi_.drawPath(<span class="num">5</span>, <span class="num">30</span>);
+
+  <span class="key">for </span>(<span class="typ">int </span>i=<span class="num">0</span>; i&lt;nbKeyFrames; ++i)
+    {
+      glPushMatrix();
+      glMultMatrixd(kfi_.keyFrame(i).matrix());
+      <span class="key">if </span>((i == currentKF_) || (keyFrame_[i]-&gt;grabsMouse()))
+	drawAxis(<span class="num">0.4</span>);
+      <span class="key">else
+	</span>drawAxis(<span class="num">0.2</span>);
+      glPopMatrix();
+    }
+}</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;keyFrames.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer, show it on screen.
+</span>  Viewer viewer;
+  viewer.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;viewer);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

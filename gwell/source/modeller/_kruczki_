@@ -1,0 +1,7 @@
+KRUCZKI, które moga zawazyc:
+
+ - klawisze sa przechwytywane najpierw przez CellFrame, dopiero potem resztki spadaja do VionaInterface - dziwne acz prawdziwe
+ 
+ - ViElemePolyhExt : informacja o nazwie materialu nie jest zapisywana do pliku .mph z bryla. Zapisywana jest wylacznie w plikach .mat
+
+- zapis materialu MaterialEditor::saveMaterial() musi uwzgledniac podana przez usera sciezke z materialami, na razie ustawione jest to na sztywno "materials/"   

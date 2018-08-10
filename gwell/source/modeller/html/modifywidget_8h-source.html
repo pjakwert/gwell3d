@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: modifywidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>modifywidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef MODIFYWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define MODIFYWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qtoolbutton.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qradiobutton.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;qfont.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qtoolbox.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qhbox.h&gt;</span>
+00015 
+00016 <span class="preprocessor">#include &lt;modifiers.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;nodotvalidator.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;cellframe.h&gt;</span>
+00020 <span class="preprocessor">#include &lt;statusbar.h&gt;</span>
+00021 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00022 
+00023 
+00024 <span class="keyword">class </span>ModifyWidget : <span class="keyword">public</span> QWidget
+00025 {
+00026   Q_OBJECT
+00027 
+00028   <span class="keyword">public</span>:
+00029     ModifyWidget( QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0 );
+00030     ~ModifyWidget() {}
+00031 
+00032   <span class="keyword">private</span>:
+00033     QPtrList&lt;ViNTreeNode&gt; *_selectedList;
+00034     QStringList *_primitiveList;
+00035     QGridLayout *grid;
+00036     <span class="keywordtype">bool</span>        _rad;
+00037     <span class="keywordtype">void</span> block(<span class="keywordtype">bool</span> yes);  <span class="comment">// blokuje lub odblokowuje sygnaly textChanged</span>
+00038     
+00039    QGroupBox   *toolsBox;
+00040     QToolButton *selectButton;
+00041     QToolButton *transButton;
+00042     QToolButton *rotateButton;
+00043     QToolButton *scaleButton;
+00044     QToolButton *linkButton;
+00045     QWidget     *emptyWidget;
+00046     QToolButton *transCoordsButton;
+00047     QToolButton *rotateCoordsButton;
+00048     QToolButton *currentButton;
+00049 
+00050   QDoubleValidator *doubleValidator;
+00051   <a class="code" href="classNoDotValidator.html">NoDotValidator</a>   *noDotValidator;
+00052   
+00053   
+00054    QGroupBox   *editBox;
+00055     QGridLayout *editGrid;
+00056     QLineEdit   *txe;
+00057     QLineEdit   *tye;
+00058     QLineEdit   *tze;
+00059     QLineEdit   *rxe;
+00060     QLineEdit   *rye;
+00061     QLineEdit   *rze;
+00062     QRadioButton *degRadio;
+00063     QRadioButton *radRadio;
+00064     QLineEdit   *sxe;
+00065     QLineEdit   *sye;
+00066     QLineEdit   *sze;
+00067     
+00068   QGroupBox* fitScaleBox;
+00069     QLineEdit* widthEdit;
+00070     QLineEdit* heightEdit;
+00071     QLineEdit* depthEdit;    
+00072 
+00073   QGroupBox *nameBox;       
+00074     QLineEdit* obNameEdit;
+00075     QLineEdit* obParentEdit;
+00076     QLineEdit* obPathEdit;
+00077     
+00078   QGroupBox     *coordsBox;
+00079     QLabel      *ctLabel;
+00080      QLineEdit  *ctxe;
+00081      QLineEdit  *ctye;
+00082      QLineEdit  *ctze;
+00083     QLabel      *crLabel;
+00084      QLineEdit  *crxe;
+00085      QLineEdit  *crye;
+00086      QLineEdit  *crze;
+00087   
+00088   QGroupBox     *primitiveTypeBox;
+00089     QComboBox   *primitiveTypeCombo;
+00090     
+00091     <a class="code" href="classSelectModifier.html">SelectModifier</a>    *mSelect;
+00092     <a class="code" href="classTranslateModifier.html">TranslateModifier</a> *mTrans;
+00093     <a class="code" href="classRotateModifier.html">RotateModifier</a>    *mRot;
+00094     <a class="code" href="classScaleModifier.html">ScaleModifier</a>     *mScale;
+00095     <a class="code" href="classLinkModifier.html">LinkModifier</a>      *mLink;
+00096     <a class="code" href="classTranslateCoordsModifier.html">TranslateCoordsModifier</a> *mTransCoords;
+00097     <a class="code" href="classRotateCoordsModifier.html">RotateCoordsModifier</a>    *mRotCoords;
+00098 
+00099     <span class="keywordtype">void</span> setActiveButton( QToolButton *activeButton );
+00100 
+00101   <span class="keyword">private</span> slots:
+00102     <span class="keywordtype">void</span> buttonClicked();
+00103     <span class="keywordtype">void</span> setName(<span class="keyword">const</span> QString &amp;name);
+00104     <span class="keywordtype">void</span> setTrans();
+00105     <span class="keywordtype">void</span> setRot();
+00106     <span class="keywordtype">void</span> setScale();
+00107     <span class="keywordtype">void</span> fitScale();
+00108     <span class="keywordtype">void</span> setDeg(<span class="keywordtype">bool</span> on);
+00109     <span class="keywordtype">void</span> setRad(<span class="keywordtype">bool</span> on);
+00110     <span class="keywordtype">void</span> setCoordsTrans();
+00111     <span class="keywordtype">void</span> setCoordsRot();
+00112     <span class="keywordtype">void</span> updateData( MModifier::ModifierType mType, Vector3f v );
+00113     <span class="keywordtype">void</span> enableInput( <span class="keywordtype">bool</span> yes );
+00114     <span class="keywordtype">void</span> primitiveTypeChanged( <span class="keywordtype">int</span> );
+00115 
+00116   <span class="keyword">public</span> slots:
+00117     <span class="keywordtype">void</span> setDefaultModifier();
+00118     <span class="keywordtype">void</span> setModifier( MModifier::ModifierType mType );
+00119     <span class="keywordtype">void</span> setSelected(QPtrList&lt;ViNTreeNode&gt; *selectedList);
+00120     <span class="keywordtype">void</span> setPrimitiveList( QStringList* primitiveList );
+00121 
+00122   signals:
+00123     <span class="keywordtype">void</span> sendModifier(MModifier *modifier);
+00124     <span class="keywordtype">void</span> modifierChoosed();
+00125     <span class="keywordtype">void</span> nameChanged();
+00126 };
+00127 
+00128 
+00129 
+00130 
+00131 
+00132 
+00133 
+00134 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:22 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

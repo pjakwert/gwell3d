@@ -1,0 +1,7 @@
+<Material materialName="blue moog ^2" >
+ <ambientColor alpha="1" blue="0.576471" red="0.254902" green="0.513725" />
+ <diffuseColor alpha="1" blue="0.756863" red="0.313725" green="0.541176" />
+ <specularColor alpha="1" blue="0.772549" red="0.278431" green="0.568627" />
+ <emissionColor alpha="1" blue="0.670588" red="0.207843" green="0.701961" />
+ <shininess shininess="6" />
+</Material>

@@ -1,0 +1,166 @@
+MultiPolyh__Begin
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: szafaX
+     NodeAddress: .szafaX
+     Transf_Node2Parent
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViMultiPolyh
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_nr_14
+     NodeAddress: .szafaX.CUBOID_nr_14
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 80.2339, -0.922229)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (70, 160, 73)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.258824" red="0.0666667" green="0.137255" />
+             <specularColor alpha="1" blue="0.266667" red="0.27451" green="0.27451" />
+             <emissionColor alpha="1" blue="0" red="0.0431373" green="0.054902" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/general/bomber_metal1-big.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_nr_15
+     NodeAddress: .szafaX.CUBOID_nr_14.CUBOID_nr_15
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 66, 37.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (66, 22, 2)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0.160784" red="0.168627" green="0.160784" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/main/mainbasefuelmissle.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="0.5" minW="0" maxH="0.5" minH="-0.5" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_1025
+     NodeAddress: .szafaX.CUBOID_nr_14.CUBOID_1025
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, 40, 37.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (66, 22, 2)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+             <specularColor alpha="1" blue="0.160784" red="0.168627" green="0.160784" />
+             <emissionColor alpha="1" blue="0" red="0" green="0" />
+             <shininess shininess="0" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/main/mainbasefuelmissle.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="0.5" minW="0" maxH="2" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+  Node__Begin:
+    ClassSection__Begin: ViNTreeNode
+     NodeName: CUBOID_1044
+     NodeAddress: .szafaX.CUBOID_nr_14.CUBOID_1044
+     Transf_Node2Parent
+       Angles XYZ Deg (0, 0, 0)
+       Translation: (0, -25, 37.5)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyh
+     PatternPolyhedronName: biblioteka_testowa::Norm::CUBOID
+     Transf_Patte2Eleme:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (66, 100, 2)
+     Transf_Eleme2Indiv:
+       Angles Euler Deg (0, 0, 0)
+       Translation: (0, 0, 0)
+       Scale: (1, 1, 1)
+    ClassSection__End
+    ClassSection__Begin: ViElemePolyhExt
+     <ElementProperties>
+         <Material applyMaterialTo="GL_FRONT" materialEnabled="true" >
+             <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+             <diffuseColor alpha="1" blue="0.258824" red="0.0666667" green="0.137255" />
+             <specularColor alpha="1" blue="0.266667" red="0.27451" green="0.27451" />
+             <emissionColor alpha="1" blue="0" red="0.0431373" green="0.054902" />
+             <shininess shininess="16" />
+         </Material>
+         <Texture reflectingEnabled="false" textureEnabled="true" >
+             <imageParameters mipmapingEnabled="true" scaleMode="ScaleFree" fileName="/home/pjakwert/downloads/tekstury/general/bomber_metal1-big.jpg" />
+             <textureFiltering wrapTFilter="GL_REPEAT" minFilter="GL_LINEAR_MIPMAP_LINEAR" envModeFilter="GL_DECAL" magFilter="GL_LINEAR" wrapSFilter="GL_REPEAT" />
+             <blending blendingSrcFunc="GL_SRC_ALPHA" blendingEnabled="false" blendingDestFunc="GL_ONE" />
+             <textureCoordinates maxW="1" minW="0" maxH="1" minH="0" />
+         </Texture>
+     </ElementProperties>
+    ClassSection__End
+  Node__End
+MultiPolyh__End

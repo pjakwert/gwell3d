@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer frameTransform example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The frameTransform example</h1>
+<center>
+  <img src="../images/frameTransform.jpg" width="300" height="200" alt="frameTransform"/>
+</center>
+
+<p>
+ Coordinate transformation between different Frames. 
+</p>
+<p>
+ This example illustrates the camera and world coordinate systems
+ relationship. The position of the camera in the world coordinate
+ system is printed from Camera::position(). Symetrically, the
+ position of the world origin is given in the camera coordinate
+ system by camera()->cameraCoordinatesOf(0,0,0).
+</p>
+<p>
+ Three sets of lines (red, green, blue) are drawned. They have different starting points, but
+ common end points, located on a circle in the XY plane.
+</p>
+<p>
+ All the red lines start from the camera position, and will hence always be aligned with the
+ viewing direction, making them invisible.
+</p>
+<p>
+ The green lines starting points' positions are determined from the camera coordinate system, using
+ <code>camera()->worldCoordinatesOf()</code>. As a result, these points will seem to be fixed on
+ the screen, even when the camera is moved
+</p>
+<p>
+ Finally, the blue lines are classically defined in the world coordinate system, and will move with
+ the camera.
+</p>
+<p>
+ Beautiful Moire pattern can be obtained with a proper rotation.
+</p>
+
+
+<h2>frameTransform.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+};</pre>
+
+
+<h2>frameTransform.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;frameTransform.h&quot;</span><span class="dir">
+</span>
+<span class="key">using namespace </span>std;
+<span class="key">using namespace </span>qglviewer; <span class="com">// Vec
+</span>
+<span class="typ">void </span>Viewer::init()
+{
+  restoreFromFile();
+
+  setSceneRadius(<span class="num">1.5</span>);
+  showEntireScene();
+  setDrawAxis();
+  glDisable(GL_LIGHTING);
+
+  help();
+}
+
+<span class="typ">void </span>Viewer::draw()
+{
+  <span class="com">// Draws line sets (red, green, blue) with different origins, but with a common
+</span>  <span class="com">// end point, located on a circle in the XY plane.
+</span>  <span class="typ">const float </span>nbLines = <span class="num">50.0</span>;
+
+  glBegin(GL_LINES);
+
+  <span class="key">for </span>(<span class="typ">float </span>i=<span class="num">0</span>; i&lt;nbLines; ++i)
+    {
+      <span class="typ">float </span>angle = <span class="num">2.0</span>*M_PI*i/nbLines;
+
+      glColor3f(.<span class="num">8</span>,.<span class="num">2</span>,.<span class="num">2</span>);
+      <span class="com">// These lines will never be seen as they are always aligned with the viewing direction.
+</span>      glVertex3fv(camera()-&gt;position().address());
+      glVertex3f (cos(angle), sin(angle), <span class="num">0.0</span>);
+
+      glColor3f(.<span class="num">2</span>,.<span class="num">8</span>,.<span class="num">2</span>);
+      <span class="com">// World Coordinates are infered from the camera, and seem to be immobile in the screen.
+</span>      glVertex3fv(camera()-&gt;worldCoordinatesOf(Vec(.<span class="num">3</span>*cos(angle), .<span class="num">3</span>*sin(angle), <span class="num">-2.0</span>)).address());
+      glVertex3f (cos(angle), sin(angle), <span class="num">0.0</span>);
+
+      glColor3f(.<span class="num">2</span>,.<span class="num">2</span>,.<span class="num">8</span>);
+      <span class="com">// These lines are defined in the world coordinate system and will move with the camera.
+</span>      glVertex3f(<span class="num">1.5</span>*cos(angle), <span class="num">1.5</span>*sin(angle), <span class="num">-1.0</span>);
+      glVertex3f(cos(angle), sin(angle), <span class="num">0.0</span>);
+    }
+  glEnd();
+
+  <span class="com">// Here, the camera position in world coord. system  is camera()-&gt;position().
+</span>  <span class="com">// The world origin position in camera frame can be obtained from camera()-&gt;cameraCoordinatesOf(Vec(0.0, 0.0, 0.0))
+</span>}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;F r a m e T r a n s f o r m&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;This example illustrates how easy it is to switch between the camera and &quot;</span>;
+  text += <span class="str">&quot;the world coordinate systems : using the &lt;i&gt;camera()-&gt;cameraCoordinatesOf()&lt;/i&gt; &quot;</span>;
+  text += <span class="str">&quot;and &lt;i&gt;camera::worldCoordinatesOf()&lt;/i&gt; functions.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;You can create your own hierarchy of local coordinates systems and each of &quot;</span>;
+  text += <span class="str">&quot;them can be manipulated with the mouse (see the &lt;i&gt;manipulatedFrame&lt;/i&gt; and &lt;i&gt;luxo&lt;/i&gt; examples). &quot;</span>;
+  text += <span class="str">&quot;Standard functions allow you to convert from any local frame to an other, &quot;</span>;
+  text += <span class="str">&quot;the world/camera relation presented here simply being one of its illustration.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;See &lt;i&gt;examples/frameTransform.html&lt;/i&gt; for an explanation of the meaning of these weird lines.&quot;</span>;
+  <span class="key">return </span>text;
+}
+</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;frameTransform.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer.
+</span>  Viewer v;
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  v.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;v);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

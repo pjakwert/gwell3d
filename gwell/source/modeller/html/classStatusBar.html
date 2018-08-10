@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: StatusBar class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy StatusBar</h1><code>#include &lt;<a class="el" href="statusbar_8h-source.html">statusbar.h</a>&gt;</code>
+<p>
+Diagram współpracy dla StatusBar:<p><center><img src="classStatusBar__coll__graph.png" border="0" usemap="#StatusBar__coll__map" alt="Collaboration graph"></center>
+<center><font size="2">[<a target="top" href="graph_legend.html">legenda</a>]</font></center><a href="classStatusBar-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classStatusBar.html#i0">copyToClipboard</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classStatusBar.html#i1">writeAllToFile</a> (QString fileName)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classStatusBar.html#i2">writeAllToFile</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="StatusBar::StatusBar" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><b>StatusBar</b> (QWidget *parent)</td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classStatusBar.html#e0">printStatusMsg</a> (const QString &amp;msg, const QString &amp;sender=0)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody chronione</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual QPopupMenu *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classStatusBar.html#b0">createPopupMenu</a> (const QPoint &amp;pos)</td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="classStatusBar.html">StatusBar</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classStatusBar.html#v0">statusBar</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa reprezentuje dolny pasek statusu aplikacji. 
+<p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="i0" doxytag="StatusBar::copyToClipboard" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void StatusBar::copyToClipboard           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda kopiuje całą zawartość statusu do schowka.     </td>
+  </tr>
+</table>
+<a class="anchor" name="b0" doxytag="StatusBar::createPopupMenu" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> QPopupMenu * StatusBar::createPopupMenu           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QPoint &amp;&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pos</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wirtualna definiująca nowe menu podręczne (popupMenu), zawierające opcje zapisu do pliku i kopiowania informacji statusu do schowka. 
+<p>
+Here is the call graph for this function:<p><center><img src="classStatusBar_b0_cgraph.png" border="0" usemap="#classStatusBar_b0_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e0" doxytag="StatusBar::printStatusMsg" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void StatusBar::printStatusMsg           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QString &amp;&nbsp;</td>
+          <td class="mdname" nowrap> <em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const QString &amp;&nbsp;</td>
+          <td class="mdname" nowrap> <em>sender</em> = <code>0</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Drukuje informację w oknie statusu: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>msg</em>&nbsp;</td><td>- treść informacji, </td></tr>
+    <tr><td></td><td valign=top><em>sender</em>&nbsp;</td><td>- nazwa obiektu wysyłającego informację. </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classStatusBar_e0_cgraph.png" border="0" usemap="#classStatusBar_e0_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i1" doxytag="StatusBar::writeAllToFile" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int StatusBar::writeAllToFile           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QString&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>fileName</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zapisuje całą zawartość statusu do pliku. <dl compact><dt><b>Zwraca:</b></dt><dd>1 - operacja zapisu sie powiodła, <p>
+-1 - w przeciwnym przypadku. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i2" doxytag="StatusBar::writeAllToFile" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int StatusBar::writeAllToFile           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda otwiera okno dialogowe do wyboru pliku i uruchamia metode <a class="el" href="classStatusBar.html#i1">writeAllToFile(QString fileName)</a>.     </td>
+  </tr>
+</table>
+<hr><h2>Dokumentacja atrybutów składowych</h2>
+<a class="anchor" name="v0" doxytag="StatusBar::statusBar" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="classStatusBar.html">StatusBar</a> * <a class="el" href="classStatusBar.html#v0">StatusBar::statusBar</a><code> [static, private]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Zmienna statyczna przechowuje wskaźnik do obiektu, do którego pisane będą wiadomości.     </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="statusbar_8h-source.html">statusbar.h</a><li>statusbar.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:25 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

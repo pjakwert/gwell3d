@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: materialwidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>materialwidget.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef MATERIALWIDGET_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define MATERIALWIDGET_H</span>
+00010 <span class="preprocessor"></span>
+00011 <span class="preprocessor">#include &lt;qptrlist.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qbuttongroup.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qradiobutton.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;qslider.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00020 <span class="preprocessor">#include &lt;qtextedit.h&gt;</span>
+00021 <span class="preprocessor">#include &lt;qcheckbox.h&gt;</span>
+00022 <span class="preprocessor">#include &lt;qcombobox.h&gt;</span>
+00023 <span class="preprocessor">#include &lt;qdom.h&gt;</span>
+00024 <span class="preprocessor">#include &lt;qdir.h&gt;</span>
+00025 <span class="preprocessor">#include &lt;qmessagebox.h&gt;</span>
+00026 
+00027 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00028 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00029 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00030 <span class="preprocessor">#include &lt;material.h&gt;</span>
+00031 <span class="preprocessor">#include &lt;statusbar.h&gt;</span>
+00032 
+00033 <span class="preprocessor">#include &lt;namedialog.h&gt;</span>
+00034 <span class="preprocessor">#include &lt;colorwidget.h&gt;</span>
+00035 <span class="preprocessor">#include &lt;shinewidget.h&gt;</span>
+00036 
+00037 <span class="keyword">class </span><a class="code" href="classCellFrame.html">CellFrame</a>;
+00038 
+00039 
+00040 
+<a name="l00045"></a><a class="code" href="structbk.html">00045</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structbk.html">bk</a>
+00046 {
+00047   <a class="code" href="classMaterial.html">Material</a>* _backupMaterial;        <span class="comment">// zapamiętujemy oczywiście materiał</span>
+00048   <span class="keywordtype">bool</span>      _backupMaterialEnabled; <span class="comment">// czy materiał dla elementu był włączony</span>
+00049   GLenum    _backupApplyTo;         <span class="comment">// do jakich ścian był stosowany</span>
+00050 } <a class="code" href="structbk.html">BackupStruct</a>;
+00051 
+00052 
+<a name="l00056"></a><a class="code" href="classMaterialWidget.html">00056</a> <span class="keyword">class </span><a class="code" href="classMaterialWidget.html">MaterialWidget</a> : <span class="keyword">public</span> QWidget
+00057 {
+00058   Q_OBJECT
+00059       
+00060   <span class="keyword">public</span>:
+00061     <a class="code" href="classMaterialWidget.html">MaterialWidget</a>( QPtrList&lt;ViNTreeNode&gt; *selectedList, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span>* name=0, WFlags fl=0 );
+00062     ~<a class="code" href="classMaterialWidget.html">MaterialWidget</a>();
+00063     
+00064   <span class="keyword">private</span>:
+00065     QPtrList&lt;ViNTreeNode&gt; *_selectedList;       <span class="comment">// lista obrabianych obiektów</span>
+00066     QPtrList&lt;Material&gt;        *_materialList;       <span class="comment">// lista materiałów załadowana z dysku</span>
+00067     QPtrList&lt;BackupStruct&gt;    *_backupMaterialList; <span class="comment">// zapasowa lista materiałów obrabianych obiektów</span>
+00068     <span class="keywordtype">bool</span> _dynamicPreview;
+00069 
+00070     QFont f10;  <span class="comment">// fonty rozmiar 9 i 10</span>
+00071     QFont f9;
+00072 
+00073     QFrame*         frameMat;
+00074     QCheckBox*      enableMatCheck;
+00075     QCheckBox*      dynamicPreviewCheck;
+00076     QButtonGroup*   applyButtonGroup;
+00077      QLabel*        applyLabel;
+00078       QRadioButton* frontRadio;
+00079       QRadioButton* backRadio;
+00080       QRadioButton* fbRadio;
+00081     <a class="code" href="classColorWidget.html">ColorWidget</a>*    ambientBox;
+00082     <a class="code" href="classColorWidget.html">ColorWidget</a>*    diffuseBox;
+00083     <a class="code" href="classColorWidget.html">ColorWidget</a>*    specularBox;
+00084     <a class="code" href="classColorWidget.html">ColorWidget</a>*    emissionBox;
+00085      QPushButton*   makeDefMatButton;
+00086      QPushButton*   resetToDefMatButton;
+00087     QComboBox*      materialCombo;
+00088     QToolButton*    generateButton;
+00089     QPushButton*    saveMatButton;
+00090     <a class="code" href="classShineWidget.html">ShineWidget</a>*    shineBox;
+00091     QTextEdit*      glMatSyntaxText;
+00092     QFrame*         matLine2;
+00093     QFrame*         matLine1;
+00094 
+00095   <span class="keyword">private</span> slots:
+00096     <span class="keywordtype">int</span>  <a class="code" href="classMaterialWidget.html#k0">deduceMaterial</a>         ( <span class="keyword">const</span> <a class="code" href="classMaterial.html">Material</a>* mat ) <span class="keyword">const</span>;
+00097     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k13">setMaterialEnabled</a>     ( <span class="keywordtype">bool</span> on );
+00098     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k11">setDynamicPreview</a>      ( <span class="keywordtype">bool</span> on );
+00099     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k2">makeMaterialDefault</a>    ();
+00100     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k4">resetToDefaultMaterial</a> ();
+00101     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k8">setApplyTo</a>             ( GLenum applyTo );
+00102     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k9">setApplyToFromButton</a>   ( <span class="keywordtype">int</span> num );
+00103     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k7">setAmbientColor</a>        ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha );
+00104     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k10">setDiffuseColor</a>        ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha );
+00105     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k15">setSpecularColor</a>       ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha );
+00106     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k12">setEmissionColor</a>       ( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha );
+00107     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k14">setShininess</a>           ( <span class="keywordtype">int</span> shininess );
+00108     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k16">updateGLMatSyntaxText</a>  ();
+00109     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k5">saveMaterial</a>           ();
+00110     <span class="keywordtype">int</span> <a class="code" href="classMaterialWidget.html#k1">loadMaterials</a>           ( QString path );
+00111      <span class="keywordtype">int</span> <a class="code" href="classMaterialWidget.html#k3">readFromFile</a>           ( QString name );
+00112      <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#k6">selectMaterialFromCombo</a>( <span class="keywordtype">int</span> index );
+00113     
+00114   <span class="keyword">public</span> slots:
+00115     <span class="keywordtype">void</span> <a class="code" href="classMaterialWidget.html#i0">undoMaterials</a>();
+00116 };
+00117 
+00118 
+00119 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:14 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

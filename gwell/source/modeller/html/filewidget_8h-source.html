@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: filewidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>filewidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef FILEWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define FILEWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qfiledialog.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qmessagebox.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;qfile.h&gt;</span>
+00011 
+00012 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;workspace.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;mphpreview.h&gt;</span>
+00016 
+00017 
+00018 <span class="keyword">class </span>FileWidget : <span class="keyword">public</span> QWidget
+00019 {
+00020   Q_OBJECT
+00021 
+00022   <span class="keyword">public</span>:
+00023     FileWidget(QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0);
+00024     ~FileWidget() {}
+00025 
+00026   <span class="keyword">private</span>:
+00027     QGridLayout *grid;
+00028     QGroupBox   *groupBox;
+00029     QPushButton *newFileButton;
+00030     QPushButton *openFileButton;
+00031     QPushButton *saveFileButton;
+00032     QPushButton *exitButton;
+00033 
+00034   <span class="keyword">private</span> slots:
+00035     <span class="keywordtype">bool</span> newMultiPolyh();
+00036     <span class="keywordtype">void</span> saveMultiPolyh();
+00037     <span class="keywordtype">void</span> openMultiPolyh();
+00038     <span class="keywordtype">void</span> exit();
+00039     
+00040   signals:
+00041     <span class="keywordtype">void</span> loadMultiPolyh( <span class="keyword">const</span> <span class="keywordtype">char</span>* fileName );
+00042     <span class="keywordtype">void</span> setMultiPolyh( ViMultiPolyh* mp );
+00043     <span class="keywordtype">void</span> setFileCaption( <span class="keyword">const</span> QString&amp; ); <span class="comment">// sygnał zawierający znak tytuł głównego widgetu</span>
+00044 };
+00045 
+00046 
+00047 
+00048 
+00049 
+00050 
+00051 
+00052 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:12 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

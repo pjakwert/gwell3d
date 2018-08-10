@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer installation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a class="qindex" href="index.html"><b>Home</b></a></td>
+     <td align="center"><a class="qindex" href="refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center" class="qindexHL"><b>Download</b></td>
+     <td align="center"><a class="qindex" href="examples/index.html"><b>Examples</b></a></td>
+     <td align="center"><a class="qindex" href="developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>libQGLViewer installation</h1>
+<p>
+libQGLViewer can easily be installed on many architectures. It was successfully installed on Linux,
+Windows, Mac OS X, SGI IRIX and QNX.
+<a href="mailto:Gilles.Debunne at imag dot fr?Subject=QGLViewer installation">Let me know</a> if you
+encountered problems that could be reported on this page or if you compiled it on another
+architecture.
+
+</p><p>
+
+libQGLViewer is distributed under the <a href="http://www.fsf.org/licenses/">GNU-GPL</a> license and is
+distributed as-is with no guarantee. Other licences may be available for specific applications. 
+
+</p><p>
+
+Select your architecture : 
+<a href="#linux"><img src="images/linux.png" width="49" height="54" align="middle" alt="linux" border="0"/></a> &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#mac"><img src="images/mac.png" width="55" height="54" align="middle" alt="mac" border="0"/></a> &nbsp; &nbsp; &nbsp; &nbsp;
+<a href="#windows"><img src="images/windows.png" width="55" height="54" align="middle" alt="windows" border="0"/></a> &nbsp; &nbsp; &nbsp; &nbsp;
+or see the Qt section <a href="#qt"><img src="images/qt.png" width="38" height="40" align="middle" alt="Qt" border="0"/></a>
+
+</p><p>
+Previous versions of the library are still available in the <a href="src">repository</a>.
+</p>
+
+
+
+<a name="linux"></a>
+<h2><img src="images/linux.png" width="49" height="54" align="middle" alt="linux"/>Linux and Unix</h2>
+<h3>RPM installation</h3>
+The easiest way to install the library on Linux is to use the RPM pre-compiled version (see the <a href="rpm.html">RPM page</a> for other rpm):<br/>
+<pre>
+rpm -Uvh <a href="http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/libQGLViewer-1.3.7-1.i586.rpm">libQGLViewer-1.3.7-1.i586.rpm</a> <a href="http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/libQGLViewer-devel-1.3.7-1.i586.rpm">libQGLViewer-devel-1.3.7-1.i586.rpm</a>
+</pre>
+
+<h3>Installation from the sources</h3>
+
+You can also directly compile the tarball sources (version 1.3.7, release 1):
+<pre>
+> tar -xjf <a href="http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/libQGLViewer-1.3.7.tar.bz2">libQGLViewer-1.3.7.tar.bz2</a>
+> cd libQGLViewer-1.3.7/QGLViewer
+> qmake [PREFIX=...] [INCLUDE_DIR=...] [LIB_DIR=...] [DOC_DIR=...]
+> make
+> make install
+</pre>
+
+The <code>qmake</code> flags are optionnal and let you customize your installation directories. A
+typical usage would be <code>qmake PREFIX=$HOME</code>. Here are their default values :
+
+<pre>
+-Flag-        -Default value-
+PREFIX        /usr/local
+INCLUDE_DIR   PREFIX/include
+LIB_DIR       PREFIX/lib
+DOC_DIR       PREFIX/share/doc
+</pre>
+
+If your Qt version is lower than 3.1, you need to link with the <code>glut</code> library :
+uncomment a line in <code>QGLViewer.pro</code> as explained.
+(<code>glut</code> can be installed with a <a href="http://rpmfind.net/linux/rpm2html/search.php?query=glut-devel">rpm</a> or <code>apt-get
+libglut3-dev</code>).
+
+<h3>Compiling the examples</h3>
+
+Once the library is installed, compile and test the <a href="examples/index.html">examples</a> :
+<pre>
+> cd ../examples
+> qmake [PREFIX=...] [INCLUDE_DIR=...] [LIB_DIR=...] (use the same parameters as above, or use
+  qmake INCLUDE_DIR=../.. LIB_DIR=../../QGLViewer  if you didn't "install" the library)
+> make
+</pre>
+
+<b>Note</b> : You may have to <code>setenv LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib</code>
+since recent distributions (Mandrake 9.2) don't have it.
+<br />
+<b>Attention</b> : Recent gcc compilers (Mandrake 9.2) have a bug and you need to replace
+<code>release</code> by <code>debug</code> in the <code>CONFIG += ...</code> line of <code>QGLViewer.pro</code>.
+
+<a name="mac"></a>
+<h2><img src="images/mac.png" width="55" height="54" align="middle" alt="mac"/>Mac OS X</h2>
+
+The installation procedure is essentially identical to the one described in the <a href="#linux">Linux</a>
+section. The <code>GL</code> (and <code>GLUT</code> with old Qt) path may have to be tuned in <code>config.h</code> and
+<code>QGLViewer.pro</code>.
+
+<p>
+The distributed version is designed for non-threaded versions of Qt. If you compiled Qt with the
+thread option, simply look for <code>thread</code> in the <code>macx/CONFIG</code> section of
+<code>.pro</code> files.
+</p>
+
+<a name="windows"></a>
+<h2><img src="images/windows.png" width="55" height="54" align="middle" alt="windows"/>Windows</h2>
+
+<ol>
+<li>Download and unzip the sources : <a href="http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/libQGLViewer-1.3.7.zip">libQGLViewer-1.3.7.zip</a></li>
+
+<li>Use the <i>Open Qt project</i> icon to open <code>QGLViewer/QGLViewer.pro</code> which creates a <code>.dsp</code> file.</li>
+
+<li>Open the generated <code>.dsp</code> workspace and make sure you select <code>Release</code> as the <code>Build</code> active configuration.</li>
+
+<li>Build the library (warnings dealing with <code>dll interface</code> are not important).</li>
+
+<li>Copy <code>QGLViewer137.dll</code> in a standard library directory, such as <code>C:\WINNT\system32</code>.</li>
+
+<li>Add the path to <code>libQGLViewer-1.3.7</code> to your
+<i>Project-QGLViewer properties-C/C++-General-Additional Include Directories</i> (optional).</li>
+
+<li>Add the path to <code>libQGLViewer-1.3.7\QGLViewer\Release</code> to your
+<i>Linker-General-Additional Library Directories</i> (optional).</li>
+
+<li>Compile and test the <a href="examples/index.html">examples</a>, using the same <i>Generate QT
+project</i> procedure to convert <code>.pro</code> files into <code>.dsp</code> workspaces.</li>
+</ol>
+
+
+<h3><img src="images/qt.png" width="19" height="20" align="middle" alt="Qt"> Qt version 2.3 with Visual Studio 6.0</h3>
+
+The Qt-2.3 version is no longer supported by Qt, and it does not give a correct picture of the
+actual Qt functionalities. You can however <a href="http://www.trolltech.com/download/qt/download_noncomm.html">
+download the free Qt 2.3 version</a>. The installation process is slightly different :
+
+<ul>
+<li>1 : If not already done, check the <i>Tools/Customize/Add-ins and Macro Files/QMsDev Add in</i> box in MSDev to use Qt.</li>
+
+<li>Before 2 : Rename <code>QGLViewer.Qt2.3.pro</code> into <code>QGLViewer.pro</code> and then use
+<i>Generate Qt project</i> on this new file instead.</li>
+
+<li>2 : In case of problem, use <code>qmake -win32 -t vclib -o QGLViewer.dsp QGLViewer.pro</code> in a DOS console instead.</li>
+
+<li>Before 4 : Add <code>/GX</code> in <i>Project/Settings/C-C++/General/Project Option</i> to limit warnings.</li>
+
+<li>Before 4 : Edit <code>qglviewer.h</code> and change <code>saveSnapshot()</code> as explained on line ~446.</li>
+
+<li>5 : Copy <code>QGLViewer.dll</code> instead.</li>
+
+<li>6 : Use <i>Tools-Options-Directories-include files</i> with MSVC 6.0.</li>
+
+<li>7 : Use <i>Tools-Options-Directories-Library files</i> with MSVC 6.0.</li>
+
+<li>8 : Edit the examples' <code>.pro</code> files and remove the end of the file as explained.</li>
+
+<li>8 : Add <code>/GX</code> in <i>Project/Settings/C-C++/General/Project Option</i> to limit warnings.</li>
+</ul>
+
+
+<a name="qt23limitations"></a>
+Here are the limitations when using Qt 2.3 :
+<ul>
+ <li>Screenshot saving (including eps output format) is not supported.</li>
+ <li>The <code>designer's *.ui</code> interface files were created with Qt 3 and may have to be adapted.</li>
+ <li>A spinning <code>SpinningFrame</code> updates the display of <i>all</i> the viewers.</li>
+ <li><code>MouseGrabber</code> behavior limited to the one of a <code>ManipulatedFrame</code>.</li>
+ <li>Pointers to <code>ManipulatedFrame</code> cannot be modified when used as key frames in <code>KeyFrameInterpolator</code>.</li>
+ <li>Use of an other viewer <code>ManipulatedCameraFrame</code> as a viewer <code>manipulatedFrame()</code> does not work.</li>
+</ul>
+
+
+<!-- <li>Non-developers can also directly download the
+<a href="http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/QGLViewer-1.3.7.dll.zip">QGLViewer-1.3.7.dll</a>.</li> -->
+
+<p>
+
+If your Qt version is lower than 3.1, install the
+<a href="http://www.xmission.com/~nate/glut.html"><code>GLUT library</code></a> (add the paths to
+<code>GLUT</code> in your <i>Tools-Options-Directories</i> configuration if needed).
+
+</p><p>
+
+An other option is to install the <a href="http://www.cygwin.com/">cigwin</a> linux emulator, with
+the <a href="http://kde-cygwin.sourceforge.net/">Qt-KDE</a> port. You should then be able to use the
+latest Qt version, with full libQGLViewer features. This was successfully tested, although
+Qt had to be recomplied. You may also have to remove <code>thread</code> from the
+<code>CONFIG</code> line in <code>QGLViewer.pro</code>.
+
+</p>
+
+<a name="qt"></a>
+<h2><img src="images/qt.png" width="38" height="40" align="middle" alt="Qt" border="0"/>Qt installation</h2>
+
+You need to have the <a href="http://www.trolltech.com">Qt</a> library installed
+in order to run libQGLViewer. Check the <a href="http://www.trolltech.com/developer/faqs/installation.html">Qt FAQ</a> in case of problem:
+
+<h4><img src="images/linux.png" width="49" height="54" align="middle" alt="linux"/>Linux and Unix</h4>
+
+Qt is probably already installed on your machine, or available on your distribution CDs. You may
+however have to install the <code>qt3-devel</code> (Mandrake and redhat rpm) or <code>aptget
+libqt3-mt-dev</code> (debian) development package. The complete Qt/X11 non commercial version can
+also freely be <a href="http://www.trolltech.com/developer/download/">downloaded</a>.
+<p>
+Try to compile a simple Qt example and check the
+<a href="http://www.trolltech.com/developer/faqs/installation.html">Qt FAQ</a> page in case of
+problem. You will probably need to set some Qt variables:
+</p>
+<pre>
+tcsh > setenv QTDIR /usr/lib/qt3 (/usr/share/qt on debian)
+bash > export QTDIR=/usr/lib/qt3 (/usr/share/qt on debian)
+> set PATH=${PATH}:${QTDIR}/bin/
+> set LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${QTDIR}/lib
+</pre>
+<p>
+If only the non-threaded version of Qt is installed on your machine (<code>libqt.so</code> instead
+of <code>libqt-mt.so</code>), simply remove <code>thread</code> from <code>QGLViewer/QGLViewer.pro</code> and examples' <code>.pro</code>.
+</p>
+
+<h4><img src="images/mac.png" width="55" height="54" align="middle" alt="mac"/>Mac OS X</h4>
+<a href="http://www.trolltech.com/download/qt/mac.html">Download</a> the free Qt/Desktop version for Mac. Qt-X11 is also freely available from the apple web site.
+
+<h4><img src="images/windows.png" width="55" height="54" align="middle" alt="windows"/>Windows</h4>
+<a href="http://www.trolltech.com/download/qt/download_noncomm.html">Download</a> the free Qt/Windows non
+commercial version (ver 2.3), or the <a href="http://www.trolltech.com/developer/download/">Qt/Desktop 30 day evaluation version</a>.
+
+<p>
+Please <a href="mailto:Gilles.Debunne at imag dot fr?Subject=QGLViewer RPM">let me know</a> if you
+encountered specific installation problems that could be reported on this page.
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="images/css.png" alt="Valid CSS!" width="88" height="31" border="0"/></a>
+  <i>Last modified on Friday, April 30, 2004.</i>
+</p>
+    
+</body>
+</html>

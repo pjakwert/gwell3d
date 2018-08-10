@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer drawLight example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The drawLight example</h1>
+<center>
+  <img src="../images/drawLight.jpg" width="300" height="200" alt="drawLight"/>
+</center>
+
+<p>
+ The <code>drawLight()</code> function is a light debugging tool.
+</p>
+<p>
+ drawLight() takes as an argument the GL index of the lamp : GL_LIGHT0, GL_LIGHT1... and displays a
+ symbolic representation of the light. This function is usefull for debugging your light setup.
+</p>
+
+
+<h2>drawLight.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+};</pre>
+
+
+<h2>drawLight.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;drawLight.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;math.h&gt;
+</span>
+<span class="key">using namespace </span>std;
+
+<span class="typ">void </span>Viewer::draw()
+{
+  <span class="typ">const float </span>nbSteps = <span class="num">500.0</span>;
+
+  glBegin(GL_QUAD_STRIP);
+  <span class="key">for </span>(<span class="typ">float </span>i=<span class="num">0</span>; i&lt;nbSteps; ++i)
+    {
+      <span class="typ">float </span>ratio = i/nbSteps;
+      <span class="typ">float </span>angle = <span class="num">21.0</span>*ratio;
+      <span class="typ">float </span>c = cos(angle);
+      <span class="typ">float </span>s = sin(angle);
+      <span class="typ">float </span>r1 = <span class="num">1.0 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>r2 = <span class="num">0.8 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>alt = ratio <span class="num">- 0.5</span>;
+      <span class="typ">const float </span>nor = .<span class="num">5</span>;
+      <span class="typ">const float </span>up = sqrt(<span class="num">1.0</span>-nor*nor);
+      glColor3f(<span class="num">1</span>-ratio, .<span class="num">2 </span>, ratio);
+      glNormal3f(nor*c, up, nor*s);
+      glVertex3f(r1*c, alt, r1*s);
+      glVertex3f(r2*c, alt+<span class="num">0.05</span>, r2*s);
+    }
+  glEnd();
+
+  drawLight(GL_LIGHT0);
+
+  <span class="typ">const </span>GLfloat pos1[<span class="num">4</span>]		  = {<span class="num">0.5</span>,<span class="num">0.5</span>,<span class="num">0.0</span>,<span class="num">1.0</span>};
+  <span class="typ">const </span>GLfloat spot_dir1[<span class="num">3</span>]  	  = {<span class="num">-1.0</span>, <span class="num">-1.0</span>, <span class="num">0.0</span>};
+  glLightfv(GL_LIGHT1, GL_POSITION, pos1);
+  glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_dir1);
+  drawLight(GL_LIGHT1, <span class="num">2.0</span>); <span class="com">// Draw this light twice bigger
+</span>
+  <span class="typ">const </span>GLfloat pos2[<span class="num">4</span>]		  = {<span class="num">-0.5</span>,<span class="num">0.5</span>,<span class="num">0.0</span>,<span class="num">1.0</span>};
+  <span class="typ">const </span>GLfloat spot_dir2[<span class="num">3</span>]  	  = {<span class="num">1.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>};
+  glLightfv(GL_LIGHT2, GL_POSITION, pos2);
+  glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, spot_dir2);
+  drawLight(GL_LIGHT2);
+}
+
+<span class="typ">void </span>Viewer::init()
+{
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+
+  <span class="com">// Light0 is the default ambient light
+</span>  glEnable(GL_LIGHT0);
+
+  <span class="com">// Light1 is a spot light
+</span>  glEnable(GL_LIGHT1);
+  <span class="typ">const </span>GLfloat light_ambient[<span class="num">4</span>]  = {<span class="num">0.5</span>, <span class="num">0.5</span>, <span class="num">0.5</span>, <span class="num">1.0</span>};
+  <span class="typ">const </span>GLfloat light_specular[<span class="num">4</span>] = {<span class="num">1.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>};
+  <span class="typ">const </span>GLfloat light_diffuse[<span class="num">4</span>]  = {<span class="num">3.0</span>, <span class="num">3.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>};
+
+  glLightf( GL_LIGHT1, GL_SPOT_EXPONENT,  <span class="num">3.0</span>);
+  glLightf( GL_LIGHT1, GL_SPOT_CUTOFF,    <span class="num">50.0</span>);
+  glLightf( GL_LIGHT1, GL_CONSTANT_ATTENUATION, <span class="num">0.5</span>);
+  glLightf( GL_LIGHT1, GL_LINEAR_ATTENUATION, <span class="num">1.0</span>);
+  glLightf( GL_LIGHT1, GL_QUADRATIC_ATTENUATION, <span class="num">1.5</span>);
+  glLightfv(GL_LIGHT1, GL_AMBIENT,  light_ambient);
+  glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);
+  glLightfv(GL_LIGHT1, GL_DIFFUSE,  light_diffuse);
+
+  <span class="com">// Light2 is a classical directionnal light
+</span>  glEnable(GL_LIGHT2);
+  <span class="typ">const </span>GLfloat light_ambient2[<span class="num">4</span>]  = {<span class="num">0.5</span>, <span class="num">0.5</span>, <span class="num">0.5</span>, <span class="num">1.0</span>};
+  <span class="typ">const </span>GLfloat light_specular2[<span class="num">4</span>] = {<span class="num">1.0</span>, <span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">1.0</span>};
+  <span class="typ">const </span>GLfloat light_diffuse2[<span class="num">4</span>]  = {<span class="num">0.0</span>, <span class="num">3.0</span>, <span class="num">0.0</span>, <span class="num">1.0</span>};
+
+  glLightfv(GL_LIGHT2, GL_AMBIENT,  light_ambient2);
+  glLightfv(GL_LIGHT2, GL_SPECULAR, light_specular2);
+  glLightfv(GL_LIGHT2, GL_DIFFUSE,  light_diffuse2);
+
+  restoreFromFile();
+  help();
+}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;D r a w L i g h t&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;The &lt;i&gt;drawLight()&lt;/i&gt; function displays a representation of the OpenGL lights &quot;</span>;
+  text += <span class="str">&quot;of your scene. This is convenient for debugging your light setup.&quot;</span>;
+  <span class="key">return </span>text;
+}</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;drawLight.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer.
+</span>  Viewer viewer;
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  viewer.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;viewer);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

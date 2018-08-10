@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: vielemepolyhext.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>vielemepolyhext.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef VIELEMEPOLYHEXT_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define VIELEMEPOLYHEXT_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qdom.h&gt;</span>
+00005 
+00006 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00008 
+00009 <span class="preprocessor">#include &lt;material.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;texturemanager.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;textureparams.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00013 
+00014 
+00018 DEFPOLYHCLASS( ViElemePolyhExt, ViElemePolyh )
+00019 {
+00020   <span class="keyword">public</span>:
+00021     ViElemePolyhExt();
+00022     ViElemePolyhExt( ViPattePolyh <span class="keyword">const</span> &amp;PPolyh, <span class="keyword">const</span> <span class="keywordtype">char</span> *IndivName );
+00023     ViElemePolyhExt( <span class="keyword">const</span> ViElemePolyhExt &amp;extEl );
+00024     ~ViElemePolyhExt();
+00025     <span class="keywordtype">bool</span> WriteDescriptionTo( ExtString &amp;Descr ) <span class="keyword">const</span>;
+00026     <span class="keywordtype">void</span> InitWithDescr( ExtString &amp;Descr );
+00027 
+00031     <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classMaterial.html">Material</a>&amp; defaultMaterial()        { <span class="keywordflow">return</span> _DefMaterial; }
+00035     <span class="keyword">static</span> <span class="keywordtype">void</span> setDefaultMaterial( <a class="code" href="classMaterial.html">Material</a> &amp;mat ) { _DefMaterial = mat; }
+00039     <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classTextureParams.html">TextureParams</a>&amp; defaultTextureParams()              { <span class="keywordflow">return</span> _DefTextureParams; }
+00043     <span class="keyword">static</span> <span class="keywordtype">void</span> setDefaultTextureParams( <a class="code" href="classTextureParams.html">TextureParams</a> &amp;texParams ) { _DefTextureParams = texParams; }
+00044 
+00048     <span class="keywordtype">int</span> count() { <span class="keywordflow">return</span> _count; }
+00049     
+00050     <span class="comment">// materiał</span>
+00054 <span class="comment"></span>    <a class="code" href="classMaterial.html">Material</a>* material()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> _material; }
+00058     GLenum    applyTo()  const  { <span class="keywordflow">return</span> _applyTo;  }
+00062     <span class="keywordtype">bool</span>      materialEnabled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _materialEnabled; }
+00063         
+00064     <span class="comment">// tekstura</span>
+00068 <span class="comment"></span>    <span class="keywordtype">bool</span>            textureEnabled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _textureEnabled; }
+00072     <a class="code" href="classTextureParams.html">TextureParams</a>*  textureParams()  const { <span class="keywordflow">return</span> _textureParams; }
+00073   
+00074   <span class="keyword">private</span>:
+00075     <span class="keyword">static</span> <a class="code" href="classMaterial.html">Material</a> _DefMaterial;
+00076     <span class="keyword">static</span> <a class="code" href="classTextureParams.html">TextureParams</a>  _DefTextureParams;
+00077     <span class="keyword">static</span> <span class="keywordtype">int</span> _count;
+00078     
+00079     <span class="comment">// materiał</span>
+00080     <a class="code" href="classMaterial.html">Material</a>* _material;
+00081     <span class="keywordtype">bool</span>      _materialEnabled;
+00082     GLenum    _applyTo;
+00083         
+00084     <span class="comment">// tekstura</span>
+00085     <span class="keywordtype">bool</span>           _textureEnabled;
+00086     <a class="code" href="classTextureParams.html">TextureParams</a>* _textureParams;
+00087     
+00088   
+00089   <span class="keyword">public</span> slots:
+00090     <span class="comment">// materiał</span>
+00091     <span class="keywordtype">void</span> setApplyTo         ( GLenum applyTo );
+00095     <span class="keywordtype">void</span> setMaterialEnabled ( <span class="keywordtype">bool</span> yes ) { _materialEnabled = yes; }
+00096     
+00097     <span class="comment">// tekstura</span>
+00101 <span class="comment"></span>    <span class="keywordtype">void</span> setTextureEnabled  ( <span class="keywordtype">bool</span> yes )          { _textureEnabled = yes; }
+00105     <span class="keywordtype">void</span> setTextureParams   ( <a class="code" href="classTextureParams.html">TextureParams</a>&amp; texParams ) { *_textureParams = texParams; }
+00106 };
+00107 
+00108 
+00109 
+00110 
+00111 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:23 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

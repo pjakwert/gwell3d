@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: glmphmenuitem.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>glmphmenuitem.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef GLMPHMENUITEM_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define GLMPHMENUITEM_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qtooltip.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00006 
+00007 <span class="preprocessor">#include &lt;QGLViewer/qglviewer.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00010 
+00011 
+00012 <span class="keyword">class </span>GLMphMenuItem : <span class="keyword">public</span> QGLViewer
+00013 {
+00014   Q_OBJECT
+00015       
+00016   <span class="keyword">public</span>:
+00017     GLMphMenuItem( QWidget *parent, QString mphPath, <span class="keyword">const</span> <span class="keywordtype">char</span> *name = 0, QGLWidget *shareWidget=0, WFlags f = 0 );
+00018     ~GLMphMenuItem() { <span class="keyword">delete</span> _multiPolyh; }
+00019 
+00020   <span class="keyword">private</span>:
+00021     ViMultiPolyh* _multiPolyh;
+00022     QString _mphPath;
+00023     <span class="keywordtype">int</span> _angle;
+00024     
+00025     <span class="keyword">static</span> QColor _clearColor;
+00026     <span class="keyword">static</span> QColor _normalColor;
+00027     <span class="keyword">static</span> QColor _overColor;
+00028     <span class="keyword">static</span> QColor _clickColor;
+00029     QColor _currentColor; <span class="comment">// obiekt pomocniczy - kolor służący do rysowania w danej chwili</span>
+00030     
+00031     <span class="keywordtype">void</span> fitItemToScreen();
+00032 
+00033   <span class="keyword">protected</span>:
+00034     <span class="keyword">virtual</span> <span class="keywordtype">void</span> init();
+00035     <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw();
+00036     <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate();
+00037     <span class="keyword">virtual</span> <span class="keywordtype">void</span> enterEvent(QEvent*);
+00038     <span class="keyword">virtual</span> <span class="keywordtype">void</span> leaveEvent(QEvent*);
+00039     <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *e);
+00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> keyPressEvent(QKeyEvent *e);
+00041     <span class="keyword">virtual</span> <span class="keywordtype">void</span> wheelEvent(QWheelEvent *e);
+00042     <span class="keyword">virtual</span> <span class="keywordtype">void</span> resizeEvent(QResizeEvent *e);    
+00043   
+00044   <span class="keyword">public</span> slots:
+00045     <span class="keyword">static</span> <span class="keywordtype">void</span> setNormalColor( <span class="keyword">const</span> QColor&amp; color );
+00046     <span class="keyword">static</span> <span class="keywordtype">void</span> setOverColor  ( <span class="keyword">const</span> QColor&amp; color );
+00047     <span class="keyword">static</span> <span class="keywordtype">void</span> setClickColor ( <span class="keyword">const</span> QColor&amp; color );
+00048     <span class="keyword">static</span> <span class="keywordtype">void</span> setClearColor ( <span class="keyword">const</span> QColor&amp; color );
+00049     <span class="keywordtype">void</span> setMultiPolyh( <span class="keyword">const</span> QString&amp; path );
+00050           
+00051   signals:
+00052     <span class="keywordtype">void</span> mphSelected( <span class="keyword">const</span> <span class="keywordtype">char</span>* mphPath );
+00053 
+00054 };
+00055 
+00056 
+00057 
+00058 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:12 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

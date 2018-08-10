@@ -1,0 +1,41 @@
+<Scene name="NowaScenaNiezalezna" >
+ <Lighting isEnabled="true">
+	<Light name="¿arówka" isEnabled="true" type="bulb" lightIs="positional" exponent="0.0" cutOff="180.0" movesWithCamera="true">
+		<position x="10.0" y="10.0" z="0.0" />
+		<direction x="-1.0" y="-1.0" z="0.0" />
+		<attenuation linear="1.0" constant="0.0" quadratic="0.0" />
+		<ambientColor red="0.7" green="0.2" blue="0.7" alpha="1.0" />
+		<diffuseColor red="0.2" green="0.4" blue="0.2" alpha="0.8" />
+		<specularColor red="0.4" green="0.9" blue="0.2" alpha="1.0" />
+	</Light>
+	<Light name="latarka" isEnabled="true" type="spotlight" lightIs="directional" exponent="0.0" cutOff="40.0" movesWithCamera="false">
+		<position x="10.0" y="10.0" z="0.0" />
+		<direction x="-1.0" y="-1.0" z="0.0" />
+		<attenuation linear="1.0" constant="0.0" quadratic="0.0" />
+		<ambientColor red="0.7" green="0.2" blue="0.7" alpha="1.0" />
+		<diffuseColor red="0.2" green="0.4" blue="0.2" alpha="0.8" />
+		<specularColor red="0.4" green="0.9" blue="0.2" alpha="1.0" />
+	</Light>
+</Lighting>
+ <Fog mode="GL_LINEAR" density="0.35" isEnabled="false" >
+  <distance end="1000" start="0" />
+  <color alpha="1" blue="0.498039" red="0.666667" green="0.666667" />
+ </Fog>
+ <Elements>
+  <Object name="ludek" fileName="/home/pjakwert/Work/myViona/mph/postac_steel.mph" >
+   <translation x="-0.84565" y="-0.168769" z="-0.750667" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="Drzewo" fileName="/home/pjakwert/Work/myViona/mph/tree_chopped.mph" >
+   <translation x="-0.684141" y="0.0435452" z="0.583752" />
+   <rotation x="-4.07177" y="67.1843" z="0" />
+   <scale x="2.83908" y="2.98468" z="1.75862" />
+  </Object>
+  <Object name="Drzewo_nr2" fileName="/home/pjakwert/Work/myViona/mph/tree_textured.mph" >
+   <translation x="1.02501" y="-0.0522199" z="-1.11444" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="2.06715" y="3.0472" z="1.50575" />
+  </Object>
+ </Elements>
+</Scene>

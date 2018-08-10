@@ -1,0 +1,4 @@
+base referer
+rect $classMaterialWidget.html 52,152 153,176
+rect $classShineWidget.html 6,19 92,43
+rect $classColorWidget.html 116,19 198,43

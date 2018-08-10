@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: lightstablewidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>lightstablewidget.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef LIGHTS_TABLE_WIDGET_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define LIGHTS_TABLE_WIDGET_H</span>
+00010 <span class="preprocessor"></span>
+00011 <span class="preprocessor">#include &lt;qtable.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qcombobox.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qcheckbox.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qstringlist.h&gt;</span>
+00015 
+00016 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;light.h&gt;</span>
+00018 
+00019 
+<a name="l00020"></a><a class="code" href="structwl.html">00020</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structwl.html">wl</a>
+00021 {
+00022   <a class="code" href="classLight.html">Light</a>*     light;
+00023   QCheckBox* tableCheck;
+00024   QComboBox* tableCombo;
+00025 } <a class="code" href="structwl.html">WidgetsList</a>;
+00026 
+00027 
+00028 <span class="keyword">class </span>LightsTableWidget : <span class="keyword">public</span> QTable
+00029 {
+00030   Q_OBJECT
+00031       
+00032   <span class="keyword">public</span>:
+00033     LightsTableWidget( QWidget* parent );
+00034     ~LightsTableWidget() {}
+00035 
+00036   <span class="keyword">private</span>:
+00037     QPtrList&lt;Light&gt;* _lightsList;
+00038     QPtrList&lt;WidgetsList&gt;* _widgetsList;
+00039     
+00040   <span class="keyword">public</span> slots:
+00041     <span class="keywordtype">void</span> setLightsList( QPtrList&lt;Light&gt;* lightsList );
+00042     <span class="keywordtype">void</span> addLight( <span class="keywordtype">int</span> bulbOrSpotlight, <span class="keywordtype">bool</span> isMovingWithCamera = <span class="keyword">false</span> ); <span class="comment">// 0=bulb, 1=spotlight</span>
+00043     <span class="keywordtype">void</span> addLight( <a class="code" href="classLight.html">Light</a> *light );
+00044     <span class="keywordtype">void</span> deleteLight();
+00045     <span class="keywordtype">void</span> deleteAllLights();
+00046     
+00047   <span class="keyword">private</span> slots:
+00048     <span class="keywordtype">void</span> toggleLight( <span class="keywordtype">bool</span> );
+00049     <span class="keywordtype">void</span> bulbOrSpotChanged( <span class="keywordtype">int</span> );
+00050     <span class="keywordtype">void</span> currentLightChanged( <span class="keywordtype">int</span>, <span class="keywordtype">int</span> );
+00051     <span class="keywordtype">void</span> userChangedName(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);
+00052     
+00053   signals:
+00054     <span class="keywordtype">void</span> lightSelected( <a class="code" href="classLight.html">Light</a>* light );
+00055     <span class="keywordtype">void</span> lightParamsChanged( <a class="code" href="classLight.html">Light</a>* light );
+00056     <span class="keywordtype">void</span> lightRemoved();
+00057     <span class="keywordtype">void</span> lightAdded();
+00058     
+00059   <span class="keyword">protected</span>:
+00060     <span class="keywordtype">void</span> resizeEvent( QResizeEvent* e );
+00061 };
+00062 
+00063 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:59 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: cellframe.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>cellframe.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 <span class="preprocessor">#ifndef CELLFRAME_H</span>
+00010 <span class="preprocessor"></span><span class="preprocessor">#define CELLFRAME_H</span>
+00011 <span class="preprocessor"></span>
+00012 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qcursor.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qptrlist.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qsplitter.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;qobjectlist.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;qpopupmenu.h&gt;</span>
+00020 
+00021 <span class="preprocessor">#include &lt;math.h&gt;</span>
+00022 
+00023 <span class="preprocessor">#include &lt;startwidget.h&gt;</span>
+00024 <span class="preprocessor">#include &lt;cellwidget.h&gt;</span>
+00025 <span class="preprocessor">#include &lt;modifiers.h&gt;</span>
+00026 <span class="preprocessor">#include &lt;materialeditor.h&gt;</span>
+00027 <span class="preprocessor">#include &lt;light.h&gt;</span>
+00028 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00029 <span class="preprocessor">#include &lt;kineditor.h&gt;</span>
+00030 
+00031 
+<a name="l00032"></a><a class="code" href="classCellFrame.html">00032</a> <span class="keyword">class </span><a class="code" href="classCellFrame.html">CellFrame</a> : <span class="keyword">public</span> QGLViewer
+00033 {
+00034   Q_OBJECT
+00035 
+00036   <span class="keyword">public</span>:
+00037     <a class="code" href="classCellFrame.html">CellFrame</a> (QWidget *parent, <span class="keyword">const</span> <span class="keywordtype">char</span> *name = 0, QGLWidget *shareWidget=0, WFlags f = 0);
+00038     ~<a class="code" href="classCellFrame.html">CellFrame</a>() {}
+00039     <span class="keywordtype">bool</span> cameraIsMoving() { <span class="keywordflow">return</span> _cameraIsMoving; }
+00040     <span class="keywordtype">bool</span> lightsAreDrawn() { <span class="keywordflow">return</span> _lightsAreDrawn; }
+00041     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e5">refresh</a>();
+00042     <span class="keyword">static</span> QPtrList&lt;ViNTreeNode&gt;* <a class="code" href="classCellFrame.html#e6">selected</a>();
+00043     <span class="keyword">static</span> ViMultiPolyh* <a class="code" href="classCellFrame.html#e4">multiPolyh</a>();
+00044     
+00045     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e9">setMultiPolyh</a>( ViMultiPolyh *multiPolyh );
+00046     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e10">setSelected</a>( QPtrList&lt;ViNTreeNode&gt; *selectedList );
+00047     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e7">setLightsList</a>( QPtrList&lt;Light&gt; *lightsList );
+00048     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e8">setModifier</a>( MModifier *modifier );
+00049     
+00050     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e3">deleteSelectedObjects</a>();
+00051     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classCellFrame.html#e0">clipboardCopy</a>();
+00052     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classCellFrame.html#e2">clipboardPaste</a>();
+00053     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#e1">clipboardCut</a>();
+00054     
+00055   <span class="keyword">private</span>:
+00056     <span class="keyword">static</span> ViMultiPolyh               *_multiPolyh;  <span class="comment">// obiekt zlozony do wyswietlania</span>
+00057     <span class="keyword">static</span> QPtrList&lt;ViNTreeNode&gt;  *_selectedList;
+00058     <span class="keyword">static</span> QPtrList&lt;ViNTreeNode&gt;  *_clipboard;
+00059     <span class="keyword">static</span> MModifier                  *_modifier;
+00060     <span class="keyword">static</span> QPtrList&lt;Light&gt;            *_lightsList;
+00061     <span class="keyword">static</span> QPtrList&lt;ViNTreeNode&gt;  nameList; <span class="comment">// przechowuje wskazniki do obiektow i odpowiadajace im numery</span>
+00062     QPtrList&lt;ViElemePolyhExt&gt; blendedList; <span class="comment">// lista obiektów z przezroczystością do posortowania i  narysowania</span>
+00063     <span class="keywordtype">bool</span> <a class="code" href="classCellFrame.html#d10">sortBlendedList</a>();
+00064 
+00065     <span class="keyword">static</span> <span class="keyword">const</span> GLfloat no_material[];    <span class="comment">// pusty wektor materiału dla OpenGL (do resetowania)</span>
+00066     <span class="keyword">static</span> <span class="keyword">const</span> GLfloat no_shininess[];   <span class="comment">// pusta jasność - wektor 1-elementowy</span>
+00067     <span class="keyword">static</span> <span class="keyword">const</span> GLfloat white_material[]; <span class="comment">// materiał o max jasności - idealny dla tekstur</span>
+00068 
+00069     <a class="code" href="classStartWidget.html">StartWidget</a> *startWidget;  <span class="comment">// widgety odpowiadajace za gorne menu</span>
+00070     <a class="code" href="classCellWidget.html">CellWidget</a>  *cellWidget;
+00071     QPopupMenu  *popupMenu;
+00072     QHBoxLayout *hbox;
+00073 
+00074     QString _info; <span class="comment">// informacje wyswietlane w cellFrame</span>
+00075     DrawMethod  _drawMethod;
+00076     <span class="keywordtype">bool</span>    _gridIsDrawn;
+00077     <span class="keywordtype">bool</span>    _grid3DIsDrawn;
+00078     <span class="keywordtype">bool</span>    _axisIsDrawn;
+00079     <span class="keywordtype">bool</span>    _lightsAreDrawn;
+00080     <span class="keywordtype">bool</span>    _cameraIsMoving;
+00081     <span class="keywordtype">int</span>     _infoPosX;
+00082     <span class="keywordtype">int</span>     _infoPosY;
+00083 
+00084     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d2">drawGridXZ</a>();
+00085     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d1">drawGrid3D</a>();
+00086     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d0">drawElemAxis</a>( ViElemePolyhExt* extEl );
+00087     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d4">drawLightShape</a>( <a class="code" href="classLight.html">Light</a>* light, <span class="keywordtype">float</span> scale = 1.0f );
+00088     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d5">drawScene</a>( <span class="keywordtype">bool</span> pushID = <span class="keyword">false</span> );
+00089     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d8">drawWired</a>   ( ViElemePolyhExt* elem, <span class="keywordtype">bool</span> isSelected=<span class="keyword">false</span> );
+00090     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d6">drawSolid</a>   ( ViElemePolyhExt* elem, <span class="keywordtype">bool</span> isSelected=<span class="keyword">false</span> );
+00091     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d7">drawTextured</a>( ViElemePolyhExt* elem, <span class="keywordtype">bool</span> isSelected=<span class="keyword">false</span> );
+00092     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d3">drawInfo</a>();
+00093     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#d9">setInfo</a>( QString s, <span class="keywordtype">int</span> x=-1, <span class="keywordtype">int</span> y=-1 );
+00094 
+00095   <span class="keyword">private</span> slots:
+00096     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#k1">popupAboutToShow</a>();
+00097     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#k0">choosedFromPopup</a>( <span class="keywordtype">int</span> );
+00098     
+00099   <span class="keyword">protected</span>:
+00100     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b2">init</a>();
+00101     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b0">draw</a>();
+00102     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b8">select</a>(<span class="keyword">const</span> QMouseEvent *e);
+00103     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b3">keyPressEvent</a>(QKeyEvent *e);
+00104     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b1">enterEvent</a>(QEvent*);
+00105     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b6">mousePressEvent</a>(QMouseEvent *e);
+00106     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b5">mouseMoveEvent</a>(QMouseEvent *e);
+00107     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b7">mouseReleaseEvent</a>(QMouseEvent *e);
+00108     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#b4">mouseDoubleClickEvent</a>(QMouseEvent *);
+00109 
+00110   <span class="keyword">public</span> slots:
+00111     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i10">setLight</a>( <a class="code" href="classLight.html">Light</a>* light );
+00112     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i2">setAllLights</a>();
+00113     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i14">turnAllLights</a>( <span class="keywordtype">bool</span> on );
+00114     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i15">updateColorForLight</a>( GLenum GLcolorChanged, <a class="code" href="classLight.html">Light</a>* light );
+00115     
+00116     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i1">selectAll</a>();
+00117     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i11">setSelectedSlot</a>( QPtrList&lt;ViNTreeNode&gt; *selectedList );
+00118     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i3">setCameraMoving</a>( <span class="keywordtype">bool</span> on );
+00119     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i4">setCameraType</a>( qglviewer::Camera::Type type );
+00120     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i9">setDrawMethod</a>( DrawMethod drawMethod );
+00121     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i13">showAllScene</a>();
+00122     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i12">setViewDirection</a>( <span class="keywordtype">int</span> direction ); <span class="comment">// direction jest jednym z predefiniowanych kierunkow</span>
+00123     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i5">setDrawAxisXYZ</a>( <span class="keywordtype">bool</span> on );
+00124     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i7">setDrawGridXZ</a>( <span class="keywordtype">bool</span> on );
+00125     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i6">setDrawGrid3D</a>( <span class="keywordtype">bool</span> on );
+00126     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i8">setDrawLights</a>( <span class="keywordtype">bool</span> on );
+00127     <span class="keywordtype">void</span> <a class="code" href="classCellFrame.html#i0">maximize</a>();
+00128 
+00129   signals:
+00130     <span class="keywordtype">void</span> setModifierFromCellFrame( MModifier::ModifierType mType );
+00131     <span class="keywordtype">void</span> userSelected( QPtrList&lt;ViNTreeNode&gt; *selectedList );
+00132     <span class="keywordtype">void</span> mphStructureChanged();
+00133 };
+00134 
+00135 
+00136 
+00137 
+00138 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:12 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

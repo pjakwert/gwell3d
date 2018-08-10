@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: Table class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy Table</h1><code>#include &lt;<a class="el" href="table_8h-source.html">table.h</a>&gt;</code>
+<p>
+<a href="classTable-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#i0">addRow</a> (ViKinemCtrlItem *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#i1">setCurrentValue</a> (double value)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#i2">updateItem</a> (ViKinemCtrlItem *controlItem)</td></tr>
+
+<tr><td colspan=2><br><h2>Sygnały</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l0" doxytag="Table::MinMaxValueChanged" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>MinMaxValueChanged</b> (ViKinemCtrlItem *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l1" doxytag="Table::valueChangedIsOK" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>valueChangedIsOK</b> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="Table::Table" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><b>Table</b> (ViMultiPolyh *multiPolyh, QWidget *parent=0, const char *name=0)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody chronione</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#b0">resizeEvent</a> (QResizeEvent *e)</td></tr>
+
+<tr><td colspan=2><br><h2>Sloty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#k0">rowAndColChanged</a> (int, int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#k1">validateAndSet</a> (int row, int col)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>Vi::Coord3DType&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#d0">indexToCoordType</a> (int i)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>Vi::TransformType&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#d1">indexToTransfType</a> (int i)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTable.html#d2">transfTypeToIndex</a> (Vi::TransformType tt)</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="Table::_multiPolyh" ></a>
+ViMultiPolyh *&nbsp;</td><td class="memItemRight" valign=bottom><b>_multiPolyh</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="Table::coordList" ></a>
+QStringList&nbsp;</td><td class="memItemRight" valign=bottom><b>coordList</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="Table::transfList" ></a>
+QStringList&nbsp;</td><td class="memItemRight" valign=bottom><b>transfList</b></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa Table reprezentuje tabelę wyświetlającą i sterującą elementami interfejsu sterowania. 
+<p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="i0" doxytag="Table::addRow" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Table::addRow           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViKinemCtrlItem *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>controlItem</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda dodaje nowy wiersz do kolumny w oparciu o wartości elementu ViKinemCtrlItem* controlItem. Po dodaniu zaznacza nowo dodany element i wysyła odpowiedni sygnał.     </td>
+  </tr>
+</table>
+<a class="anchor" name="d0" doxytag="Table::indexToCoordType" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Vi::Coord3DType Table::indexToCoordType           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>i</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca typ współrzędnej w zależności od indeksu w combo. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTable_d0_cgraph.png" border="0" usemap="#classTable_d0_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d1" doxytag="Table::indexToTransfType" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Vi::TransformType Table::indexToTransfType           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>i</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca typ transformacji na podstawie indeksu w comboBox. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTable_d1_cgraph.png" border="0" usemap="#classTable_d1_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b0" doxytag="Table::resizeEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Table::resizeEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QResizeEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>e</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda obsługi zdarzenia zmiany rozmiaru. Zachowuje odpowiednie szerokości kolumn. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTable_b0_cgraph.png" border="0" usemap="#classTable_b0_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="k0" doxytag="Table::rowAndColChanged" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Table::rowAndColChanged           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wysyła informację do knoba, jeżeli zmieni się aktualny wiersz, żeby knob ustawił sobie odpowiednie wartości.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i1" doxytag="Table::setCurrentValue" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Table::setCurrentValue           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia wartość value z zewnątrz zaznaczonemu elementowi ViKinemCtrlItem. Wysyła sygnał tylko wtedy, gdy podana wartość jest poza przedziałem i trzeba ją modyfikować.     </td>
+  </tr>
+</table>
+<a class="anchor" name="d2" doxytag="Table::transfTypeToIndex" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int Table::transfTypeToIndex           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Vi::TransformType&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>tt</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda "tłumaczy" typ transformacji na jego index w comboBox. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTable_d2_cgraph.png" border="0" usemap="#classTable_d2_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i2" doxytag="Table::updateItem" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Table::updateItem           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViKinemCtrlItem *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>controlItem</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda przelicza wierzchołki dla danej transformacji.     </td>
+  </tr>
+</table>
+<a class="anchor" name="k1" doxytag="Table::validateAndSet" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool Table::validateAndSet           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>col</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda obsługuje sygnał valueChanged(int,int). W zależności od zadanej wartości i kolumny, w której wpisana jest wartość - ustawia ją bądź odrzuca. Nie przejmujemy się tutaj: numerem ID, typem transformacji (ReadOnly combo), typem współrzędnej oraz komentarzem. Pozostałe wartości trzeba sprawdzić w obliczu potencjalnego zagrożenia ze strony użytkownika (Al-Kaida User). Zostają więc trzy: MIN, MAX i VALUE.     </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="table_8h-source.html">table.h</a><li>table.cpp<li>moc_table.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:06 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<Material materialName="sea blue" >
+ <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+ <diffuseColor alpha="1" blue="0.262745" red="0.0705882" green="0.145098" />
+ <specularColor alpha="1" blue="0.0156863" red="0.054902" green="0.0431373" />
+ <emissionColor alpha="1" blue="0" red="0.0470588" green="0.054902" />
+ <shininess shininess="16" />
+</Material>

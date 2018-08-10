@@ -1,0 +1,1888 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: CellFrame class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy CellFrame</h1><code>#include &lt;<a class="el" href="cellframe_8h-source.html">cellframe.h</a>&gt;</code>
+<p>
+Diagram współpracy dla CellFrame:<p><center><img src="classCellFrame__coll__graph.png" border="0" usemap="#CellFrame__coll__map" alt="Collaboration graph"></center>
+<map name="CellFrame__coll__map">
+<area href="classCellWidget.html" shape="rect" coords="6,18,84,42" alt="">
+<area href="classStartWidget.html" shape="rect" coords="117,18,197,42" alt="">
+</map>
+<center><font size="2">[<a target="top" href="graph_legend.html">legenda</a>]</font></center><a href="classCellFrame-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i0">maximize</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i1">selectAll</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i2">setAllLights</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i3">setCameraMoving</a> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i4">setCameraType</a> (qglviewer::Camera::Type type)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i5">setDrawAxisXYZ</a> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i6">setDrawGrid3D</a> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i7">setDrawGridXZ</a> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i8">setDrawLights</a> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i9">setDrawMethod</a> (DrawMethod drawMethod)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i10">setLight</a> (<a class="el" href="classLight.html">Light</a> *light)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i11">setSelectedSlot</a> (QPtrList&lt; ViNTreeNode &gt; *selectedList)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i12">setViewDirection</a> (int direction)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i13">showAllScene</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i14">turnAllLights</a> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#i15">updateColorForLight</a> (GLenum GLcolorChanged, <a class="el" href="classLight.html">Light</a> *light)</td></tr>
+
+<tr><td colspan=2><br><h2>Sygnały</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l0" doxytag="CellFrame::mphStructureChanged" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>mphStructureChanged</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l1" doxytag="CellFrame::setModifierFromCellFrame" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setModifierFromCellFrame</b> (MModifier::ModifierType mType)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l2" doxytag="CellFrame::userSelected" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>userSelected</b> (QPtrList&lt; ViNTreeNode &gt; *selectedList)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="CellFrame::cameraIsMoving" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>cameraIsMoving</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="CellFrame::CellFrame" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><b>CellFrame</b> (QWidget *parent, const char *name=0, QGLWidget *shareWidget=0, WFlags f=0)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="CellFrame::lightsAreDrawn" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>lightsAreDrawn</b> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e0">clipboardCopy</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e1">clipboardCut</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e2">clipboardPaste</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e3">deleteSelectedObjects</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>ViMultiPolyh *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e4">multiPolyh</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e5">refresh</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e6">selected</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e7">setLightsList</a> (QPtrList&lt; <a class="el" href="classLight.html">Light</a> &gt; *lightsList)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e8">setModifier</a> (MModifier *modifier)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e9">setMultiPolyh</a> (ViMultiPolyh *multiPolyh)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#e10">setSelected</a> (QPtrList&lt; ViNTreeNode &gt; *selectedList)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody chronione</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b0">draw</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b1">enterEvent</a> (QEvent *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b2">init</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b3">keyPressEvent</a> (QKeyEvent *e)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b4">mouseDoubleClickEvent</a> (QMouseEvent *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b5">mouseMoveEvent</a> (QMouseEvent *e)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b6">mousePressEvent</a> (QMouseEvent *e)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b7">mouseReleaseEvent</a> (QMouseEvent *e)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#b8">select</a> (const QMouseEvent *e)</td></tr>
+
+<tr><td colspan=2><br><h2>Sloty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#k0">choosedFromPopup</a> (int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#k1">popupAboutToShow</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d0">drawElemAxis</a> (ViElemePolyhExt *extEl)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d1">drawGrid3D</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d2">drawGridXZ</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d3">drawInfo</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d4">drawLightShape</a> (<a class="el" href="classLight.html">Light</a> *light, float scale=1.0f)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d5">drawScene</a> (bool pushID=false)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d6">drawSolid</a> (ViElemePolyhExt *elem, bool isSelected=false)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d7">drawTextured</a> (ViElemePolyhExt *elem, bool isSelected=false)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d8">drawWired</a> (ViElemePolyhExt *elem, bool isSelected=false)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d9">setInfo</a> (QString s, int x=-1, int y=-1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classCellFrame.html#d10">sortBlendedList</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="CellFrame::_axisIsDrawn" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_axisIsDrawn</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="CellFrame::_cameraIsMoving" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_cameraIsMoving</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="CellFrame::_drawMethod" ></a>
+DrawMethod&nbsp;</td><td class="memItemRight" valign=bottom><b>_drawMethod</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="CellFrame::_grid3DIsDrawn" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_grid3DIsDrawn</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r4" doxytag="CellFrame::_gridIsDrawn" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_gridIsDrawn</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r5" doxytag="CellFrame::_info" ></a>
+QString&nbsp;</td><td class="memItemRight" valign=bottom><b>_info</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r6" doxytag="CellFrame::_infoPosX" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>_infoPosX</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r7" doxytag="CellFrame::_infoPosY" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>_infoPosY</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r8" doxytag="CellFrame::_lightsAreDrawn" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_lightsAreDrawn</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r9" doxytag="CellFrame::blendedList" ></a>
+QPtrList&lt; ViElemePolyhExt &gt;&nbsp;</td><td class="memItemRight" valign=bottom><b>blendedList</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r10" doxytag="CellFrame::cellWidget" ></a>
+<a class="el" href="classCellWidget.html">CellWidget</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>cellWidget</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r11" doxytag="CellFrame::hbox" ></a>
+QHBoxLayout *&nbsp;</td><td class="memItemRight" valign=bottom><b>hbox</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r12" doxytag="CellFrame::popupMenu" ></a>
+QPopupMenu *&nbsp;</td><td class="memItemRight" valign=bottom><b>popupMenu</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r13" doxytag="CellFrame::startWidget" ></a>
+<a class="el" href="classStartWidget.html">StartWidget</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>startWidget</b></td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v0" doxytag="CellFrame::_clipboard" ></a>
+QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td><td class="memItemRight" valign=bottom><b>_clipboard</b> = new QPtrList&lt;ViNTreeNode&gt;</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v1" doxytag="CellFrame::_lightsList" ></a>
+QPtrList&lt; <a class="el" href="classLight.html">Light</a> &gt; *&nbsp;</td><td class="memItemRight" valign=bottom><b>_lightsList</b> = 0L</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v2" doxytag="CellFrame::_modifier" ></a>
+MModifier *&nbsp;</td><td class="memItemRight" valign=bottom><b>_modifier</b> = 0L</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v3" doxytag="CellFrame::_multiPolyh" ></a>
+ViMultiPolyh *&nbsp;</td><td class="memItemRight" valign=bottom><b>_multiPolyh</b> = 0L</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v4" doxytag="CellFrame::_selectedList" ></a>
+QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td><td class="memItemRight" valign=bottom><b>_selectedList</b> = new QPtrList&lt;ViNTreeNode&gt;</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v5" doxytag="CellFrame::nameList" ></a>
+QPtrList&lt; ViNTreeNode &gt;&nbsp;</td><td class="memItemRight" valign=bottom><b>nameList</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v6" doxytag="CellFrame::no_material" ></a>
+const GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>no_material</b> [] = { 0.0, 0.0, 0.0, 1.0 }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v7" doxytag="CellFrame::no_shininess" ></a>
+const GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>no_shininess</b> [] = { 0.0 }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v8" doxytag="CellFrame::white_material" ></a>
+const GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>white_material</b> [] = { 1.0, 1.0, 1.0, 1.0 }</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+class: CellFrame (.h)<p>
+Pojedyncze okno edycyjne aplikacji. 
+<p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="k0" doxytag="CellFrame::choosedFromPopup" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::choosedFromPopup           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>n</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wywołuje odpowiednią akcję w zależności od pozycji wybranej z popupMenu.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e0" doxytag="CellFrame::clipboardCopy" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool CellFrame::clipboardCopy           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda Copy. Metoda czyści schowek i tworzy nowe obiekty na podstawie wskaźników z _selectedList.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e1" doxytag="CellFrame::clipboardCut" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::clipboardCut           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda Cut. Metoda czyści schowek, kopiuje zawartość _selectedList do schowka i usuwa kopiowane obiekty. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e1_cgraph.png" border="0" usemap="#classCellFrame_e1_cgraph_map" alt=""></center>
+<map name="classCellFrame_e1_cgraph_map">
+<area href="classCellFrame.html#e0" shape="rect" coords="249,7,414,31" alt="">
+<area href="classCellFrame.html#e3" shape="rect" coords="224,55,440,78" alt="">
+<area href="classKernel.html#e0" shape="rect" coords="490,31,634,55" alt="">
+<area href="classCellFrame.html#e5" shape="rect" coords="504,78,621,102" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e2" doxytag="CellFrame::clipboardPaste" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool CellFrame::clipboardPaste           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda Paste. Metoda wkleja zawartość schowka i dołącza obiekty do pierwszego zaznaczonego obiektu lub do głównego obiektu złożonego, jeżeli nie ma zaznaczenia. Nowo utworzone obiekty zostają zaznaczone (poprzednie odznaczone). 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e2_cgraph.png" border="0" usemap="#classCellFrame_e2_cgraph_map" alt=""></center>
+<map name="classCellFrame_e2_cgraph_map">
+<area href="classKernel.html#e0" shape="rect" coords="237,7,381,31" alt="">
+<area href="classCellFrame.html#e5" shape="rect" coords="250,54,367,78" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e3" doxytag="CellFrame::deleteSelectedObjects" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::deleteSelectedObjects           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda usuwa wszystkie zaznaczone obiekty (znajdujące się na liście _selectedList), po czym odświeża wszystkie widoki i wysyła sygnał nowej listy _selectedList. Metoda nigdy nie usunie głównego obiektu złożonego. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e3_cgraph.png" border="0" usemap="#classCellFrame_e3_cgraph_map" alt=""></center>
+<map name="classCellFrame_e3_cgraph_map">
+<area href="classKernel.html#e0" shape="rect" coords="285,7,429,31" alt="">
+<area href="classCellFrame.html#e5" shape="rect" coords="298,54,415,78" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b0" doxytag="CellFrame::draw" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::draw           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Główna metoda, wewnątrz której odbywa się całe rysowanie. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b0_cgraph.png" border="0" usemap="#classCellFrame_b0_cgraph_map" alt=""></center>
+<map name="classCellFrame_b0_cgraph_map">
+<area href="classCellFrame.html#d3" shape="rect" coords="184,280,312,304" alt="">
+<area href="classCellFrame.html#d5" shape="rect" coords="175,352,321,376" alt="">
+<area href="classCellFrame.html#d0" shape="rect" coords="376,31,538,55" alt="">
+<area href="classCellFrame.html#d1" shape="rect" coords="383,79,532,103" alt="">
+<area href="classCellFrame.html#d2" shape="rect" coords="604,104,753,128" alt="">
+<area href="classCellFrame.html#d4" shape="rect" coords="369,303,545,327" alt="">
+<area href="classLight.html#a4" shape="rect" coords="632,216,725,240" alt="">
+<area href="classLight.html#a5" shape="rect" coords="628,284,729,308" alt="">
+<area href="classLight.html#a6" shape="rect" coords="593,343,764,366" alt="">
+<area href="classLight.html#a12" shape="rect" coords="625,397,732,421" alt="">
+<area href="classCellFrame.html#d6" shape="rect" coords="610,501,746,525" alt="">
+<area href="classCellFrame.html#d7" shape="rect" coords="379,476,536,500" alt="">
+<area href="classCellFrame.html#d8" shape="rect" coords="387,598,528,622" alt="">
+<area href="classCellFrame.html#d10" shape="rect" coords="372,646,542,670" alt="">
+<area href="classLight.html#a16" shape="rect" coords="388,694,526,718" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d0" doxytag="CellFrame::drawElemAxis" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawElemAxis           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViElemePolyhExt *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>extEl</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje lokalny układ współrzędnych dla elementu: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>extEl</em>&nbsp;</td><td>- element, dla którego narysowany będzie lokalny układ współrzędnych. </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d0_cgraph.png" border="0" usemap="#classCellFrame_d0_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d1" doxytag="CellFrame::drawGrid3D" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawGrid3D           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje siatkę 3D. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d1_cgraph.png" border="0" usemap="#classCellFrame_d1_cgraph_map" alt=""></center>
+<map name="classCellFrame_d1_cgraph_map">
+<area href="classCellFrame.html#d2" shape="rect" coords="214,7,364,30" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d2" doxytag="CellFrame::drawGridXZ" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawGridXZ           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje siatkę w płaszczyźnie XZ (poziomą).     </td>
+  </tr>
+</table>
+<a class="anchor" name="d3" doxytag="CellFrame::drawInfo" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawInfo           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wyświetla informację tekstową zawartą w polu _info. Używa czcionki zdefiniowanej globalnie dla całej aplikacji.     </td>
+  </tr>
+</table>
+<a class="anchor" name="d4" doxytag="CellFrame::drawLightShape" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawLightShape           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classLight.html">Light</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>light</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>float&nbsp;</td>
+          <td class="mdname" nowrap> <em>scale</em> = <code>1.0f</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje kształty źródeł światła w zależności od ich parametrów: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>light</em>&nbsp;</td><td>- opisuje źródło światła, </td></tr>
+    <tr><td></td><td valign=top><em>scale</em>&nbsp;</td><td>- skala w jakie rysujemy światło ( parametr aktualnie nieużywany). </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d4_cgraph.png" border="0" usemap="#classCellFrame_d4_cgraph_map" alt=""></center>
+<map name="classCellFrame_d4_cgraph_map">
+<area href="classLight.html#a4" shape="rect" coords="280,7,373,31" alt="">
+<area href="classLight.html#a5" shape="rect" coords="276,55,377,79" alt="">
+<area href="classLight.html#a6" shape="rect" coords="241,103,412,127" alt="">
+<area href="classLight.html#a7" shape="rect" coords="273,151,380,175" alt="">
+<area href="classLight.html#a9" shape="rect" coords="278,198,374,222" alt="">
+<area href="classLight.html#a11" shape="rect" coords="288,246,365,270" alt="">
+<area href="classLight.html#a12" shape="rect" coords="273,294,380,318" alt="">
+<area href="classLight.html#a15" shape="rect" coords="256,342,397,366" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d5" doxytag="CellFrame::drawScene" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawScene           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pushID</em> = <code>false</code>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje lub zrzuca nazwy obiektów na stos OpenGL (do celów poźniejszej selekcji): <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pushID</em>&nbsp;</td><td>- włączone indeksowanie obiektów. </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d5_cgraph.png" border="0" usemap="#classCellFrame_d5_cgraph_map" alt=""></center>
+<map name="classCellFrame_d5_cgraph_map">
+<area href="classCellFrame.html#d0" shape="rect" coords="218,31,381,55" alt="">
+<area href="classCellFrame.html#d1" shape="rect" coords="225,79,374,103" alt="">
+<area href="classCellFrame.html#d2" shape="rect" coords="446,104,595,128" alt="">
+<area href="classCellFrame.html#d4" shape="rect" coords="212,303,387,327" alt="">
+<area href="classLight.html#a4" shape="rect" coords="474,216,567,240" alt="">
+<area href="classLight.html#a5" shape="rect" coords="470,284,571,308" alt="">
+<area href="classLight.html#a6" shape="rect" coords="435,343,606,366" alt="">
+<area href="classLight.html#a12" shape="rect" coords="467,397,574,421" alt="">
+<area href="classCellFrame.html#d6" shape="rect" coords="453,501,589,525" alt="">
+<area href="classCellFrame.html#d7" shape="rect" coords="221,476,378,500" alt="">
+<area href="classCellFrame.html#d8" shape="rect" coords="229,598,370,622" alt="">
+<area href="classCellFrame.html#d10" shape="rect" coords="214,646,385,670" alt="">
+<area href="classLight.html#a16" shape="rect" coords="230,694,369,718" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d6" doxytag="CellFrame::drawSolid" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawSolid           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViElemePolyhExt *&nbsp;</td>
+          <td class="mdname" nowrap> <em>elem</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>isSelected</em> = <code>false</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje element w trybie prostego renderingu: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>elem</em>&nbsp;</td><td>- obiekt klasy ViElemePolyhExt do narysowania, </td></tr>
+    <tr><td></td><td valign=top><em>isSelected</em>&nbsp;</td><td>- czy obiekt jest zaznaczony.</td></tr>
+  </table>
+</dl>
+<p>
+wyłączamy materiał 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d6_cgraph.png" border="0" usemap="#classCellFrame_d6_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d7" doxytag="CellFrame::drawTextured" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawTextured           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViElemePolyhExt *&nbsp;</td>
+          <td class="mdname" nowrap> <em>elem</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>isSelected</em> = <code>false</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje element w trybie teksturowanym: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>elem</em>&nbsp;</td><td>- obiekt klasy ViElemePolyhExt do narysowania, </td></tr>
+    <tr><td></td><td valign=top><em>isSelected</em>&nbsp;</td><td>- czy obiekt jest zaznaczony (tutaj nie wykorzystywane). </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d7_cgraph.png" border="0" usemap="#classCellFrame_d7_cgraph_map" alt=""></center>
+<map name="classCellFrame_d7_cgraph_map">
+<area href="classMaterial.html#a1" shape="rect" coords="249,7,409,31" alt="">
+<area href="classTextureParams.html#a0" shape="rect" coords="226,55,432,79" alt="">
+<area href="classTextureParams.html#a1" shape="rect" coords="226,103,432,127" alt="">
+<area href="classTextureParams.html#a2" shape="rect" coords="230,151,428,175" alt="">
+<area href="classMaterial.html#a4" shape="rect" coords="254,199,404,223" alt="">
+<area href="classCellFrame.html#d6" shape="rect" coords="261,271,397,295" alt="">
+<area href="classMaterial.html#a7" shape="rect" coords="246,319,412,343" alt="">
+<area href="classTextureParams.html#a3" shape="rect" coords="248,367,410,391" alt="">
+<area href="classTextureParams.html#a4" shape="rect" coords="252,415,406,439" alt="">
+<area href="classTextureParams.html#a5" shape="rect" coords="248,463,410,486" alt="">
+<area href="classTextureParams.html#a6" shape="rect" coords="260,510,398,534" alt="">
+<area href="classTextureParams.html#a7" shape="rect" coords="257,558,401,582" alt="">
+<area href="classTextureParams.html#a8" shape="rect" coords="250,606,408,630" alt="">
+<area href="classTextureParams.html#a9" shape="rect" coords="262,654,396,678" alt="">
+<area href="classTextureParams.html#a10" shape="rect" coords="260,702,398,726" alt="">
+<area href="classMaterial.html#a27" shape="rect" coords="261,750,397,774" alt="">
+<area href="classMaterial.html#a29" shape="rect" coords="248,798,410,822" alt="">
+<area href="classTextureParams.html#a28" shape="rect" coords="258,846,400,870" alt="">
+<area href="classTextureParams.html#a29" shape="rect" coords="258,894,400,918" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d8" doxytag="CellFrame::drawWired" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::drawWired           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViElemePolyhExt *&nbsp;</td>
+          <td class="mdname" nowrap> <em>elem</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>isSelected</em> = <code>false</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda rysuje element jako druciak: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>elem</em>&nbsp;</td><td>- obiekt klasy ViElemePolyhExt do narysowania, </td></tr>
+    <tr><td></td><td valign=top><em>isSelected</em>&nbsp;</td><td>- czy obiekt jest zaznaczony. </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d8_cgraph.png" border="0" usemap="#classCellFrame_d8_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b1" doxytag="CellFrame::enterEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::enterEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Gdy mysz wjedzie na CellFrame, automatycznie ustawiany jest dla niej focus klawiatury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b1_cgraph.png" border="0" usemap="#classCellFrame_b1_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b2" doxytag="CellFrame::init" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::init           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda inicjuje OpenGL.     </td>
+  </tr>
+</table>
+<a class="anchor" name="b3" doxytag="CellFrame::keyPressEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::keyPressEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QKeyEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>e</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Przechwycenie i obsługa zdarzenia klawiatury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b3_cgraph.png" border="0" usemap="#classCellFrame_b3_cgraph_map" alt=""></center>
+<map name="classCellFrame_b3_cgraph_map">
+<area href="classCellFrame.html#e0" shape="rect" coords="467,60,633,84" alt="">
+<area href="classCellFrame.html#e1" shape="rect" coords="237,108,392,132" alt="">
+<area href="classCellFrame.html#e3" shape="rect" coords="442,108,658,132" alt="">
+<area href="classCellFrame.html#e2" shape="rect" coords="465,12,635,36" alt="">
+<area href="classKernel.html#e0" shape="rect" coords="709,24,853,48" alt="">
+<area href="classCellFrame.html#e5" shape="rect" coords="722,84,839,108" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i0" doxytag="CellFrame::maximize" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::maximize           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda maksymalizuje okno widoku, minimalizując pozostałe. WARUNEK - CellFrame jest dzieckiem obiektu klasy QSplitter, który ma również rodzica QSplitter. Sposób działania tej metody jest ściśle uzależniony od struktury splitterów, w których obiekt CellFrame egzystuje - struktura ta budowana jest w obiekcie klasy <a class="el" href="classWorkspace.html">Workspace</a>.     </td>
+  </tr>
+</table>
+<a class="anchor" name="b4" doxytag="CellFrame::mouseDoubleClickEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::mouseDoubleClickEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QMouseEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Podwójne kliknięcie mysza - przywracany jest odpowiedni widok dla okna. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b4_cgraph.png" border="0" usemap="#classCellFrame_b4_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b5" doxytag="CellFrame::mouseMoveEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::mouseMoveEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QMouseEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>e</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Zdarzenie ruchu myszą (przy wciśniętym przycisku). Działa modyfikator. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b5_cgraph.png" border="0" usemap="#classCellFrame_b5_cgraph_map" alt=""></center>
+<map name="classCellFrame_b5_cgraph_map">
+<area href="classCellFrame.html#e5" shape="rect" coords="253,7,370,31" alt="">
+<area href="classCellFrame.html#d9" shape="rect" coords="253,78,370,102" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b6" doxytag="CellFrame::mousePressEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::mousePressEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QMouseEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>e</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Zdarzenie naciśnięcia przycisku myszy - rozpoczynamy działanie modyfikatora. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b6_cgraph.png" border="0" usemap="#classCellFrame_b6_cgraph_map" alt=""></center>
+<map name="classCellFrame_b6_cgraph_map">
+<area href="classCellFrame.html#e5" shape="rect" coords="256,7,373,31" alt="">
+<area href="classCellFrame.html#b8" shape="rect" coords="257,79,371,102" alt="">
+<area href="classCellFrame.html#d5" shape="rect" coords="425,31,571,55" alt="">
+<area href="classCellFrame.html#e6" shape="rect" coords="433,79,563,102" alt="">
+<area href="classCellFrame.html#e10" shape="rect" coords="423,150,573,174" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b7" doxytag="CellFrame::mouseReleaseEvent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::mouseReleaseEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QMouseEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>e</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Zdarzenie zwolnienia przycisku myszy. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b7_cgraph.png" border="0" usemap="#classCellFrame_b7_cgraph_map" alt=""></center>
+<map name="classCellFrame_b7_cgraph_map">
+<area href="classCellFrame.html#e5" shape="rect" coords="271,7,389,31" alt="">
+<area href="classCellFrame.html#d9" shape="rect" coords="271,78,389,102" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e4" doxytag="CellFrame::multiPolyh" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> ViMultiPolyh * CellFrame::multiPolyh           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca wskaźnik na główny (edytowany) obiekt złożony.     </td>
+  </tr>
+</table>
+<a class="anchor" name="k1" doxytag="CellFrame::popupAboutToShow" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::popupAboutToShow           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wywoływana w momencie wywołania popupMenu - wyłącza opcje zależne od selekcji.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e5" doxytag="CellFrame::refresh" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::refresh           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda statyczna odświeżająca wszystkie widoki. Najpierw oblicza współrzędne globalne brył.     </td>
+  </tr>
+</table>
+<a class="anchor" name="b8" doxytag="CellFrame::select" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::select           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QMouseEvent *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>e</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda realizująca selekcję obiektu w przestrzeni OpenGL: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>e</em>&nbsp;</td><td>- zdarzenie myszy, zawierające pozycję kursora i naciśnięty przycisk </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_b8_cgraph.png" border="0" usemap="#classCellFrame_b8_cgraph_map" alt=""></center>
+<map name="classCellFrame_b8_cgraph_map">
+<area href="classCellFrame.html#d5" shape="rect" coords="185,352,332,376" alt="">
+<area href="classCellFrame.html#e6" shape="rect" coords="193,400,324,424" alt="">
+<area href="classCellFrame.html#e10" shape="rect" coords="184,472,333,496" alt="">
+<area href="classCellFrame.html#d0" shape="rect" coords="389,31,552,55" alt="">
+<area href="classCellFrame.html#d1" shape="rect" coords="396,79,545,103" alt="">
+<area href="classCellFrame.html#d2" shape="rect" coords="617,104,766,128" alt="">
+<area href="classCellFrame.html#d4" shape="rect" coords="382,303,558,327" alt="">
+<area href="classLight.html#a4" shape="rect" coords="645,216,738,240" alt="">
+<area href="classLight.html#a5" shape="rect" coords="641,284,742,308" alt="">
+<area href="classLight.html#a6" shape="rect" coords="606,343,777,366" alt="">
+<area href="classLight.html#a12" shape="rect" coords="638,397,745,421" alt="">
+<area href="classCellFrame.html#d6" shape="rect" coords="624,501,760,525" alt="">
+<area href="classCellFrame.html#d7" shape="rect" coords="392,476,549,500" alt="">
+<area href="classCellFrame.html#d8" shape="rect" coords="400,598,541,622" alt="">
+<area href="classCellFrame.html#d10" shape="rect" coords="385,646,556,670" alt="">
+<area href="classLight.html#a16" shape="rect" coords="401,694,540,718" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i1" doxytag="CellFrame::selectAll" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::selectAll           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zaznacza wszystkie obiekty na scenie.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e6" doxytag="CellFrame::selected" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> QPtrList&lt; ViNTreeNode &gt; * CellFrame::selected           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca wskaźnik na listę zaznaczonych obiektów.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i2" doxytag="CellFrame::setAllLights" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setAllLights           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia parametry wszystkich świateł z listy w przestrzeni OpenGL.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i3" doxytag="CellFrame::setCameraMoving" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setCameraMoving           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>on</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia czy poruszamy kamerą.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i4" doxytag="CellFrame::setCameraType" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setCameraType           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">qglviewer::Camera::Type&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>type</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia typu rzutowania.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i5" doxytag="CellFrame::setDrawAxisXYZ" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setDrawAxisXYZ           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>on</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza rysowanie osi współrzędnych.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i6" doxytag="CellFrame::setDrawGrid3D" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setDrawGrid3D           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>on</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza rysowanie siatki 3D.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i7" doxytag="CellFrame::setDrawGridXZ" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setDrawGridXZ           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>on</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza rysowanie poziomej siatki.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i8" doxytag="CellFrame::setDrawLights" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setDrawLights           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>on</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza rysowanie kształtów świateł.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i9" doxytag="CellFrame::setDrawMethod" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setDrawMethod           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">DrawMethod&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>drawMethod</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia tryb rysowania dla widoku: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>drawMethod</em>&nbsp;</td><td>- określa jaki to tryb: Wire, Solid, Textured </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d9" doxytag="CellFrame::setInfo" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setInfo           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QString&nbsp;</td>
+          <td class="mdname" nowrap> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em> = <code>-1</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia tekst wyświetlany jako informacja w oknie edycyjnym. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_d9_cgraph.png" border="0" usemap="#classCellFrame_d9_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i10" doxytag="CellFrame::setLight" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setLight           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classLight.html">Light</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>light</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia parametry aktualnie edytowanego światła dla widoku.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e7" doxytag="CellFrame::setLightsList" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setLightsList           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPtrList&lt; <a class="el" href="classLight.html">Light</a> &gt; *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>lightsList</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia statyczny wskaźnik do listy wszystkich świateł. Wywoływana jeden raz na początku. <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>lightsList</em>&nbsp;</td><td>- wskaźnik na listę świateł. </td></tr>
+  </table>
+</dl>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e7_cgraph.png" border="0" usemap="#classCellFrame_e7_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e8" doxytag="CellFrame::setModifier" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setModifier           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">MModifier *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>modifier</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia modyfikator obowiązujący dla wszystkich widoków. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e8_cgraph.png" border="0" usemap="#classCellFrame_e8_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e9" doxytag="CellFrame::setMultiPolyh" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setMultiPolyh           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViMultiPolyh *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>multiPolyh</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia główną bryłę do wyświetlania. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e9_cgraph.png" border="0" usemap="#classCellFrame_e9_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e10" doxytag="CellFrame::setSelected" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setSelected           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>selectedList</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia listę brył zaznaczonych. 
+<p>
+Here is the call graph for this function:<p><center><img src="classCellFrame_e10_cgraph.png" border="0" usemap="#classCellFrame_e10_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i11" doxytag="CellFrame::setSelectedSlot" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setSelectedSlot           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>selectedList</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda nadmiarowa - jest tylko dlatego, że nie można łączyć slotów statycznych. Wywołuje metodę statyczną setSelected().     </td>
+  </tr>
+</table>
+<a class="anchor" name="i12" doxytag="CellFrame::setViewDirection" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::setViewDirection           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>direction</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia kamerę w określony (predefiniowany) sposób - spojrzenie z boku, z przodu lub z góry sceny. Podwojne kliknięcie na scenie powoduje powrót do tego ustawienia (obsługa mouseDoubleClickEvent()). <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>direction</em>&nbsp;</td><td>- jest predefiniowanym kierunkiem. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="i13" doxytag="CellFrame::showAllScene" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::showAllScene           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda dopasowuje widok do rozmiarów sceny, tak żeby wszystko było widoczne.     </td>
+  </tr>
+</table>
+<a class="anchor" name="d10" doxytag="CellFrame::sortBlendedList" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool CellFrame::sortBlendedList           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda sortuje listę obiektów przezroczystych względem współrzędnej Z (we współrzędnych kamery).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i14" doxytag="CellFrame::turnAllLights" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::turnAllLights           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>on</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda (slot) włącza/wyłącza wszystkie światła. UWAGA! włączane są tylko te światła, które mają ustawione isEnabled() (są włączone). Metoda nie wpływa na oświetlenie globalne GL_LIGHTING - tym nie manipulujemy ze względu na rysowanie WIRE.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i15" doxytag="CellFrame::updateColorForLight" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void CellFrame::updateColorForLight           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>GLcolorChanged</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="classLight.html">Light</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>light</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda uaktualnia wartość koloru dla danego źródła światła: <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>GLcolorChanged</em>&nbsp;</td><td>- który parametr światła uległ zmianie (ambient, diffuse, itp.), </td></tr>
+    <tr><td></td><td valign=top><em>light</em>&nbsp;</td><td>- światło, któremu zmieniono wartość. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="cellframe_8h-source.html">cellframe.h</a><li>cellframe.cpp<li>moc_cellframe.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:23 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

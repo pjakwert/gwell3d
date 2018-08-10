@@ -1,0 +1,1173 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="_backgroundColor"><param name="Name" value="_backgroundColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#v0"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="_libPaths"><param name="Name" value="_libPaths"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#v10"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="addMultiPolyh"><param name="Name" value="addMultiPolyh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#i0"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="addPattePolyh"><param name="Name" value="addPattePolyh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#i1"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="address"><param name="Name" value="address"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classHierListViewItem.html#a0"><param name="Name" value="HierListViewItem"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="addRow"><param name="Name" value="addRow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i0"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="afterInit"><param name="Name" value="afterInit"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#v0"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="alpha"><param name="Name" value="alpha"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#a0"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="autoRemoveUnusedTextures"><param name="Name" value="autoRemoveUnusedTextures"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e4"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="axisToggled"><param name="Name" value="axisToggled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k0"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="blockEditSignals"><param name="Name" value="blockEditSignals"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#d0"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="blockSliderSignals"><param name="Name" value="blockSliderSignals"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#d1"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="buildPattePolyhList"><param name="Name" value="buildPattePolyhList"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#d0"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="cameraToggled"><param name="Name" value="cameraToggled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k1"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html"><param name="Name" value="CellFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#k0"><param name="Name" value="choosedFromPopup"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e0"><param name="Name" value="clipboardCopy"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e1"><param name="Name" value="clipboardCut"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e2"><param name="Name" value="clipboardPaste"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e3"><param name="Name" value="deleteSelectedObjects"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b0"><param name="Name" value="draw"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d0"><param name="Name" value="drawElemAxis"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d1"><param name="Name" value="drawGrid3D"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d2"><param name="Name" value="drawGridXZ"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d3"><param name="Name" value="drawInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d4"><param name="Name" value="drawLightShape"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d5"><param name="Name" value="drawScene"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d6"><param name="Name" value="drawSolid"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d7"><param name="Name" value="drawTextured"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d8"><param name="Name" value="drawWired"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b1"><param name="Name" value="enterEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b2"><param name="Name" value="init"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b3"><param name="Name" value="keyPressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i0"><param name="Name" value="maximize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b4"><param name="Name" value="mouseDoubleClickEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b5"><param name="Name" value="mouseMoveEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b6"><param name="Name" value="mousePressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b7"><param name="Name" value="mouseReleaseEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e4"><param name="Name" value="multiPolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#k1"><param name="Name" value="popupAboutToShow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e5"><param name="Name" value="refresh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b8"><param name="Name" value="select"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i1"><param name="Name" value="selectAll"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e6"><param name="Name" value="selected"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i2"><param name="Name" value="setAllLights"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i3"><param name="Name" value="setCameraMoving"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i4"><param name="Name" value="setCameraType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i5"><param name="Name" value="setDrawAxisXYZ"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i6"><param name="Name" value="setDrawGrid3D"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i7"><param name="Name" value="setDrawGridXZ"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i8"><param name="Name" value="setDrawLights"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i9"><param name="Name" value="setDrawMethod"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d9"><param name="Name" value="setInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i10"><param name="Name" value="setLight"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e7"><param name="Name" value="setLightsList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e8"><param name="Name" value="setModifier"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e9"><param name="Name" value="setMultiPolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e10"><param name="Name" value="setSelected"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i11"><param name="Name" value="setSelectedSlot"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i12"><param name="Name" value="setViewDirection"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i13"><param name="Name" value="showAllScene"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d10"><param name="Name" value="sortBlendedList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i14"><param name="Name" value="turnAllLights"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i15"><param name="Name" value="updateColorForLight"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html"><param name="Name" value="CellWidget"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k0"><param name="Name" value="axisToggled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k1"><param name="Name" value="cameraToggled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k2"><param name="Name" value="gridToggled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#i0"><param name="Name" value="hidePrivateButtons"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k3"><param name="Name" value="lightsToggled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k4"><param name="Name" value="maximizeClicked"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k5"><param name="Name" value="screenshotClicked"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k6"><param name="Name" value="showAll"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#i1"><param name="Name" value="toggleVisibility"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k7"><param name="Name" value="viewDirChanged"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k8"><param name="Name" value="viewProjChanged"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k9"><param name="Name" value="viewTypeChanged"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="choosedFromPopup"><param name="Name" value="choosedFromPopup"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#k0"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="clearAllPaths"><param name="Name" value="clearAllPaths"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e4"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="clipboardCopy"><param name="Name" value="clipboardCopy"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e0"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="clipboardCut"><param name="Name" value="clipboardCut"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e1"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="clipboardPaste"><param name="Name" value="clipboardPaste"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e2"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="closeEvent"><param name="Name" value="closeEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classGwellInterface.html#b0"><param name="Name" value="GwellInterface"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="color"><param name="Name" value="color"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#a1"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html"><param name="Name" value="ColorWidget"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#a0"><param name="Name" value="alpha"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#d0"><param name="Name" value="blockEditSignals"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#d1"><param name="Name" value="blockSliderSignals"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#a1"><param name="Name" value="color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#a2"><param name="Name" value="ColorWidget"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k0"><param name="Name" value="openColorDialog"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k1"><param name="Name" value="setAlpha"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#i0"><param name="Name" value="setColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k3"><param name="Name" value="setColorFromSliders"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k4"><param name="Name" value="setSlidersFromEdits"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="computeScene"><param name="Name" value="computeScene"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#e0"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="copyToClipboard"><param name="Name" value="copyToClipboard"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#i0"><param name="Name" value="StatusBar"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="createPopupMenu"><param name="Name" value="createPopupMenu"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#b0"><param name="Name" value="StatusBar"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="currentFrame"><param name="Name" value="currentFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#a0"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="decHowManyUsers"><param name="Name" value="decHowManyUsers"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a0"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="deduceMaterial"><param name="Name" value="deduceMaterial"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k0"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="defaultAmbientColor"><param name="Name" value="defaultAmbientColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#v1"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="deleteSelectedObjects"><param name="Name" value="deleteSelectedObjects"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e3"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="disableCameraInCurrentFrame"><param name="Name" value="disableCameraInCurrentFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#a1"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="draw"><param name="Name" value="draw"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b0"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawElemAxis"><param name="Name" value="drawElemAxis"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d0"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawGrid3D"><param name="Name" value="drawGrid3D"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d1"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawGridXZ"><param name="Name" value="drawGridXZ"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d2"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawInfo"><param name="Name" value="drawInfo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d3"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawLightShape"><param name="Name" value="drawLightShape"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d4"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawScene"><param name="Name" value="drawScene"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d5"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawSolid"><param name="Name" value="drawSolid"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d6"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawTextured"><param name="Name" value="drawTextured"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d7"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="drawWired"><param name="Name" value="drawWired"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d8"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="emptyMaterialsCount"><param name="Name" value="emptyMaterialsCount"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#v0"><param name="Name" value="Material"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="enterEvent"><param name="Name" value="enterEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b1"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="fileName"><param name="Name" value="fileName"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a1"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="findPattePolyh"><param name="Name" value="findPattePolyh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#e1"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="findSetAndDeleteGLName"><param name="Name" value="findSetAndDeleteGLName"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#d0"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html"><param name="Name" value="FloatSpinBox"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#a0"><param name="Name" value="FloatSpinBox"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#a1"><param name="Name" value="floatValue"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#b0"><param name="Name" value="mapTextToValue"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#b1"><param name="Name" value="mapValueToText"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#k0"><param name="Name" value="sendFloatValue"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#i0"><param name="Name" value="setDecimals"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#i1"><param name="Name" value="setFloatValue"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#a2"><param name="Name" value="value"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="floatValue"><param name="Name" value="floatValue"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#a1"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="GLTextureID"><param name="Name" value="GLTextureID"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a2"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="gridToggled"><param name="Name" value="gridToggled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k2"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classGwellInterface.html"><param name="Name" value="GwellInterface"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classGwellInterface.html#b0"><param name="Name" value="closeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classGwellInterface.html#a0"><param name="Name" value="GwellInterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classGwellInterface.html#b1"><param name="Name" value="keyPressEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="hidePrivateButtons"><param name="Name" value="hidePrivateButtons"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#i0"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="hier"><param name="Name" value="hier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classHierListViewItem.html#a1"><param name="Name" value="HierListViewItem"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classHierListViewItem.html"><param name="Name" value="HierListViewItem"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classHierListViewItem.html#a0"><param name="Name" value="address"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classHierListViewItem.html#a1"><param name="Name" value="hier"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classHierListViewItem.html#a3"><param name="Name" value="HierListViewItem"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="howManyTexturesLoaded"><param name="Name" value="howManyTexturesLoaded"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e8"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="howManyUsers"><param name="Name" value="howManyUsers"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a3"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html"><param name="Name" value="ImagePreview"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#a0"><param name="Name" value="ImagePreview"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#a1"><param name="Name" value="previewUrl"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#b0"><param name="Name" value="resizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#d0"><param name="Name" value="setInfo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="incHowManyUsers"><param name="Name" value="incHowManyUsers"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a4"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="indexToCoordType"><param name="Name" value="indexToCoordType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#d0"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="indexToTransfType"><param name="Name" value="indexToTransfType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#d1"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="init"><param name="Name" value="init"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b2"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#a0"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="initFreeLightNamesList"><param name="Name" value="initFreeLightNamesList"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#d1"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="intCorrectionHint"><param name="Name" value="intCorrectionHint"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e15"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="intShadeModel"><param name="Name" value="intShadeModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e16"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="isValid"><param name="Name" value="isValid"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a5"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html"><param name="Name" value="Kernel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#i0"><param name="Name" value="addMultiPolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#i1"><param name="Name" value="addPattePolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#d0"><param name="Name" value="buildPattePolyhList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#e0"><param name="Name" value="computeScene"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#e1"><param name="Name" value="findPattePolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#a0"><param name="Name" value="init"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#i2"><param name="Name" value="loadMultiPolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#a2"><param name="Name" value="multiPolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#d1"><param name="Name" value="readAllLibraries"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="keyPressEvent"><param name="Name" value="keyPressEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b3"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classGwellInterface.html#b1"><param name="Name" value="GwellInterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialEditor.html#b0"><param name="Name" value="MaterialEditor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html"><param name="Name" value="Light"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#v0"><param name="Name" value="afterInit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#v1"><param name="Name" value="defaultAmbientColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#d0"><param name="Name" value="findSetAndDeleteGLName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#d1"><param name="Name" value="initFreeLightNamesList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i0"><param name="Name" value="reset"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i1"><param name="Name" value="setAmbientColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i3"><param name="Name" value="setConstantAttenuation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i4"><param name="Name" value="setDiffuseColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i6"><param name="Name" value="setEnabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i7"><param name="Name" value="setLightType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i8"><param name="Name" value="setLinearAttenuation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i9"><param name="Name" value="setMovingWithCamera"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i10"><param name="Name" value="setName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i11"><param name="Name" value="setPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i12"><param name="Name" value="setQuadraticAttenuation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i13"><param name="Name" value="setSpecularColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i15"><param name="Name" value="setSpotCutOffAngle"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i16"><param name="Name" value="setSpotDirection"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i17"><param name="Name" value="setSpotExponent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i18"><param name="Name" value="setSpotlight"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#a18"><param name="Name" value="~Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="lightsToggled"><param name="Name" value="lightsToggled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k3"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="loadMaterials"><param name="Name" value="loadMaterials"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k1"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="loadMultiPolyh"><param name="Name" value="loadMultiPolyh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#i2"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="loadSettings"><param name="Name" value="loadSettings"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e21"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="makeCurrent"><param name="Name" value="makeCurrent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#h6"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="makeMaterialDefault"><param name="Name" value="makeMaterialDefault"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k2"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mapTextToValue"><param name="Name" value="mapTextToValue"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#b0"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mapValueToText"><param name="Name" value="mapValueToText"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#b1"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html"><param name="Name" value="Material"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#v0"><param name="Name" value="emptyMaterialsCount"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a11"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a13"><param name="Name" value="operator="></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a14"><param name="Name" value="operator=="></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a15"><param name="Name" value="setAmbientColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#d0"><param name="Name" value="setColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a17"><param name="Name" value="setDiffuseColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a19"><param name="Name" value="setEmissionColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a21"><param name="Name" value="setMaterialName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a23"><param name="Name" value="setShininess"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a24"><param name="Name" value="setSpecularColor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialEditor.html"><param name="Name" value="MaterialEditor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialEditor.html#b0"><param name="Name" value="keyPressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialEditor.html#a0"><param name="Name" value="MaterialEditor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialEditor.html#k0"><param name="Name" value="undoAllAndClose"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html"><param name="Name" value="MaterialWidget"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k0"><param name="Name" value="deduceMaterial"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k1"><param name="Name" value="loadMaterials"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k2"><param name="Name" value="makeMaterialDefault"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#a0"><param name="Name" value="MaterialWidget"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k3"><param name="Name" value="readFromFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k4"><param name="Name" value="resetToDefaultMaterial"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k5"><param name="Name" value="saveMaterial"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k6"><param name="Name" value="selectMaterialFromCombo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k7"><param name="Name" value="setAmbientColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k8"><param name="Name" value="setApplyTo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k9"><param name="Name" value="setApplyToFromButton"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k10"><param name="Name" value="setDiffuseColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k11"><param name="Name" value="setDynamicPreview"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k12"><param name="Name" value="setEmissionColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k13"><param name="Name" value="setMaterialEnabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k14"><param name="Name" value="setShininess"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k15"><param name="Name" value="setSpecularColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#i0"><param name="Name" value="undoMaterials"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k16"><param name="Name" value="updateGLMatSyntaxText"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="maximize"><param name="Name" value="maximize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i0"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="maximizeClicked"><param name="Name" value="maximizeClicked"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k4"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mipmapingEnabled"><param name="Name" value="mipmapingEnabled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a6"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="modifierChangedFromCellFrame"><param name="Name" value="modifierChangedFromCellFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#k0"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mouseDoubleClickEvent"><param name="Name" value="mouseDoubleClickEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b4"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mouseMoveEvent"><param name="Name" value="mouseMoveEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b5"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mousePressEvent"><param name="Name" value="mousePressEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b6"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStartWidget.html#b0"><param name="Name" value="StartWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="mouseReleaseEvent"><param name="Name" value="mouseReleaseEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b7"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classMphPreview.html"><param name="Name" value="MphPreview"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMphPreview.html#a0"><param name="Name" value="MphPreview"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="multiPolyh"><param name="Name" value="multiPolyh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e4"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#a2"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="name"><param name="Name" value="name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classNameDialog.html#a0"><param name="Name" value="NameDialog"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classNameDialog.html"><param name="Name" value="NameDialog"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classNameDialog.html#a0"><param name="Name" value="name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classNameDialog.html#a1"><param name="Name" value="NameDialog"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classNoDotValidator.html"><param name="Name" value="NoDotValidator"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classNoDotValidator.html#a1"><param name="Name" value="NoDotValidator"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classObjectsWidget.html"><param name="Name" value="ObjectsWidget"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classObjectsWidget.html#a0"><param name="Name" value="ObjectsWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="openColorDialog"><param name="Name" value="openColorDialog"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k0"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="operator=="><param name="Name" value="operator=="></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a14"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a8"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="operator="><param name="Name" value="operator="></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a13"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a7"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html"><param name="Name" value="Options"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#v0"><param name="Name" value="_backgroundColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#v10"><param name="Name" value="_libPaths"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e4"><param name="Name" value="clearAllPaths"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e15"><param name="Name" value="intCorrectionHint"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e16"><param name="Name" value="intShadeModel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e21"><param name="Name" value="loadSettings"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e28"><param name="Name" value="resetColorsToDefaults"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e30"><param name="Name" value="resetToDefaults"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e31"><param name="Name" value="saveSettings"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e34"><param name="Name" value="setColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e42"><param name="Name" value="setIntCorrectionHint"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e43"><param name="Name" value="setIntShadeModel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="paintEvent"><param name="Name" value="paintEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStartWidget.html#b1"><param name="Name" value="StartWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="popupAboutToShow"><param name="Name" value="popupAboutToShow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#k1"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="preview"><param name="Name" value="preview"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a9"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="previewUrl"><param name="Name" value="previewUrl"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#a1"><param name="Name" value="ImagePreview"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="printStatusMsg"><param name="Name" value="printStatusMsg"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#e0"><param name="Name" value="StatusBar"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="readAllLibraries"><param name="Name" value="readAllLibraries"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classKernel.html#d1"><param name="Name" value="Kernel"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="readFromFile"><param name="Name" value="readFromFile"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k3"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="refresh"><param name="Name" value="refresh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e5"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i0"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="removeCurrentRow"><param name="Name" value="removeCurrentRow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i1"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="reset"><param name="Name" value="reset"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i0"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="resetAllFrames"><param name="Name" value="resetAllFrames"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#e0"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="resetColorsToDefaults"><param name="Name" value="resetColorsToDefaults"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e28"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="resetToDefaultMaterial"><param name="Name" value="resetToDefaultMaterial"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k4"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="resetToDefaults"><param name="Name" value="resetToDefaults"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e30"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="resizeEvent"><param name="Name" value="resizeEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#b0"><param name="Name" value="ImagePreview"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#b0"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classRotateCoordsModifier.html"><param name="Name" value="RotateCoordsModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classRotateCoordsModifier.html#a3"><param name="Name" value="RotateCoordsModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classRotateModifier.html"><param name="Name" value="RotateModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classRotateModifier.html#a3"><param name="Name" value="RotateModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="rowAndColChanged"><param name="Name" value="rowAndColChanged"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#k0"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="safeMode"><param name="Name" value="safeMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e11"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="safeSize"><param name="Name" value="safeSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e12"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="saveMaterial"><param name="Name" value="saveMaterial"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k5"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="saveSettings"><param name="Name" value="saveSettings"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e31"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="scaleMode"><param name="Name" value="scaleMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a10"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classScaleModifier.html"><param name="Name" value="ScaleModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classScaleModifier.html#a3"><param name="Name" value="ScaleModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="screenshotClicked"><param name="Name" value="screenshotClicked"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k5"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="select"><param name="Name" value="select"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#b8"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="selectAll"><param name="Name" value="selectAll"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i1"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="selected"><param name="Name" value="selected"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e6"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="selectMaterialFromCombo"><param name="Name" value="selectMaterialFromCombo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k6"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classSelectModifier.html"><param name="Name" value="SelectModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classSelectModifier.html#a3"><param name="Name" value="SelectModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="sendFloatValue"><param name="Name" value="sendFloatValue"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#k0"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setAllLights"><param name="Name" value="setAllLights"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i2"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setAlpha"><param name="Name" value="setAlpha"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k1"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setAmbientColor"><param name="Name" value="setAmbientColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i1"><param name="Name" value="Light"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a15"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k7"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setApplyTo"><param name="Name" value="setApplyTo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k8"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setApplyToFromButton"><param name="Name" value="setApplyToFromButton"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k9"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setAutoRemoveUnusedTextures"><param name="Name" value="setAutoRemoveUnusedTextures"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e13"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setCameraIsMovingForAll"><param name="Name" value="setCameraIsMovingForAll"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i1"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setCameraMoving"><param name="Name" value="setCameraMoving"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i3"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setCameraType"><param name="Name" value="setCameraType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i4"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setColor"><param name="Name" value="setColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#i0"><param name="Name" value="ColorWidget"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#d0"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e34"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setColorFromSliders"><param name="Name" value="setColorFromSliders"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k3"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setComboBox"><param name="Name" value="setComboBox"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e14"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setConstantAttenuation"><param name="Name" value="setConstantAttenuation"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i3"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setCurrentValue"><param name="Name" value="setCurrentValue"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i2"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDecimals"><param name="Name" value="setDecimals"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#i0"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDiffuseColor"><param name="Name" value="setDiffuseColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i4"><param name="Name" value="Light"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a17"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k10"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDrawAxisXYZ"><param name="Name" value="setDrawAxisXYZ"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i5"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDrawGrid3D"><param name="Name" value="setDrawGrid3D"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i6"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDrawGridXZ"><param name="Name" value="setDrawGridXZ"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i7"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDrawLights"><param name="Name" value="setDrawLights"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i8"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDrawMethod"><param name="Name" value="setDrawMethod"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i9"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setDynamicPreview"><param name="Name" value="setDynamicPreview"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k11"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setEmissionColor"><param name="Name" value="setEmissionColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a19"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k12"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setEnabled"><param name="Name" value="setEnabled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i6"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setFileName"><param name="Name" value="setFileName"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a11"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setFloatValue"><param name="Name" value="setFloatValue"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#i1"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setGLTextureID"><param name="Name" value="setGLTextureID"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#d0"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setHostFrame"><param name="Name" value="setHostFrame"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e15"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setHowManyUsers"><param name="Name" value="setHowManyUsers"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#d1"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setInfo"><param name="Name" value="setInfo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d9"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classImagePreview.html#d0"><param name="Name" value="ImagePreview"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setIntCorrectionHint"><param name="Name" value="setIntCorrectionHint"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e42"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setIntShadeModel"><param name="Name" value="setIntShadeModel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classOptions.html#e43"><param name="Name" value="Options"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setLight"><param name="Name" value="setLight"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i10"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i2"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setLightingEnabled"><param name="Name" value="setLightingEnabled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i3"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setLightsList"><param name="Name" value="setLightsList"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e7"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i4"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setLightType"><param name="Name" value="setLightType"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i7"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setLinearAttenuation"><param name="Name" value="setLinearAttenuation"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i8"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setMaterialEnabled"><param name="Name" value="setMaterialEnabled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k13"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setMaterialName"><param name="Name" value="setMaterialName"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a21"><param name="Name" value="Material"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setMipmapEnabled"><param name="Name" value="setMipmapEnabled"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a12"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setModifier"><param name="Name" value="setModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e8"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i5"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setMovingWithCamera"><param name="Name" value="setMovingWithCamera"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i9"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setMultiPolyh"><param name="Name" value="setMultiPolyh"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e9"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i6"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setName"><param name="Name" value="setName"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i10"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setPosition"><param name="Name" value="setPosition"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i11"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setPreview"><param name="Name" value="setPreview"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a13"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setQuadraticAttenuation"><param name="Name" value="setQuadraticAttenuation"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i12"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSafeMode"><param name="Name" value="setSafeMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e16"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSafeSize"><param name="Name" value="setSafeSize"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e17"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setScaleMode"><param name="Name" value="setScaleMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a14"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSelected"><param name="Name" value="setSelected"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#e10"><param name="Name" value="CellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i8"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSelectedSlot"><param name="Name" value="setSelectedSlot"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i11"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setShine"><param name="Name" value="setShine"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#k0"><param name="Name" value="ShineWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setShininess"><param name="Name" value="setShininess"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a23"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k14"><param name="Name" value="MaterialWidget"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#i0"><param name="Name" value="ShineWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSlidersFromEdits"><param name="Name" value="setSlidersFromEdits"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classColorWidget.html#k4"><param name="Name" value="ColorWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSpecularColor"><param name="Name" value="setSpecularColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i13"><param name="Name" value="Light"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterial.html#a24"><param name="Name" value="Material"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k15"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSpotCutOffAngle"><param name="Name" value="setSpotCutOffAngle"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i15"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSpotDirection"><param name="Name" value="setSpotDirection"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i16"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSpotExponent"><param name="Name" value="setSpotExponent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i17"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setSpotlight"><param name="Name" value="setSpotlight"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#i18"><param name="Name" value="Light"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setVerboseMode"><param name="Name" value="setVerboseMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e18"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="setViewDirection"><param name="Name" value="setViewDirection"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i12"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html"><param name="Name" value="ShineWidget"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#k0"><param name="Name" value="setShine"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#i0"><param name="Name" value="setShininess"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#a0"><param name="Name" value="ShineWidget"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#a1"><param name="Name" value="shininess"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="shininess"><param name="Name" value="shininess"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classShineWidget.html#a1"><param name="Name" value="ShineWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="showAll"><param name="Name" value="showAll"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k6"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="showAllScene"><param name="Name" value="showAllScene"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i13"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="showEntireSceneForAll"><param name="Name" value="showEntireSceneForAll"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i11"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="sortBlendedList"><param name="Name" value="sortBlendedList"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#d10"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classStartWidget.html"><param name="Name" value="StartWidget"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStartWidget.html#b0"><param name="Name" value="mousePressEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStartWidget.html#b1"><param name="Name" value="paintEvent"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html"><param name="Name" value="StatusBar"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#i0"><param name="Name" value="copyToClipboard"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#b0"><param name="Name" value="createPopupMenu"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#e0"><param name="Name" value="printStatusMsg"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="statusBar"><param name="Name" value="statusBar"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#v0"><param name="Name" value="StatusBar"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html"><param name="Name" value="StatusBar"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#v0"><param name="Name" value="statusBar"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#i1"><param name="Name" value="writeAllToFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="structureChanged"><param name="Name" value="structureChanged"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#k1"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html"><param name="Name" value="Table"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i0"><param name="Name" value="addRow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#d0"><param name="Name" value="indexToCoordType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#d1"><param name="Name" value="indexToTransfType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i1"><param name="Name" value="removeCurrentRow"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#b0"><param name="Name" value="resizeEvent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#k0"><param name="Name" value="rowAndColChanged"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i2"><param name="Name" value="setCurrentValue"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#d2"><param name="Name" value="transfTypeToIndex"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i3"><param name="Name" value="updateItem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#k1"><param name="Name" value="validateAndSet"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html"><param name="Name" value="Texture"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a0"><param name="Name" value="decHowManyUsers"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a1"><param name="Name" value="fileName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a2"><param name="Name" value="GLTextureID"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a3"><param name="Name" value="howManyUsers"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a4"><param name="Name" value="incHowManyUsers"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a5"><param name="Name" value="isValid"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a6"><param name="Name" value="mipmapingEnabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a7"><param name="Name" value="operator="></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a8"><param name="Name" value="operator=="></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a9"><param name="Name" value="preview"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a10"><param name="Name" value="scaleMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a11"><param name="Name" value="setFileName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#d0"><param name="Name" value="setGLTextureID"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#d1"><param name="Name" value="setHowManyUsers"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a12"><param name="Name" value="setMipmapEnabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a13"><param name="Name" value="setPreview"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a14"><param name="Name" value="setScaleMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTexture.html#a15"><param name="Name" value="Texture"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="textureList"><param name="Name" value="textureList"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#v6"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html"><param name="Name" value="TextureManager"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e4"><param name="Name" value="autoRemoveUnusedTextures"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e8"><param name="Name" value="howManyTexturesLoaded"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#h6"><param name="Name" value="makeCurrent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e11"><param name="Name" value="safeMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e12"><param name="Name" value="safeSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e13"><param name="Name" value="setAutoRemoveUnusedTextures"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e14"><param name="Name" value="setComboBox"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e15"><param name="Name" value="setHostFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e16"><param name="Name" value="setSafeMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e17"><param name="Name" value="setSafeSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e18"><param name="Name" value="setVerboseMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#v6"><param name="Name" value="textureList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#h8"><param name="Name" value="updateComboBox"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e19"><param name="Name" value="verboseMode"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureParams.html"><param name="Name" value="TextureParams"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureParams.html#a27"><param name="Name" value="TextureParams"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="toggleVisibility"><param name="Name" value="toggleVisibility"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#i1"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="transfTypeToIndex"><param name="Name" value="transfTypeToIndex"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#d2"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateCoordsModifier.html"><param name="Name" value="TranslateCoordsModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateCoordsModifier.html#a3"><param name="Name" value="TranslateCoordsModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateLightDirModifier.html"><param name="Name" value="TranslateLightDirModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateLightDirModifier.html#a4"><param name="Name" value="TranslateLightDirModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateLightPosModifier.html"><param name="Name" value="TranslateLightPosModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateLightPosModifier.html#a4"><param name="Name" value="TranslateLightPosModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateModifier.html"><param name="Name" value="TranslateModifier"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTranslateModifier.html#a3"><param name="Name" value="TranslateModifier"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="turnAllLights"><param name="Name" value="turnAllLights"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i14"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="undoAllAndClose"><param name="Name" value="undoAllAndClose"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialEditor.html#k0"><param name="Name" value="MaterialEditor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="undoMaterials"><param name="Name" value="undoMaterials"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#i0"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="updateColorForLight"><param name="Name" value="updateColorForLight"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellFrame.html#i15"><param name="Name" value="CellFrame"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="updateComboBox"><param name="Name" value="updateComboBox"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#h8"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="updateGLMatSyntaxText"><param name="Name" value="updateGLMatSyntaxText"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classMaterialWidget.html#k16"><param name="Name" value="MaterialWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="updateItem"><param name="Name" value="updateItem"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#i3"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="updateLightColor"><param name="Name" value="updateLightColor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i14"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="userSelected"><param name="Name" value="userSelected"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#k2"><param name="Name" value="Workspace"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="validateAndSet"><param name="Name" value="validateAndSet"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTable.html#k1"><param name="Name" value="Table"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="value"><param name="Name" value="value"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classFloatSpinBox.html#a2"><param name="Name" value="FloatSpinBox"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="verboseMode"><param name="Name" value="verboseMode"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classTextureManager.html#e19"><param name="Name" value="TextureManager"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="viewDirChanged"><param name="Name" value="viewDirChanged"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k7"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="viewProjChanged"><param name="Name" value="viewProjChanged"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k8"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="viewTypeChanged"><param name="Name" value="viewTypeChanged"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCellWidget.html#k9"><param name="Name" value="CellWidget"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html"><param name="Name" value="Workspace"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#a0"><param name="Name" value="currentFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#a1"><param name="Name" value="disableCameraInCurrentFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#k0"><param name="Name" value="modifierChangedFromCellFrame"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i0"><param name="Name" value="refresh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#e0"><param name="Name" value="resetAllFrames"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i1"><param name="Name" value="setCameraIsMovingForAll"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i2"><param name="Name" value="setLight"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i3"><param name="Name" value="setLightingEnabled"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i4"><param name="Name" value="setLightsList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i5"><param name="Name" value="setModifier"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i6"><param name="Name" value="setMultiPolyh"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i8"><param name="Name" value="setSelected"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i11"><param name="Name" value="showEntireSceneForAll"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#k1"><param name="Name" value="structureChanged"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#i14"><param name="Name" value="updateLightColor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classWorkspace.html#k2"><param name="Name" value="userSelected"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="writeAllToFile"><param name="Name" value="writeAllToFile"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classStatusBar.html#i1"><param name="Name" value="StatusBar"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="~Light"><param name="Name" value="~Light"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classLight.html#a18"><param name="Name" value="Light"></OBJECT>
+</UL>

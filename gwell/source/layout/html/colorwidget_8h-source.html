@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: colorwidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>colorwidget.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef COLORWIDGET_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define COLORWIDGET_H</span>
+00010 <span class="preprocessor"></span>
+00011 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qcolordialog.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qslider.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qtoolbutton.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qvalidator.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00019 
+00020 <span class="preprocessor">#include &lt;GL/gl.h&gt;</span>
+00021 
+00022 
+<a name="l00023"></a><a class="code" href="classColorWidget.html">00023</a> <span class="keyword">class </span><a class="code" href="classColorWidget.html">ColorWidget</a> : <span class="keyword">public</span> QGroupBox
+00024 {
+00025   Q_OBJECT
+00026 
+00027   <span class="keyword">public</span>:
+00028     <a class="code" href="classColorWidget.html">ColorWidget</a>(QWidget *parent, QString title, QColor color = QColor(255,255,255), <span class="keywordtype">int</span> alpha=255);
+00029     ~<a class="code" href="classColorWidget.html">ColorWidget</a>();
+00030     QColor color();
+00031     <span class="keywordtype">int</span> alpha();
+00032 
+00033   <span class="keyword">private</span>:
+00034     QColor  _color;
+00035     <span class="keywordtype">int</span>     _alpha;
+00036 
+00037     QColorDialog *colorDialog;
+00038     QToolButton  *colorButton;    
+00039     QSlider *rSlide; QLineEdit *rEdit;
+00040     QSlider *gSlide; QLineEdit *gEdit;
+00041     QSlider *bSlide; QLineEdit *bEdit;
+00042     QSlider *aSlide; QLineEdit *aEdit;
+00043     QGridLayout *grid;
+00044     QIntValidator *intValidator;
+00045     <span class="keywordtype">void</span> blockEditSignals(<span class="keywordtype">bool</span> yes);
+00046     <span class="keywordtype">void</span> blockSliderSignals(<span class="keywordtype">bool</span> yes);
+00047 
+00048   <span class="keyword">public</span> slots:
+00049     <span class="keywordtype">void</span> setColor( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha=255 );
+00050     <span class="keywordtype">void</span> setColor( <span class="keyword">const</span> GLfloat* GLcolor4fv );
+00051 
+00052   <span class="keyword">private</span> slots:
+00053     <span class="keywordtype">void</span> setColorFromSliders(<span class="keywordtype">int</span> unused);
+00054     <span class="keywordtype">void</span> setSlidersFromEdits(<span class="keyword">const</span> QString&amp; unused);    
+00055     <span class="keywordtype">void</span> setAlpha(<span class="keywordtype">int</span> value);
+00056     <span class="keywordtype">void</span> setAlpha(<span class="keyword">const</span> QString&amp; alpha);
+00057     <span class="keywordtype">void</span> openColorDialog();
+00058 
+00059   signals:
+00060     <span class="keywordtype">void</span> colorChanged( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha );
+00061 };
+00062 
+00063 
+00064 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

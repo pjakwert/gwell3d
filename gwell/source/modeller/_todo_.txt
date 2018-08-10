@@ -1,0 +1,68 @@
+TO CO NALE¯Y DODAÆ, POPRAWIÆ, PRZEMY¦LEÆ
+
+
+********************************************* DODAÆ ****************************************************
+ViElemePolyhExt:
+      - uzupe³niæ metodê WriteDescriptionTo() o zapis parametrów tekstury
+      
+const.h:
+      - dodaæ sta³e znaczniki XML dla zapisu tekstury
+
+OptionsWidget:
+      - ustawienie ¶cie¿ek, kolorów, miejsc po przecinku przez usera i zapisanie wszystkiego (QSettings)
+
+TextureWidget:
+      - Layout.
+
+MaterialWidget:
+      - Layout!
+
+ModifyWidget:
+      - zadanie przeskalowania do porz±danych rozmiarów - dodaæ pro¶bê o ENTER
+      - modyfikacja grupy obiektów z palca
+      - modyfikacja IndivCoord
+      - ToolTips modyfikatorów musz± zawieraæ informacje o klawiszach ALT, SHIFT, ...
+      - przy zmianie nazwy obiektu, sprawd¼ czy jest unikalna (to samo w ObjectExplorer)
+      
+CellFrame:
+      - zaznaczanie wymiarów na siatce
+      - Grid 3D
+      - PopupMenu dla lewego klawisza (modyfikatory, materia³, textura, delete, clipboard)
+      
+ObjectExplorer:
+      - M_LINK
+      - edycja materia³u/tekstury (wywo³anie MaterialEditor)
+      - edycja nazw obiektów
+
+            
+      
+********************************************* POPRAWIÆ **************************************************
+CellFrame:
+      - algorytm showFullScene() ( taki sam algorytm stosowany jest w Workspace::setMultiPolyh() )
+      - dopasowywaæ dynamicznie sceneRadius
+      - M_ROTATE prostopadle do kamery
+      - osie wspó³rzêdnych obiektów odpowiednio przeskalowane
+      - problem z czcionk± w drawInfo() (wina QT?)
+
+GLMenuItem:
+      - odpowiednie skalowanie
+
+MaterialEditor:
+      - ENTER zamyka dialog - NIE TAK MA BYÆ
+      
+
+********************************************* PRZEMY¦LEÆ ***********************************************
+TextureWidget:
+      no i jak bêdzie z przechowywaniem tekstur, wykorzystywaniem ju¿ za³adowanych, itd...
+
+GENERALNIE:
+      - dodaæ UNDO - no w³a¶nie, undo ...
+      - dodaæ Clipboard - bardzo przydatne
+      - zmiana nazwy MainObject
+      - ¶wiat³a
+      - mg³a
+      - ³adowanie plików MPH ( !!! )
+      - wewnêtrzny edytor kinematyki dla obiektów z³o¿onych     
+      - QTranslator
+      - ³adowanie plików 3DS (dodatkowy edytor/konwerter)
+      - tryb demo (kamera, kinematyka ?)

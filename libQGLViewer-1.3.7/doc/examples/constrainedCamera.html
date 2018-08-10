@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer constrainedCamera example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The constrainedCamera example</h1>
+<center>
+  <img src="../images/constrainedCamera.jpg" width="300" height="200" alt="constrainedCamera"/>
+</center>
+
+<p>
+ Constraints applied on the Camera Frame to limit its translation and/or rotation.
+</p>
+<p>
+ Try the different possible constraints using the T (translate) and R (rotate) keys. G and D change
+ the constraint directions. Press Space to change the coordinate system (World or Camera) which
+ defines the constraint directions.
+</p>
+<p>
+ Note that in order to apply a constraint to a camera, you need to apply it to the camera()-&gt;frame().
+</p>
+
+
+<h2>constrainedCamera.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">protected</span>:
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+  <span class="key">virtual </span><span class="typ">void </span>keyPressEvent(QKeyEvent *);
+
+  <span class="typ">void </span>displayText();
+  <span class="typ">void </span>displayType(<span class="typ">const </span>qglviewer::AxisPlaneConstraint::Type type, <span class="typ">const int </span>x, <span class="typ">const int </span>y, <span class="typ">const char </span>c);
+  <span class="typ">void </span>displayDir(<span class="typ">const unsigned short </span>dir, <span class="typ">const int </span>x, <span class="typ">const int </span>y, <span class="typ">const char </span>c);
+
+<span class="key">private</span>:
+  <span class="typ">int </span>transDir;
+  <span class="typ">int </span>rotDir;
+
+  <span class="typ">void </span>changeConstraint();
+  qglviewer::AxisPlaneConstraint* constraints[<span class="num">2</span>];
+  <span class="typ">unsigned short </span>activeConstraint;
+};</pre>
+
+
+<h2>constrainedCamera.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;constrainedCamera.h&quot;</span><span class="dir">
+</span>
+<span class="key">using namespace </span>qglviewer;
+<span class="key">using namespace </span>std;
+
+<span class="typ">static </span>AxisPlaneConstraint::Type nextTranslationConstraintType(<span class="typ">const </span>AxisPlaneConstraint::Type&amp; type)
+{
+  <span class="key">switch </span>(type)
+    {
+    <span class="key">case </span>AxisPlaneConstraint::FREE  : <span class="key">return </span>AxisPlaneConstraint::PLANE; <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::PLANE : <span class="key">return </span>AxisPlaneConstraint::AXIS;  <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::AXIS  : <span class="key">return </span>AxisPlaneConstraint::FORBIDDEN;  <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::FORBIDDEN   : <span class="key">return </span>AxisPlaneConstraint::FREE; <span class="key">break</span>;
+    <span class="key">default </span>: <span class="key">return </span>AxisPlaneConstraint::FREE;
+    }
+}
+
+<span class="typ">static </span>AxisPlaneConstraint::Type nextRotationConstraintType(<span class="typ">const </span>AxisPlaneConstraint::Type&amp; type)
+{
+  <span class="key">switch </span>(type)
+    {
+    <span class="key">case </span>AxisPlaneConstraint::FREE  : <span class="key">return </span>AxisPlaneConstraint::AXIS; <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::PLANE : <span class="key">return </span>AxisPlaneConstraint::FREE; <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::AXIS  : <span class="key">return </span>AxisPlaneConstraint::FORBIDDEN;  <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::FORBIDDEN   : <span class="key">return </span>AxisPlaneConstraint::FREE; <span class="key">break</span>;
+    <span class="key">default </span>: <span class="key">return </span>AxisPlaneConstraint::FREE;
+    }
+}
+
+<span class="typ">void </span>Viewer::changeConstraint()
+{
+  <span class="typ">unsigned short </span>previous = activeConstraint;
+  activeConstraint = (activeConstraint+<span class="num">1</span>)%<span class="num">2</span>;
+
+  constraints[activeConstraint]-&gt;setTranslationConstraintType(constraints[previous]-&gt;translationConstraintType());
+  constraints[activeConstraint]-&gt;setTranslationConstraintDir (constraints[previous]-&gt;translationConstraintDir());
+  constraints[activeConstraint]-&gt;setRotationConstraintType   (constraints[previous]-&gt;rotationConstraintType());
+  constraints[activeConstraint]-&gt;setRotationConstraintDir    (constraints[previous]-&gt;rotationConstraintDir());
+
+  camera()-&gt;frame()-&gt;setConstraint(constraints[activeConstraint]);
+}
+
+<span class="typ">void </span>Viewer::init()
+{
+  restoreFromFile();
+
+  constraints[<span class="num">0</span>] = <span class="key">new </span>WorldConstraint();
+
+  <span class="com">// Note that a CameraConstraint(camera) would produce the same results:
+</span>  <span class="com">// A CameraConstraint is a LocalConstraint when applied to the camera frame !
+</span>  constraints[<span class="num">1</span>] = <span class="key">new </span>LocalConstraint();
+
+  transDir = <span class="num">0</span>;
+  rotDir   = <span class="num">0</span>;
+  activeConstraint = <span class="num">0</span>;
+
+  camera()-&gt;frame()-&gt;setConstraint(constraints[activeConstraint]);
+
+  setDrawAxis();
+
+  help();
+}
+
+<span class="typ">void </span>Viewer::draw()
+{
+  <span class="typ">const float </span>nbSteps = <span class="num">500.0</span>;
+  glBegin(GL_QUAD_STRIP);
+  <span class="key">for </span>(<span class="typ">float </span>i=<span class="num">0</span>; i&lt;nbSteps; ++i)
+    {
+      <span class="typ">float </span>ratio = i/nbSteps;
+      <span class="typ">float </span>angle = <span class="num">21.0</span>*ratio;
+      <span class="typ">float </span>c = cos(angle);
+      <span class="typ">float </span>s = sin(angle);
+      <span class="typ">float </span>r1 = <span class="num">1.0 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>r2 = <span class="num">0.8 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>alt = ratio <span class="num">- 0.5</span>;
+      <span class="typ">const float </span>nor = .<span class="num">5</span>;
+      <span class="typ">const float </span>up = sqrt(<span class="num">1.0</span>-nor*nor);
+      glColor3f(<span class="num">1</span>-ratio, .<span class="num">2 </span>, ratio);
+      glNormal3f(nor*c, up, nor*s);
+      glVertex3f(r1*c, alt, r1*s);
+      glVertex3f(r2*c, alt+<span class="num">0.05</span>, r2*s);
+    }
+  glEnd();
+
+  displayText();
+}
+
+<span class="typ">void </span>Viewer::keyPressEvent(QKeyEvent *e)
+{
+  <span class="key">switch </span>(e-&gt;key())
+    {
+    <span class="key">case </span>Qt::Key_G : transDir = (transDir+<span class="num">1</span>)%<span class="num">3</span>; <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_D : rotDir   = (rotDir+<span class="num">1</span>)%<span class="num">3</span>;   <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_Space: changeConstraint();     <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_T :
+      constraints[activeConstraint]-&gt;setTranslationConstraintType(nextTranslationConstraintType(constraints[activeConstraint]-&gt;translationConstraintType()));
+      <span class="key">break</span>;
+    <span class="key">case </span>Qt::Key_R :
+      constraints[activeConstraint]-&gt;setRotationConstraintType(nextRotationConstraintType(constraints[activeConstraint]-&gt;rotationConstraintType()));
+      <span class="key">break</span>;
+    <span class="key">default</span>:
+      QGLViewer::keyPressEvent(e);
+    }
+
+  Vec dir(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>);
+  dir[transDir] = <span class="num">1.0</span>;
+  constraints[activeConstraint]-&gt;setTranslationConstraintDir(dir);
+
+  dir = Vec(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>);
+  dir[rotDir] = <span class="num">1.0</span>;
+  constraints[activeConstraint]-&gt;setRotationConstraintDir(dir);
+
+  updateGL();
+}
+
+<span class="typ">void </span>Viewer::displayType(<span class="typ">const </span>AxisPlaneConstraint::Type type, <span class="typ">const int </span>x, <span class="typ">const int </span>y, <span class="typ">const char </span>c)
+{
+  <span class="typ">char </span>text[<span class="num">12</span>];
+  <span class="key">switch </span>(type)
+    {
+    <span class="key">case </span>AxisPlaneConstraint::FREE:  sprintf(text, <span class="str">&quot;FREE (%c)&quot;</span>, c);  <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::PLANE: sprintf(text, <span class="str">&quot;PLANE (%c)&quot;</span>, c); <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::AXIS:  sprintf(text, <span class="str">&quot;AXIS (%c)&quot;</span>, c);  <span class="key">break</span>;
+    <span class="key">case </span>AxisPlaneConstraint::FORBIDDEN:   sprintf(text, <span class="str">&quot;FORBIDDEN (%c)&quot;</span>, c);   <span class="key">break</span>;
+    }
+  drawText(x, y, text);
+}
+
+<span class="typ">void </span>Viewer::displayDir(<span class="typ">const unsigned short </span>dir, <span class="typ">const int </span>x, <span class="typ">const int </span>y, <span class="typ">const char </span>c)
+{
+  <span class="typ">char </span>text[<span class="num">6</span>];
+  <span class="key">switch </span>(dir)
+    {
+    <span class="key">case </span><span class="num">0</span>:  sprintf(text, <span class="str">&quot;X (%c)&quot;</span>, c);  <span class="key">break</span>;
+    <span class="key">case </span><span class="num">1</span>:  sprintf(text, <span class="str">&quot;Y (%c)&quot;</span>, c);  <span class="key">break</span>;
+    <span class="key">case </span><span class="num">2</span>:  sprintf(text, <span class="str">&quot;Z (%c)&quot;</span>, c);  <span class="key">break</span>;
+    }
+  drawText(x, y, text);
+}
+
+<span class="typ">void </span>Viewer::displayText()
+{
+  glColor3fv(foregroundColor().address());
+  glDisable(GL_LIGHTING);
+  drawText(<span class="num">10</span>,height()<span class="num">-30</span>, <span class="str">&quot;TRANSLATION :&quot;</span>);
+  displayDir(transDir, <span class="num">190</span>, height()<span class="num">-30</span>, <span class="str">'G'</span>);
+  displayType(constraints[activeConstraint]-&gt;translationConstraintType(), <span class="num">10</span>, height()<span class="num">-60</span>, <span class="str">'T'</span>);
+
+  drawText(width()<span class="num">-220</span>,height()<span class="num">-30</span>, <span class="str">&quot;ROTATION&quot;</span>);
+  displayDir(rotDir, width()<span class="num">-100</span>, height()<span class="num">-30</span>, <span class="str">'D'</span>);
+  displayType(constraints[activeConstraint]-&gt;rotationConstraintType(), width()<span class="num">-220</span>, height()<span class="num">-60</span>, <span class="str">'R'</span>);
+
+  <span class="key">switch </span>(activeConstraint)
+    {
+    <span class="key">case </span><span class="num">0 </span>: drawText(<span class="num">20</span>,<span class="num">20</span>, <span class="str">&quot;Constraint direction defined w/r to WORLD (SPACE)&quot;</span>); <span class="key">break</span>;
+    <span class="key">case </span><span class="num">1 </span>: drawText(<span class="num">20</span>,<span class="num">20</span>, <span class="str">&quot;Constraint direction defined w/r to CAMERA (SPACE)&quot;</span>); <span class="key">break</span>;
+    }
+}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;C o n s t r a i n e d C a m e r a&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;The camera frame can be constrained to limit the camera displacements.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Try the different translation (press &lt;b&gt;G&lt;/b&gt; and &lt;b&gt;T&lt;/b&gt;) and rotation &quot;</span>;
+  text += <span class="str">&quot;(&lt;b&gt;D&lt;/b&gt; and &lt;b&gt;R&lt;/b&gt;) constraints while moving the frame with the mouse. &quot;</span>;
+  text += <span class="str">&quot;The constraints can be defined with respect to various coordinates &quot;</span>;
+  text += <span class="str">&quot;systems : press &lt;b&gt;Space&lt;/b&gt; to switch.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;You can easily define your own constraints to create a specific camera constraint.&quot;</span>;
+  <span class="key">return </span>text;
+}
+</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;constrainedCamera.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer.
+</span>  Viewer v;
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  v.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;v);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: Workspace class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy Workspace</h1><code>#include &lt;<a class="el" href="workspace_8h-source.html">workspace.h</a>&gt;</code>
+<p>
+<a href="classWorkspace-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i0">refresh</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i1">setCameraIsMovingForAll</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i2">setLight</a> (<a class="el" href="classLight.html">Light</a> *light)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i3">setLightingEnabled</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i4">setLightsList</a> (QPtrList&lt; <a class="el" href="classLight.html">Light</a> &gt; *lightsList)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i5">setModifier</a> (MModifier *modifier)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i6">setMultiPolyh</a> (ViMultiPolyh *multiPolyh)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i7" doxytag="Workspace::setProjTypeForAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setProjTypeForAll</b> (qglviewer::Camera::Type type)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i8">setSelected</a> (QPtrList&lt; ViNTreeNode &gt; *selected)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i9" doxytag="Workspace::setViewTypeForAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setViewTypeForAll</b> (DrawMethod type)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i10" doxytag="Workspace::showAxisForAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>showAxisForAll</b> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i11">showEntireSceneForAll</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i12" doxytag="Workspace::showGridForAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>showGridForAll</b> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i13" doxytag="Workspace::showLightsForAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>showLightsForAll</b> (bool on)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#i14">updateLightColor</a> (GLenum, <a class="el" href="classLight.html">Light</a> *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i15" doxytag="Workspace::viewDirectionChangedForAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>viewDirectionChangedForAll</b> (int direction)</td></tr>
+
+<tr><td colspan=2><br><h2>Sygnały</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l0" doxytag="Workspace::mphStructureChanged" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>mphStructureChanged</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l1" doxytag="Workspace::setModifierFromCellFrame" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setModifierFromCellFrame</b> (MModifier::ModifierType mType)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l2" doxytag="Workspace::userSelectedObject" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>userSelectedObject</b> (QPtrList&lt; ViNTreeNode &gt; *selected)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="classCellFrame.html">CellFrame</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#a0">currentFrame</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#a1">disableCameraInCurrentFrame</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="Workspace::Workspace" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><b>Workspace</b> (QWidget *parent, const char *name=0, WFlags fl=0)</td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#e0">resetAllFrames</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Sloty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#k0">modifierChangedFromCellFrame</a> (MModifier::ModifierType mType)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#k1">structureChanged</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classWorkspace.html#k2">userSelected</a> (QPtrList&lt; ViNTreeNode &gt; *selected)</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="Workspace::grid" ></a>
+QGridLayout *&nbsp;</td><td class="memItemRight" valign=bottom><b>grid</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="Workspace::split3" ></a>
+QSplitter *&nbsp;</td><td class="memItemRight" valign=bottom><b>split3</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="Workspace::splitH" ></a>
+QSplitter *&nbsp;</td><td class="memItemRight" valign=bottom><b>splitH</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="Workspace::splitV" ></a>
+QSplitter *&nbsp;</td><td class="memItemRight" valign=bottom><b>splitV</b></td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v0" doxytag="Workspace::framesList" ></a>
+QPtrList&lt; <a class="el" href="classCellFrame.html">CellFrame</a> &gt;&nbsp;</td><td class="memItemRight" valign=bottom><b>framesList</b></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa reprezentuje cały obszar roboczy. Zawiera wszystkie okna edycyjne aplikacji. 
+<p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="a0" doxytag="Workspace::currentFrame" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="classCellFrame.html">CellFrame</a> * Workspace::currentFrame           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca wskaźnik do widoku aktualnie posiadającegu focus lub 0L, gdy żaden widok go nie posiada.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="Workspace::disableCameraInCurrentFrame" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::disableCameraInCurrentFrame           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wyłącza kamerę dla aktywnego widoku. 
+<p>
+Here is the call graph for this function:<p><center><img src="classWorkspace_a1_cgraph.png" border="0" usemap="#classWorkspace_a1_cgraph_map" alt=""></center>
+<map name="classWorkspace_a1_cgraph_map">
+<area href="classWorkspace.html#a0" shape="rect" coords="337,7,500,30" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="k0" doxytag="Workspace::modifierChangedFromCellFrame" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::modifierChangedFromCellFrame           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">MModifier::ModifierType&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>mType</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Widok wysyła sygnał o zmianie modyfikatora.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i0" doxytag="Workspace::refresh" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::refresh           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda odświeża zawartość wszystkich widoków.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e0" doxytag="Workspace::resetAllFrames" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::resetAllFrames           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia początkowe wartości wszystkim widokom.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i1" doxytag="Workspace::setCameraIsMovingForAll" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setCameraIsMovingForAll           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda kopiuje ustawienia z globalnego menu do wszystkich widoków.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i2" doxytag="Workspace::setLight" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setLight           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classLight.html">Light</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>light</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia oknom właściwości pojedynczego, edytowanego właśnie światła.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i3" doxytag="Workspace::setLightingEnabled" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setLightingEnabled           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza oświetlenie dla wszystkich widoków.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i4" doxytag="Workspace::setLightsList" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setLightsList           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPtrList&lt; <a class="el" href="classLight.html">Light</a> &gt; *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>lightsList</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia wskaźnik statyczny do listy świateł, po czym ustawia wszystkim oknom edycyjnym te światła.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i5" doxytag="Workspace::setModifier" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setModifier           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">MModifier *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>modifier</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia widokom dany modyfikator.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i6" doxytag="Workspace::setMultiPolyh" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setMultiPolyh           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">ViMultiPolyh *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>multiPolyh</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia bryłę złożoną do wyświetlania dla wszystkich widoków edycyjnych. Jeżeli nowo wstawiany obiekt nie mieści się w którymś widoku, widokowi temu ustawia się nowy promień sceny.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i8" doxytag="Workspace::setSelected" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::setSelected           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>selectedList</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia listę wybranych obiektów.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i11" doxytag="Workspace::showEntireSceneForAll" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::showEntireSceneForAll           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zadaje pokazanie całej sceny wszystkim widokom.     </td>
+  </tr>
+</table>
+<a class="anchor" name="k1" doxytag="Workspace::structureChanged" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::structureChanged           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wywoływana przy zmianie struktury obiektu złożonego w <a class="el" href="classCellFrame.html">CellFrame</a> przez np. usunięcie elementu. Emitowany jest sygnał globalny mphStructureChanged(), obsługuje go <a class="el" href="classObjectsWidget.html">ObjectsWidget</a> do odrysowania drzewa obiektów.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i14" doxytag="Workspace::updateLightColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::updateLightColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>GLcolorChanged</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="classLight.html">Light</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>light</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda odświeża dany kolor danego światła wszystkim widokom.     </td>
+  </tr>
+</table>
+<a class="anchor" name="k2" doxytag="Workspace::userSelected" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Workspace::userSelected           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QPtrList&lt; ViNTreeNode &gt; *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>selectedList</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private, slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda wysyła sygnał z elementem zaznaczonym w widoku.     </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="workspace_8h-source.html">workspace.h</a><li>moc_workspace.cpp<li>workspace.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:30 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

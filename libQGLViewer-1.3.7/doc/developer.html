@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>QGLViewer - Developer's page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="index.html"><b>Home</b></a></td>
+     <td align="center"><a href="refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="download.html"><b>Download</b></a></td>
+     <td align="center"><a href="examples/index.html"><b>Examples</b></a></td>
+     <td align="center" class="qindexHL"><b>Developer</b></td>
+   </tr>
+</table>
+
+<h1>libQGLViewer - Developer</h1>
+<center>
+<a href="changeLog.html">ChangeLog</a> &nbsp; &nbsp;
+<a href="http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/CVS/chrono.html">CVS history</a>
+</center>
+
+
+<h2>Get on board !</h2>
+<p>
+libQGLViewer is distributed under the terms of the GNU-GPL license. The entire source code is available for
+<a href="download.html">download</a>, and can freely be edited. There is no (not yet?)
+anonymous CVS server, but if you want to participate into the project, just send me an <a
+href="mailto:Gilles.Debunne at imag dot fr?Subject=QGLViewer developpement">e-mail</a> with your code and
+an explanation, I'll do the merge.
+</p><p>
+Please don't hesitate to ask me if you are unsure about what the library does, why things are
+coded as they are, which features are in the todo list and which are not scheduled.
+</p>
+
+<h2>Bugs</h2>
+<ul>
+<li>No bug is currently reported.
+<a href="mailto:Gilles.Debunne at imag dot fr?Subject=QGLViewer bug!">Send a bug report</a> if you find one.</li>
+</ul>
+
+<h2>Todo list for next release</h2>
+<ul>
+<li>KFI : smarter update with pointer, problem at first point</li>
+<li>Shared context constructor</li>
+<li>triSetConstraint only as an example + debug</li>
+<li>Message when XML cannot be loaded or has nan inside.</li>
+<li>Save to File problem : closeEvent and so on, embedded widgets</li>
+<li>Z buffer as texture, resizeGL allocates with new size</li>
+<li>Text displayed for a few seconds, under background : camera paths defined/stop/play/clear...</li>
+<li>Record new key/mouse bindings for help window.</li>
+<li>DrawUtils class : axis, grid, bbox, circle, sphere, text, color, ...</li>
+<li>simplified selection (from select example) : not that clear</li>
+</ul>
+
+<h2>Future Works</h2>
+<ul>
+<li>shortcuts and mouse bindings editor.</li>
+<li>Emulate three mouse buttons on Mac architecture.</li>
+<li>KeyFrameInterpolator : closedPath, deleteKF, insertKF.</li>
+<li>KeyFrameInterpolator should propose an easy-in easy-out option</li>
+<li>Mouse cursors according to mode.</li>
+<li>keyframe path optimal update using sender().</li>
+<li>Camera constraints display with visual hints.</li>
+<li>Add a Camera::projectionMatrix_ to speed up projectedCoordinatesOf().</li>
+<li>GLU (Un)project buffer : better performance</li>
+<li>Q_OS (Qt>3) in config.h.</li>
+<li>drawTextForAWhile.</li>
+<li>Rename the axis.</li>
+<li>Help window title configuration : key and mouse tabs, registerNewSortcut()</li>
+<li>CONFIG=prl.</li>
+<li>Vec : operator const float*() const { return &amp;x; }; replaced by &amp;</li>
+<li>Replace 0x0f00 by Qt::KeyButtonMask in qglviewer.cpp (patch for Qt &lt; 3.0).</li>
+<li>New constructor with context.</li>
+<li>withConstraint for mouse bindings</li>
+<li>Better drawLight(), add a drawFrameHierarchy.</li>
+<li>Select image size when saving snapshot, select bg color, pure alpha, no fps.</li>
+<li>Actual Camera Field Of View in 'C' mode</li>
+</ul>
+
+<h2>Documentation</h2>
+<ul>
+<li>Example and home page documentation with doxygen, if possible (and as good)</li>
+</ul>
+
+<h2>New examples</h2>
+<ul>
+<li>Planetarium to illustrate frame hierarchy.</li>
+<li>Shadow maps, Quarto</li>
+<li>Contrib section.</li>
+</ul>
+
+<h2>Long term</h2>
+<ul>
+<li>Event recorder.</li>
+<li>KeyFrame path editor.</li>
+<li>A shortcut editor window.</li>
+<li>Overlays ??</li>
+</ul>
+
+<h2>Code cleaning</h2>
+<ul>
+<li>Check all new are deleted</li>
+<li>Check if there are memory leaks.</li>
+<li>Check public/protected, slots, double const pointers, virtual.</li>
+<li>Define Copy constructors and = operators ?</li>
+<li>Class state output as a stream. QPROPERTY ?</li>
+</ul>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="images/css.png" alt="Valid CSS!" width="88" height="31" border="0"/></a>
+  <i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body></html>

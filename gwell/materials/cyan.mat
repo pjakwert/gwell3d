@@ -1,0 +1,7 @@
+<Material materialName="cyan">
+ <ambientColor alpha="1" blue="0.109804" red="0.192157" green="0.2" />
+ <diffuseColor alpha="1" blue="0.486275" red="0.121569" green="0.552941" />
+ <specularColor alpha="1" blue="0.0784314" red="0.0784314" green="0.0784314" />
+ <emissionColor alpha="1" blue="0.207843" red="0.231373" green="0.152941" />
+ <shininess shininess="0" />
+</Material>

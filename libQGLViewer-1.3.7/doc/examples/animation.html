@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer animation example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The animation example</h1>
+<center>
+  <img src="../images/animation.jpg" width="300" height="200" alt="animation"/>
+</center>
+
+<p>
+ The <code>animate()</code> function illustrated by a water particle simulation.
+</p>
+<p>
+ When animation is activated (the Return key toggles animation), the <code>animate()</code> and
+ then the <code>draw()</code> functions are called in an infinite loop.
+</p>
+<p>
+ You can tune the frequency of your animation (default is 25Hz) using
+ <code>setAnimationInterval()</code>. The frame rate will then be fixed, provided that your
+ animation loop function is fast enough.
+</p>
+
+
+<h2>animation.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Particle
+{
+<span class="key">public </span>:
+  Particle();
+
+  <span class="typ">void </span>init();
+  <span class="typ">void </span>draw();
+  <span class="typ">void </span>animate();
+
+<span class="key">private </span>:
+  qglviewer::Vec speed_, pos_;
+  <span class="typ">int </span>age_, ageMax_;
+};
+
+
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span><span class="typ">void </span>animate();
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+
+<span class="key">private</span>:
+  <span class="typ">int </span>nbPart_;
+  Particle* particle_;
+};
+</pre>
+
+
+<h2>animation.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;animation.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;math.h&gt;
+</span><span class="dir">#include &lt;stdlib.h&gt; </span><span class="com">// RAND_MAX
+</span><span class="dir"></span>
+<span class="key">using namespace </span>qglviewer;
+<span class="key">using namespace </span>std;
+
+<span class="com">///////////////////////   V i e w e r  ///////////////////////
+</span><span class="typ">void </span>Viewer::init()
+{
+  restoreFromFile();
+  glDisable(GL_LIGHTING);
+  nbPart_ = <span class="num">2000</span>;
+  particle_ = <span class="key">new </span>Particle[nbPart_];
+  glPointSize(<span class="num">3.0</span>);
+  setDrawGrid();
+  help();
+  startAnimation();
+}
+
+<span class="typ">void </span>Viewer::draw()
+{
+  glBegin(GL_POINTS);
+  <span class="key">for </span>(<span class="typ">int </span>i=<span class="num">0</span>; i&lt;nbPart_; i++)
+    particle_[i].draw();
+  glEnd();
+}
+
+<span class="typ">void </span>Viewer::animate()
+{
+  <span class="key">for </span>(<span class="typ">int </span>i=<span class="num">0</span>; i&lt;nbPart_; i++)
+    particle_[i].animate();
+}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;A n i m a t i o n&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;Use the &lt;i&gt;animate()&lt;/i&gt; function to implement the animation part of your &quot;</span>;
+  text += <span class="str">&quot;application. Once the animation is started, &lt;i&gt;animate()&lt;/i&gt; and &lt;i&gt;draw()&lt;/i&gt; &quot;</span>;
+  text += <span class="str">&quot;are called in an infinite loop, at a frequency that can be fixed.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Press &lt;b&gt;Return&lt;/b&gt; to start/stop the animation.&quot;</span>;
+  <span class="key">return </span>text;
+}
+
+<span class="com">///////////////////////   P a r t i c l e   ///////////////////////////////
+</span>
+Particle::Particle()
+{
+  init();
+}
+
+<span class="typ">void </span>Particle::animate()
+{
+  speed_.z -= <span class="num">0.05</span>;
+  pos_     += <span class="num">0.1 </span>* speed_;
+
+  <span class="key">if </span>(pos_.z &lt; <span class="num">0.0</span>)
+    {
+      speed_.z = <span class="num">-0.8</span>*speed_.z;
+      pos_.z = <span class="num">0.0</span>;
+    }
+
+  <span class="key">if </span>(++age_ == ageMax_)
+    init();
+}
+
+<span class="typ">void </span>Particle::draw()
+{
+  glColor3f(age_/(<span class="typ">float</span>)ageMax_, age_/(<span class="typ">float</span>)ageMax_, <span class="num">1.0</span>);
+  glVertex3fv(pos_.address());
+}
+
+
+<span class="typ">void </span>Particle::init()
+{
+  pos_ = Vec(<span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">0.0</span>);
+  <span class="typ">float </span>angle = <span class="num">2.0 </span>* M_PI * rand() / RAND_MAX;
+  <span class="typ">float </span>norm  = <span class="num">0.04 </span>* rand() / RAND_MAX;
+  speed_ = Vec(norm*cos(angle), norm*sin(angle), rand() / <span class="key">static_cast</span>&lt;<span class="typ">float</span>&gt;(RAND_MAX) );
+  age_ = <span class="num">0</span>;
+  ageMax_ = <span class="num">50 </span>+ <span class="key">static_cast</span>&lt;<span class="typ">int</span>&gt;(<span class="num">100.0 </span>* rand() / RAND_MAX);
+}
+</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;animation.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer.
+</span>  Viewer v;
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  v.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;v);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

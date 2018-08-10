@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: Texture class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy Texture</h1><code>#include &lt;<a class="el" href="texture_8h-source.html">texture.h</a>&gt;</code>
+<p>
+<a href="classTexture-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="Texture::decHowManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>decHowManyUsers</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="Texture::fileName" ></a>
+const QString &amp;&nbsp;</td><td class="memItemRight" valign=bottom><b>fileName</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="Texture::GLTextureID" ></a>
+GLuint&nbsp;</td><td class="memItemRight" valign=bottom><b>GLTextureID</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="Texture::howManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>howManyUsers</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a4" doxytag="Texture::incHowManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>incHowManyUsers</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a5" doxytag="Texture::isValid" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>isValid</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a6" doxytag="Texture::mipmapingEnabled" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>mipmapingEnabled</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a7" doxytag="Texture::operator=" ></a>
+<a class="el" href="classTexture.html">Texture</a> &amp;&nbsp;</td><td class="memItemRight" valign=bottom><b>operator=</b> (<a class="el" href="classTexture.html">Texture</a> &amp;)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a8" doxytag="Texture::operator==" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>operator==</b> (<a class="el" href="classTexture.html">Texture</a> &amp;)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a9" doxytag="Texture::preview" ></a>
+QPixmap *&nbsp;</td><td class="memItemRight" valign=bottom><b>preview</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a10" doxytag="Texture::scaleMode" ></a>
+QImage::ScaleMode&nbsp;</td><td class="memItemRight" valign=bottom><b>scaleMode</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a11" doxytag="Texture::setFileName" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>setFileName</b> (const QString &amp;fileName)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a12" doxytag="Texture::setMipmapEnabled" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setMipmapEnabled</b> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a13" doxytag="Texture::setPreview" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setPreview</b> (QPixmap *pixmap)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a14" doxytag="Texture::setScaleMode" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setScaleMode</b> (const QImage::ScaleMode mode)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTexture.html#a15">Texture</a> (QString fileName=QString::null, QImage::ScaleMode scaleMode=QImage::ScaleFree, bool mipmapingEnabled=true, GLuint GLTextureID=0, int howManyUsers=0, QPixmap *preview=0L)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="d0" doxytag="Texture::setGLTextureID" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setGLTextureID</b> (GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="d1" doxytag="Texture::setHowManyUsers" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setHowManyUsers</b> (int howMany)</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="Texture::_fileName" ></a>
+QString&nbsp;</td><td class="memItemRight" valign=bottom><b>_fileName</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="Texture::_GLTextureID" ></a>
+GLuint&nbsp;</td><td class="memItemRight" valign=bottom><b>_GLTextureID</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="Texture::_howManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>_howManyUsers</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="Texture::_isValid" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_isValid</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r4" doxytag="Texture::_mipmapEnabled" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_mipmapEnabled</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r5" doxytag="Texture::_preview" ></a>
+QPixmap *&nbsp;</td><td class="memItemRight" valign=bottom><b>_preview</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r6" doxytag="Texture::_scaleMode" ></a>
+QImage::ScaleMode&nbsp;</td><td class="memItemRight" valign=bottom><b>_scaleMode</b></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+class: Texture (.h)<p>
+klasa opisuje teksturę przeciążone są operatory przypisania i porównania 
+<p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="a15" doxytag="Texture::Texture" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Texture::Texture           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QString&nbsp;</td>
+          <td class="mdname" nowrap> <em>fileName</em> = <code>QString::null</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>QImage::ScaleMode&nbsp;</td>
+          <td class="mdname" nowrap> <em>scaleMode</em> = <code>QImage::ScaleFree</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>mipmapingEnabled</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>GLuint&nbsp;</td>
+          <td class="mdname" nowrap> <em>GLTextureID</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>howManyUsers</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>QPixmap *&nbsp;</td>
+          <td class="mdname" nowrap> <em>preview</em> = <code>0L</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<ul>
+<li>nie porównuje pól howManyUsers (ale przepisuje je) </li></ul>
+
+<p>
+Here is the call graph for this function:<p><center><img src="classTexture_a15_cgraph.png" border="0" usemap="#classTexture_a15_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="texture_8h-source.html">texture.h</a><li>texture.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:06 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

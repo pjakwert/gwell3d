@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: Graph Legend</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Legenda wykresu</h1>Ta strona wyjaśnia jak interpretować wykresy, które są wygenerowane przez doxygen.<p>
+Rozważ następujący przykład: <pre><div class="fragment"><span class="comment">/*! Klasa Niewidzialna z powodu okrojenia */</span>
+<span class="keyword">class </span>Niewidzialna { };
+<span class="comment"></span>
+<span class="comment">/*! Klasa Okrojona, relacja dziedziczenia jest ukryta */</span>
+<span class="keyword">class </span>Okrojona : <span class="keyword">public</span> Niewidzialna { };
+
+<span class="comment">/* Klasa nie udokumentowana komentarzami doxygen */</span>
+<span class="keyword">class </span>Nieudokumentowana { };
+<span class="comment"></span>
+<span class="comment">/*! Klasa, która jest dziedziczona publicznie */</span>
+<span class="keyword">class </span>PublicznaBaza : <span class="keyword">public</span> Okrojona { };
+<span class="comment"></span>
+<span class="comment">/*! Klasa, która jest dziedziczona przy użyciu dziedziczenia chronionego */</span>
+<span class="keyword">class </span>ChronionaBaza { };
+<span class="comment"></span>
+<span class="comment">/*! Klasa, która jest dziedziczona prywatnie */</span>
+<span class="keyword">class </span>PrywatnaBaza { };
+<span class="comment"></span>
+<span class="comment">/*! Klasa, która jest użyta przez klasę Dziedziczona */</span>
+<span class="keyword">class </span>Uzyta { };
+<span class="comment"></span>
+<span class="comment">/*! Superklasa, która dziedziczy kilka innych klas */</span>
+<span class="keyword">class </span>Dziedziczona : <span class="keyword">public</span> PublicznaBaza,
+                     <span class="keyword">protected</span> ChronionaBaza,
+                     <span class="keyword">private</span> PrywatnaBaza,
+                     <span class="keyword">public</span> Nieudokumentowana
+{
+  <span class="keyword">private</span>:
+    Uzyta *m_usedClass;
+};
+</div></pre>Jeśli znacznik <code>MAX_DOT_GRAPH_HEIGHT</code> w pliku konfiguracji jest ustawiony na 200, odniesie to rezultat w następującym wykresie:&lt;p&gt;<center><div align="center">
+<img src="graph_legend.png" alt="graph_legend.png">
+</div>
+</center> <p>
+Prostokąty w powyższym wykresie mają następujące znaczenie: <ul>
+<li>
+Wypełniony czarny prostokąt reprezentuje strukturę lub klasę dla której został wygenerowany wykres. </li>
+<li>
+Prostokąt z czarną obwolutą oznacza udokumentowaną strukturę lub klasę. </li>
+<li>
+Prostokąt z szarą obwolutą oznacza nieudokumentowaną strukturę lub klasę. </li>
+<li>
+Prostokąt z czerwoną obwolutą oznacza udokumentowaną strukturę lub klasę dla której nie są pokazane wszystkie relacje dziedziczenia/zawierania. Wykres jest okrojony, jeśli nie mieści się w określonych brzegach.</li>
+</ul>
+Strzałki mają następujące znaczenie: <ul>
+<li>
+Ciemno niebieska strzałka jest używana do wizualizacji relacji dziedziczenia publicznego pomiędzy dwiema klasami. </li>
+<li>
+Ciemno zielona strzałka jest używana dla dziedziczenia chronionego. </li>
+<li>
+Ciemno czerwona strzałka jest używana dla dziedziczenia prywatnego. </li>
+<li>
+Fioletowa przerywana strzałka jest używana jeśli klasa jest zawarta lub użyta przez inną klasę. Strzałka jest podpisana zmienną(ymi) przez które wskazywana klasa lub struktura jest dostępna. </li>
+</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:30 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

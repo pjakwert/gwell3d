@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: const.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>const.h</h1><pre class="fragment"><div>00001 
+00002 <span class="comment">//</span>
+00003 <span class="comment">//    const (.h)</span>
+00004 <span class="comment">//</span>
+00005 <span class="comment">//    Plik naglowkowy zawierajacy stale i typy uzywane w calej aplikacji.</span>
+00006 <span class="comment">//</span>
+00008 <span class="comment"></span><span class="preprocessor">#ifndef CONST_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define CONST_H</span>
+00010 <span class="preprocessor"></span>
+00011 
+00012 <span class="preprocessor">#define APPNAME "Gwell Layout"</span>
+00013 <span class="preprocessor"></span><span class="preprocessor">#define APPDESCRIPTION "Graphical Workshop for modelling and simulating robot environments"</span>
+00014 <span class="preprocessor"></span><span class="comment">// wersja</span>
+00015 <span class="preprocessor">#define VERSION 0.18092004</span>
+00016 <span class="preprocessor"></span>
+00017 <span class="preprocessor">#define PI 3.14159265358979</span>
+00018 <span class="preprocessor"></span>
+00019 <span class="comment">// typ wyliczeniowy dla metod rysowania brył</span>
+00020 <span class="keyword">typedef</span> <span class="keyword">enum</span> { Wire=0, Solid=1, Textured=2 } DrawMethod;
+00021 
+00022 <span class="comment">// typ wyliczeniowy dla parametrów mgły</span>
+00023 <span class="keyword">typedef</span> <span class="keyword">enum</span> { FogEnabled=0, FogMode=1, FogDensity, FogStart, FogEnd, FogColor, FogAll } FogParamsEnum;
+00024 
+00025 
+00026 
+00027 
+00028 <span class="comment">// numery identyfikujace i laczace poszczegolne zakladki (tabs.h) z widgetami w lewym menu (widgetstack.h)</span>
+00029 <span class="preprocessor">#define FILE_TAB_ID    0</span>
+00030 <span class="preprocessor"></span><span class="preprocessor">#define DRAW_TAB_ID    1</span>
+00031 <span class="preprocessor"></span><span class="preprocessor">#define MODIFY_TAB_ID  2</span>
+00032 <span class="preprocessor"></span><span class="preprocessor">#define OBJECTS_TAB_ID 3</span>
+00033 <span class="preprocessor"></span><span class="preprocessor">#define LIGHTS_TAB_ID  4</span>
+00034 <span class="preprocessor"></span><span class="preprocessor">#define FOG_TAB_ID     5</span>
+00035 <span class="preprocessor"></span><span class="preprocessor">#define OPTIONS_TAB_ID 6</span>
+00036 <span class="preprocessor"></span><span class="preprocessor">#define HELP_TAB_ID    7</span>
+00037 <span class="preprocessor"></span>
+00038 
+00039 
+00040 
+00041 <span class="comment">// nazwy elementów i atrybutów materiału w zapisie/odczycie materiału do/z pliku XML</span>
+00042   <span class="comment">// główny element dokumentu XML</span>
+00043 <span class="preprocessor">#define ELEMENT_PROPERTIES      "ElementProperties"</span>
+00044 <span class="preprocessor"></span>  <span class="comment">// nazwa głównej sekcji materiału</span>
+00045 <span class="preprocessor">#define MATERIAL_MAIN           "Material"</span>
+00046 <span class="preprocessor"></span>  <span class="comment">// nazwy atrybutów głównej sekcji</span>
+00047 <span class="preprocessor">#define ATTR_MATERIAL_NAME      "materialName"</span>
+00048 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_MATERIAL_ENABLED   "materialEnabled"</span>
+00049 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_APPLY_MATERIAL_TO  "applyMaterialTo"</span>
+00050 <span class="preprocessor"></span>  <span class="comment">// nazwy elementów</span>
+00051 <span class="preprocessor">#define ELEM_AMBIENT_COLOR      "ambientColor"</span>
+00052 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_DIFFUSE_COLOR      "diffuseColor"</span>
+00053 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_SPECULAR_COLOR     "specularColor"</span>
+00054 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_EMISSION_COLOR     "emissionColor"</span>
+00055 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_SHININESS          "shininess"</span>
+00056 <span class="preprocessor"></span>  <span class="comment">// nazwy atrybutów elementów</span>
+00057 <span class="preprocessor">#define ATTR_RED                "red"</span>
+00058 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_GREEN              "green"</span>
+00059 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_BLUE               "blue"</span>
+00060 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_ALPHA              "alpha"</span>
+00061 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_SHININESS          "shininess"</span>
+00062 <span class="preprocessor"></span>
+00063 <span class="comment">// nazwy elementów i atrybutów materiału w zapisie/odczycie tekstury do/z pliku XML</span>
+00064   <span class="comment">// nazwa głównej sekcji</span>
+00065 <span class="preprocessor">#define TEXTURE_MAIN           "Texture"</span>
+00066 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_TEXTURE_ENABLED   "textureEnabled"</span>
+00067 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_TEXTURE_REFLECT   "reflectingEnabled"</span>
+00068 <span class="preprocessor"></span>
+00069 <span class="preprocessor">#define ELEM_IMAGE_PARAMS      "imageParameters"</span>
+00070 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_IMAGE_FILENAME    "fileName"</span>
+00071 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_IMAGE_SCALEMODE   "scaleMode"</span>
+00072 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_IMAGE_MIPMAPING   "mipmapingEnabled"</span>
+00073 <span class="preprocessor"></span>
+00074 <span class="preprocessor">#define ELEM_FILTERING         "textureFiltering"</span>
+00075 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FILTER_MAG        "magFilter"</span>
+00076 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FILTER_MIN        "minFilter"</span>
+00077 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FILTER_WRAPS      "wrapSFilter"</span>
+00078 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FILTER_WRAPT      "wrapTFilter"</span>
+00079 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FILTER_ENVMODE    "envModeFilter"</span>
+00080 <span class="preprocessor"></span>
+00081 <span class="preprocessor">#define ELEM_BLENDING          "blending"</span>
+00082 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_BLENDING_ENABLED  "blendingEnabled"</span>
+00083 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_BLENDING_SRC      "blendingSrcFunc"</span>
+00084 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_BLENDING_DEST     "blendingDestFunc"</span>
+00085 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_BLENDING_COLOR    "blendingColor"</span>
+00086 <span class="preprocessor"></span><span class="comment">// po tym idą atrybuty ATTR_RED, ATTR_GREEN, ...</span>
+00087 
+00088 <span class="preprocessor">#define ELEM_TEXTURE_COORDS    "textureCoordinates"</span>
+00089 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_MINW              "minW"</span>
+00090 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_MINH              "minH"</span>
+00091 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_MAXW              "maxW"</span>
+00092 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_MAXH              "maxH"</span>
+00093 <span class="preprocessor"></span>
+00094 
+00095 
+00097 <span class="preprocessor">#define SCENE_MAIN            "Scene"</span>
+00098 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_SCENE_NAME       "name"</span>
+00099 <span class="preprocessor"></span>
+00101 <span class="preprocessor">#define ELEM_LIGHTING         "Lighting"</span>
+00102 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHTING_ENABLED "isEnabled"</span>
+00103 <span class="preprocessor"></span>
+00105 <span class="preprocessor">#define ELEM_LIGHT            "Light"</span>
+00106 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_NAME       "name"</span>
+00107 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_ENABLED    "isEnabled"</span>
+00108 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_TYPE       "type"</span>
+00109 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_IS         "lightIs"</span>
+00110 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_EXPONENT   "exponent"</span>
+00111 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_CUTOFF     "cutOff"</span>
+00112 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_MOVES_WITH_CAMERA "movesWithCamera"</span>
+00113 <span class="preprocessor"></span>
+00114 <span class="preprocessor">#define ELEM_LIGHT_POSITION   "position"</span>
+00115 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_LIGHT_DIRECTION  "direction"</span>
+00116 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_X                "x"</span>
+00117 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_Y                "y"</span>
+00118 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_Z                "z"</span>
+00119 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_LIGHT_ATTENUATION "attenuation"</span>
+00120 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_LINEAR     "linear"</span>
+00121 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_CONSTANT   "constant"</span>
+00122 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_LIGHT_QUADRATIC  "quadratic"</span>
+00123 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_LIGHT_AMBIENT    "ambientColor"</span>
+00124 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_LIGHT_DIFFUSE    "diffuseColor"</span>
+00125 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_LIGHT_SPECULAR   "specularColor"</span>
+00126 <span class="preprocessor"></span>
+00128 <span class="preprocessor">#define ELEM_FOG              "Fog"</span>
+00129 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FOG_ENABLED      "isEnabled"</span>
+00130 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FOG_MODE         "mode"</span>
+00131 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FOG_DENSITY      "density"</span>
+00132 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_FOG_DISTANCE     "distance"</span>
+00133 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FOG_START        "start"</span>
+00134 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_FOG_END          "end"</span>
+00135 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_FOG_COLOR        "color"</span>
+00136 <span class="preprocessor"></span>
+00138 <span class="preprocessor">#define ELEM_SHADOWS          "Shadows"</span>
+00139 <span class="preprocessor"></span>
+00141 <span class="preprocessor">#define ELEM_ELEMENTS         "Elements"</span>
+00142 <span class="preprocessor"></span>
+00144 <span class="preprocessor">#define ELEM_OBJECT           "Object"</span>
+00145 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_ELEM_FILENAME    "fileName"</span>
+00146 <span class="preprocessor"></span><span class="preprocessor">#define ATTR_ELEM_NAME        "name"</span>
+00147 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_TRANS            "translation"</span>
+00148 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_ROT              "rotation"</span>
+00149 <span class="preprocessor"></span><span class="preprocessor">#define ELEM_SCALE            "scale"</span>
+00150 <span class="preprocessor"></span>
+00151 
+00152 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,1 @@
+/* #define  ERR_NOT_ENOGHT_MEMORY    41 */

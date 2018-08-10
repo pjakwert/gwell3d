@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: options.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>options.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef OPTIONS_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define OPTIONS_H</span>
+00010 <span class="preprocessor"></span>
+00011 
+00012 <span class="preprocessor">#include &lt;qstring.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qstringlist.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qsettings.h&gt;</span>
+00016 
+00017 <span class="preprocessor">#include &lt;GL/gl.h&gt;</span>
+00018 
+00019 
+<a name="l00020"></a><a class="code" href="classOptions.html">00020</a> <span class="keyword">class </span><a class="code" href="classOptions.html">Options</a>
+00021 { 
+00022   <span class="keyword">static</span> QStringList _libPaths;
+00023   <span class="keyword">static</span> QStringList _mphPaths;
+00024   <span class="keyword">static</span> QStringList _materialPaths;
+00025   <span class="keyword">static</span> QString _imagesPath;
+00026   <span class="keyword">static</span> QString _scenesPath;
+00027   <span class="keyword">static</span> QString _langPath;
+00028   <span class="keyword">static</span> QString _layoutLangFile;
+00029   <span class="keyword">static</span> QString _modelerLangFile;
+00030   
+00031   <span class="keyword">static</span> <span class="keywordtype">int</span>         _decimals;
+00032   
+00033   <span class="keyword">static</span> QColor      <a class="code" href="classOptions.html#v0">_backgroundColor</a>;
+00034   <span class="keyword">static</span> QColor      _wireColor;
+00035   <span class="keyword">static</span> QColor      _wireSelectedColor;
+00036   <span class="keyword">static</span> QColor      _solidColor;
+00037   <span class="keyword">static</span> QColor      _solidSelectedColor;
+00038   <span class="keyword">static</span> QColor      _gridColor;
+00039   <span class="keyword">static</span> QColor      _grid3DColor;
+00040   <span class="keyword">static</span> QColor      _lightsColor;
+00041   <span class="keyword">static</span> QColor      _frameColor;
+00042   <span class="keyword">static</span> QColor      _infoTextColor;
+00043   
+00044   <span class="keyword">static</span> GLenum      _correctionHint;
+00045   <span class="keyword">static</span> GLenum      _shadeModel;
+00046   
+00047   <span class="keyword">public</span>:
+00049     <span class="keyword">static</span> <span class="keywordtype">bool</span> loadSettings();
+00050     <span class="keyword">static</span> <span class="keywordtype">bool</span> saveSettings();
+00051     
+00052     <span class="keyword">static</span> <span class="keywordtype">void</span> resetColorsToDefaults();
+00053     <span class="keyword">static</span> <span class="keywordtype">void</span> resetPathsToDefaults();
+00054     <span class="keyword">static</span> <span class="keywordtype">void</span> resetToDefaults();
+00055     
+00056     <span class="keyword">static</span> <span class="keywordtype">void</span> clearAllPaths();
+00057     
+00058     <span class="keyword">static</span> <span class="keywordtype">void</span> addLibPath( QString&amp; libPath )      { _libPaths.append( libPath ); }
+00059     <span class="keyword">static</span> <span class="keywordtype">void</span> removeLibPath( QString&amp; libPath );  
+00060     <span class="keyword">static</span> <span class="keywordtype">void</span> clearLibPaths()                     { _libPaths.clear(); }
+00061     
+00062     <span class="keyword">static</span> <span class="keywordtype">void</span> addMphPath( QString&amp; mphPath )      { _mphPaths.append( mphPath ); }
+00063     <span class="keyword">static</span> <span class="keywordtype">void</span> removeMphPath( QString&amp; mphPath );
+00064     <span class="keyword">static</span> <span class="keywordtype">void</span> clearMphPaths()                     { _mphPaths.clear(); }
+00065 
+00066     <span class="keyword">static</span> <span class="keywordtype">void</span> addMaterialPath( QString&amp; matPath ) { _materialPaths.append( matPath ); }
+00067     <span class="keyword">static</span> <span class="keywordtype">void</span> removeMaterialPath( QString&amp; matPath );
+00068     <span class="keyword">static</span> <span class="keywordtype">void</span> clearMaterialPaths()                { _materialPaths.clear(); }
+00069     
+00070     <span class="keyword">static</span> <span class="keywordtype">void</span> setImagesPath( QString imgPath ) { _imagesPath = imgPath; }
+00071     <span class="keyword">static</span> <span class="keywordtype">void</span> setScenesPath( QString scenesPath ) { _scenesPath = scenesPath; }
+00072     <span class="keyword">static</span> <span class="keywordtype">void</span> setLangPath( QString langPath ) { _langPath = langPath; }
+00073     <span class="keyword">static</span> <span class="keywordtype">void</span> setLayoutLangFile( QString fileName ) { _layoutLangFile = fileName; }
+00074     <span class="keyword">static</span> <span class="keywordtype">void</span> setModelerLangFile( QString fileName ) { _modelerLangFile = fileName; }
+00075     
+00076     <span class="keyword">typedef</span> <span class="keyword">enum</span> { BackgroundColor=0, WireColor=1, WireSelectedColor, SolidColor, SolidSelectedColor,
+00077                  GridColor, Grid3DColor, LightsColor, FrameColor,  InfoTextColor } Colors;
+00078     <span class="keyword">static</span> <span class="keywordtype">void</span> setColor( Colors whichColor, <span class="keyword">const</span> QColor&amp; color );
+00079     
+00080     <span class="keyword">static</span> <span class="keywordtype">void</span> setBackgroundColor( <span class="keyword">const</span> QColor&amp; color )    { setColor( BackgroundColor, color ); }
+00081     <span class="keyword">static</span> <span class="keywordtype">void</span> setWireColor( <span class="keyword">const</span> QColor&amp; color )          { setColor( WireColor, color ); }
+00082     <span class="keyword">static</span> <span class="keywordtype">void</span> setWireSelectedColor( <span class="keyword">const</span> QColor&amp; color )  { setColor( WireSelectedColor, color ); }
+00083     <span class="keyword">static</span> <span class="keywordtype">void</span> setSolidColor( <span class="keyword">const</span> QColor&amp; color )         { setColor( SolidColor, color ); }
+00084     <span class="keyword">static</span> <span class="keywordtype">void</span> setSolidSelectedColor( <span class="keyword">const</span> QColor&amp; color ) { setColor( SolidSelectedColor, color ); }
+00085     <span class="keyword">static</span> <span class="keywordtype">void</span> setGridColor( <span class="keyword">const</span> QColor&amp; color )          { setColor( GridColor, color ); }
+00086     <span class="keyword">static</span> <span class="keywordtype">void</span> setGrid3DColor( <span class="keyword">const</span> QColor&amp; color )        { setColor( Grid3DColor, color ); }
+00087     <span class="keyword">static</span> <span class="keywordtype">void</span> setLightsColor( <span class="keyword">const</span> QColor&amp; color )        { setColor( LightsColor, color ); }
+00088     <span class="keyword">static</span> <span class="keywordtype">void</span> setFrameColor( <span class="keyword">const</span> QColor&amp; color )         { setColor( FrameColor, color ); }
+00089     <span class="keyword">static</span> <span class="keywordtype">void</span> setInfoTextColor( <span class="keyword">const</span> QColor&amp; color )      { setColor( InfoTextColor, color ); }
+00090     
+00091     <span class="keyword">static</span> <span class="keywordtype">void</span> setDecimals( <span class="keywordtype">int</span> decimals ) { <span class="keywordflow">if</span> (decimals&gt;0) _decimals = decimals; }
+00092     
+00093     <span class="keyword">static</span> <span class="keywordtype">void</span> setCorrectionHint( GLenum corrHint )         { _correctionHint = corrHint; }
+00094     <span class="keyword">static</span> <span class="keywordtype">void</span> setIntCorrectionHint( <span class="keywordtype">int</span> index );
+00095     <span class="keyword">static</span> <span class="keywordtype">void</span> setShadeModel( GLenum shadeModel )           { _shadeModel = shadeModel; }
+00096     <span class="keyword">static</span> <span class="keywordtype">void</span> setIntShadeModel( <span class="keywordtype">int</span> index );
+00097     
+00099     <span class="keyword">static</span> <span class="keyword">const</span> QStringList* libPaths()      { <span class="keywordflow">return</span> &amp;_libPaths; }
+00100     <span class="keyword">static</span> QStringList* mphPaths()      { <span class="keywordflow">return</span> &amp;_mphPaths; }
+00101     <span class="keyword">static</span> <span class="keyword">const</span> QStringList* materialPaths() { <span class="keywordflow">return</span> &amp;_materialPaths; }
+00102     <span class="keyword">static</span> <span class="keyword">const</span> QString&amp; imagesPath()        { <span class="keywordflow">return</span> _imagesPath; }
+00103     <span class="keyword">static</span> <span class="keyword">const</span> QString&amp; scenesPath()        { <span class="keywordflow">return</span> _scenesPath; }
+00104     <span class="keyword">static</span> <span class="keyword">const</span> QString&amp; langPath()          { <span class="keywordflow">return</span> _langPath; }
+00105     <span class="keyword">static</span> <span class="keyword">const</span> QString&amp; layoutLangFile()    { <span class="keywordflow">return</span> _layoutLangFile; }
+00106     <span class="keyword">static</span> <span class="keyword">const</span> QString&amp; modelerLangFile()   { <span class="keywordflow">return</span> _modelerLangFile; }
+00107     
+00108     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> decimals()               { <span class="keywordflow">return</span> _decimals; }
+00109     
+00110     <span class="keyword">static</span> <span class="keyword">const</span> GLenum correctionHint()      { <span class="keywordflow">return</span> _correctionHint; }
+00111     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> intCorrectionHint();
+00112     <span class="keyword">static</span> <span class="keyword">const</span> GLenum shadeModel()          { <span class="keywordflow">return</span> _shadeModel; }
+00113     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> intShadeModel();
+00114     
+00115     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; backgroundColor()     { <span class="keywordflow">return</span> <a class="code" href="classOptions.html#v0">_backgroundColor</a>; }
+00116     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; gridColor()           { <span class="keywordflow">return</span> _gridColor; }
+00117     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; grid3DColor()         { <span class="keywordflow">return</span> _grid3DColor; }
+00118     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; wireColor()           { <span class="keywordflow">return</span> _wireColor; }
+00119     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; wireSelectedColor()   { <span class="keywordflow">return</span> _wireSelectedColor; }
+00120     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; solidColor()          { <span class="keywordflow">return</span> _solidColor; }
+00121     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; solidSelectedColor()  { <span class="keywordflow">return</span> _solidSelectedColor; }
+00122     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; lightsColor()         { <span class="keywordflow">return</span> _lightsColor; }
+00123     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; frameColor()          { <span class="keywordflow">return</span> _frameColor; }
+00124     <span class="keyword">static</span> <span class="keyword">const</span> QColor&amp; infoTextColor()       { <span class="keywordflow">return</span> _infoTextColor; }
+00125 };
+00126 
+00127 
+00128 
+00129 
+00130 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:04 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

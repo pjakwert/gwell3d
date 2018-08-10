@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: floatspinbox.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>floatspinbox.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 <span class="preprocessor">#ifndef FLOAT_SPIN_BOX_H</span>
+00010 <span class="preprocessor"></span><span class="preprocessor">#define FLOAT_SPIN_BOX_H</span>
+00011 <span class="preprocessor"></span>
+00012 <span class="preprocessor">#include &lt;qspinbox.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qvalidator.h&gt;</span>
+00014 
+00015 
+00016 
+<a name="l00017"></a><a class="code" href="classFloatSpinBox.html">00017</a> <span class="keyword">class </span><a class="code" href="classFloatSpinBox.html">FloatSpinBox</a> : <span class="keyword">public</span> QSpinBox
+00018 {
+00019   Q_OBJECT
+00020       
+00021   <span class="keyword">public</span>:
+00022     <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>( <span class="keywordtype">float</span> minValue, <span class="keywordtype">float</span> maxValue, <span class="keywordtype">float</span> step, <span class="keywordtype">int</span> decimals=3, QWidget *parent=0 );
+00023     ~<a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>();
+00024     <span class="keywordtype">float</span> value();
+00025     <span class="keywordtype">float</span> floatValue(); <span class="comment">// zwraca to samo co value();</span>
+00026     
+00027   <span class="keyword">public</span> slots:
+00028     <span class="keywordtype">void</span> setFloatValue( <span class="keywordtype">float</span> value );
+00029     <span class="keywordtype">void</span> setDecimals( <span class="keywordtype">int</span> decimals ) { <span class="keywordflow">if</span> (decimals&gt;0) _decimals=decimals; }
+00030     
+00031   <span class="keyword">private</span>:
+00032     <span class="keywordtype">int</span> _decimals;
+00033     <span class="keywordtype">int</span> _factor;
+00034     
+00035   <span class="keyword">protected</span>:
+00036     QString mapValueToText( <span class="keywordtype">int</span> );
+00037     <span class="keywordtype">int</span> mapTextToValue( <span class="keywordtype">bool</span>* );
+00038     
+00039   <span class="keyword">private</span> slots:
+00040     <span class="keywordtype">void</span> sendFloatValue( <span class="keywordtype">int</span> );
+00041   
+00042   signals:
+00043     <span class="keywordtype">void</span> valueChanged( <span class="keywordtype">float</span> );
+00044 };
+00045 
+00046 
+00047 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<Material materialName="steel">
+ <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+ <diffuseColor alpha="1" blue="0.317647" red="0.317647" green="0.317647" />
+ <specularColor alpha="1" blue="0.156863" red="0.568627" green="0.368627" />
+ <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+ <shininess shininess="16" />
+</Material>

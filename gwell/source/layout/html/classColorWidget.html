@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: ColorWidget class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy ColorWidget</h1><code>#include &lt;<a class="el" href="colorwidget_8h-source.html">colorwidget.h</a>&gt;</code>
+<p>
+<a href="classColorWidget-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i0" doxytag="ColorWidget::setColor" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setColor</b> (const GLfloat *GLcolor4fv)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="i1" doxytag="ColorWidget::setColor" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setColor</b> (const QColor &amp;color, int alpha=255)</td></tr>
+
+<tr><td colspan=2><br><h2>Sygnały</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l0" doxytag="ColorWidget::colorChanged" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>colorChanged</b> (const QColor &amp;color, int alpha)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="ColorWidget::alpha" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>alpha</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="ColorWidget::color" ></a>
+QColor&nbsp;</td><td class="memItemRight" valign=bottom><b>color</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classColorWidget.html#a2">ColorWidget</a> (QWidget *parent, QString title, QColor color=QColor(255, 255, 255), int alpha=255)</td></tr>
+
+<tr><td colspan=2><br><h2>Sloty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="k0" doxytag="ColorWidget::openColorDialog" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>openColorDialog</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="k1" doxytag="ColorWidget::setAlpha" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setAlpha</b> (const QString &amp;alpha)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="k2" doxytag="ColorWidget::setAlpha" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setAlpha</b> (int value)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="k3" doxytag="ColorWidget::setColorFromSliders" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setColorFromSliders</b> (int unused)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="k4" doxytag="ColorWidget::setSlidersFromEdits" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setSlidersFromEdits</b> (const QString &amp;unused)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="d0" doxytag="ColorWidget::blockEditSignals" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>blockEditSignals</b> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="d1" doxytag="ColorWidget::blockSliderSignals" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>blockSliderSignals</b> (bool yes)</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="ColorWidget::_alpha" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>_alpha</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="ColorWidget::_color" ></a>
+QColor&nbsp;</td><td class="memItemRight" valign=bottom><b>_color</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="ColorWidget::aEdit" ></a>
+QLineEdit *&nbsp;</td><td class="memItemRight" valign=bottom><b>aEdit</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="ColorWidget::aSlide" ></a>
+QSlider *&nbsp;</td><td class="memItemRight" valign=bottom><b>aSlide</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r4" doxytag="ColorWidget::bEdit" ></a>
+QLineEdit *&nbsp;</td><td class="memItemRight" valign=bottom><b>bEdit</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r5" doxytag="ColorWidget::bSlide" ></a>
+QSlider *&nbsp;</td><td class="memItemRight" valign=bottom><b>bSlide</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r6" doxytag="ColorWidget::colorButton" ></a>
+QToolButton *&nbsp;</td><td class="memItemRight" valign=bottom><b>colorButton</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r7" doxytag="ColorWidget::colorDialog" ></a>
+QColorDialog *&nbsp;</td><td class="memItemRight" valign=bottom><b>colorDialog</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r8" doxytag="ColorWidget::gEdit" ></a>
+QLineEdit *&nbsp;</td><td class="memItemRight" valign=bottom><b>gEdit</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r9" doxytag="ColorWidget::grid" ></a>
+QGridLayout *&nbsp;</td><td class="memItemRight" valign=bottom><b>grid</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r10" doxytag="ColorWidget::gSlide" ></a>
+QSlider *&nbsp;</td><td class="memItemRight" valign=bottom><b>gSlide</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r11" doxytag="ColorWidget::intValidator" ></a>
+QIntValidator *&nbsp;</td><td class="memItemRight" valign=bottom><b>intValidator</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r12" doxytag="ColorWidget::rEdit" ></a>
+QLineEdit *&nbsp;</td><td class="memItemRight" valign=bottom><b>rEdit</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r13" doxytag="ColorWidget::rSlide" ></a>
+QSlider *&nbsp;</td><td class="memItemRight" valign=bottom><b>rSlide</b></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+class: ColorWidget (.h)<p>
+widget do edycji koloru 
+<p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="a2" doxytag="ColorWidget::ColorWidget" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> ColorWidget::ColorWidget           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QWidget *&nbsp;</td>
+          <td class="mdname" nowrap> <em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>QString&nbsp;</td>
+          <td class="mdname" nowrap> <em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>QColor&nbsp;</td>
+          <td class="mdname" nowrap> <em>color</em> = <code>QColor(255,255,255)</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>alpha</em> = <code>255</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+class: ColorWidget (.cpp)<p>
+widget do edycji koloru 
+<p>
+Here is the call graph for this function:<p><center><img src="classColorWidget_a2_cgraph.png" border="0" usemap="#classColorWidget_a2_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="colorwidget_8h-source.html">colorwidget.h</a><li>colorwidget.cpp<li>moc_colorwidget.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:05 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

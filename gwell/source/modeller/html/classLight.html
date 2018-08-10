@@ -1,0 +1,891 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: Light class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy Light</h1><code>#include &lt;<a class="el" href="light_8h-source.html">light.h</a>&gt;</code>
+<p>
+<a href="classLight-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Typy publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>enum &nbsp;</td><td class="memItemRight" valign=bottom><b>LightType</b> { <b>Directional</b> =  0, 
+<b>Positional</b>
+ }</td></tr>
+
+<tr><td colspan=2><br><h2>Sloty publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i0">reset</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i1">setAmbientColor</a> (const GLfloat *ambientColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i2">setAmbientColor</a> (const QColor &amp;color, int alpha=-1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i3">setConstantAttenuation</a> (GLfloat ca)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i4">setDiffuseColor</a> (const GLfloat *diffuseColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i5">setDiffuseColor</a> (const QColor &amp;color, int alpha=-1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i6">setEnabled</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i7">setLightType</a> (LightType lightType)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i8">setLinearAttenuation</a> (GLfloat la)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i9">setMovingWithCamera</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i10">setName</a> (QString lightName=QString::null)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i11">setPosition</a> (Vector3f position)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i12">setQuadraticAttenuation</a> (GLfloat qa)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i13">setSpecularColor</a> (const GLfloat *specularColor)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i14">setSpecularColor</a> (const QColor &amp;color, int alpha=-1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i15">setSpotCutOffAngle</a> (GLfloat spotCutOff)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i16">setSpotDirection</a> (Vector3f spotDirection)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i17">setSpotExponent</a> (GLfloat spotExponent)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#i18">setSpotlight</a> (bool yes)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="Light::ambientColor4fv" ></a>
+const GLfloat *&nbsp;</td><td class="memItemRight" valign=bottom><b>ambientColor4fv</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="Light::constantAttenuation" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>constantAttenuation</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="Light::createdSuccessfully" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>createdSuccessfully</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="Light::diffuseColor4fv" ></a>
+const GLfloat *&nbsp;</td><td class="memItemRight" valign=bottom><b>diffuseColor4fv</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a4" doxytag="Light::GLname" ></a>
+const GLenum&nbsp;</td><td class="memItemRight" valign=bottom><b>GLname</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a5" doxytag="Light::isEnabled" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>isEnabled</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a6" doxytag="Light::isMovingWithCamera" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>isMovingWithCamera</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a7" doxytag="Light::isSpotlight" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>isSpotlight</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a8" doxytag="Light::Light" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><b>Light</b> (bool isSpotlight, QString lightName=QString::null, bool isEnabled=true, LightType lightType=Directional, bool isMovingWithCamera=false, const GLfloat *ambientColor=<a class="el" href="classLight.html#v1">defaultAmbientColor</a>, const GLfloat *diffuseColor=defaultDiffuseColor, const GLfloat *specularColor=defaultSpecularColor, Vector3f position=defaultPosition, Vector3f spotDirection=defaultSpotDirection, GLfloat spotExponent=0.0, GLfloat spotCutOffAngle=180.0, GLfloat constantAttenuation=1.0, GLfloat linearAttenuation=0.0, GLfloat quadraticAttenuation=0.0)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a9" doxytag="Light::lightType" ></a>
+LightType&nbsp;</td><td class="memItemRight" valign=bottom><b>lightType</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a10" doxytag="Light::linearAttenuation" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>linearAttenuation</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a11" doxytag="Light::name" ></a>
+const QString&nbsp;</td><td class="memItemRight" valign=bottom><b>name</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a12" doxytag="Light::position4fv" ></a>
+const GLfloat *&nbsp;</td><td class="memItemRight" valign=bottom><b>position4fv</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a13" doxytag="Light::quadraticAttenuation" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>quadraticAttenuation</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a14" doxytag="Light::specularColor4fv" ></a>
+const GLfloat *&nbsp;</td><td class="memItemRight" valign=bottom><b>specularColor4fv</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a15" doxytag="Light::spotCutOffAngle" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>spotCutOffAngle</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a16" doxytag="Light::spotDirection3fv" ></a>
+const GLfloat *&nbsp;</td><td class="memItemRight" valign=bottom><b>spotDirection3fv</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a17" doxytag="Light::spotExponent" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>spotExponent</b> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#a18">~Light</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#d0">findSetAndDeleteGLName</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#d1">initFreeLightNamesList</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="Light::_ambientColor" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_ambientColor</b> [4]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="Light::_constantAttenuation" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_constantAttenuation</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="Light::_createdSuccessfully" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_createdSuccessfully</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="Light::_diffuseColor" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_diffuseColor</b> [4]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r4" doxytag="Light::_GLname" ></a>
+GLenum&nbsp;</td><td class="memItemRight" valign=bottom><b>_GLname</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r5" doxytag="Light::_isEnabled" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_isEnabled</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r6" doxytag="Light::_isMovingWithCamera" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_isMovingWithCamera</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r7" doxytag="Light::_isSpotlight" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_isSpotlight</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r8" doxytag="Light::_lightType" ></a>
+LightType&nbsp;</td><td class="memItemRight" valign=bottom><b>_lightType</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r9" doxytag="Light::_linearAttenuation" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_linearAttenuation</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r10" doxytag="Light::_name" ></a>
+QString&nbsp;</td><td class="memItemRight" valign=bottom><b>_name</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r11" doxytag="Light::_position" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_position</b> [4]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r12" doxytag="Light::_prevCutOff" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_prevCutOff</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r13" doxytag="Light::_quadraticAttenuation" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_quadraticAttenuation</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r14" doxytag="Light::_specularColor" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_specularColor</b> [4]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r15" doxytag="Light::_spotCutOffAngle" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_spotCutOffAngle</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r16" doxytag="Light::_spotDirection" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_spotDirection</b> [3]</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r17" doxytag="Light::_spotExponent" ></a>
+GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>_spotExponent</b></td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#v0">afterInit</a> = false</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>const GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classLight.html#v1">defaultAmbientColor</a> [] = { 0.0, 0.0, 0.0, 1.0 }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v2" doxytag="Light::defaultDiffuseColor" ></a>
+const GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>defaultDiffuseColor</b> [] = { 1.0, 1.0, 1.0, 1.0 }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v3" doxytag="Light::defaultPosition" ></a>
+const Vector3f&nbsp;</td><td class="memItemRight" valign=bottom><b>defaultPosition</b> = Vector3f( 0.0, 0.0, 1.0 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v4" doxytag="Light::defaultSpecularColor" ></a>
+const GLfloat&nbsp;</td><td class="memItemRight" valign=bottom><b>defaultSpecularColor</b> [] = { 1.0, 1.0, 1.0, 1.0 }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v5" doxytag="Light::defaultSpotDirection" ></a>
+const Vector3f&nbsp;</td><td class="memItemRight" valign=bottom><b>defaultSpotDirection</b> = Vector3f( 0.0, 0.0, -1.0 )</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v6" doxytag="Light::freeLightNamesList" ></a>
+QValueList&lt; GLenum &gt;&nbsp;</td><td class="memItemRight" valign=bottom><b>freeLightNamesList</b> = QValueList&lt;GLenum&gt;()</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa Light opisuje pojedyncze źródło światła wraz ze wszystkimi parametrami. 
+<p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="a18" doxytag="Light::~Light" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Light::~<a class="el" href="classLight.html">Light</a>           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Destruktor - usunięcie światła powoduje odłożenie jego nazwy na listę wolnych nazw OpenGL.     </td>
+  </tr>
+</table>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="d0" doxytag="Light::findSetAndDeleteGLName" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool Light::findSetAndDeleteGLName           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda znajduje wolną nazwę na liście, ustawia ją jako aktualną i zdejmuje z listy wolnych nazw.     </td>
+  </tr>
+</table>
+<a class="anchor" name="d1" doxytag="Light::initFreeLightNamesList" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::initFreeLightNamesList           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda inicjuje listę wolnych nazw OpenGL dla 8 świateł.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i0" doxytag="Light::reset" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::reset           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda przywraca domyślne wartości OpenGL dla światła (oprócz nazwy).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i1" doxytag="Light::setAmbientColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setAmbientColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const GLfloat *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>ambientColor</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie koloru Ambient (parametry dla OpenGL).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i2" doxytag="Light::setAmbientColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setAmbientColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QColor &amp;&nbsp;</td>
+          <td class="mdname" nowrap> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>alpha</em> = <code>-1</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie koloru Ambient (parametry dla QT).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i3" doxytag="Light::setConstantAttenuation" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setConstantAttenuation           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLfloat&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>ca</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie rozproszenia światła - współczynnika stałego.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i4" doxytag="Light::setDiffuseColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setDiffuseColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const GLfloat *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>diffuseColor</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie koloru Ambient (parametry dla OpenGL).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i5" doxytag="Light::setDiffuseColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setDiffuseColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QColor &amp;&nbsp;</td>
+          <td class="mdname" nowrap> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>alpha</em> = <code>-1</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie koloru Diffuse (parametry dla QT).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i6" doxytag="Light::setEnabled" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setEnabled           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Czy światło jest włączone?     </td>
+  </tr>
+</table>
+<a class="anchor" name="i7" doxytag="Light::setLightType" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setLightType           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">LightType&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>lightType</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia typ światła: Directional lub Positional. W zależności od tego ustawia odpowiednio wartość _position[3].     </td>
+  </tr>
+</table>
+<a class="anchor" name="i8" doxytag="Light::setLinearAttenuation" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setLinearAttenuation           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLfloat&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>la</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie rozproszenia światła - współczynnika liniowego.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i9" doxytag="Light::setMovingWithCamera" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setMovingWithCamera           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Czy światło porusza się razem z kamerą?     </td>
+  </tr>
+</table>
+<a class="anchor" name="i10" doxytag="Light::setName" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setName           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QString&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>name</em> = <code>QString::null</code>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia nazwę dla światła. Jeżeli nazwa nie zostanie podana, ustawi nazwę odpowiadającą OpenGL: Gl_LIGHT0, GL_LIGHT1, ...     </td>
+  </tr>
+</table>
+<a class="anchor" name="i11" doxytag="Light::setPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Vector3f&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>position</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia pozycję dla światła.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i12" doxytag="Light::setQuadraticAttenuation" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setQuadraticAttenuation           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLfloat&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>qa</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie rozproszenia światła - współczynnika kwadratowego.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i13" doxytag="Light::setSpecularColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setSpecularColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const GLfloat *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>specularColor</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie koloru Specular (parametry dla OpenGL).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i14" doxytag="Light::setSpecularColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setSpecularColor           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const QColor &amp;&nbsp;</td>
+          <td class="mdname" nowrap> <em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>alpha</em> = <code>-1</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ustawienie koloru Specular (parametry dla QT).     </td>
+  </tr>
+</table>
+<a class="anchor" name="i15" doxytag="Light::setSpotCutOffAngle" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setSpotCutOffAngle           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLfloat&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>spotCutOff</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia kąt rozwarcia stożka świetlnego.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i16" doxytag="Light::setSpotDirection" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setSpotDirection           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Vector3f&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>spotDirection</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia kierunek światła kierunkowego :)     </td>
+  </tr>
+</table>
+<a class="anchor" name="i17" doxytag="Light::setSpotExponent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setSpotExponent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLfloat&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>spotExponent</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia skupienie światła.     </td>
+  </tr>
+</table>
+<a class="anchor" name="i18" doxytag="Light::setSpotlight" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Light::setSpotlight           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [slot]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia światło na kierunkowe, dodatkowo koryguje wartość rozwarcia stożka świetlnego.     </td>
+  </tr>
+</table>
+<hr><h2>Dokumentacja atrybutów składowych</h2>
+<a class="anchor" name="v0" doxytag="Light::afterInit" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool <a class="el" href="classLight.html#v0">Light::afterInit</a> = false<code> [static, private]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+czy lista świateł została zainicjowana - operacja wykonywana tylko raz     </td>
+  </tr>
+</table>
+<a class="anchor" name="v1" doxytag="Light::defaultAmbientColor" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> const GLfloat <a class="el" href="classLight.html#v1">Light::defaultAmbientColor</a> = { 0.0, 0.0, 0.0, 1.0 }<code> [static, private]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+domyślne kolory dla nowo utworzonego światła     </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="light_8h-source.html">light.h</a><li>light.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:24 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

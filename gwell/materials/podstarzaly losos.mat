@@ -1,0 +1,7 @@
+<Material materialName="rose">
+ <ambientColor alpha="1" blue="0.2" red="0.0941176" green="0.0745098" />
+ <diffuseColor alpha="1" blue="0.219608" red="0.219608" green="0.219608" />
+ <specularColor alpha="1" blue="0.203922" red="0.4" green="0.290196" />
+ <emissionColor alpha="1" blue="0.172549" red="0.654902" green="0.364706" />
+ <shininess shininess="9" />
+</Material>

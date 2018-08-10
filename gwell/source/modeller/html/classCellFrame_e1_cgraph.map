@@ -1,0 +1,5 @@
+base referer
+rect $classCellFrame.html#e0 249,7 414,31
+rect $classCellFrame.html#e3 224,55 440,78
+rect $classKernel.html#e0 490,31 634,55
+rect $classCellFrame.html#e5 504,78 621,102

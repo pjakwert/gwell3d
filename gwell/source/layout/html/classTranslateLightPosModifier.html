@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: TranslateLightPosModifier class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy TranslateLightPosModifier</h1><code>#include &lt;<a class="el" href="m__translightpos_8h-source.html">m_translightpos.h</a>&gt;</code>
+<p>
+Diagram współpracy dla TranslateLightPosModifier:<p><center><img src="classTranslateLightPosModifier__coll__graph.png" border="0" usemap="#TranslateLightPosModifier__coll__map" alt="Collaboration graph"></center>
+<map name="TranslateLightPosModifier__coll__map">
+<area href="classLight.html" shape="rect" coords="69,18,106,42" alt="">
+</map>
+<center><font size="2">[<a target="top" href="graph_legend.html">legenda</a>]</font></center><a href="classTranslateLightPosModifier-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Sygnały</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="l0" doxytag="TranslateLightPosModifier::vectorChanged" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>vectorChanged</b> (MModifier::ModifierType mType, Vector3f v)</td></tr>
+
+<tr><td colspan=2><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="TranslateLightPosModifier::mouseMoveEvent" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>mouseMoveEvent</b> (QMouseEvent *e, qglviewer::Camera *camera, QString &amp;info)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="TranslateLightPosModifier::mousePressEvent" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>mousePressEvent</b> (QMouseEvent *e, qglviewer::Camera *camera, QPtrList&lt; ViMultiPolyh &gt; *selectedList)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="TranslateLightPosModifier::mouseReleaseEvent" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>mouseReleaseEvent</b> (QMouseEvent *e)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="TranslateLightPosModifier::setCurrentLight" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>setCurrentLight</b> (<a class="el" href="classLight.html">Light</a> *light)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTranslateLightPosModifier.html#a4">TranslateLightPosModifier</a> (QCursor cursor=0)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a5" doxytag="TranslateLightPosModifier::type" ></a>
+virtual ModifierType&nbsp;</td><td class="memItemRight" valign=bottom><b>type</b> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="TranslateLightPosModifier::_currentLight" ></a>
+<a class="el" href="classLight.html">Light</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>_currentLight</b></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+class: TranslateLightPosModifier (.h)<p>
+modyfikator translacji pozycji światła<p>
+niniejszy modyfikator (podobnie jak <a class="el" href="classTranslateLightDirModifier.html">TranslateLightDirModifier</a>) działa w nieco odmienny sposób, mianowicie: nie używają wogle listy zaznaczonych obiektów _selectedList, deklaracja ta musi zostać zachowana, żeby dziedziczyć po MModifier zamiast tego należy ustawiać światło, które będzie poddawane modyfikacji, dokonuje się tego metodą setCurrentLight(Light*) w dowolym momencie działania modyfikatora 
+<p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="a4" doxytag="TranslateLightPosModifier::TranslateLightPosModifier" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> TranslateLightPosModifier::TranslateLightPosModifier           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QCursor&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>cursor</em> = <code>0</code>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+class: TranslateLightPosModifier (.cpp)<p>
+modyfikator translacji pozycji światła 
+<p>
+Here is the call graph for this function:<p><center><img src="classTranslateLightPosModifier_a4_cgraph.png" border="0" usemap="#classTranslateLightPosModifier_a4_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="m__translightpos_8h-source.html">m_translightpos.h</a><li>moc_m_translightpos.cpp<li>m_translightpos.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:29:06 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

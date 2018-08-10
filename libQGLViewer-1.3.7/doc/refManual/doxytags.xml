@@ -1,0 +1,4078 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes'?>
+<tagfile>
+  <compound kind="page">
+    <filename>index</filename>
+    <title></title>
+    <name>index</name>
+  </compound>
+  <compound kind="file">
+    <name>camera.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>camera_8cpp</filename>
+    <namespace>std</namespace>
+    <member kind="function" static="yes">
+      <type>float</type>
+      <name>det</name>
+      <anchor>a0</anchor>
+      <arglist>(const float m00, const float m01, const float m02, const float m10, const float m11, const float m12, const float m20, const float m21, const float m22)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>unsigned int</type>
+      <name>ind</name>
+      <anchor>a1</anchor>
+      <arglist>(unsigned int i, unsigned int j)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>camera.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>camera_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>config.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>config_8h</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>QGLVIEWER_VERSION</name>
+      <anchor>a0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>QT_VERSION_WITHOUT_GLUT</name>
+      <anchor>a1</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>constraint.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>constraint_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>constraint.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>constraint_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>frame.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>frame_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>frame.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>frame_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>keyFrameInterpolator.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>keyFrameInterpolator_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>keyFrameInterpolator.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>keyFrameInterpolator_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>manipulatedCameraFrame.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>manipulatedCameraFrame_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>manipulatedCameraFrame.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>manipulatedCameraFrame_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>manipulatedFrame.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>manipulatedFrame_8cpp</filename>
+    <member kind="function" static="yes">
+      <type>float</type>
+      <name>projectOnBall</name>
+      <anchor>a0</anchor>
+      <arglist>(const float x, const float y)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>manipulatedFrame.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>manipulatedFrame_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>mouseGrabber.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>mouseGrabber_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>mouseGrabber.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>mouseGrabber_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>qglviewer.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>qglviewer_8cpp</filename>
+    <member kind="function" static="yes">
+      <type>QString</type>
+      <name>buttonStateKeyString</name>
+      <anchor>a0</anchor>
+      <arglist>(Qt::ButtonState s, bool noButton=false)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>QString</type>
+      <name>buttonStateButtonString</name>
+      <anchor>a1</anchor>
+      <arglist>(Qt::ButtonState s)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>QString</type>
+      <name>keyString</name>
+      <anchor>a2</anchor>
+      <arglist>(const Qt::Key &amp;key)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>drawCone</name>
+      <anchor>a3</anchor>
+      <arglist>(const float radius, const float height, const int nbSub)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>drawCylinder</name>
+      <anchor>a4</anchor>
+      <arglist>(const float radius, const float length, const int nbSub)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>createAxisDL</name>
+      <anchor>a5</anchor>
+      <arglist>(GLuint &amp;dlNumber, const float length=1.0f, const int nbSub=8)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>createGridDL</name>
+      <anchor>a6</anchor>
+      <arglist>(GLuint &amp;dlNumber, const float length=1.0f, const float width=1.0f, const float nbSub=10)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>createCameraDL</name>
+      <anchor>a7</anchor>
+      <arglist>(GLuint &amp;dlNumber)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>qglviewer.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>qglviewer_8h</filename>
+    <namespace>qglviewer</namespace>
+    <class kind="class">QGLViewer::ClickActionPrivate</class>
+    <class kind="struct">QGLViewer::MouseActionPrivate</class>
+    <class kind="class">QGLViewer</class>
+  </compound>
+  <compound kind="file">
+    <name>quaternion.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>quaternion_8cpp</filename>
+    <member kind="function">
+      <type>ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchor>a0</anchor>
+      <arglist>(ostream &amp;o, const Quaternion &amp;Q)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>quaternion.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>quaternion_8h</filename>
+    <namespace>qglviewer</namespace>
+    <member kind="function">
+      <type>std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchor>a0</anchor>
+      <arglist>(std::ostream &amp;o, const qglviewer::Quaternion &amp;)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>saveSnapshot.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>saveSnapshot_8cpp</filename>
+    <namespace>EpsRenderer</namespace>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>createFormatList</name>
+      <anchor>a4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>checkFileName</name>
+      <anchor>a5</anchor>
+      <arglist>(QString &amp;filename, QWidget *widget, const QString &amp;snapshotFormat_, bool overwrite)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>drawVectorial</name>
+      <anchor>a6</anchor>
+      <arglist>(void *param)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>int</type>
+      <name>saveVectorialSnapshot</name>
+      <anchor>a7</anchor>
+      <arglist>(const QString &amp;filename, QGLWidget *widget, const QString &amp;snapshotFormat_)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>QString</type>
+      <name>formats</name>
+      <anchor>a0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>QMap&lt; QString, QString &gt;</type>
+      <name>Qtformat</name>
+      <anchor>a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>QMap&lt; QString, QString &gt;</type>
+      <name>FDFormatString</name>
+      <anchor>a2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>QMap&lt; QString, QString &gt;</type>
+      <name>extension</name>
+      <anchor>a3</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>spinningFrame.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>spinningFrame_8cpp</filename>
+  </compound>
+  <compound kind="file">
+    <name>spinningFrame.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>spinningFrame_8h</filename>
+    <namespace>qglviewer</namespace>
+  </compound>
+  <compound kind="file">
+    <name>vec.cpp</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>vec_8cpp</filename>
+    <member kind="function">
+      <type>ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchor>a0</anchor>
+      <arglist>(ostream &amp;o, const Vec &amp;v)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>vec.h</name>
+    <path>/home/artis/debunne/QGLViewer/QGLViewer/</path>
+    <filename>vec_8h</filename>
+    <namespace>qglviewer</namespace>
+    <member kind="function">
+      <type>std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchor>a0</anchor>
+      <arglist>(std::ostream &amp;o, const qglviewer::Vec &amp;)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>QGLViewer</name>
+    <filename>classQGLViewer.html</filename>
+    <member kind="enumeration">
+      <name>MouseAction</name>
+      <anchor>z111_0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NO_MOUSE_ACTION</name>
+      <anchor>z111_0s0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ROTATE</name>
+      <anchor>z111_0s1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ZOOM</name>
+      <anchor>z111_0s2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TRANSLATE</name>
+      <anchor>z111_0s3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>MOVE_FORWARD</name>
+      <anchor>z111_0s4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LOOK_AROUND</name>
+      <anchor>z111_0s5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>MOVE_BACKWARD</name>
+      <anchor>z111_0s6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SCREEN_ROTATE</name>
+      <anchor>z111_0s7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SCREEN_ROTATE_BOTTOM</name>
+      <anchor>z111_0s8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SCREEN_TRANSLATE</name>
+      <anchor>z111_0s9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ZOOM_ON_REGION</name>
+      <anchor>z111_0s10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMouseStateKey</name>
+      <anchor>z111_1</anchor>
+      <arglist>(MouseHandler mh, int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMouseBinding</name>
+      <anchor>z111_2</anchor>
+      <arglist>(int buttonState, MouseHandler handler, MouseAction action, bool withConstraint=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>MouseAction</type>
+      <name>mouseAction</name>
+      <anchor>z111_3</anchor>
+      <arglist>(int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>mouseHandler</name>
+      <anchor>z111_4</anchor>
+      <arglist>(int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>Qt::ButtonState</type>
+      <name>mouseButtonState</name>
+      <anchor>z111_5</anchor>
+      <arglist>(MouseHandler mh, MouseAction ma, bool withConstraint=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMouseBinding</name>
+      <anchor>z111_6</anchor>
+      <arglist>(int buttonState, ClickAction action, bool doubleClick=false, int buttonBefore=Qt::NoButton)</arglist>
+    </member>
+    <member kind="function">
+      <type>ClickAction</type>
+      <name>clickAction</name>
+      <anchor>z111_7</anchor>
+      <arglist>(int buttonState, bool doubleClick, int buttonBefore)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getClickButtonState</name>
+      <anchor>z111_8</anchor>
+      <arglist>(ClickAction ca, Qt::ButtonState &amp;buttonState, bool &amp;doubleClick, Qt::ButtonState &amp;buttonBefore)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setWheelBinding</name>
+      <anchor>z111_9</anchor>
+      <arglist>(int stateKey, MouseHandler handler, MouseAction action, bool withConstraint=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>MouseAction</type>
+      <name>wheelAction</name>
+      <anchor>z111_10</anchor>
+      <arglist>(int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>wheelHandler</name>
+      <anchor>z111_11</anchor>
+      <arglist>(int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>wheelButtonState</name>
+      <anchor>z111_12</anchor>
+      <arglist>(MouseHandler mh, MouseAction ma, bool withConstraint=true)</arglist>
+    </member>
+    <member kind="enumeration">
+      <name>MouseHandler</name>
+      <anchor>z111_13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CAMERA</name>
+      <anchor>z111_13t13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRAME</name>
+      <anchor>z111_13t14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <name>ClickAction</name>
+      <anchor>z111_14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NO_CLICK_ACTION</name>
+      <anchor>z111_14t15</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ZOOM_ON_PIXEL</name>
+      <anchor>z111_14t16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ZOOM_TO_FIT</name>
+      <anchor>z111_14t17</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SELECT</name>
+      <anchor>z111_14t18</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAP_FROM_PIXEL</name>
+      <anchor>z111_14t19</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAP_IS_CENTER</name>
+      <anchor>z111_14t20</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CENTER_FRAME</name>
+      <anchor>z111_14t21</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CENTER_SCENE</name>
+      <anchor>z111_14t22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SHOW_ENTIRE_SCENE</name>
+      <anchor>z111_14t23</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ALIGN_FRAME</name>
+      <anchor>z111_14t24</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ALIGN_CAMERA</name>
+      <anchor>z111_14t25</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>qglviewer::Vec</type>
+      <name>backgroundColor</name>
+      <anchor>z85_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getBackgroundColor</name>
+      <anchor>z85_1</anchor>
+      <arglist>(float &amp;r, float &amp;g, float &amp;b) const</arglist>
+    </member>
+    <member kind="function">
+      <type>qglviewer::Vec</type>
+      <name>foregroundColor</name>
+      <anchor>z85_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getForegroundColor</name>
+      <anchor>z85_3</anchor>
+      <arglist>(float &amp;r, float &amp;g, float &amp;b) const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setBackgroundColor</name>
+      <anchor>z85_4</anchor>
+      <arglist>(const qglviewer::Vec &amp;color)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setBackgroundColor</name>
+      <anchor>z85_5</anchor>
+      <arglist>(float r, float g, float b)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setBackgroundColor</name>
+      <anchor>z85_6</anchor>
+      <arglist>(const QColor &amp;c)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setForegroundColor</name>
+      <anchor>z85_7</anchor>
+      <arglist>(const qglviewer::Vec &amp;color)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setForegroundColor</name>
+      <anchor>z85_8</anchor>
+      <arglist>(float r, float g, float b)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setForegroundColor</name>
+      <anchor>z85_9</anchor>
+      <arglist>(const QColor &amp;c)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>axisIsDrawn</name>
+      <anchor>z87_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>gridIsDrawn</name>
+      <anchor>z87_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>fpsIsDisplayed</name>
+      <anchor>z87_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>zBufferIsDisplayed</name>
+      <anchor>z87_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>textIsEnabled</name>
+      <anchor>z87_4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>cameraPathIsEdited</name>
+      <anchor>z87_5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setDrawAxis</name>
+      <anchor>z87_6</anchor>
+      <arglist>(bool f=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleDrawAxis</name>
+      <anchor>z87_7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setDrawGrid</name>
+      <anchor>z87_8</anchor>
+      <arglist>(bool f=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleDrawGrid</name>
+      <anchor>z87_9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setDisplayFPS</name>
+      <anchor>z87_10</anchor>
+      <arglist>(bool f=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleDisplayFPS</name>
+      <anchor>z87_11</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setDisplayZBuffer</name>
+      <anchor>z87_12</anchor>
+      <arglist>(bool f=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleDisplayZBuffer</name>
+      <anchor>z87_13</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setEnableText</name>
+      <anchor>z87_14</anchor>
+      <arglist>(bool f=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleEnableText</name>
+      <anchor>z87_15</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>editCameraPath</name>
+      <anchor>z87_16</anchor>
+      <arglist>(bool edit=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleCameraPathEditor</name>
+      <anchor>z87_17</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>sceneRadius</name>
+      <anchor>z89_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>qglviewer::Vec</type>
+      <name>QGLViewer::sceneCenter</name>
+      <anchor>z89_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getSceneCenter</name>
+      <anchor>z89_2</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSceneBoundingBox</name>
+      <anchor>z89_3</anchor>
+      <arglist>(const float m[3], const float M[3])</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>currentFPS</name>
+      <anchor>z89_4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSceneRadius</name>
+      <anchor>z89_5</anchor>
+      <arglist>(float r)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSceneCenter</name>
+      <anchor>z89_6</anchor>
+      <arglist>(const qglviewer::Vec &amp;sc)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSceneCenter</name>
+      <anchor>z89_7</anchor>
+      <arglist>(float x, float y, float z)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSceneBoundingBox</name>
+      <anchor>z89_8</anchor>
+      <arglist>(const qglviewer::Vec &amp;m, const qglviewer::Vec &amp;M)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>showEntireScene</name>
+      <anchor>z89_9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>qglviewer::Camera *</type>
+      <name>camera</name>
+      <anchor>z91_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>qglviewer::ManipulatedFrame *</type>
+      <name>manipulatedFrame</name>
+      <anchor>z91_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setCamera</name>
+      <anchor>z91_2</anchor>
+      <arglist>(qglviewer::Camera *const c)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setManipulatedFrame</name>
+      <anchor>z91_3</anchor>
+      <arglist>(qglviewer::ManipulatedFrame *fr)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>aspectRatio</name>
+      <anchor>z93_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isFullScreen</name>
+      <anchor>z93_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>displaysInStereo</name>
+      <anchor>z93_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFullScreen</name>
+      <anchor>z93_3</anchor>
+      <arglist>(bool fs=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleFullScreen</name>
+      <anchor>z93_4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setStereoDisplay</name>
+      <anchor>z93_5</anchor>
+      <arglist>(bool s=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleStereoDisplay</name>
+      <anchor>z93_6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>toggleCameraMode</name>
+      <anchor>z93_7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>drawAxis</name>
+      <anchor>z95_0</anchor>
+      <arglist>(float scale=1.0f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>drawGrid</name>
+      <anchor>z95_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>startScreenCoordinatesSystem</name>
+      <anchor>z95_2</anchor>
+      <arglist>(bool upward=false) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>stopScreenCoordinatesSystem</name>
+      <anchor>z95_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>drawText</name>
+      <anchor>z95_4</anchor>
+      <arglist>(int x, int y, const QString &amp;text, const QFont &amp;fnt=QFont())</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>draw3DText</name>
+      <anchor>z95_5</anchor>
+      <arglist>(const qglviewer::Vec &amp;pos, const qglviewer::Vec &amp;normal, const QString &amp;string, GLfloat height=0.1f)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>drawLight</name>
+      <anchor>z95_6</anchor>
+      <arglist>(GLenum light, float scale=1.0f) const</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>displayFPS</name>
+      <anchor>z95_7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>displayZBuffer</name>
+      <anchor>z95_8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>qglviewer::MouseGrabber *</type>
+      <name>mouseGrabber</name>
+      <anchor>z97_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setMouseGrabber</name>
+      <anchor>z97_1</anchor>
+      <arglist>(qglviewer::MouseGrabber *mg)</arglist>
+    </member>
+    <member kind="function">
+      <type>const QString &amp;</type>
+      <name>snapshotFilename</name>
+      <anchor>z99_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const QString &amp;</type>
+      <name>snapshotFormat</name>
+      <anchor>z99_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>snapshotCounter</name>
+      <anchor>z99_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>saveSnapshot</name>
+      <anchor>z99_3</anchor>
+      <arglist>(bool automatic=false, bool overwrite=false)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSnapshotFilename</name>
+      <anchor>z99_4</anchor>
+      <arglist>(const QString &amp;n)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSnapshotFormat</name>
+      <anchor>z99_5</anchor>
+      <arglist>(const QString &amp;f)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSnapshotCounter</name>
+      <anchor>z99_6</anchor>
+      <arglist>(const int c)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>animationIsStarted</name>
+      <anchor>z101_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>animationPeriod</name>
+      <anchor>z101_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setAnimationPeriod</name>
+      <anchor>z101_2</anchor>
+      <arglist>(int msecs)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>startAnimation</name>
+      <anchor>z101_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>stopAnimation</name>
+      <anchor>z101_4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>toggleAnimationMode</name>
+      <anchor>z101_5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>animate</name>
+      <anchor>z101_6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QString</type>
+      <name>helpString</name>
+      <anchor>z103_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QString</type>
+      <name>mouseBindingsString</name>
+      <anchor>z103_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QString</type>
+      <name>shortcutBindingsString</name>
+      <anchor>z103_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>help</name>
+      <anchor>z103_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>select</name>
+      <anchor>z107_0</anchor>
+      <arglist>(const QMouseEvent *e)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>select</name>
+      <anchor>z107_1</anchor>
+      <arglist>(int x, int y)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>beginSelection</name>
+      <anchor>z107_2</anchor>
+      <arglist>(int x, int y)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>drawWithNames</name>
+      <anchor>z107_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>endSelection</name>
+      <anchor>z107_4</anchor>
+      <arglist>(int x, int y)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>postSelection</name>
+      <anchor>z107_5</anchor>
+      <arglist>(int, int)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>selectedName</name>
+      <anchor>z107_6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSelectedName</name>
+      <anchor>z107_7</anchor>
+      <arglist>(int id)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>selectBufferSize</name>
+      <anchor>z107_8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSelectBufferSize</name>
+      <anchor>z107_9</anchor>
+      <arglist>(int size)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>selectRegionSize</name>
+      <anchor>z107_10</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSelectRegionSize</name>
+      <anchor>z107_11</anchor>
+      <arglist>(int size)</arglist>
+    </member>
+    <member kind="function">
+      <type>GLuint *</type>
+      <name>selectBuffer</name>
+      <anchor>z107_12</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setShortcutKey</name>
+      <anchor>z109_0</anchor>
+      <arglist>(ShortcutAction action, int key, int stateKey=-1)</arglist>
+    </member>
+    <member kind="function">
+      <type>Qt::Key</type>
+      <name>shortcutKey</name>
+      <anchor>z109_1</anchor>
+      <arglist>(ShortcutAction action) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setShortcutStateKey</name>
+      <anchor>z109_2</anchor>
+      <arglist>(ShortcutAction action, int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>Qt::ButtonState</type>
+      <name>shortcutStateKey</name>
+      <anchor>z109_3</anchor>
+      <arglist>(ShortcutAction action) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setKeyFrameKey</name>
+      <anchor>z109_4</anchor>
+      <arglist>(int nb, int key)</arglist>
+    </member>
+    <member kind="function">
+      <type>Qt::Key</type>
+      <name>keyFrameKey</name>
+      <anchor>z109_5</anchor>
+      <arglist>(int nb) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setAddKeyFrameStateKey</name>
+      <anchor>z109_6</anchor>
+      <arglist>(int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>Qt::ButtonState</type>
+      <name>addKeyFrameStateKey</name>
+      <anchor>z109_7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setPlayKeyFramePathStateKey</name>
+      <anchor>z109_8</anchor>
+      <arglist>(int buttonState)</arglist>
+    </member>
+    <member kind="function">
+      <type>Qt::ButtonState</type>
+      <name>playKeyFramePathStateKey</name>
+      <anchor>z109_9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="enumeration">
+      <name>ShortcutAction</name>
+      <anchor>z109_10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DRAW_AXIS</name>
+      <anchor>z109_10t0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DRAW_GRID</name>
+      <anchor>z109_10t1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DISPLAY_FPS</name>
+      <anchor>z109_10t2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DISPLAY_Z_BUFFER</name>
+      <anchor>z109_10t3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENABLE_TEXT</name>
+      <anchor>z109_10t4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXIT</name>
+      <anchor>z109_10t5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SAVE_SCREENSHOT</name>
+      <anchor>z109_10t6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CAMERA_MODE</name>
+      <anchor>z109_10t7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FULL_SCREEN</name>
+      <anchor>z109_10t8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STEREO</name>
+      <anchor>z109_10t9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ANIMATION</name>
+      <anchor>z109_10t10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>HELP</name>
+      <anchor>z109_10t11</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EDIT_CAMERA_PATHS</name>
+      <anchor>z109_10t12</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>saveToFile</name>
+      <anchor>z113_0</anchor>
+      <arglist>(const QString &amp;fileName=&quot;&quot;)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>restoreFromFile</name>
+      <anchor>z113_1</anchor>
+      <arglist>(const QString &amp;fileName=&quot;&quot;)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>z113_2</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z113_3</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setVisualHintsMask</name>
+      <anchor>z117_0</anchor>
+      <arglist>(int mask, int delay=2000)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>drawVisualHints</name>
+      <anchor>z117_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>resetVisualHints</name>
+      <anchor>z117_2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>const QPtrList&lt; QGLViewer &gt; &amp;</type>
+      <name>QGLViewerPool</name>
+      <anchor>z115_0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>int</type>
+      <name>QGLViewerIndex</name>
+      <anchor>z115_1</anchor>
+      <arglist>(const QGLViewer *const v)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>connectSignalToAllViewers</name>
+      <anchor>z115_2</anchor>
+      <arglist>(const QObject *sender, const char *signal, const char *member=SLOT(updateGL()))</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>disconnectSignalToAllViewers</name>
+      <anchor>z115_3</anchor>
+      <arglist>(const QObject *sender, const char *signal, const char *member=SLOT(updateGL()))</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>updateGLForAllViewers</name>
+      <anchor>z115_4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>void</type>
+      <name>saveToFileForAllViewers</name>
+      <anchor>z115_5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mousePressEvent</name>
+      <anchor>z105_0</anchor>
+      <arglist>(QMouseEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseDoubleClickEvent</name>
+      <anchor>z105_1</anchor>
+      <arglist>(QMouseEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseReleaseEvent</name>
+      <anchor>z105_2</anchor>
+      <arglist>(QMouseEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseMoveEvent</name>
+      <anchor>z105_3</anchor>
+      <arglist>(QMouseEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>wheelEvent</name>
+      <anchor>z105_4</anchor>
+      <arglist>(QWheelEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>timerEvent</name>
+      <anchor>z105_5</anchor>
+      <arglist>(QTimerEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>closeEvent</name>
+      <anchor>z105_6</anchor>
+      <arglist>(QCloseEvent *)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>keyPressEvent</name>
+      <anchor>z105_7</anchor>
+      <arglist>(QKeyEvent *)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>viewerInitialized</name>
+      <anchor>j0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>drawNeeded</name>
+      <anchor>j1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>animateNeeded</name>
+      <anchor>j2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>helpRequired</name>
+      <anchor>j3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>axisDrawn</name>
+      <anchor>j4</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>gridDrawn</name>
+      <anchor>j5</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>fpsDisplayed</name>
+      <anchor>j6</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>zBufferDisplayed</name>
+      <anchor>j7</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>textEnabled</name>
+      <anchor>j8</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>cameraPathEdited</name>
+      <anchor>j9</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>stereoChanged</name>
+      <anchor>j10</anchor>
+      <arglist>(bool on)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>pointSelected</name>
+      <anchor>j11</anchor>
+      <arglist>(const QMouseEvent *e)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>QGLViewer</name>
+      <anchor>a0</anchor>
+      <arglist>(QWidget *parent=NULL, const char *name=0, const QGLWidget *shareWidget=0, WFlags flags=0)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>QGLViewer</name>
+      <anchor>a1</anchor>
+      <arglist>(const QGLFormat &amp;format, QWidget *parent=0, const char *name=0, const QGLWidget *shareWidget=0, WFlags flags=0)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~QGLViewer</name>
+      <anchor>a2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>resizeGL</name>
+      <anchor>b0</anchor>
+      <arglist>(int w, int h)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initializeGL</name>
+      <anchor>b1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>init</name>
+      <anchor>b2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>paintGL</name>
+      <anchor>b3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>preDraw</name>
+      <anchor>b4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>preDrawStereo</name>
+      <anchor>b5</anchor>
+      <arglist>(bool leftBuffer=true)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>draw</name>
+      <anchor>b6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>fastDraw</name>
+      <anchor>b7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>postDraw</name>
+      <anchor>b8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public">
+      <type>QWidget *</type>
+      <name>rootWidget</name>
+      <anchor>b9</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>EpsRenderer</name>
+    <filename>namespaceEpsRenderer.html</filename>
+  </compound>
+  <compound kind="namespace">
+    <name>qglviewer</name>
+    <filename>namespaceqglviewer.html</filename>
+    <class kind="class">qglviewer::AxisPlaneConstraint</class>
+    <class kind="class">qglviewer::Camera</class>
+    <class kind="class">qglviewer::CameraConstraint</class>
+    <class kind="class">qglviewer::Constraint</class>
+    <class kind="class">qglviewer::Frame</class>
+    <class kind="class">qglviewer::KeyFrameInterpolator::KeyFrame</class>
+    <class kind="class">qglviewer::KeyFrameInterpolator</class>
+    <class kind="class">qglviewer::LocalConstraint</class>
+    <class kind="class">qglviewer::ManipulatedCameraFrame</class>
+    <class kind="class">qglviewer::ManipulatedFrame</class>
+    <class kind="class">qglviewer::MouseGrabber</class>
+    <class kind="class">qglviewer::Quaternion</class>
+    <class kind="class">qglviewer::SpinningFrame</class>
+    <class kind="class">qglviewer::Vec</class>
+    <class kind="class">qglviewer::WorldConstraint</class>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::AxisPlaneConstraint</name>
+    <filename>classqglviewer_1_1AxisPlaneConstraint.html</filename>
+    <base>qglviewer::Constraint</base>
+    <member kind="enumeration">
+      <name>Type</name>
+      <anchor>s4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FREE</name>
+      <anchor>s4s0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLANE</name>
+      <anchor>s4s1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>AXIS</name>
+      <anchor>s4s2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FORBIDDEN</name>
+      <anchor>s4s3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AxisPlaneConstraint</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~AxisPlaneConstraint</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>constrainTranslation</name>
+      <anchor>z29_0</anchor>
+      <arglist>(Vec &amp;, Frame *const)=0</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationConstraint</name>
+      <anchor>z29_1</anchor>
+      <arglist>(const Type t, const Vec &amp;dir)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationConstraint</name>
+      <anchor>z29_2</anchor>
+      <arglist>(const Type t, const float x, const float y, const float z)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationConstraintType</name>
+      <anchor>z29_3</anchor>
+      <arglist>(const Type t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationConstraintDir</name>
+      <anchor>z29_4</anchor>
+      <arglist>(const Vec &amp;dir)</arglist>
+    </member>
+    <member kind="function">
+      <type>Type</type>
+      <name>translationConstraintType</name>
+      <anchor>z29_5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getTranslationConstraintDir</name>
+      <anchor>z29_6</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>translationConstraintDir</name>
+      <anchor>z29_7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>constrainRotation</name>
+      <anchor>z31_0</anchor>
+      <arglist>(Quaternion &amp;, Frame *const)=0</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotationConstraint</name>
+      <anchor>z31_1</anchor>
+      <arglist>(const Type t, const Vec &amp;dir)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotationConstraint</name>
+      <anchor>z31_2</anchor>
+      <arglist>(const Type t, const float x, const float y, const float z)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotationConstraintType</name>
+      <anchor>z31_3</anchor>
+      <arglist>(const Type t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotationConstraintDir</name>
+      <anchor>z31_4</anchor>
+      <arglist>(const Vec &amp;dir)</arglist>
+    </member>
+    <member kind="function">
+      <type>Type</type>
+      <name>rotationConstraintType</name>
+      <anchor>z31_5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getRotationConstraintDir</name>
+      <anchor>z31_6</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>rotationConstraintDir</name>
+      <anchor>z31_7</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::Camera</name>
+    <filename>classqglviewer_1_1Camera.html</filename>
+    <member kind="function">
+      <type>Vec</type>
+      <name>position</name>
+      <anchor>z1_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>orientation</name>
+      <anchor>z1_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getPosition</name>
+      <anchor>z1_2</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getOrientation</name>
+      <anchor>z1_3</anchor>
+      <arglist>(float &amp;q0, float &amp;q1, float &amp;q2, float &amp;q3) const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setPosition</name>
+      <anchor>z1_4</anchor>
+      <arglist>(const Vec &amp;pos)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setPosition</name>
+      <anchor>z1_5</anchor>
+      <arglist>(float x, float y, float z)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setOrientation</name>
+      <anchor>z1_6</anchor>
+      <arglist>(const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setOrientation</name>
+      <anchor>z1_7</anchor>
+      <arglist>(float q0, float q1, float q2, float q3)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setOrientation</name>
+      <anchor>z1_8</anchor>
+      <arglist>(float theta, float phi)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setCameraFromProjectionMatrix</name>
+      <anchor>z1_9</anchor>
+      <arglist>(const float *const m)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setUpVector</name>
+      <anchor>z3_0</anchor>
+      <arglist>(float x, float y, float z, bool noMove=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>showEntireScene</name>
+      <anchor>z3_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>fitBoundingBox</name>
+      <anchor>z3_2</anchor>
+      <arglist>(const Vec &amp;m, const Vec &amp;M)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>fitSphere</name>
+      <anchor>z3_3</anchor>
+      <arglist>(const Vec &amp;center, float radius)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>fitSphere</name>
+      <anchor>z3_4</anchor>
+      <arglist>(float x, float y, float z, float r)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>lookAt</name>
+      <anchor>z3_5</anchor>
+      <arglist>(const Vec &amp;target)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>lookAt</name>
+      <anchor>z3_6</anchor>
+      <arglist>(float x, float y, float z)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>centerScene</name>
+      <anchor>z3_7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setUpVector</name>
+      <anchor>z3_8</anchor>
+      <arglist>(const Vec &amp;up, bool noMove=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>fitScreenRegion</name>
+      <anchor>z3_9</anchor>
+      <arglist>(int xa, int ya, int xb, int yb)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFOVToFitScene</name>
+      <anchor>z3_10</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>interpolateToZoomOnPixel</name>
+      <anchor>z3_11</anchor>
+      <arglist>(int x, int y)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>interpolateToFitScene</name>
+      <anchor>z3_12</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>fieldOfView</name>
+      <anchor>z5_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>horizontalFieldOfView</name>
+      <anchor>z5_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>flySpeed</name>
+      <anchor>z5_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Type</type>
+      <name>type</name>
+      <anchor>z5_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFieldOfView</name>
+      <anchor>z5_4</anchor>
+      <arglist>(float f)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setHorizontalFieldOfView</name>
+      <anchor>z5_5</anchor>
+      <arglist>(float hfov)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFlySpeed</name>
+      <anchor>z5_6</anchor>
+      <arglist>(float s)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setType</name>
+      <anchor>z5_7</anchor>
+      <arglist>(Type type)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual float</type>
+      <name>zNear</name>
+      <anchor>z7_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual float</type>
+      <name>zFar</name>
+      <anchor>z7_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>zNearCoef</name>
+      <anchor>z7_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getOrthoWidthHeight</name>
+      <anchor>z7_3</anchor>
+      <arglist>(GLdouble &amp;w, GLdouble &amp;h) const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>aspectRatio</name>
+      <anchor>z7_4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>screenWidth</name>
+      <anchor>z7_5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>screenHeight</name>
+      <anchor>z7_6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>pixelGLRatio</name>
+      <anchor>z7_7</anchor>
+      <arglist>(const Vec &amp;pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>distanceToSceneCenter</name>
+      <anchor>z7_8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>upVector</name>
+      <anchor>z7_9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getUpVector</name>
+      <anchor>z7_10</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>viewDirection</name>
+      <anchor>z7_11</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getViewDirection</name>
+      <anchor>z7_12</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>pointUnderPixel</name>
+      <anchor>z7_13</anchor>
+      <arglist>(const int x, const int y, bool &amp;found)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isManipulated</name>
+      <anchor>z7_14</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getViewport</name>
+      <anchor>z7_15</anchor>
+      <arglist>(GLint viewport[4]) const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setZNearCoef</name>
+      <anchor>z7_16</anchor>
+      <arglist>(float coef)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setAspectRatio</name>
+      <anchor>z7_17</anchor>
+      <arglist>(float ar)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>revolveAroundPoint</name>
+      <anchor>z9_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getRevolveAroundPoint</name>
+      <anchor>z9_1</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setRevolveAroundPoint</name>
+      <anchor>z9_2</anchor>
+      <arglist>(const Vec &amp;rap)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setRevolveAroundPoint</name>
+      <anchor>z9_3</anchor>
+      <arglist>(float x, float y, float z)</arglist>
+    </member>
+    <member kind="slot">
+      <type>bool</type>
+      <name>setRevolveAroundPointFromPixel</name>
+      <anchor>z9_4</anchor>
+      <arglist>(int x, int y)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>nbPaths</name>
+      <anchor>z11_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>KeyFrameInterpolator *</type>
+      <name>keyFrameInterpolator</name>
+      <anchor>z11_1</anchor>
+      <arglist>(unsigned short i) const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setKeyFrameInterpolator</name>
+      <anchor>z11_2</anchor>
+      <arglist>(unsigned short i, KeyFrameInterpolator *const kfi)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>addKeyFrame</name>
+      <anchor>z11_3</anchor>
+      <arglist>(unsigned short i)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>playKeyFramePath</name>
+      <anchor>z11_4</anchor>
+      <arglist>(unsigned short i)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>deleteKeyFramePath</name>
+      <anchor>z11_5</anchor>
+      <arglist>(unsigned short i)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>resetKeyFramePath</name>
+      <anchor>z11_6</anchor>
+      <arglist>(unsigned short i)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>drawAllPaths</name>
+      <anchor>z11_7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ManipulatedCameraFrame *</type>
+      <name>frame</name>
+      <anchor>z13_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFrame</name>
+      <anchor>z13_1</anchor>
+      <arglist>(ManipulatedCameraFrame *const f)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>loadProjectionMatrix</name>
+      <anchor>z15_0</anchor>
+      <arglist>(bool reset=true) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>loadProjectionMatrixStereo</name>
+      <anchor>z15_1</anchor>
+      <arglist>(bool leftBuffer=true) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>loadModelViewMatrix</name>
+      <anchor>z15_2</anchor>
+      <arglist>(bool reset=true) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>loadModelViewMatrixStereo</name>
+      <anchor>z15_3</anchor>
+      <arglist>(bool leftBuffer=true) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>getProjectionMatrix</name>
+      <anchor>z15_4</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>getProjectionMatrix</name>
+      <anchor>z15_5</anchor>
+      <arglist>(GLfloat m[16]) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>getModelViewMatrix</name>
+      <anchor>z15_6</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>getModelViewMatrix</name>
+      <anchor>z15_7</anchor>
+      <arglist>(GLfloat m[16]) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>computeModelViewMatrix</name>
+      <anchor>z15_8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getCameraCoordinatesOf</name>
+      <anchor>z17_0</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>cameraCoordinatesOf</name>
+      <anchor>z17_1</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getWorldCoordinatesOf</name>
+      <anchor>z17_2</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>worldCoordinatesOf</name>
+      <anchor>z17_3</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>projectedCoordinatesOf</name>
+      <anchor>z19_0</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getProjectedCoordinatesOf</name>
+      <anchor>z19_1</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>unprojectedCoordinatesOf</name>
+      <anchor>z19_2</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getUnprojectedCoordinatesOf</name>
+      <anchor>z19_3</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>convertClickToLine</name>
+      <anchor>z19_4</anchor>
+      <arglist>(int x, int y, float orig[3], float dir[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>convertClickToLine</name>
+      <anchor>z19_5</anchor>
+      <arglist>(int x, int y, Vec &amp;orig, Vec &amp;dir) const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>IODist</name>
+      <anchor>z21_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>distanceToScreen</name>
+      <anchor>z21_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>distanceToZeroParallaxPlane</name>
+      <anchor>z21_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>physicalScreenWidth</name>
+      <anchor>z21_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setIODist</name>
+      <anchor>z21_4</anchor>
+      <arglist>(float iod)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setDistanceToScreen</name>
+      <anchor>z21_5</anchor>
+      <arglist>(float dts)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setDistanceToZeroParallaxPlane</name>
+      <anchor>z21_6</anchor>
+      <arglist>(float dtz)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setPhysicalScreenWidth</name>
+      <anchor>z21_7</anchor>
+      <arglist>(float sw)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>z23_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z23_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>sceneRadius</name>
+      <anchor>z25_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>sceneCenter</name>
+      <anchor>z25_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSceneRadius</name>
+      <anchor>z25_2</anchor>
+      <arglist>(float r)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSceneBoundingBox</name>
+      <anchor>z25_3</anchor>
+      <arglist>(const Vec &amp;m, const Vec &amp;M)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSceneCenter</name>
+      <anchor>z25_4</anchor>
+      <arglist>(const Vec &amp;sc)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSceneCenter</name>
+      <anchor>z25_5</anchor>
+      <arglist>(float x, float y, float z)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>setSceneCenterFromPixel</name>
+      <anchor>z25_6</anchor>
+      <arglist>(int x, int y)</arglist>
+    </member>
+    <member kind="function" protection="public">
+      <type>bool</type>
+      <name>cameraPathIsEdited</name>
+      <anchor>z27_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot" protection="public">
+      <type>void</type>
+      <name>editCameraPath</name>
+      <anchor>z27_1</anchor>
+      <arglist>(bool edit)</arglist>
+    </member>
+    <member kind="slot" protection="public">
+      <type>void</type>
+      <name>setWindowWidthAndHeight</name>
+      <anchor>z27_2</anchor>
+      <arglist>(int w, int h)</arglist>
+    </member>
+    <member kind="enumeration">
+      <name>Type</name>
+      <anchor>s2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PERSPECTIVE</name>
+      <anchor>s2s0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ORTHO</name>
+      <anchor>s2s1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Camera</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~Camera</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::CameraConstraint</name>
+    <filename>classqglviewer_1_1CameraConstraint.html</filename>
+    <base>qglviewer::AxisPlaneConstraint</base>
+    <member kind="function">
+      <type></type>
+      <name>CameraConstraint</name>
+      <anchor>a0</anchor>
+      <arglist>(const Camera *const cam)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~CameraConstraint</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainTranslation</name>
+      <anchor>a2</anchor>
+      <arglist>(Vec &amp;, Frame *const)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainRotation</name>
+      <anchor>a3</anchor>
+      <arglist>(Quaternion &amp;, Frame *const)</arglist>
+    </member>
+    <member kind="function">
+      <type>const Camera *</type>
+      <name>camera</name>
+      <anchor>a4</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::Constraint</name>
+    <filename>classqglviewer_1_1Constraint.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~Constraint</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainTranslation</name>
+      <anchor>a1</anchor>
+      <arglist>(Vec &amp;, Frame *const)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainRotation</name>
+      <anchor>a2</anchor>
+      <arglist>(Quaternion &amp;, Frame *const)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::Frame</name>
+    <filename>classqglviewer_1_1Frame.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Frame</name>
+      <anchor>z33_0</anchor>
+      <arglist>(const Vec &amp;pos, const Quaternion &amp;orien)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPosition</name>
+      <anchor>z33_1</anchor>
+      <arglist>(const Vec &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPosition</name>
+      <anchor>z33_2</anchor>
+      <arglist>(const float x, const float y, const float z)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPositionWithConstraint</name>
+      <anchor>z33_3</anchor>
+      <arglist>(Vec &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setOrientation</name>
+      <anchor>z33_4</anchor>
+      <arglist>(const float x, const float y, const float z, const float a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setOrientation</name>
+      <anchor>z33_5</anchor>
+      <arglist>(const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setOrientationWithConstraint</name>
+      <anchor>z33_6</anchor>
+      <arglist>(Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setOrientationAxisAngle</name>
+      <anchor>z33_7</anchor>
+      <arglist>(const float x, const float y, const float z, const float a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPositionAndOrientation</name>
+      <anchor>z33_8</anchor>
+      <arglist>(const Vec &amp;t, const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setPositionAndOrientationWithConstraint</name>
+      <anchor>z33_9</anchor>
+      <arglist>(Vec &amp;t, Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>position</name>
+      <anchor>z33_10</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getPosition</name>
+      <anchor>z33_11</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>orientation</name>
+      <anchor>z33_12</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getOrientation</name>
+      <anchor>z33_13</anchor>
+      <arglist>(float &amp;q0, float &amp;q1, float &amp;q2, float &amp;q3) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Frame *</type>
+      <name>referenceFrame</name>
+      <anchor>z35_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setReferenceFrame</name>
+      <anchor>z35_1</anchor>
+      <arglist>(Frame *const fr)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>settingAsReferenceFrameWillCreateALoop</name>
+      <anchor>z35_2</anchor>
+      <arglist>(Frame *const fr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslation</name>
+      <anchor>z37_0</anchor>
+      <arglist>(const float x, const float y, const float z)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslation</name>
+      <anchor>z37_1</anchor>
+      <arglist>(const Vec &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationWithConstraint</name>
+      <anchor>z37_2</anchor>
+      <arglist>(Vec &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotation</name>
+      <anchor>z37_3</anchor>
+      <arglist>(const float x, const float y, const float z, const float a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotation</name>
+      <anchor>z37_4</anchor>
+      <arglist>(const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotationWithConstraint</name>
+      <anchor>z37_5</anchor>
+      <arglist>(Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRotationAxisAngle</name>
+      <anchor>z37_6</anchor>
+      <arglist>(const float x, const float y, const float z, const float a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationAndRotation</name>
+      <anchor>z37_7</anchor>
+      <arglist>(const Vec &amp;t, const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTranslationAndRotationWithConstraint</name>
+      <anchor>z37_8</anchor>
+      <arglist>(Vec &amp;t, Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getTranslation</name>
+      <anchor>z37_9</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>translation</name>
+      <anchor>z37_10</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getRotation</name>
+      <anchor>z37_11</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z, float &amp;a) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>rotation</name>
+      <anchor>z37_12</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>translate</name>
+      <anchor>z39_0</anchor>
+      <arglist>(Vec &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>translate</name>
+      <anchor>z39_1</anchor>
+      <arglist>(const Vec &amp;t)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>translate</name>
+      <anchor>z39_2</anchor>
+      <arglist>(float t[3])</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>translate</name>
+      <anchor>z39_3</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>translate</name>
+      <anchor>z39_4</anchor>
+      <arglist>(const float x, const float y, const float z)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotate</name>
+      <anchor>z39_5</anchor>
+      <arglist>(Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotate</name>
+      <anchor>z39_6</anchor>
+      <arglist>(const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotate</name>
+      <anchor>z39_7</anchor>
+      <arglist>(float q[4])</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotate</name>
+      <anchor>z39_8</anchor>
+      <arglist>(float &amp;x, float &amp;y, float &amp;z, float &amp;a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotate</name>
+      <anchor>z39_9</anchor>
+      <arglist>(const float x, const float y, const float z, const float a)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotateAroundPoint</name>
+      <anchor>z39_10</anchor>
+      <arglist>(Quaternion &amp;q, const Vec &amp;p)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rotateAroundPoint</name>
+      <anchor>z39_11</anchor>
+      <arglist>(const Quaternion &amp;q, const Vec &amp;p)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>coordinatesOf</name>
+      <anchor>z41_0</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>inverseCoordinatesOf</name>
+      <anchor>z41_1</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>localCoordinatesOf</name>
+      <anchor>z41_2</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>localInverseCoordinatesOf</name>
+      <anchor>z41_3</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>coordinatesOfIn</name>
+      <anchor>z41_4</anchor>
+      <arglist>(const Vec &amp;src, const Frame *in) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>coordinatesOfFrom</name>
+      <anchor>z41_5</anchor>
+      <arglist>(const Vec &amp;src, const Frame *from) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getCoordinatesOf</name>
+      <anchor>z41_6</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseCoordinatesOf</name>
+      <anchor>z41_7</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getLocalCoordinatesOf</name>
+      <anchor>z41_8</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getLocalInverseCoordinatesOf</name>
+      <anchor>z41_9</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getCoordinatesOfIn</name>
+      <anchor>z41_10</anchor>
+      <arglist>(const float src[3], float res[3], const Frame *in) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getCoordinatesOfFrom</name>
+      <anchor>z41_11</anchor>
+      <arglist>(const float src[3], float res[3], const Frame *from) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>transformOf</name>
+      <anchor>z43_0</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>inverseTransformOf</name>
+      <anchor>z43_1</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>localTransformOf</name>
+      <anchor>z43_2</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>localInverseTransformOf</name>
+      <anchor>z43_3</anchor>
+      <arglist>(const Vec &amp;src) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>transformOfIn</name>
+      <anchor>z43_4</anchor>
+      <arglist>(const Vec &amp;src, const Frame *in) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>transformOfFrom</name>
+      <anchor>z43_5</anchor>
+      <arglist>(const Vec &amp;src, const Frame *from) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getTransformOf</name>
+      <anchor>z43_6</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseTransformOf</name>
+      <anchor>z43_7</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getLocalTransformOf</name>
+      <anchor>z43_8</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getLocalInverseTransformOf</name>
+      <anchor>z43_9</anchor>
+      <arglist>(const float src[3], float res[3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getTransformOfIn</name>
+      <anchor>z43_10</anchor>
+      <arglist>(const float src[3], float res[3], const Frame *in) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getTransformOfFrom</name>
+      <anchor>z43_11</anchor>
+      <arglist>(const float src[3], float res[3], const Frame *from) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Constraint *</type>
+      <name>constraint</name>
+      <anchor>z45_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setConstraint</name>
+      <anchor>z45_1</anchor>
+      <arglist>(Constraint *c)</arglist>
+    </member>
+    <member kind="function">
+      <type>const GLdouble *</type>
+      <name>matrix</name>
+      <anchor>z47_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getMatrix</name>
+      <anchor>z47_1</anchor>
+      <arglist>(GLdouble m[4][4]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getMatrix</name>
+      <anchor>z47_2</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>const GLdouble *</type>
+      <name>worldMatrix</name>
+      <anchor>z47_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getWorldMatrix</name>
+      <anchor>z47_4</anchor>
+      <arglist>(GLdouble m[4][4]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getWorldMatrix</name>
+      <anchor>z47_5</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFromMatrix</name>
+      <anchor>z47_6</anchor>
+      <arglist>(const float m[4][4])</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>alignWithFrame</name>
+      <anchor>z47_7</anchor>
+      <arglist>(const Frame *const fr, bool move=false, float threshold=0.85f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>projectOnLine</name>
+      <anchor>z47_8</anchor>
+      <arglist>(const Vec &amp;origin, const Vec &amp;dir)</arglist>
+    </member>
+    <member kind="function">
+      <type>const GLdouble *</type>
+      <name>inverseMatrix</name>
+      <anchor>z47_9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseMatrix</name>
+      <anchor>z47_10</anchor>
+      <arglist>(GLdouble m[4][4]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseMatrix</name>
+      <anchor>z47_11</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>const GLdouble *</type>
+      <name>worldInverseMatrix</name>
+      <anchor>z47_12</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getWorldInverseMatrix</name>
+      <anchor>z47_13</anchor>
+      <arglist>(GLdouble m[4][4]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getWorldInverseMatrix</name>
+      <anchor>z47_14</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Frame</type>
+      <name>inverse</name>
+      <anchor>z49_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>invert</name>
+      <anchor>z49_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Frame</type>
+      <name>worldInverse</name>
+      <anchor>z49_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>worldInvert</name>
+      <anchor>z49_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>z51_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z51_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>modified</name>
+      <anchor>j0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Frame</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~Frame</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Frame &amp;</type>
+      <name>operator=</name>
+      <anchor>a2</anchor>
+      <arglist>(const Frame &amp;f)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Frame</name>
+      <anchor>a3</anchor>
+      <arglist>(const Frame &amp;f)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::KeyFrameInterpolator</name>
+    <filename>classqglviewer_1_1KeyFrameInterpolator.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>setFrame</name>
+      <anchor>z53_0</anchor>
+      <arglist>(Frame *fr)</arglist>
+    </member>
+    <member kind="function">
+      <type>Frame *</type>
+      <name>frame</name>
+      <anchor>z53_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addKeyFrame</name>
+      <anchor>z53_2</anchor>
+      <arglist>(const Frame &amp;fr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addKeyFrame</name>
+      <anchor>z53_3</anchor>
+      <arglist>(const Frame &amp;fr, const float time)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addKeyFrame</name>
+      <anchor>z53_4</anchor>
+      <arglist>(const Frame *fr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addKeyFrame</name>
+      <anchor>z53_5</anchor>
+      <arglist>(const Frame *fr, const float time)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>deletePath</name>
+      <anchor>z53_6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>numberOfKeyFrames</name>
+      <anchor>z53_7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Frame</type>
+      <name>keyFrame</name>
+      <anchor>z53_8</anchor>
+      <arglist>(const int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>keyFramePosition</name>
+      <anchor>z53_9</anchor>
+      <arglist>(const int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>keyFrameOrientation</name>
+      <anchor>z53_10</anchor>
+      <arglist>(const int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>keyFrameTime</name>
+      <anchor>z53_11</anchor>
+      <arglist>(const int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>interpolationTime</name>
+      <anchor>z55_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInterpolationTime</name>
+      <anchor>z55_1</anchor>
+      <arglist>(const float time)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>interpolationSpeed</name>
+      <anchor>z55_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInterpolationSpeed</name>
+      <anchor>z55_3</anchor>
+      <arglist>(const float speed)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>interpolationPeriod</name>
+      <anchor>z55_4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInterpolationPeriod</name>
+      <anchor>z55_5</anchor>
+      <arglist>(const int msecs)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>loopInterpolation</name>
+      <anchor>z55_6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLoopInterpolation</name>
+      <anchor>z55_7</anchor>
+      <arglist>(const bool loop=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>closedPath</name>
+      <anchor>z55_8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setClosedPath</name>
+      <anchor>z55_9</anchor>
+      <arglist>(const bool closed=true)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>interpolateAtTime</name>
+      <anchor>z57_0</anchor>
+      <arglist>(const float time)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>startInterpolation</name>
+      <anchor>z57_1</anchor>
+      <arglist>(const int msecs=-1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>stopInterpolation</name>
+      <anchor>z57_2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resetInterpolation</name>
+      <anchor>z57_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>interpolationIsStarted</name>
+      <anchor>z57_4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>toggleInterpolation</name>
+      <anchor>z57_5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>drawPath</name>
+      <anchor>z59_0</anchor>
+      <arglist>(const int mask=1, int nbFrames=6, const float scale=1.0f)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>drawPathModifyGLState</name>
+      <anchor>z59_1</anchor>
+      <arglist>(const int mask, int nbFrames, const float scale)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>z61_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z61_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>update</name>
+      <anchor>g0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>interpolated</name>
+      <anchor>j0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>finished</name>
+      <anchor>j1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>KeyFrameInterpolator</name>
+      <anchor>a0</anchor>
+      <arglist>(Frame *fr=NULL)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~KeyFrameInterpolator</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::LocalConstraint</name>
+    <filename>classqglviewer_1_1LocalConstraint.html</filename>
+    <base>qglviewer::AxisPlaneConstraint</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~LocalConstraint</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainTranslation</name>
+      <anchor>a1</anchor>
+      <arglist>(Vec &amp;, Frame *const)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainRotation</name>
+      <anchor>a2</anchor>
+      <arglist>(Quaternion &amp;, Frame *const)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::ManipulatedCameraFrame</name>
+    <filename>classqglviewer_1_1ManipulatedCameraFrame.html</filename>
+    <base>qglviewer::ManipulatedFrame</base>
+    <member kind="function">
+      <type>float</type>
+      <name>flySpeed</name>
+      <anchor>z63_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>flyUpVector</name>
+      <anchor>z63_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFlySpeed</name>
+      <anchor>z63_2</anchor>
+      <arglist>(const float s)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setFlyUpVector</name>
+      <anchor>z63_3</anchor>
+      <arglist>(const Vec &amp;up)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>z65_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z65_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseReleaseEvent</name>
+      <anchor>z67_0</anchor>
+      <arglist>(QMouseEvent *const, Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseMoveEvent</name>
+      <anchor>z67_1</anchor>
+      <arglist>(QMouseEvent *const, const Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>wheelEvent</name>
+      <anchor>z67_2</anchor>
+      <arglist>(QWheelEvent *const, const Camera *const camera)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ManipulatedCameraFrame</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~ManipulatedCameraFrame</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot" protection="public">
+      <type>void</type>
+      <name>updateFrameInFlyMode</name>
+      <anchor>h0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public">
+      <type>void</type>
+      <name>updateFlyUpVector</name>
+      <anchor>b0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public">
+      <type>Quaternion</type>
+      <name>quaternionFromThetaPhi</name>
+      <anchor>b1</anchor>
+      <arglist>(const int x, const int y, const Camera *const camera)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>startAction</name>
+      <anchor>b2</anchor>
+      <arglist>(int ma, bool withConstraint=true)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::ManipulatedFrame</name>
+    <filename>classqglviewer_1_1ManipulatedFrame.html</filename>
+    <base>qglviewer::SpinningFrame</base>
+    <base>qglviewer::MouseGrabber</base>
+    <member kind="function">
+      <type>float</type>
+      <name>rotationSensitivity</name>
+      <anchor>z69_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>translationSensitivity</name>
+      <anchor>z69_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>spinningSensitivity</name>
+      <anchor>z69_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>wheelSensitivity</name>
+      <anchor>z69_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setRotationSensitivity</name>
+      <anchor>z69_4</anchor>
+      <arglist>(const float s)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setTranslationSensitivity</name>
+      <anchor>z69_5</anchor>
+      <arglist>(const float s)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSpinningSensitivity</name>
+      <anchor>z69_6</anchor>
+      <arglist>(const float s)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setWheelSensitivity</name>
+      <anchor>z69_7</anchor>
+      <arglist>(const float s)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isManipulated</name>
+      <anchor>z71_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>z73_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z73_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mousePressEvent</name>
+      <anchor>z75_0</anchor>
+      <arglist>(QMouseEvent *const, Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseReleaseEvent</name>
+      <anchor>z75_1</anchor>
+      <arglist>(QMouseEvent *const, Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseMoveEvent</name>
+      <anchor>z75_2</anchor>
+      <arglist>(QMouseEvent *const, const Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>wheelEvent</name>
+      <anchor>z75_3</anchor>
+      <arglist>(QWheelEvent *const, const Camera *const camera)</arglist>
+    </member>
+    <member kind="function" protection="public">
+      <type>void</type>
+      <name>checkIfGrabsMouse</name>
+      <anchor>z77_0</anchor>
+      <arglist>(int x, int y, const Camera *const camera)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>manipulated</name>
+      <anchor>j0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ManipulatedFrame</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~ManipulatedFrame</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::MouseGrabber</name>
+    <filename>classqglviewer_1_1MouseGrabber.html</filename>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>checkIfGrabsMouse</name>
+      <anchor>z79_0</anchor>
+      <arglist>(int x, int y, const Camera *const camera)=0</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>grabsMouse</name>
+      <anchor>z79_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public">
+      <type>void</type>
+      <name>setGrabsMouse</name>
+      <anchor>z79_2</anchor>
+      <arglist>(const bool flag)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isInMouseGrabberPool</name>
+      <anchor>z81_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addInMouseGrabberPool</name>
+      <anchor>z81_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>removeFromMouseGrabberPool</name>
+      <anchor>z81_2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clearMouseGrabberPool</name>
+      <anchor>z81_3</anchor>
+      <arglist>(bool autoDelete=false)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>const QPtrList&lt; MouseGrabber &gt; &amp;</type>
+      <name>MouseGrabberPool</name>
+      <anchor>z81_4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mousePressEvent</name>
+      <anchor>z83_0</anchor>
+      <arglist>(QMouseEvent *const, Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseDoubleClickEvent</name>
+      <anchor>z83_1</anchor>
+      <arglist>(QMouseEvent *const, Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseReleaseEvent</name>
+      <anchor>z83_2</anchor>
+      <arglist>(QMouseEvent *const, Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>mouseMoveEvent</name>
+      <anchor>z83_3</anchor>
+      <arglist>(QMouseEvent *const, const Camera *const)</arglist>
+    </member>
+    <member kind="function" protection="public" virtualness="virtual">
+      <type>virtual void</type>
+      <name>wheelEvent</name>
+      <anchor>z83_4</anchor>
+      <arglist>(QWheelEvent *const, const Camera *const)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MouseGrabber</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~MouseGrabber</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::Quaternion</name>
+    <filename>classqglviewer_1_1Quaternion.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Quaternion</name>
+      <anchor>z119_0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Quaternion</name>
+      <anchor>z119_1</anchor>
+      <arglist>(const Vec &amp;axis, const double angle)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Quaternion</name>
+      <anchor>z119_2</anchor>
+      <arglist>(const Vec &amp;v, const double sin_ha, const double cos_ha)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Quaternion</name>
+      <anchor>z119_3</anchor>
+      <arglist>(const double q0, const double q1, const double q2, const double q3)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Quaternion</name>
+      <anchor>z119_4</anchor>
+      <arglist>(const Vec &amp;from, const Vec &amp;to)</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion &amp;</type>
+      <name>operator=</name>
+      <anchor>z119_5</anchor>
+      <arglist>(const Quaternion &amp;Q)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Quaternion</name>
+      <anchor>z119_6</anchor>
+      <arglist>(const Quaternion &amp;Q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setAxisAngle</name>
+      <anchor>z119_7</anchor>
+      <arglist>(const Vec &amp;v, const double angle)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setValue</name>
+      <anchor>z119_8</anchor>
+      <arglist>(const double q0, const double q1, const double q2, const double q3)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFromRotationMatrix</name>
+      <anchor>z119_9</anchor>
+      <arglist>(const float m[3][3])</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFromRotatedBase</name>
+      <anchor>z119_10</anchor>
+      <arglist>(const Vec &amp;X, const Vec &amp;Y, const Vec &amp;Z)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>axis</name>
+      <anchor>z121_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>angle</name>
+      <anchor>z121_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getAxisAngle</name>
+      <anchor>z121_2</anchor>
+      <arglist>(Vec &amp;axis, float &amp;angle) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>operator[]</name>
+      <anchor>z121_3</anchor>
+      <arglist>(int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double &amp;</type>
+      <name>operator[]</name>
+      <anchor>z121_4</anchor>
+      <arglist>(int i)</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion &amp;</type>
+      <name>operator *=</name>
+      <anchor>z123_0</anchor>
+      <arglist>(const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>inverseRotate</name>
+      <anchor>z123_1</anchor>
+      <arglist>(const Vec &amp;v) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>rotate</name>
+      <anchor>z123_2</anchor>
+      <arglist>(const Vec &amp;v) const</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend const Quaternion</type>
+      <name>operator *</name>
+      <anchor>z123_3</anchor>
+      <arglist>(const Quaternion &amp;a, const Quaternion &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend const Vec</type>
+      <name>operator *</name>
+      <anchor>z123_4</anchor>
+      <arglist>(const Quaternion &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>inverse</name>
+      <anchor>z125_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>invert</name>
+      <anchor>z125_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>negate</name>
+      <anchor>z125_2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>normalize</name>
+      <anchor>z125_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const GLdouble *</type>
+      <name>matrix</name>
+      <anchor>z127_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getMatrix</name>
+      <anchor>z127_1</anchor>
+      <arglist>(GLdouble m[4][4]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getMatrix</name>
+      <anchor>z127_2</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getRotationMatrix</name>
+      <anchor>z127_3</anchor>
+      <arglist>(float m[3][3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>const GLdouble *</type>
+      <name>inverseMatrix</name>
+      <anchor>z127_4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseMatrix</name>
+      <anchor>z127_5</anchor>
+      <arglist>(GLdouble m[4][4]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseMatrix</name>
+      <anchor>z127_6</anchor>
+      <arglist>(GLdouble m[16]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getInverseRotationMatrix</name>
+      <anchor>z127_7</anchor>
+      <arglist>(float m[3][3]) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>log</name>
+      <anchor>z129_0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>exp</name>
+      <anchor>z129_1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>Quaternion</type>
+      <name>slerp</name>
+      <anchor>z129_2</anchor>
+      <arglist>(const Quaternion &amp;a, const Quaternion &amp;b, float t, bool allowFlip=true)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>Quaternion</type>
+      <name>squad</name>
+      <anchor>z129_3</anchor>
+      <arglist>(const Quaternion &amp;a, const Quaternion &amp;tgA, const Quaternion &amp;tgB, const Quaternion &amp;b, float t)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>double</type>
+      <name>dot</name>
+      <anchor>z129_4</anchor>
+      <arglist>(const Quaternion &amp;a, const Quaternion &amp;b)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>Quaternion</type>
+      <name>lnDif</name>
+      <anchor>z129_5</anchor>
+      <arglist>(const Quaternion &amp;a, const Quaternion &amp;b)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>Quaternion</type>
+      <name>squadTangent</name>
+      <anchor>z129_6</anchor>
+      <arglist>(const Quaternion &amp;a, const Quaternion &amp;b, const Quaternion &amp;c)</arglist>
+    </member>
+    <member kind="function">
+      <type>QDomElement</type>
+      <name>domElement</name>
+      <anchor>z133_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z133_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>Quaternion</type>
+      <name>randomOrientation</name>
+      <anchor>z131_0</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::SpinningFrame</name>
+    <filename>classqglviewer_1_1SpinningFrame.html</filename>
+    <base>qglviewer::Frame</base>
+    <member kind="function">
+      <type>Quaternion</type>
+      <name>spinningQuaternion</name>
+      <anchor>z135_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>rotationCenter</name>
+      <anchor>z135_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>rotatesAroundCenter</name>
+      <anchor>z135_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>orientationIsFrozen</name>
+      <anchor>z135_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setSpinningQuaternion</name>
+      <anchor>z135_4</anchor>
+      <arglist>(const Quaternion &amp;q)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setRotationCenter</name>
+      <anchor>z135_5</anchor>
+      <arglist>(const Vec &amp;center)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setRotateAroundCenter</name>
+      <anchor>z135_6</anchor>
+      <arglist>(const bool rac=true)</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>freezeOrientation</name>
+      <anchor>z135_7</anchor>
+      <arglist>(const bool fo=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSpinning</name>
+      <anchor>z137_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>updateInterval</name>
+      <anchor>z137_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>startSpinning</name>
+      <anchor>z137_2</anchor>
+      <arglist>(const int msecs=-1)</arglist>
+    </member>
+    <member kind="slot" virtualness="virtual">
+      <type>virtual void</type>
+      <name>stopSpinning</name>
+      <anchor>z137_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>setUpdateInterval</name>
+      <anchor>z137_4</anchor>
+      <arglist>(const int msecs)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>spinned</name>
+      <anchor>j0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SpinningFrame</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~SpinningFrame</name>
+      <anchor>a1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual QDomElement</type>
+      <name>domElement</name>
+      <anchor>a2</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>initFromDOMElement</name>
+      <anchor>a3</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="slot" protection="public">
+      <type>void</type>
+      <name>updateFrame</name>
+      <anchor>h0</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::Vec</name>
+    <filename>classqglviewer_1_1Vec.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Vec</name>
+      <anchor>z139_0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Vec</name>
+      <anchor>z139_1</anchor>
+      <arglist>(const float X, const float Y, const float Z)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Vec</name>
+      <anchor>z139_2</anchor>
+      <arglist>(const C &amp;c)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec &amp;</type>
+      <name>operator=</name>
+      <anchor>z139_3</anchor>
+      <arglist>(const Vec &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setValue</name>
+      <anchor>z139_4</anchor>
+      <arglist>(const float X, const float Y, const float Z)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>operator[]</name>
+      <anchor>z141_0</anchor>
+      <arglist>(int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>float &amp;</type>
+      <name>operator[]</name>
+      <anchor>z141_1</anchor>
+      <arglist>(int i)</arglist>
+    </member>
+    <member kind="function">
+      <type>const float *</type>
+      <name>address</name>
+      <anchor>z141_2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator const float *</name>
+      <anchor>z141_3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec &amp;</type>
+      <name>operator+=</name>
+      <anchor>z143_0</anchor>
+      <arglist>(const Vec &amp;a)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec &amp;</type>
+      <name>operator-=</name>
+      <anchor>z143_1</anchor>
+      <arglist>(const Vec &amp;a)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec &amp;</type>
+      <name>operator *=</name>
+      <anchor>z143_2</anchor>
+      <arglist>(float k)</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec &amp;</type>
+      <name>operator/=</name>
+      <anchor>z143_3</anchor>
+      <arglist>(float k)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator+</name>
+      <anchor>z143_4</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator-</name>
+      <anchor>z143_5</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator-</name>
+      <anchor>z143_6</anchor>
+      <arglist>(const Vec &amp;a)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator *</name>
+      <anchor>z143_7</anchor>
+      <arglist>(const Vec &amp;a, const float k)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator *</name>
+      <anchor>z143_8</anchor>
+      <arglist>(float k, const Vec &amp;a)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator/</name>
+      <anchor>z143_9</anchor>
+      <arglist>(const Vec &amp;a, const float k)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator!=</name>
+      <anchor>z143_10</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator==</name>
+      <anchor>z143_11</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend float</type>
+      <name>operator *</name>
+      <anchor>z143_12</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>cross</name>
+      <anchor>z143_13</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend Vec</type>
+      <name>operator^</name>
+      <anchor>z143_14</anchor>
+      <arglist>(const Vec &amp;a, const Vec &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>sqNorm</name>
+      <anchor>z145_0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>norm</name>
+      <anchor>z145_1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>normalize</name>
+      <anchor>z145_2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Vec</type>
+      <name>unit</name>
+      <anchor>z145_3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>projectOnAxis</name>
+      <anchor>z147_0</anchor>
+      <arglist>(const Vec &amp;dir)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>projectOnPlane</name>
+      <anchor>z147_1</anchor>
+      <arglist>(const Vec &amp;n)</arglist>
+    </member>
+    <member kind="function">
+      <type>QDomElement</type>
+      <name>domElement</name>
+      <anchor>z149_0</anchor>
+      <arglist>(const QString &amp;name, QDomDocument &amp;doc) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>initFromDOMElement</name>
+      <anchor>z149_1</anchor>
+      <arglist>(const QDomElement &amp;de)</arglist>
+    </member>
+    <member kind="variable">
+      <type>float</type>
+      <name>x</name>
+      <anchor>m0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>float</type>
+      <name>y</name>
+      <anchor>m1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>float</type>
+      <name>z</name>
+      <anchor>m2</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>qglviewer::WorldConstraint</name>
+    <filename>classqglviewer_1_1WorldConstraint.html</filename>
+    <base>qglviewer::AxisPlaneConstraint</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
+      <name>~WorldConstraint</name>
+      <anchor>a0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainTranslation</name>
+      <anchor>a1</anchor>
+      <arglist>(Vec &amp;, Frame *const)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>constrainRotation</name>
+      <anchor>a2</anchor>
+      <arglist>(Quaternion &amp;, Frame *const)</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>std</name>
+    <filename>namespacestd.html</filename>
+  </compound>
+</tagfile>

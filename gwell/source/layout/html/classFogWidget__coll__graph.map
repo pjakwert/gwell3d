@@ -1,0 +1,4 @@
+base referer
+rect $classFloatSpinBox.html 6,19 94,43
+rect $structFogStruct.html 177,19 243,43
+rect $classColorWidget.html 267,19 350,43

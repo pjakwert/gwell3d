@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: texturewidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>texturewidget.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef TEXTUREWIDGET_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define TEXTUREWIDGET_H</span>
+00010 <span class="preprocessor"></span>
+00011 <span class="preprocessor">#include &lt;qframe.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qcheckbox.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qpixmap.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qspinbox.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;qstringlist.h&gt;</span>
+00019 <span class="preprocessor">#include &lt;qfont.h&gt;</span>
+00020 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00021 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00022 <span class="preprocessor">#include &lt;qfiledialog.h&gt;</span>
+00023 <span class="preprocessor">#include &lt;qfile.h&gt;</span>
+00024 <span class="preprocessor">#include &lt;qtooltip.h&gt;</span>
+00025 
+00026 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00027 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00028 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00029 
+00030 <span class="preprocessor">#include &lt;floatspinbox.h&gt;</span>
+00031 <span class="preprocessor">#include &lt;texturemanager.h&gt;</span>
+00032 <span class="preprocessor">#include &lt;imagepreview.h&gt;</span>
+00033 
+00034 
+00035 <span class="keyword">class </span><a class="code" href="classCellFrame.html">CellFrame</a>;
+00036 
+00037 
+00038 <span class="keyword">class </span>TextureWidget : <span class="keyword">public</span> QWidget
+00039 {
+00040   Q_OBJECT
+00041       
+00042   <span class="keyword">public</span>:
+00043     TextureWidget( QPtrList&lt;ViNTreeNode&gt; *selectedList, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span>* name=0, WFlags fl=0 );
+00044     ~TextureWidget() { TextureManager::removeUnusedTextures(); <a class="code" href="classTextureManager.html#e14">TextureManager::setComboBox</a>( 0L ); }
+00045     
+00046     <span class="keywordtype">void</span> undoTexturing();
+00047     
+00048   <span class="keyword">private</span>:
+00049     QPtrList&lt;ViNTreeNode&gt; *_selectedList;       <span class="comment">// lista obrabianych obiektów</span>
+00050     <span class="keywordtype">bool</span>    _dynamicPreview;
+00051     <span class="keyword">static</span> QString _lastPath;  <span class="comment">// używana przez FileDialog - ostatnio używany katalog</span>
+00052     <span class="keyword">static</span> QImage  _lastImage;    <span class="comment">// przechowuje cały aktualnie używany obraz</span>
+00053     <span class="keyword">static</span> QString _lastFileName; <span class="comment">// nazwa pliku skojarzona z powyższym obrazem</span>
+00054     
+00055     QFrame*       mainFrame;
+00056     QCheckBox*    textureEnabledCheck;
+00057     QCheckBox*    dynamicPreviewCheck;
+00058     QCheckBox*    mipmapCheck;
+00059     QCheckBox*    reflectCheck;
+00060     QFrame*       topLine;
+00061     QFont         f9, f10;
+00062     
+00063     QGroupBox*    texParamsGroup;
+00064      QLabel*      magFilterLabel; 
+00065      QComboBox*   magFilterCombo; 
+00066      QLabel*      minFilterLabel;
+00067      QComboBox*   minFilterCombo; 
+00068      QLabel*      wrapSLabel;
+00069      QComboBox*   wrapSCombo; 
+00070      QLabel*      wrapTLabel;
+00071      QComboBox*   wrapTCombo;
+00072      QLabel*      envModeLabel;
+00073      QComboBox*   envModeCombo;
+00074      
+00075     QGroupBox*    blendGroup;
+00076      QCheckBox*   enableBlendCheck;
+00077      QLabel*      srcBlendLabel;
+00078      QComboBox*   srcBlendCombo;
+00079      QLabel*      destBlendLabel;
+00080      QComboBox*   destBlendCombo;
+00081     
+00082     QGroupBox*    imageParamsGroup;
+00083      QPushButton* loadImageButton;
+00084      QPushButton* removeImageButton;
+00085      QLabel*      scaleModeLabel;
+00086      QComboBox*   scaleModeCombo;
+00087      QLabel*      previewLabel;
+00088      QLabel*      fileLabel;
+00089      QLineEdit*   fileEdit;
+00090      QLabel*      origSizeLabel;
+00091      QLineEdit*   origSizeEdit;
+00092      QLabel*      currSizeLabel;
+00093      QLineEdit*   currSizeEdit;
+00094      
+00095     QGroupBox*    coordsGroup; 
+00096      QLabel*      MINlabel;
+00097      QLabel*      MAXlabel;
+00098      QLabel*      widthLabel;
+00099      QLabel*      heightLabel;
+00100      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>* minWSpin;
+00101      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>* minHSpin;
+00102      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>* maxWSpin;
+00103      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>* maxHSpin;
+00104     
+00105     QPushButton*  makeDefaultButton;
+00106     QPushButton*  resetToDefaultButton; 
+00107     
+00108     QComboBox*    loadedTexturesCombo;
+00109     
+00110     <span class="keywordtype">void</span> generatePreviewAndInfo( QString fileName=QString::null, QImage::ScaleMode=QImage::ScaleFree, <span class="keyword">const</span> QImage* inputImage=0L );
+00111     <span class="keywordtype">void</span> setInfo( QString fileName=QString::null, QString oldSize=QString::null, QString newSize=QString::null );
+00112     <span class="comment">/*</span>
+00113 <span class="comment">    QFrame*       bottomLine;</span>
+00114 <span class="comment">    QTextEdit*    glTexSyntaxEdit;</span>
+00115 <span class="comment">    QToolButton*  generateButton;</span>
+00116 <span class="comment">    */</span>
+00117     
+00118   <span class="keyword">private</span> slots:
+00119     <span class="keywordtype">void</span> setTextureEnabledGUI    ( <span class="keywordtype">bool</span> yes );  <span class="comment">// metody *GUI ustawiają tylko widgety,</span>
+00120     <span class="keywordtype">void</span> setBlendingEnabledGUI   ( <span class="keywordtype">bool</span> yes );  <span class="comment">// nie zmieniają właściwości obiektu</span>
+00121     
+00122     <span class="keywordtype">void</span> setTextureEnabled ( <span class="keywordtype">bool</span> yes );
+00123     
+00124     <span class="keywordtype">void</span> setScaleMode      ( QImage::ScaleMode scaleMode, <span class="keywordtype">bool</span> apply );
+00125     <span class="keywordtype">void</span> setMipmapingEnabled( <span class="keywordtype">bool</span> yes );
+00126     <span class="keywordtype">void</span> setMagFilter      ( GLenum magFilter, <span class="keywordtype">bool</span> apply );
+00127     <span class="keywordtype">void</span> setMinFilter      ( GLenum minFilter, <span class="keywordtype">bool</span> apply );
+00128     <span class="keywordtype">void</span> setWrapS          ( GLenum wrapS, <span class="keywordtype">bool</span> apply );
+00129     <span class="keywordtype">void</span> setWrapT          ( GLenum wrapT, <span class="keywordtype">bool</span> apply );
+00130     <span class="keywordtype">void</span> setEnvMode        ( GLenum envMode, <span class="keywordtype">bool</span> apply );
+00131     <span class="keywordtype">void</span> setBlendingEnabled( <span class="keywordtype">bool</span> yes );
+00132     <span class="keywordtype">void</span> setBlendSrcFactor ( GLenum srcFactor, <span class="keywordtype">bool</span> apply );
+00133     <span class="keywordtype">void</span> setBlendDestFactor( GLenum destFactor, <span class="keywordtype">bool</span> apply );
+00134     <span class="keywordtype">void</span> setReflectingEnabled( <span class="keywordtype">bool</span> yes );
+00135     <span class="keywordtype">void</span> setMinWH          ( GLfloat minW, GLfloat minH, <span class="keywordtype">bool</span> apply );
+00136     <span class="keywordtype">void</span> setMaxWH          ( GLfloat maxW, GLfloat maxH, <span class="keywordtype">bool</span> apply );
+00137     
+00138     <span class="keywordtype">void</span> setDynamicPreview ( <span class="keywordtype">bool</span> on );
+00139     <span class="keywordtype">void</span> refresh();
+00140     
+00141     <span class="comment">// sloty dla widgetow</span>
+00142     <span class="keywordtype">void</span> setMagFilterFromCombo( <span class="keywordtype">int</span> );
+00143     <span class="keywordtype">void</span> setMinFilterFromCombo( <span class="keywordtype">int</span> );
+00144     <span class="keywordtype">void</span> setWrapSFromCombo    ( <span class="keywordtype">int</span> );
+00145     <span class="keywordtype">void</span> setWrapTFromCombo    ( <span class="keywordtype">int</span> );
+00146     <span class="keywordtype">void</span> setEnvModeFromCombo  ( <span class="keywordtype">int</span> );
+00147     <span class="keywordtype">void</span> setBlendSrcFactorFromCombo ( <span class="keywordtype">int</span> );
+00148     <span class="keywordtype">void</span> setBlendDestFactorFromCombo( <span class="keywordtype">int</span> );
+00149     <span class="keywordtype">void</span> setScaleModeFromCombo( <span class="keywordtype">int</span> );
+00150     <span class="keywordtype">void</span> minWHChanged         ( <span class="keywordtype">float</span> );
+00151     <span class="keywordtype">void</span> maxWHChanged         ( <span class="keywordtype">float</span> );
+00152     <span class="keywordtype">void</span> openFileDialog();
+00153     <span class="keywordtype">void</span> removeImage();
+00154     <span class="keywordtype">void</span> makeCurrentTextureDefault();
+00155     <span class="keywordtype">void</span> resetToDefaultTexture();
+00156     <span class="keywordtype">void</span> loadTextureFromCombo( <span class="keywordtype">int</span> );
+00157 };
+00158 
+00159 
+00160 
+00161 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:23 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

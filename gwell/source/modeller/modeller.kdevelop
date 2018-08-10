@@ -1,0 +1,126 @@
+<!DOCTYPE kdevelop>
+<kdevelop>
+  <general>
+    <author>Przemek Jakwert</author>
+    <email>pjakwert@o2.pl</email>
+    <projectmanagement>KDevCustomProject</projectmanagement>
+    <primarylanguage>C++</primarylanguage>
+    <keywords/>
+    <projectdirectory>/home/pjakwert/Work/gwell/source/modeller</projectdirectory>
+    <absoluteprojectpath>true</absoluteprojectpath>
+    <version/>
+    <description/>
+    <ignoreparts/>
+    <secondaryLanguages/>
+  </general>
+  <kdevfileview>
+    <groups>
+      <group pattern="*.h;*.hxx;*.hpp;*.H" name="Headers" />
+      <group pattern="*.cpp;*.c;*.cc;*.C;*.cxx;*.ec;*.ecpp;*.lxx;*.l++;*.ll;*.l" name="Sources" />
+      <group pattern="AUTHORS;COPYING;ChangeLog;INSTALL;README;TODO;NEWS" name="GNU" />
+      <group pattern="*.ts;*.po" name="Translations" />
+      <group pattern="*.ui;*.kdevdlg;*.rc" name="User Interface" />
+      <group pattern="*" name="Others" />
+      <hidenonprojectfiles>false</hidenonprojectfiles>
+      <hidenonlocation>false</hidenonlocation>
+    </groups>
+    <tree>
+      <hidepatterns></hidepatterns>
+      <hidenonprojectfiles>false</hidenonprojectfiles>
+      <showvcsfields>true</showvcsfields>
+    </tree>
+  </kdevfileview>
+  <kdevdoctreeview>
+    <ignoretocs>
+      <toc>gtk</toc>
+    </ignoretocs>
+    <projectdoc>
+      <userdocDir>/home/pjakwert/Work/gwell/source/modeller/html/</userdocDir>
+      <apidocDir>/home/pjakwert/Work/gwell/source/modeller/html/</apidocDir>
+    </projectdoc>
+    <ignoreqt_xml/>
+    <ignoredoxygen/>
+    <ignorekdocs/>
+    <ignoredevhelp/>
+  </kdevdoctreeview>
+  <kdevcustomproject>
+    <run>
+      <directoryradio>custom</directoryradio>
+      <customdirectory>/home/pjakwert/Work/gwell/source/modeller/</customdirectory>
+      <mainprogram>/home/pjakwert/Work/gwell/bin/modeler</mainprogram>
+      <programargs/>
+      <terminal>false</terminal>
+      <autocompile>true</autocompile>
+      <envvars/>
+    </run>
+    <build>
+      <buildtool>make</buildtool>
+      <builddir>/home/pjakwert/Work/gwell/source/modeller/</builddir>
+    </build>
+    <make>
+      <abortonerror>true</abortonerror>
+      <numberofjobs>1</numberofjobs>
+      <dontact>false</dontact>
+      <makebin/>
+      <environments>
+        <default/>
+      </environments>
+      <selectedenvironment>default</selectedenvironment>
+    </make>
+  </kdevcustomproject>
+  <kdevcvs>
+    <cvsoptions>-f</cvsoptions>
+    <commitoptions/>
+    <addoptions/>
+    <logoptions/>
+    <updateoptions>-dP</updateoptions>
+    <removeoptions>-f</removeoptions>
+    <revertoptions>-C -d -P</revertoptions>
+    <diffoptions>-u3 -p</diffoptions>
+    <rshoptions/>
+  </kdevcvs>
+  <kdevcppsupport>
+    <references>
+      <pcs>Qt</pcs>
+    </references>
+    <codecompletion>
+      <includeGlobalFunctions>true</includeGlobalFunctions>
+      <includeTypes>true</includeTypes>
+      <includeEnums>true</includeEnums>
+      <includeTypedefs>false</includeTypedefs>
+      <automaticCodeCompletion>true</automaticCodeCompletion>
+      <automaticArgumentsHint>true</automaticArgumentsHint>
+      <automaticHeaderCompletion>true</automaticHeaderCompletion>
+      <codeCompletionDelay>100</codeCompletionDelay>
+      <argumentsHintDelay>300</argumentsHintDelay>
+      <headerCompletionDelay>250</headerCompletionDelay>
+    </codecompletion>
+  </kdevcppsupport>
+  <kdevfilecreate>
+    <filetypes/>
+    <useglobaltypes/>
+  </kdevfilecreate>
+  <cppsupportpart>
+    <filetemplates>
+      <interfacesuffix>.h</interfacesuffix>
+      <implementationsuffix>.cpp</implementationsuffix>
+    </filetemplates>
+  </cppsupportpart>
+  <kdevdebugger>
+    <general>
+      <programargs/>
+      <gdbpath/>
+      <dbgshell/>
+      <configGdbScript/>
+      <runShellScript/>
+      <runGdbScript/>
+      <breakonloadinglibs>true</breakonloadinglibs>
+      <separatetty>false</separatetty>
+      <floatingtoolbar>false</floatingtoolbar>
+    </general>
+    <display>
+      <staticmembers>false</staticmembers>
+      <demanglenames>true</demanglenames>
+    </display>
+  </kdevdebugger>
+</kdevelop>

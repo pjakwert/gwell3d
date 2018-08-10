@@ -1,0 +1,7 @@
+<Material materialName="gold">
+ <ambientColor alpha="1" blue="0.541176" red="0.247059" green="0" />
+ <diffuseColor alpha="1" blue="0.219608" red="0.733333" green="0.294118" />
+ <specularColor alpha="1" blue="0.243137" red="0.901961" green="0.564706" />
+ <emissionColor alpha="1" blue="0" red="0.572549" green="0.564706" />
+ <shininess shininess="74" />
+</Material>

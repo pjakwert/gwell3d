@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: drawwidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>drawwidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef DRAWWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define DRAWWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qtoolbox.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00007 
+00008 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;glmenuitem.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;glmenu.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;glmphmenuitem.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;glmphmenu.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;icons.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;cellframe.h&gt;</span>
+00016 
+00017 
+00018 
+00019 <span class="keyword">class </span>DrawWidget : <span class="keyword">public</span> QWidget
+00020 {
+00021   Q_OBJECT
+00022 
+00023   <span class="keyword">public</span>:
+00024     DrawWidget(QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0);
+00025     ~DrawWidget() {}
+00026 
+00027   <span class="keyword">private</span>:
+00028     QGroupBox   *groupBox;
+00029     QGridLayout *mainGrid;
+00030     QToolBox    *toolBox;
+00031 
+00032     <span class="keywordtype">void</span> clearToolBox();
+00033     ViScene     *_scene;
+00034 
+00035   <span class="keyword">private</span>:
+00036     <span class="keywordtype">int</span>  loadMphs( QStringList* paths, ViScene* scene );
+00037     <span class="keywordtype">void</span> loadFromDir( QString dirPath, <span class="keywordtype">int</span> &amp;count );
+00038 
+00039   <span class="keyword">private</span> slots:
+00040     <span class="keywordtype">void</span> objectItemSelected( <span class="keyword">const</span> <span class="keywordtype">char</span> *objectName );
+00041     <span class="keywordtype">void</span> multiPolyhSelected( <span class="keyword">const</span> <span class="keywordtype">char</span>* mphPath );
+00042       
+00043   <span class="keyword">public</span> slots:
+00044     <span class="keywordtype">void</span> setScene( ViScene *scene );
+00045 
+00046   signals:
+00047     <span class="keywordtype">void</span> objectSelected( <span class="keyword">const</span> <span class="keywordtype">char</span> *objectName );
+00048     <span class="keywordtype">void</span> addMultiPolyh( <span class="keyword">const</span> <span class="keywordtype">char</span>* mphPath, ViNTreeNode* parent );
+00049 };
+00050 
+00051 
+00052 
+00053 
+00054 
+00055 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:12 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

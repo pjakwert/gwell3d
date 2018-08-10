@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer keyboardAndMouse example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The keyboardAndMouse example</h1>
+<center>
+  <img src="../images/keyboardAndMouse.jpg" width="300" height="200" alt="keyboardAndMouse"/>
+</center>
+
+<p>
+ Shows how to customize your keyboard and mouse bindings.
+</p>
+<p>
+ Use <code>setKeyFrameKey()</code> to change <b>standard</b> action bindings (axis, grid or fps
+ display, exit...).
+</p>
+<p>
+ Use <code>setMouseBinding()</code> and <code>setWheelBinding()</code> to change <b>standard</b> action
+ mouse bindings (camera rotation, translation, object selection...).
+</p>
+<p>
+ If you want to define <b>new</b> key or mouse actions, you have to overload
+ <code>keyPressEvent()</code> and <code>mouse(Press|Move|Release)Event</code> to define and bind
+ your own new actions.
+</p>
+<p>
+ Overload <code>shortcutBindingsString()</code> and <code>mouseBindingsString()</code> to update
+ the help window binding tabs.
+</p>
+
+
+<h2>keyboardAndMouse.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">public</span>:
+  Viewer() : wireframe_(<span class="key">false</span>), flatShading_(<span class="key">false</span>) {};
+
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span><span class="typ">void </span>keyPressEvent(QKeyEvent *e);
+  <span class="key">virtual </span><span class="typ">void </span>mousePressEvent(QMouseEvent* e);
+
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+  <span class="key">virtual </span>QString mouseBindingsString() <span class="typ">const</span>;
+  <span class="key">virtual </span>QString shortcutBindingsString() <span class="typ">const</span>;
+
+<span class="key">private </span>:
+  <span class="typ">bool </span>wireframe_, flatShading_;
+};</pre>
+
+
+<h2>keyboardAndMouse.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;keyboardAndMouse.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qpopupmenu.h&gt;
+</span><span class="dir">#include &lt;qcursor.h&gt;
+</span><span class="dir">#include &lt;qmap.h&gt;
+</span><span class="dir">#include &lt;math.h&gt;
+</span>
+<span class="key">using namespace </span>std;
+
+<span class="com">// Draws a spiral
+</span><span class="typ">void </span>Viewer::draw()
+{
+  <span class="typ">const float </span>nbSteps = <span class="num">80.0</span>;
+
+  glBegin(GL_QUAD_STRIP);
+  <span class="key">for </span>(<span class="typ">float </span>i=<span class="num">0</span>; i&lt;nbSteps; ++i)
+    {
+      <span class="typ">float </span>ratio = i/nbSteps;
+      <span class="typ">float </span>angle = <span class="num">21.0</span>*ratio;
+      <span class="typ">float </span>c = cos(angle);
+      <span class="typ">float </span>s = sin(angle);
+      <span class="typ">float </span>r1 = <span class="num">1.0 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>r2 = <span class="num">0.8 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>alt = ratio <span class="num">- 0.5</span>;
+      <span class="typ">const float </span>nor = .<span class="num">5</span>;
+      <span class="typ">const float </span>up = sqrt(<span class="num">1.0</span>-nor*nor);
+      glColor3f(fabs(c), <span class="num">0.2</span>, fabs(s));
+      glNormal3f(nor*c, up, nor*s);
+      glVertex3f(r1*c, alt, r1*s);
+      glVertex3f(r2*c, alt+<span class="num">0.05</span>, r2*s);
+    }
+  glEnd();
+}
+
+<span class="typ">void </span>Viewer::init()
+{
+  <span class="com">// Restore previous viewer state.
+</span>  restoreFromFile();
+
+
+  <span class="com">/////////////////////////////////////////////////////
+</span>  <span class="com">//       Keyboard shortcut customization           //
+</span>  <span class="com">//      Changes standard action key bindings       //
+</span>  <span class="com">/////////////////////////////////////////////////////
+</span>
+  <span class="com">// Define 'CTRL+Q' as the new exit shortcut (default was 'Escape')
+</span>  setShortcutKey(QGLViewer::EXIT, Qt::Key_Q, Qt::ControlButton);
+
+  <span class="com">// Set 'Control' as the FPS toggle state key (default was 'F' and becomes 'CTRL+F')
+</span>  setShortcutStateKey(QGLViewer::DISPLAY_FPS, Qt::ControlButton);
+
+  <span class="com">// Disable Z-Buffer toggle shortcut (default was 'Z')
+</span>  setShortcutKey(QGLViewer::DISPLAY_Z_BUFFER, <span class="num">0</span>);
+
+
+
+  <span class="com">/////////////////////////////////////////////////////
+</span>  <span class="com">//         Mouse bindings customization            //
+</span>  <span class="com">//     Changes standard action mouse bindings      //
+</span>  <span class="com">/////////////////////////////////////////////////////
+</span>
+  <span class="com">// Left and right buttons together make a camera zoom : emulates a mouse third button if needed.
+</span>  setMouseBinding(Qt::LeftButton | Qt::RightButton, CAMERA, ZOOM);
+
+  <span class="com">// Alt+left button translates the camera (since right button will popup a menu).
+</span>  setMouseBinding(Qt::AltButton | Qt::LeftButton, CAMERA, TRANSLATE);
+
+  <span class="com">// Disable previous TRANSLATE mouse binding (and remove it from help mouse tab).
+</span>  setMouseBinding(Qt::RightButton, NO_CLICK_ACTION);
+
+  <span class="com">// Define Control+Shift+Right button as selection shortcut
+</span>  setMouseBinding(Qt::ControlButton | Qt::ShiftButton | Qt::RightButton, SELECT);
+
+  <span class="com">// Alt + mouse wheel MOVE_FORWARD the camera.
+</span>  setWheelBinding(Qt::AltButton, CAMERA, MOVE_FORWARD);
+
+  <span class="com">// Display the help window. The help window tabs are automatically updated when you define new
+</span>  <span class="com">// standard key or mouse bindings (as is done above). Use shortcutBindingsString() and
+</span>  <span class="com">// mouseBindingsString() to add the description of your own new actions.
+</span>  help();
+}
+
+
+<span class="com">///////////////////////////////////////////////
+</span><span class="com">//      Define new key bindings : F &amp; W      //
+</span><span class="com">///////////////////////////////////////////////
+</span>
+<span class="typ">void </span>Viewer::keyPressEvent(QKeyEvent *e)
+{
+  <span class="com">// Get event state key
+</span>  <span class="typ">const </span>Qt::ButtonState state = (Qt::ButtonState)(e-&gt;state() &amp; Qt::KeyButtonMask);
+  <span class="com">// Bug in Qt : use 0x0f00 instead of Qt::KeyButtonMask with Qt versions &lt; 3.1
+</span>
+  <span class="com">// A simple switch on e-&gt;key() is not sufficient if we want to take state key into account.
+</span>  <span class="com">// With a switch, it would have been impossible to separate 'F' from 'CTRL+F'.
+</span>  <span class="com">// That's why we use imbricated if...else and a &quot;handled&quot; boolean.
+</span>  <span class="typ">bool </span>handled = <span class="key">false</span>;
+  <span class="key">if </span>((e-&gt;key()==Qt::Key_W) &amp;&amp; (state==Qt::NoButton))
+    {
+      wireframe_ = !wireframe_;
+      <span class="key">if </span>(wireframe_)
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+      <span class="key">else
+	</span>glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+      handled = <span class="key">true</span>;
+      updateGL();
+    }
+  <span class="key">else
+    if </span>((e-&gt;key()==Qt::Key_F) &amp;&amp; (state==Qt::NoButton))
+      {
+	flatShading_ = !flatShading_;
+	<span class="key">if </span>(flatShading_)
+	  glShadeModel(GL_FLAT);
+	<span class="key">else
+	  </span>glShadeModel(GL_SMOOTH);
+	handled = <span class="key">true</span>;
+	updateGL();
+      }
+  <span class="com">// and so on with other else if.
+</span>
+  <span class="key">if </span>(!handled)
+    QGLViewer::keyPressEvent(e);
+}
+
+
+<span class="com">///////////////////////////////////////////////////////////
+</span><span class="com">//             Define new mouse bindings                 //
+</span><span class="com">//   A camera viewpoint menu binded on right button      //
+</span><span class="com">///////////////////////////////////////////////////////////
+</span>
+<span class="typ">void </span>Viewer::mousePressEvent(QMouseEvent* e)
+{
+  <span class="key">if </span>((e-&gt;button() == Qt::RightButton) &amp;&amp; (e-&gt;state() == Qt::NoButton))
+    {
+      QPopupMenu menu( <span class="key">this </span>);
+      menu.insertItem(<span class="str">&quot;Camera positions&quot;</span>);
+      menu.insertSeparator();
+
+      QMap&lt;<span class="typ">int</span>, <span class="typ">int</span>&gt; menuMap;
+      <span class="typ">bool </span>atLeastOne = <span class="key">false</span>;
+      <span class="key">for </span>(<span class="typ">unsigned short </span>i=<span class="num">0</span>; i&lt;camera()-&gt;nbPaths(); ++i)
+	<span class="key">if </span>(camera()-&gt;keyFrameInterpolator(i))
+	  {
+	    atLeastOne = <span class="key">true</span>;
+	    <span class="key">if </span>(camera()-&gt;keyFrameInterpolator(i)-&gt;numberOfKeyFrames() == <span class="num">1</span>)
+	      menuMap[menu.insertItem(<span class="str">&quot;Position &quot;</span>+QString::number(i+<span class="num">1</span>))] = i;
+	    <span class="key">else
+	      </span>menuMap[menu.insertItem(<span class="str">&quot;Path &quot;</span>+QString::number(i+<span class="num">1</span>))] = i;
+	  }
+
+      <span class="key">if </span>(!atLeastOne)
+	{
+	  menu.insertItem(<span class="str">&quot;No position defined&quot;</span>);
+	  menu.insertItem(<span class="str">&quot;Use to Alt+Fx to define one&quot;</span>);
+	}
+
+      menu.setMouseTracking( <span class="key">true </span>);
+      <span class="typ">int </span>select = menu.exec( QCursor::pos() );
+
+      <span class="key">if </span>(atLeastOne &amp;&amp; select != <span class="num">-1</span>)
+	camera()-&gt;playKeyFramePath(menuMap[select]);
+    }
+  <span class="key">else
+    </span>QGLViewer::mousePressEvent(e);
+}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;K e y b o a r d A n d M o u s e&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;This example illustrates the mouse and key bindings customization.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Use setKeyFrameKey() to change standard action key bindings (axis, grid or fps display, exit...).&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Use setMouseBinding() and setWheelBinding() to change standard action mouse bindings &quot;</span>;
+  text += <span class="str">&quot;(camera rotation, translation, object selection...).&lt;br&gt;&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;If you want to define &lt;b&gt;new&lt;/b&gt; key or mouse actions, you need to overload keyPressEvent() and/or &quot;</span>;
+  text += <span class="str">&quot;mouse(Press|Move|Release)Event to define and bind your own new actions.&lt;br&gt;&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Finally, overload shortcutBindingsString() and mouseBindingsString() to update the help window binding tabs.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;See those tabs for the complete current bindings.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;By the way, exit shortcut has been binded to &lt;b&gt;CTRL+Q&lt;/b&gt;&quot;</span>;
+  <span class="key">return </span>text;
+}
+
+<span class="com">// Add specific custom bindings to help window tabs
+</span>QString Viewer::mouseBindingsString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;The right mouse button opens a popup menu that displays the defined camera positions and paths.&lt;br&gt;&lt;br&gt;&quot;</span>);
+  text += <span class="str">&quot;The other mouse bindings are :&lt;br&gt;&quot;</span>;
+  text += QGLViewer::mouseBindingsString();
+  <span class="key">return </span>text;
+}
+
+QString Viewer::shortcutBindingsString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;Press '&lt;b&gt;W&lt;/b&gt; to toggle wire frame display&lt;br&gt;&quot;</span>);
+  text += <span class="str">&quot;Press '&lt;b&gt;F&lt;/b&gt; to toggle flat shading display&lt;br&gt;&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;The other standard actions are binded to:&lt;br&gt;&quot;</span>;
+  text += QGLViewer::shortcutBindingsString();
+  <span class="key">return </span>text;
+}
+</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;keyboardAndMouse.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer.
+</span>  Viewer v;
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  v.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;v);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

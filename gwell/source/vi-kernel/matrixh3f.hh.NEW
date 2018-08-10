@@ -1,0 +1,2044 @@
+#ifndef MATRIXH3F_HH
+#define MATRIXH3F_HH
+
+/*!
+ * \file        matrixh3f.hh
+ * Plik zawiera definicjê klasy MatrixH3f. Jest ona podstaw± wszystkich
+ * transforacji miêdzy poszczególnymi uk³adami wspó³rzêdnych.
+ * \author	Bogdan Kreczmer
+ * \date        2004.01
+ */
+
+
+#ifdef __GNUG__
+#pragma interface
+#endif
+
+
+#include "vector3f.hh"
+#include <cmath>
+#include <cstdio>
+#include <iostream>
+#include "matrixrt3f.hh"
+#include "vi-utils.hh"
+
+class ExtString;
+class SxInterp;
+
+
+
+ /*!
+  *  Okre¶la jednostkê w jakiej wyra¿one s± k±ty. Jednostkami
+  *  tymi dla poszczególnych warto¶ci mog± byc:
+  *
+  *    \li  AU_Deg   - stopnie,
+  *    \li  AU_Rad   - radiany.
+  */
+typedef enum { AU_Deg, AU_Rad } AngleUnit;
+
+
+
+/*!
+ * Klasa modeluje macierz transformacji dla wspó³rzêdnych jednorodnych.
+ */
+class MatrixH3f: public MatrixRT3f { //=========================================
+  public:
+
+    /*!
+     * Okre¶la typ k±tów w reprezentacji przekszta³cenia. W tej chwili
+     * dostêpne
+     * s± dwie reprezentacje: poprzez k±ty Eulera i k±ty obrotu wzglêdem osi
+     * OX,OY,OZ.
+     *
+     *    \li  AT_xyz    - obrot wzgl osi X,Y,Z
+     *    \li  AT_Euler  - katy Eulera
+     *
+     */
+   typedef enum { AT_xyz, AT_Euler } AnglesType;
+
+    /*!
+     * Decyduje o typie rotacji, czy ma ona zostaæ dokonana wzglêdem
+     * lokalnego uk³adu wspó³rzêdnych, czy te¿ wzglêdem uk³adu 
+     * wspó³rzêdnych rodzica.
+     */
+   typedef enum { CS_Parent, CS_Local } CoordSysType;
+
+  /*!
+   * Klasa zawiera parametry transformacji dla macierzy przekszta³cenia
+   * we wspó³rzêdnych jednorodnych (k±ty rotacji, wektor translacji i
+   * skale wzd³u¿ osi OX, OY, OZ.
+   */
+  class Parameters { //________________________________________________________
+
+     /*!
+      *  Okre¶la czy warto¶ci k±tów rotacji w polu  
+      *  \link Parameters::_Rot _Rot\endlink nale¿y interpretowaæ jako
+      *  k±ty Eulera (warto¶æ \p AT_Euler) czy te¿ jako k±ty obrotu 
+      *  wzglêdem osi OX, OY i OZ (warto¶æ \p AT_xyz).
+      */
+     AnglesType  _AngType;
+
+     /*!
+      *  Kolejne wspó³rzêdne wektora zawieraj± warto¶ci k±tów rotacji 
+      *  wzglêdem osi OX, OY i OZ lub te¿ k±ty Eulera.
+      *  Warto¶ci k±tów wyra¿one s± w radianach.
+      *
+      *  Je¿eli przyjêta jest reprezentacja za pomoc± k±tów Eulera,
+      *  to kolejne wspó³rzêdne wektora zawieraj± k±ty:
+      *  \f$ \varphi \f$ (obrót wokó³ osi \f$ OZ\f$), \f$ \theta\f$
+      *  (obrót wokó³ chwilowej osi \f$ OY'\f$) oraz \f$\psi\f$
+      *  (obrót wokó³ chwilowej osi \f$ OZ''\f$).
+      */
+     Vector3f       _Rot;
+
+     /*!
+      *  Pole zawiera wektor translacji pocz±tku uk³adju wspó³rzêdnych.
+      */
+     Vector3f       _Tran; 
+
+     /*!
+      *  Kolejne wspó³rzêdne wektora zawieraj± warto¶ci wspó³czynników
+      *  skali dla poszczególnych osi.
+      */
+     Vector3f       _Scale;
+
+    public:
+
+    /*!
+     * Ustawia sposób interpretacji k±tów rotacji.
+     * \param ATyp - nowa wartosc dla pola 
+     * \link Parameters::_AngType _AngType\endlink informuj±ca o sposobie
+     *  interpretacji k±tów rotacji.
+     * \post Zostaje zmodyfikowna warto¶æ pola 
+     * \link Parameters::_AngType _AngType\endlink.
+     */
+    void SetAngType(AnglesType ATyp) { _AngType = ATyp; }
+    /*!
+     * Udostêpnia warto¶æ pola \link Parameters::_AngType _AngType\endlink
+     * informuj±c± o sposobie interpretacji k±tów rotacji, które zapisane
+     * s± w polu \link Parameters::_Rot _Rot\endlink.
+     */
+    AnglesType GetAngType() const { return _AngType; }
+
+    /*===!
+     *  Zwraca referencjê do pola zawieraj±cego warto¶ci k±tów 
+     *  Eulera dla danej macierzy obrotu.
+     */
+    //    const Vector3f &GetAng_Euler_Deg() const;
+
+      /*!
+       *  Nadaje nowe warto¶ci wspó³czynnikom skali.
+       *  \param sx - nowa warto¶æ wspó³czynnika skali wzglêdem osi OX,
+       *  \param sy - nowa warto¶æ wspó³czynnika skali wzglêdem osi OY,
+       *  \param sz - nowa warto¶æ wspó³czynnika skali wzglêdem osi OZ.
+       *  \post Nowe warto¶ci wspó³czynników skali zostaj± wpisane do
+       *        pola \link MatrixH3f::Parameters::_Scale _Scale\endlink.
+       */
+     void SetScale(float sx, float sy, float sz) { _Scale.Set(sx,sy,sz); }
+
+      /*!
+       *  Nadaje nowe warto¶ci wspó³czynnikom skali.
+       *  \param x_S - nowa warto¶æ wspó³czynnika skali wzglêdem osi OX,
+       *  \post Nowa warto¶æ wspó³czynnika \e x-owej wspó³rzêdnej 
+       *        wektora skali zostaje wpisane do
+       *        pola \link MatrixH3f::Parameters::_Scale _Scale\endlink.
+       */
+     void SetScaleX(float x_S) { _Scale.x = x_S; }
+      /*!
+       *  Nadaje nowe warto¶ci wspó³czynnikom skali.
+       *  \param y_S - nowa warto¶æ wspó³czynnika skali wzglêdem osi OY,
+       *  \post Nowa warto¶æ wspó³czynnika \e y-owej wspó³rzêdnej 
+       *        wektora skali zostaje wpisane do
+       *        pola \link MatrixH3f::Parameters::_Scale _Scale\endlink.
+       */
+     void SetScaleY(float y_S) { _Scale.y = y_S; }
+      /*!
+       *  Nadaje nowe warto¶ci wspó³czynnikom skali.
+       *  \param z_S - nowa warto¶æ wspó³czynnika skali wzglêdem osi OZ,
+       *  \post Nowa warto¶æ wspó³czynnika \e z-owej wspó³rzêdnej 
+       *        wektora skali zostaje wpisane do
+       *        pola \link MatrixH3f::Parameters::_Scale _Scale\endlink.
+       */
+     void SetScaleZ(float z_S) { _Scale.z = z_S; }
+
+
+      /*!
+       *  Nadaje nowe wspó³rzêdnym wektora translacji.
+       *  \param x - nowa warto¶æ wspó³rzêdnej \e x wektora translacji,
+       *  \param y - nowa warto¶æ wspó³rzêdnej \e y wektora translacji,
+       *  \param z - nowa warto¶æ wspó³rzêdnej \e z wektora translacji.
+       *  \post Nowe warto¶ci wspó³czynników skali zostaj± wpisane do
+       *        pola \link MatrixH3f::Parameters::_Tran _Tran\endlink.
+       */
+     void SetTran(float x, float y, float z) { _Tran.Set(x,y,z);}
+      /*!
+       *  Nadaje nowe warto¶ci k±tów rotacji. Warto¶ci k±tów 
+       *  wyra¿one s± w radianach.
+       *  \param ax_rad - nowa warto¶æ pierwszego k±ta rotacji,
+       *  \param ay_rad - nowa warto¶æ drugiego k±ta rotacji,
+       *  \param az_rad - nowa warto¶æ trzeciego k±ta rotacji.
+       *  \post Nowe warto¶ci k±tów rotacji zostaj± wpisane do
+       *        pola \link MatrixH3f::Parameters::_Rot _Rot\endlink.
+       */
+     void SetRot( float ax_rad, float ay_rad, float az_rad )
+                                 { _Rot.Set(ax_rad,ay_rad,az_rad); }
+      /*!
+       *  Nadaje nowe warto¶ci k±tów rotacji. Warto¶ci k±tów domy¶lnie 
+       *  wyra¿one s± w radianach. Mo¿na jednak wyraziæ je w stopniach.
+       *  O tym w jakich jednostkach s± wyra¿one k±ty decyduje
+       *  parametr \e AngUnit.
+       *  \param ax - nowa warto¶æ pierwszego k±ta rotacji,
+       *  \param ay - nowa warto¶æ drugiego k±ta rotacji,
+       *  \param az - nowa warto¶æ trzeciego k±ta rotacji.
+       *  \param AngUnit - zawiera informacjê o tym w jakich jednostkach s±
+       *                   wyra¿one k±ty.
+       *  \post Nowe warto¶ci k±tów rotacji zostaj± wpisane do
+       *        pola \link MatrixH3f::Parameters::_Rot _Rot\endlink.
+       */
+     void SetRot( float ax, float ay, float az, 
+                  AngleUnit AngUnit
+                )
+              { 
+                if (AngUnit == AU_Rad) _Rot.Set(ax,ay,az);
+                  else _Rot.Set(DEG2RAD(ax),DEG2RAD(ay),DEG2RAD(az));
+              }
+
+      /*!
+       *  Nadaje nowe warto¶ci k±tów rotacji. Warto¶ci k±tów domy¶lnie 
+       *  wyra¿one s± w radianach. Mo¿na jednak wyraziæ je w stopniach.
+       *  O tym w jakich jednostkach s± wyra¿one k±ty decyduje
+       *  parametr \e AngUnit.
+       *  \param Ang - wektor nowych warto¶ci k±tów rotacji.
+       *  \param AngUnit - zawiera informacjê o tym w jakich jednostkach s±
+       *                   wyra¿one k±ty.
+       *  \post Nowe warto¶ci k±tów rotacji zostaj± wpisane do
+       *        pola \link MatrixH3f::Parameters::_Rot _Rot\endlink.
+       */
+     void SetRot( const Vector3f  &Ang, AngleUnit AngUnit ) 
+                            { SetRot(Ang.x,Ang.y,Ang.z,AngUnit); }
+
+     /*!
+      *  Podstawia now± warto¶æ k±ta rotacji wzglêdem osi OX.
+      *  K±t wyra¿ony musi byæ w radianach.  Warto¶ci pozosta³ych k±tów
+      *  nie ulegaj± zmianie.
+      *  \param ang - nowa warto¶æ rotacji wzglêdem osi OX. 
+      */
+     void SetRotX_Rad(float ang) { _Rot.x = ang; }
+     /*!
+      *  Podstawia now± warto¶æ k±ta rotacji wzglêdem osi OY.
+      *  K±t wyra¿ony musi byæ w radianach.  Warto¶ci pozosta³ych k±tów
+      *  nie ulegaj± zmianie.
+      *  \param ang - nowa warto¶æ rotacji wzglêdem osi OY. 
+      */
+     void SetRotY_Rad(float ang) { _Rot.y = ang; }
+     /*!
+      *  Podstawia now± warto¶æ k±ta rotacji wzglêdem osi OZ.
+      *  K±t wyra¿ony musi byæ w radianach.  Warto¶ci pozosta³ych k±tów
+      *  nie ulegaj± zmianie.
+      *  \param ang - nowa warto¶æ rotacji wzglêdem osi OZ. 
+      */
+     void SetRotZ_Rad(float ang) { _Rot.z = ang; }
+     /*!
+      * Nadaje nowe warto¶ci wektorowi wspó³czynników skali
+      * (patrz pole  \link MatrixH3f::Parameters::_Scale _Scale\endlink).
+      * \param Sc - wektor nowych warto¶ci wspó³czynników skali.
+      * \return referencjê do samego siebie (\b *this).
+      * \post Do pola \link MatrixH3f::Parameters::_Scale _Scale\endlink
+      *       zostaje podstawiony nowy wektor (\e Sc) warto¶ci wspó³czynników
+      *       skali wzglêdem poszczególnych osi.
+      */
+     Parameters &SetScale(Vector3f const &Sc){ _Scale.Set(Sc); return *this; }
+     /*!
+      * Nadaje nowe warto¶ci wektorowi translacji
+      * (patrz pole  \link MatrixH3f::Parameters::_Tran _Tran\endlink).
+      * \param Tr - nowy wektor translacji.
+      * \return referencjê do samego siebie (\b *this).
+      * \post Do pola \link MatrixH3f::Parameters::_Tran _Tran\endlink
+      *       zostaje podstawiony nowy wektor translacji (\e Tr).
+      */
+     Parameters &SetTran(Vector3f const &Tr) { _Tran.Set(Tr); return *this; }
+     /*!
+      * Nadaje nowe warto¶ci wektorowi k±tów rotacji 
+      * (patrz pole  \link MatrixH3f::Parameters::_Rot _Rot\endlink).
+      * \param Ro - wektor nowych k±tów rotacji wyra¿onych w radianach.
+      * \return referencjê do samego siebie (\b *this).
+      * \post Do pola \link MatrixH3f::Parameters::_Rot _Rot\endlink
+      *       zostaje podstawiony nowy wektor (\e Ro) warto¶ci k±tów
+      *       rotacji wzglêdem poszczególnych osi.
+      */
+     Parameters &SetRot(Vector3f const &Ro)  { _Rot.Set(Ro);  return *this; }
+
+      /*! 
+       * Udostêpnia wektor wspó³czynników skali dla poszczególnuch osi.
+       * Warto¶ci te s± udostêpnione z pola 
+       * \link MatrixH3f::Parameters::_Scale _Scale\endlink.
+       */
+     Vector3f const &GetScale() const { return _Scale; }
+      /*! 
+       * Udostêpnia wektor translacji pocz±tku uk³adu wspó³rzêdnych.
+       * Warto¶ci te s± udostêpnione z pola 
+       * \link MatrixH3f::Parameters::_Tran _Tran\endlink.
+       */
+     Vector3f const &GetTran() const { return _Tran; }
+      /*! 
+       * Udostêpnia wektor k±tów rotacji dla poszczególnch osi.
+       * Warto¶ci te s± udostêpnione z pola 
+       * \link MatrixH3f::Parameters::_Rot _Rot\endlink.
+       */
+     Vector3f const &GetRot() const { return _Rot; }
+      /*!
+       *  Przypisanie nowych warto¶ci parametrów.
+       *  \param FP - zestawenie nowych warto¶ci parametrów macierzy
+       *   transformacji.
+       *  \return referencje do samego siebie (\b *this).
+       *  \post Zostaj± skopiowane warto¶ci pól z parametru \e FP.
+       */
+     Parameters &operator =   (Parameters const &FP);
+      /*!
+       *  Wydobywa z macierzy transformacji jej parametry. 
+       *  Wyliczane s± one bezpo¶rednio ze wspó³czynników transformacji
+       *  w z pola MatrixRT3f::_DH parametru \e Mtx.
+       *  \param Mtx - (in) macierz, której parametry transformacji maj±
+       *               zostaæ przepisane.
+       *  \return referencjê do samego siebie (\b *this).
+       *  \post Parametry transformacji z macierzy \e Mtx zostaj± przepisne 
+       *   do pól
+       *    \link MatrixH3f::Parameters::_Scale _Scale\endlink,
+       *    \link MatrixH3f::Parameters::_Tran _Tran\endlink,
+       *    \link MatrixH3f::Parameters::_Rot _Rot\endlink.
+       */
+     Parameters &operator <<= (MatrixH3f const &Mtx);
+      /*===!
+       * Wylicza parametry transformacji macierzy i wyznacza k±ty obrotu wokó³
+       * osi OX, OY, OZ jako jako k±ty rotacji.
+       * \warning Metoda ta nie wywo³uje ¿adnych innych metod, których
+       *          dzia³anie
+       *          zale¿ne by³oby od pola 
+       *          \link MatrixH3f::_Valid _Valid\endlink
+       *          Wszystkie parametry wyliczane s± ze wspó³czynników 
+       *          transformacji macierzy. Jest to niezbêdne, aby unikn±æ
+       *          ewentualnej nieskoñczonej pêtli wzajemnych wywo³añ metod.
+       * \param Fr - macierz, z której maj± zostaæ wyekstrahowane jej
+       *           parametry
+       *             transformacji.
+       * \return referencjê do samego siebie (\b *this).
+       * \post Parametry transformacji z macierzy \e Mtx zostaj± przepisne
+       *       do pól
+       *    \link MatrixH3f::Parameters::_Scale _Scale\endlink,
+       *    \link MatrixH3f::Parameters::_Tran _Tran\endlink,
+       *    \link MatrixH3f::Parameters::_Rot _Rot\endlink, przy czym k±ty 
+       *    rotacji traktowane s± jako k±ty Eulera.
+       */
+    //     Parameters &UnMakeXYZFrame(MatrixH3f const &Fr);
+
+      /*===!
+       * Wylicza parametry transformacji macierzy i wyznacza k±ty Eulera jako 
+       * jako k±ty rotacji.
+       * \param Fr - macierz, z której maj± zostaæ wyekstrahowane jej
+       *             parametry transformacji.
+       * \return referencjê do samego siebie (\b *this).
+       * \post Parametry transformacji z macierzy \e Mtx zostaj± przepisne
+       *       do pól
+       *    \link MatrixH3f::Parameters::_Scale _Scale\endlink,
+       *    \link MatrixH3f::Parameters::_Tran _Tran\endlink,
+       *    \link MatrixH3f::Parameters::_Rot _Rot\endlink, przy czym k±ty 
+       *    rotacji traktowane s± jako k±ty Eulera.
+       */
+    //     Parameters &UnMakeEulerFrame(MatrixH3f const &Fr);
+      /*!
+       * Zapisuje do pliku tekstowego liniê z zestawem parametrów
+       * transformacji
+       * macierzy. Parametry te brane s± z pól:
+       *    \link MatrixH3f::Parameters::_Scale _Scale\endlink,
+       *    \link MatrixH3f::Parameters::_Tran _Tran\endlink,
+       *    \link MatrixH3f::Parameters::_Rot _Rot\endlink.
+       *
+       * Przyk³adowa linia zapisu parametrów ma postac:
+       *
+       *  Position (1, 1.5, 1) (15.2, 14.5, 60) (10, 100, 10)
+       *
+       * Kolejno¶æ parametrów: wsp³czynniki skali, k±ty rotacji, wspó³rzêdne
+       * wektora translacji.
+       *
+       * \param f - wska¼nik na strukturê skojarzon± z otwartym do zapisu
+       *            plikiem tekstowym.
+       * \pre \e f != \p NULL. Parametr skojarzony jest z plikiem otwartym do
+       *        zapisu.
+       * \post Po dokonaniu operacji zapisu plik nie jest zamykany i operacje
+       *       zapisu mog± byæ kontynuowane.
+       */
+     int Save(FILE *f);
+  
+
+      /*!
+       * Inicjalizuje parametry transformacji jako parametry przekszta³cenia 
+       * to¿samo¶ciowego, tzn. k±ty rotacji oraz wektor translacji maj± zerowe
+       * warto¶ci, za¶ wspó³czynniki skali maj± warto¶ci 1.
+       */
+     Parameters(){ _Rot.Set_0(); _Tran.Set_0(); _Scale.Set_1(); };
+   }; //_______________________ Parameters ___________________________________
+
+  private:
+    /*===!
+     *  Okre¶la w jakich jednostkach wyra¿ony s± k±ty rotacji.
+     *  Pole to ma charakter roboczy i jest wykorzystywane w trakcie
+     *  operacji pobierania warto¶ci k±tów.
+     */
+    AngleUnit   _AngUnit;
+
+
+    /*!
+     *  Okre¶la czy warto¶ci k±tów w polu  
+     *  \link MatrixH3f::_RotAng _RotAng\endlink nale¿y interpretowaæ jako
+     *  k±ty Eulera (warto¶æ \p AT_Euler) czy te¿ jako k±ty obrotu 
+     *  wzglêdem osi OX, OY i OZ (warto¶æ \p AT_xyz).
+     */
+    AnglesType  _AngType;
+
+
+     /*!
+      * Zawiera k±ty rotacji. Iterpretacja tych k±tów oke¶lona jest
+      * poprzez warto¶æ pola \link MatrixH3f::_AngType _AngType\endlink.
+      * Faktyczne wspó³czynniki macierzy transformacji znajduj± siê w 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.  O tym czy warto¶ci pola 
+      * \link MatrixH3f::_Scale _Scale\endlink s±
+      * adekwatne do wspó³czynników w 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink informuje warto¶æ w polu
+      * \link MatrixH3f::_Valid _Valid\endlink. 
+      *  Parametry przestaj± byæ adekwatne je¿eli podstawiany 
+      * zostaje wynik mno¿enia dwóch macierzy. Metody pobieraj±ce konkretne
+      * warto¶ci wspó³czynników wykrywaj± to i odpowiednio aktualizuj± 
+      * warto¶ci parametrów.
+      */
+    Vector3f  _RotAng;
+
+     /*!
+      * Zawiera wektor translacji. Faktyczne 
+      * wspó³czynniki macierzy transformacji znajduj± siê w 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.  O tym czy warto¶ci pola 
+      * \link MatrixH3f::_Scale _Scale\endlink s±
+      * adekwatne do wspó³czynników w 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink informuje warto¶æ w polu
+      * \link MatrixH3f::_Valid _Valid\endlink. 
+      *  Parametry przestaj± byæ adekwatne je¿eli podstawiany 
+      * zostaje wynik mno¿enia dwóch macierzy. Metody pobieraj±ce konkretne
+      * warto¶ci wspó³czynników wykrywaj± to i odpowiednio aktualizuj± 
+      * warto¶ci parametrów.
+      */
+    Vector3f  _Trans; 
+
+     /*!
+      * Zawiera wspó³czynniki skali wzd³u¿ osi OX, OY, OZ. Faktyczne 
+      * wspó³czynniki macierzy transformacji znajduj± siê w 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.  O tym czy warto¶ci pola 
+      * \link MatrixH3f::_Scale _Scale\endlink s±
+      * adekwatne do wspó³czynników w 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink informuje warto¶æ w polu
+      * \link MatrixH3f::_Valid _Valid\endlink. 
+      *  Parametry przestaj± byæ adekwatne je¿eli podstawiany 
+      * zostaje wynik mno¿enia dwóch macierzy. Metody pobieraj±ce konkretne
+      * warto¶ci wspó³czynników wykrywaj± to i odpowiednio aktualizuj± 
+      * warto¶ci parametrów.
+      */
+    Vector3f  _Scale;
+
+     /*!
+      * Warto¶æ pola okre¶la czy parametry transformacji 
+      * tzn. warto¶ci pól 
+      * \link MatrixH3f::_RotAng _RotAng\endlink,
+      * \link MatrixH3f::_Trans _Trans\endlink oraz
+      * \link MatrixH3f::_Scale _Scale\endlink,
+      * odpowiadaj±
+      * faktycznym warto¶ciom w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+      */
+    bool      _Valid; 
+
+   /*! 
+    * Warto¶æ pola okre¶la czy parametry transformacji 
+    * \link MatrixH3f::_Trans _Trans\endlink
+    * odpowiada
+    * faktycznej warto¶ci wspó³czynnikom macierzy transformacji
+    * w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+    */
+    bool     _Valid__Trans;
+
+   /*! 
+    * Warto¶æ pola okre¶la czy parametry transformacji 
+    * \link MatrixH3f::_Trans _Trans\endlink
+    * odpowiada translacji po rotacji (\p true),
+    * czy te¿ przed (\p false).
+    */
+    bool     _Trans__After;
+
+   /*! 
+    * Warto¶æ pola okre¶la czy parametry transformacji 
+    * \link MatrixH3f::_Scale _Scale\endlink
+    * odpowiada
+    * faktycznej warto¶ci wspó³czynnikom macierzy transformacji
+    * w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+    */
+    bool     _Valid__Scale;
+
+   /*!
+    * Warto¶æ pola okre¶la czy parametry transformacji 
+    * \link MatrixH3f::_RotAng _RotAng\endlink
+    * odpowiada
+    * faktycznej warto¶ci wspó³czynnikom macierzy transformacji
+    * w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+    */
+    bool     _Valid__RotAng;
+
+    /*!
+     * Czyni niewa¿nymi aktualne warto¶ci pola 
+     * \link MatrixH3f::_Trans _Trans\endlink. W ten sposób pozosta³e
+     * metody s± informowane, ¿e przed skorzystaniem z tego pola
+     * nale¿y zaktualizowaæ jego warto¶æ na podstawie warto¶ci
+     * parametrów macierzy transformacji.
+     * \post Pole
+     *  \link MatrixH3f::_Valid__Trans MatrixH3f::_Valid__Trans\endlink
+     *  ma warto¶æ \p false.
+     */
+    void InvalidParam__Trans() { _Valid__Trans = false; }
+
+
+    /*!
+     * Czyni wa¿nymi aktualne warto¶ci pola 
+     * \link MatrixH3f::_Trans _Trans\endlink. W ten sposób pozosta³e
+     * metody s± informowane, ¿e przed skorzystaniem z tego pola
+     * nie jest potrzebna aktualizacja jego warto¶ci.
+     * Nieniejsza metoda operuje tylko na polach
+     * \link MatrixH3f::_Valid__Trans _Valid__Trans\endlink
+     * oraz
+     *  \link MatrixH3f::_Trans__After _Trans__After\endlink.
+     *
+     * \post Pola
+     *  \link MatrixH3f::_Valid__Trans _Valid__Trans\endlink
+     *  oraz 
+     *  \link MatrixH3f::_Trans__After _Trans__After\endlink
+     *  maj± warto¶æ \p true.
+     */
+    void ValidParam__Trans_AfterRot() {_Trans__After = _Valid__Trans = true;}
+
+
+    /*!
+     * Czyni wa¿nymi aktualne warto¶ci pola 
+     * \link MatrixH3f::_Scale _Scale\endlink. W ten sposób pozosta³e
+     * metody s± informowane, ¿e przed skorzystaniem z tego pola
+     * nie jest potrzebna aktualizacja jego warto¶ci.
+     * Nieniejsza metoda operuje tylko na polu
+     * \link MatrixH3f::_Valid__Scale _Valid__Scale\endlink.
+     * \post Pole
+     *  \link MatrixH3f::_Valid__Scale _Valid__Scale\endlink
+     *  ma warto¶æ \p true.
+     */
+    void ValidParam__Scale() { _Valid__Scale = true; }
+
+
+    /*!
+     *  Aktualizuje warto¶æ pola \link MatrixH3f::_Scale _Scale\endlink, 
+     *  w którym zapisany jest
+     *  wektor wspó³czynników skali dla poszczególnych osi. 
+     *  Zapisywane warto¶ci wyliczane s± na podstawie aktualnych parameterów
+     *  macierzy transformacji.
+     * \post Pole 
+     *   \link MatrixH3f::_Valid__Scale  _Valid__Scale\endlink
+     *   ma warto¶æ \p true.
+     */
+    void UpdateParam__Scale()
+      {
+        if (_Valid__Scale) return;
+        MatrixRT3f::GetScale(_Scale);
+        ValidParam__Scale();
+      }
+
+  /*!
+   *  Aktualizuje zawarto¶æ pola 
+   *  \link MatrixH3f::_Trans  _Trans\endlink traktuj±c wektor translacji
+   *  jako translacjê po rotacji.
+   *  \post Pole  \link MatrixH3f::_Trans  _Trans\endlink
+   *    zwiera aktualn± warto¶æ wektora translacji wyliczonego
+   *    na podstawie wspó³czynników macierzy transformacji.
+   *    Wektor translacji traktowany jest jako translacja po
+   *    rotacji. Ponadto pola
+   *    \link MatrixH3f::_Valid__Trans _Valid__Trans\endlink
+   *     oraz 
+   *    \link MatrixH3f::_Trans__After _Trans__After\endlink
+   *    maj± warto¶æ \p true.
+   */
+   void UpdateParam__Trans_AfterRot();
+
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+    /*!
+     *  Przepisuje wspó³rzêdne wektora translacji przechowywanego jako
+     *  parametr transformacji (patrz pole 
+     *  \link MatrixH3f::_Trans _Trans\endlink)
+     *  do macierzy transformacji (patrz pole 
+     *  \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+     */
+     void UpdateTrans();
+    /*!
+     *  Przepisuje wspó³rzêdn± \e x-ow± wektora translacji przechowywanejjako
+     *  parametr transformacji (patrz pole \link MatrixH3f::_Trans
+     *    _Trans\endlink)
+     *  do macierzy transformacji 
+     *  (patrz pole \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+     */
+     void UpdateTransX();
+    /*!
+     *  Przepisuje wspó³rzêdn± \e y-ow± wektora translacji przechowywanejjako
+     *  parametr transformacji (patrz pole \link MatrixH3f::_Trans
+     *    _Trans\endlink)
+     *  do macierzy transformacji
+     *  (patrz pole \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+     */
+     void UpdateTransY();
+    /*!
+     *  Przepisuje wspó³rzêdn± \e z-ow± wektora translacji przechowywanejjako
+     *  parametr transformacji 
+     *  (patrz pole \link MatrixH3f::_Trans _Trans\endlink)
+     *  do macierzy transformacji 
+     *  (patrz pole \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+     */
+     void UpdateTransZ();
+
+     /*!
+      *  Metoda zmienia wspó³rzêdn± wektora translacji (jako parametr
+      *  transformacji) i wprowadza aktualizuje warto¶æ macierz transformacji.
+      */
+     void SetTransX_Update(float x_T);
+
+     /*!
+      *  Metoda zmienia wspó³rzêdn± wektora translacji (jako parametr
+      *  transformacji) i wprowadza aktualizuje warto¶æ macierz transformacji.
+      */
+     void SetTransY_Update(float y_T);
+
+     /*!
+      *  Metoda zmienia wspó³rzêdn± wektora translacji (jako parametr
+      *  transformacji) i wprowadza aktualizuje warto¶æ macierz transformacji.
+      */
+     void SetTransZ_Update(float z_T);
+
+
+
+     /*!
+      * Metoda podstawia nowe warto¶ci do pola
+      * \link MatrixH3f::_RotAng _RotAng\endlink. Warto¶ci k±tów
+      * wyra¿one musz± byæ w radianach.
+      * \param ax_rad - k±t rotacji wzglêdem pierwszej osi.
+      * \param ay_rad - k±t rotacji wzglêdem drugiej osi.
+      * \param az_rad - k±t rotacji wzglêdem trzeciej osi.
+      * \warning Nie dokonywana jest aktualizacja wspó³czynników 
+      *          macierzy.
+      */
+    void SetRotAng_OnlyParam_Rad(float ax_rad, float ay_rad, float az_rad)
+                                      {  _RotAng.Set(ax_rad,ay_rad,az_rad); }
+
+     /*!
+      * Metoda podstawia nowe warto¶ci do pola
+      * \link MatrixH3f::_RotAng _RotAng\endlink. Warto¶ci k±tów
+      * wyra¿one musz± byæ w radianach.
+      * \param Ang_rad - warto¶ci k±tów rotacji wzglêdem poszczególnych osi.
+      * \warning Nie dokonywana jest aktualizacja wspó³czynników 
+      *          macierzy.
+      */
+    void SetRotAng_OnlyParam_Rad(const Vector3f &Ang_rad )
+                              { _RotAng.Set(Ang_rad.x,Ang_rad.y,Ang_rad.z); }
+
+     /*!
+      * Metoda podstawia nowe warto¶ci do pola
+      * \link MatrixH3f::_RotAng _RotAng\endlink. Warto¶ci k±tów
+      * wyra¿one musz± byæ w stopniach.
+      * \param ax_deg - k±t rotacji wzglêdem pierwszej osi.
+      * \param ay_deg - k±t rotacji wzglêdem drugiej osi.
+      * \param az_deg - k±t rotacji wzglêdem trzeciej osi.
+      * \warning Nie dokonywana jest aktualizacja wspó³czynników 
+      *          macierzy.
+      */
+    void SetRotAng_OnlyParam_Deg(float ax_deg, float ay_deg, float az_deg)
+           {  _RotAng.Set(DEG2RAD(ax_deg),DEG2RAD(ay_deg),DEG2RAD(az_deg)); }
+
+     /*!
+      * Metoda podstawia nowe warto¶ci do pola
+      * \link MatrixH3f::_RotAng _RotAng\endlink. Warto¶ci k±tów
+      * wyra¿one musz± byæ w stopniach.
+      * \param Ang_deg - warto¶ci k±tów rotacji wzglêdem poszczególnych osi.
+      * \warning Nie dokonywana jest aktualizacja wspó³czynników 
+      *          macierzy.
+      */
+    void SetRotAng_OnlyParam_Deg(const Vector3f &Ang_deg )
+             { SetRotAng_OnlyParam_Deg(Ang_deg.x,Ang_deg.y,Ang_deg.z); }
+
+     /*!
+      * Metoda podstawia nowe warto¶ci do pola
+      * \link MatrixH3f::_RotAng _RotAng\endlink. Informacja o jednostach
+      * w jakich wyra¿ona jest warto¶æ k±tów przekazywana jest 
+      * przez parametr \e AUnit.
+      * \param Ang - warto¶ci k±tów rotacji wzglêdem poszczególnych osi.
+      * \param AUnit - przekazuje informacjê o jednostkach w jakich wyra¿one
+      *                s± warto¶ci k±tów.
+      * \warning Nie dokonywana jest aktualizacja wspó³czynników 
+      *          macierzy.
+      */
+    void SetRotAng_OnlyParam(const Vector3f &Ang, AngleUnit AUnit )
+     {
+       if (AUnit == AU_Rad) SetRotAng_OnlyParam_Rad(Ang);
+                       else SetRotAng_OnlyParam_Deg(Ang);
+     }
+
+    /*!
+     * Metoda podstawia now± warto¶æ wektora skali do pola
+     * \link MatrixH3f::_Scale _Scale\endlink.
+     * \param Scale - wektor nowych warto¶ci skali wzglêdem
+     *                poszczególnych osi.
+     *  \warning Nie dokonywana jest aktualizacja wspó³czynników 
+     *          macierzy.
+     */
+   void SetScale_OnlyParam(const Vector3f &Scale) { _Scale = Scale; }
+
+
+    /*!
+     * Metoda podstawia now± warto¶æ wektora skali do pola
+     * \link MatrixH3f::_Trans _Trans\endlink.
+     * \param Trans - wektor translacji.
+     * \warning Nie dokonywana jest aktualizacja wspó³czynników 
+     *          macierzy.
+     */
+   void SetTrans_OnlyParam(const Vector3f &Trans) { _Trans = Trans; }
+
+
+     /*!
+      * Zmienia warto¶æ pola \link MatrixH3f::_Valid\endlink na \p false
+      * sygnalizuj±c w ten sposób, ¿e warto¶ci parametrów transformacji
+      * zapisane w polach 
+      * \link MatrixH3f::_RotAng _RotAng\endlink,
+      * \link MatrixH3f::_Trans _Trans\endlink oraz
+      * \link MatrixH3f::_Scale _Scale\endlink,
+      * nie odpowiadaj±
+      * faktycznymi warto¶ciomi w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+      */
+    void   SetParamInvalid() 
+            { _Valid = _Valid__Scale = _Valid__Trans = false; }
+     /*!
+      * Zmienia warto¶æ pola \link MatrixH3f::_Valid\endlink na \p false
+      * sygnalizuj±c w ten sposób, ¿e warto¶ci parametrów transformacji
+      * zapisane w polach 
+      * \link MatrixH3f::_RotAng _RotAng\endlink,
+      * \link MatrixH3f::_Trans _Trans\endlink oraz
+      * \link MatrixH3f::_Scale _Scale\endlink,
+      * s± zgodne z
+      * faktycznymi warto¶ciami w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+      */
+    void   SetParamValid() 
+        { _Valid = _Valid__Trans = _Valid__Scale = _Valid__RotAng = true; }
+     /*!
+      * Udostêpnia warto¶æ pola \link MatrixH3f::_Valid\endlink 
+      * informuj±c±, czy warto¶ci parametrów transformacji
+      * zapisane w polach 
+      * \link MatrixH3f::_RotAng _RotAng\endlink,
+      * \link MatrixH3f::_Trans _Trans\endlink oraz
+      * \link MatrixH3f::_Scale _Scale\endlink,
+      * s± zgodne z
+      * faktycznymi warto¶ciami w 
+      *         \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+      */
+    bool  AreParamValid() const 
+        { return _Valid && _Valid__Trans && _Valid__Scale && _Valid__RotAng; }
+
+
+    /*!
+     *  Aktualizuje kolumnê macierzy transformacji, w której zapisany
+     *  wektor translacji. Podstawiony zostaje do niej wektor translacji
+     *  reprezentowany przez pole \link MatrixH3f::_Trans _Trans\endlink.
+     * \warning Metoda nie zmienia pola
+     *       \link MatrixH3f::_Valid _Valid\endlink.
+     *       Metoda te mo¿e byæ  wykorzystywana jedynie w po³±czeniu 
+     *       z innymi metodami, które wp³ywaj± bezpo¶rednio
+     *       na warto¶æ pola _Valid.
+     */
+    void UpdateMatrix_Trans() { MatrixRT3f::SetTrans_AfterRot(_Trans); }
+
+
+
+    /*!
+     *  Aktualizuje warto¶æ pola \link MatrixH3f::_Trans _Trans\endlink, 
+     *  w którym zapisany jest
+     *  wektor translacji. 
+     *  Zapisywane warto¶ci wyznaczane s± na podstawie aktualnych parameterów
+     *  macierzy transformacji.
+     * \warning Metoda nie zmienia pola 
+     *       \link MatrixH3f::_Valid _Valid\endlink,
+     *       ani te¿ jej dzia³anie nie zale¿y do tego pola.
+     *       Metoda te powinna byæ  wykorzystywana jedynie w po³±czeniu 
+     *       z innymi metodami, które wp³ywaj± bezpo¶rednio
+     *       na warto¶æ pola _Valid.
+     */
+    void UpdateParam__Trans() 
+          { _Trans = MatrixRT3f::GetTrans_AfterRot(); }
+
+    /*!
+     *  Aktualizuje warto¶æ pola \link MatrixH3f::_Scale _Scale\endlink, 
+     *  w którym zapisany jest
+     *  wektor wspó³czynników skali dla poszczególnych osi. 
+     *  Aktualizuje jednocze¶nie wektor k±tów rotacji, traktuj±c je
+     *  jako k±ty Eulera.
+     *  Zapisywane warto¶ci wyliczane s± na podstawie aktualnych parameterów
+     *  macierzy transformacji.
+     * \pre Wyliczenia bêd± poprawne wtedy i tylko wtedy gdy macierz 
+     *      wspó³czynników transformacji wyliczna zosta³a dla k±tów Eulera,
+     *      tzn gdy pole \link MatrixH3f::_AngType _AngType\endlink
+     *      ma warto¶æ \p AT_Euler.
+     * \post Wyliczone warto¶ci k±tów mieszcz± siê w przedzia³ach:
+     *         \li \f$ \psi \in (-\pi,-\pi]\f$ - odpowiada wspó³rzêdnej $y$
+     *            wektora k±tów rotacji.
+     * \warning Metoda nie zmienia pola
+     *       \link MatrixH3f::_Valid _Valid\endlink,
+     *       ani te¿ jej dzia³anie nie zale¿y do tego pola.
+     *       Metoda te powinna byæ  wykorzystywana jedynie w po³±czeniu 
+     *       z innymi metodami, które wp³ywaj± bezpo¶rednio
+     *       na warto¶æ pola _Valid.
+     */
+    void UpdateParam__Scale__Euler_Angles();
+    /*!
+     *  Aktualizuje warto¶æ pola \link MatrixH3f::_Scale _Scale\endlink, 
+     *  w którym zapisany jest
+     *  wektor wspó³czynników skali dla poszczególnych osi. 
+     *  Aktualizuje jednocze¶nie wektor k±tów rotacji, traktuj±c je
+     *  jako k±ty obrotu wokó³ osi OX, OY, OZ.
+     *  Zapisywane warto¶ci wyliczane s± na podstawie aktualnych parameterów
+     *  macierzy transformacji.
+     * \pre Wyliczenia bêd± poprawne wtedy i tylko wtedy gdy macierz 
+     *      wspó³czynników transformacji wyliczna zosta³a dla k±tów obrotu
+     *      wokó³ osi OX, OY, OZ,
+     *      tzn. gdy pole \link MatrixH3f::_AngType _AngType\endlink
+     *      ma warto¶æ \p AT_xyz. Wspó³czynniki skali musz± byæ ró¿ne
+     *      od zera.
+     * \warning Metoda nie zmienia pola
+     *       \link MatrixH3f::_Valid _Valid\endlink,
+     *       ani te¿ jej dzia³anie nie zale¿y do tego pola.
+     *       Metoda te powinna byæ  wykorzystywana jedynie w po³±czeniu 
+     *       z innymi metodami, które wp³ywaj± bezpo¶rednio
+     *       na warto¶æ pola _Valid.
+     */
+    void UpdateParam__Scale__XYZ_Angles();
+
+
+    /*!
+     * Na podstawie warto¶ci elementów macierzy wyznacza k±ty rotacji,
+     * wektor translacji i skali.
+     * \pre Operacja jest wykonywana tylko wtedy gdy warto¶æ pola 
+     *   \link MatrixH3f::_Valid _Valid\endlink jest \p false.
+     * \post Po zakoñczeniu dzia³ania metody pole 
+     *    \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ \p true.
+     *    Wyznaczone k±ty rotacji, wektor translacji i wspó³czynniki skali
+     *   dostêpne s± poprzez metody:
+     *    \link MatrixH3f::GetRotAng_Rad GetRotAng_Rad\endlink,
+     *    \link MatrixH3f::GetTrans GetTrans\endlink, 
+     *    \link MatrixH3f::GetScale GetScale\endlink,   
+     */
+   void UpdateParameters();
+
+    /*!
+     * Na podstawie warto¶ci elementów macierzy wyznacza k±ty rotacji,
+     * wektor translacji i skali. K±ty rotacji traktowane s± jako k±ty
+     * Eulera.
+     * \pre Operacja jest wykonywana tylko wtedy gdy warto¶æ pola 
+     *   \link MatrixH3f::_Valid _Valid\endlink jest \p false.
+     * \post Po zakoñczeniu dzia³ania metody pole 
+     *    \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ \p true.
+     *    Wyznaczone k±ty rotacji, wektor translacji i wspó³czynniki skali
+     *   dostêpne s± poprzez metody:
+     *    \link MatrixH3f::GetRotAng_Rad GetRotAng_Rad\endlink,
+     *    \link MatrixH3f::GetTrans GetTrans\endlink, 
+     *    \link MatrixH3f::GetScale GetScale\endlink,   
+     *    Do pola \link MatrixH3f::_AngType _AngType\endlink zostaje 
+     *    wpisana warto¶æ \p AT_Euler.
+     */
+   void UpdateParam__Euler_Frame();
+    /*!
+     * Na podstawie warto¶ci elementów macierzy wyznacza k±ty rotacji,
+     * wektor translacji i skali. K±ty rotacji traktowane s± jako k±ty
+     * obrotu wokó³ osi OX, OY, OZ.
+     * \pre Operacja jest wykonywana tylko wtedy gdy warto¶æ pola 
+     *   \link MatrixH3f::_Valid _Valid\endlink jest \p false.
+     * \post Po zakoñczeniu dzia³ania metody pole 
+     *    \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ \p true.
+     *    Wyznaczone k±ty rotacji, wektor translacji i wspó³czynniki skali
+     *   dostêpne s± poprzez metody:
+     *    \link MatrixH3f::GetRotAng_Rad GetRotAng_Rad\endlink,
+     *    \link MatrixH3f::GetTrans GetTrans\endlink, 
+     *    \link MatrixH3f::GetScale GetScale\endlink,   
+     *    Do pola \link MatrixH3f::_AngType _AngType\endlink zostaje 
+     *    wpisana warto¶æ \p AT_xyz.
+     */
+   void UpdateParam__XYZ_Frame();
+
+    /*=======================================================================
+     * Obliczanie macierzy transformacji i traktuj±c k±ty rotacji, jako
+     * k±ty obrotu wokó³ osi OX, OY, OZ.
+     */
+   void UpdateMatrix__XYZ_Angles();
+
+    /*========================================================================
+     * Obliczanie macierzy transformacji i traktuj±c k±ty rotacji, jako
+     * k±ty Eulera.
+     */
+   void UpdateMatrix__Euler_Angles();
+
+
+
+   /*!
+    *  Wyznacza macierz transformacji na podstawie aktualnych warto¶ci 
+    *  parametrów i zadanego sposobu traktowania warto¶ci k±tów rotacji.
+    *  \pre Pola
+    *    \link MatrixH3f::_RotAng _RotAng\endlink,
+    *    \link MatrixH3f::_Trans _Trans\endlink,
+    *    \link MatrixH3f::_Scale _Scale\endlink zawieraj± 
+    *    warto¶ci k±tów rotacji, 
+    *    wektor translacji i wektor skali. Pole
+    *    \link MatrixH3f::_AngType _AngType\endlink okre¶la sposób traktowania
+    *    warto¶ci k±tów rotacji.
+    * \post Zostaj± wyliczone wspó³czynniki macierzy transformacji, które
+    *       umieszczone zostaj± w polu 
+    *       \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+    *       Warto¶æ pola \link MatrixH3f::_AngType _AngType\endlink decyduje o 
+    *       o tym jaka metda zostaje u¿yta do wyznaczenia wspp³czynników
+    *       macierzy transformacji, tzn. 
+    *       \link MatrixH3f::UpdateMatrix__XYZ_Angles 
+    *                        UpdateMatrix__XYZ_Angles \endlink
+    *       (gdy k±ty rotacji maj± byæ traktowane jako k±ty obrotu wokó³ osi
+    *        OX, OY, OZ) czy te¿  \link MatrixH3f::UpdateMatrix__Euler_Angles
+    *        UpdateMatrix__Euler_Angles\endlink, gdy k±ty rotacji maj±
+    *        byæ traktwane jako k±ty Eulera).
+    *        Po zakoñczeniu dzia³ania metody pole 
+    *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ \p true.
+    *
+    * \warning Skala nie jest mno¿ona przez wspó³rzêdne wektora translacji.
+    *          Mno¿ona s± jedynie wspó³czynniki macerzy rotacji.
+    */
+   void UpdateMatrix();
+    /*!
+     *  Aktualizuje warto¶ci parametrów (o ile jest to potrzebne, tzn.
+     *  gdy pole \link MatrixH3f::_Valid _Valid\endlink ma warto¶æ \p false).
+     *  Dziêki aktualizacji parametry transformacji zapisane w polach:
+     *     \link MatrixH3f::_RotAng _RotAng\endlink,
+     *     \link MatrixH3f::_Trans _Trans\endlink oraz 
+     *     \link MatrixH3f::_Scale _Scale\endlink,
+     *   odpowiadaj± wspó³czynnikom macierzy transformacji,
+     *   ktore znajduj± siê w \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink.
+     *
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+   void ValidateParameters() const
+          { if (!_Valid){ 
+                   (*(MatrixH3f*)this).UpdateParameters(); 
+                   (*(MatrixH3f*)this).SetParamValid();
+            }
+          }
+
+  public:
+
+
+     /*!
+      * Metoda udostêpnia wektor skali wzglêdem poszczególnych osi
+      * (warto¶æ pola \link MatrixH3f::_Scale _Scale\endlink).
+      * Je¿eli jest to konieczne to aktualizuje jego zawarto¶æ,
+      * tak aby dopowiada³a ona warto¶ci wynikaj±cej ze wspó³czynników
+      * macierzy transformacji.
+      * \return referencjê do pola  \link MatrixH3f::_Scale _Scale\endlink
+      *         zawieraj±cego wektor wspó³czynników skali.
+      * \post Pole 
+      *   \link MatrixH3f::_Valid__Scale  MatrixH3f::_Valid__Scale\endlink
+      *   ma warto¶æ \p true.
+      */
+   const Vector3f &GetScale() const;
+
+
+
+     /*!
+      * Metoda udostêpnia wektor skali wzglêdem poszczególnych osi
+      * (warto¶æ pola \link MatrixH3f::_Scale _Scale\endlink).
+      * Je¿eli jest to konieczne to aktualizuje jego zawarto¶æ,
+      * tak aby dopowiada³a ona warto¶ci wynikaj±cej ze wspó³czynników
+      * macierzy transformacji.
+      * \param Scale - (\b out) po zakoñczeniu dzia³ania metody zawiera
+      *         warto¶ci skali dla poszczególnych osi, tzn.
+      *         odpowiednio \e OX, \e OY, \e OZ.
+      * \post Pole 
+      *   \link MatrixH3f::_Valid__Scale  MatrixH3f::_Valid__Scale\endlink
+      *   ma warto¶æ \p true.
+      */
+   void GetScale(Vector3f &Scale) const { Scale = GetScale(); }
+
+
+     /*!
+      * Metoda udostêpnia wektor translacji traktowanej jako translacja
+      * po rotacji.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda dokonuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+   const Vector3f &GetTrans_AfterRot() const;
+
+
+
+    /*!
+     * Nadaje now± warto¶æ wektorowi translacji.
+     * \param T - nowa warto¶æ wektora translacji.
+     * \post Do pola \link MatrixH3f::_Trans _Trans\endlink zostaje wpisany
+     *       nowy wektor translacji przekazany przez parametr \e T.
+     *       Wpisany zostje on równie¿ do 4 kolumny macierzy wspó³czynników
+     *       transformacji (patrz opis pola 
+     *       \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink)
+     *       zachowuj±c aktualno¶æ
+     *       wyliczeñ wpó³czynników tej macierzy.
+     *       
+     *       Dzia³anie metody powoduje przypisanie polom 
+     *    \link MatrixH3f::_Valid__Trans  MatrixH3f::_Valid__Trans\endlink
+     *    oraz 
+     *    \link MatrixH3f::_Trans__After MatrixH3f::_Trans__After \endlink
+     *    warto¶ci \p true.
+     */
+    void SetTrans_AfterRot(Vector3f const &T);
+
+
+    /*!
+     * Dodaje do wektora translacji traktowanego jako translacjê
+     * po rotacji, podany wektor.
+     * \param dT - dodawany wektor.
+     * \post Do pola \link MatrixH3f::_Trans _Trans\endlink zostaje wpisana
+     *       suma wektora translacji pochodz±cego bezpo¶renio z 4 kolumny 
+     *       macierzy wspó³czynników transformacji 
+     *       Nowa wyliczona warto¶æ zostaje wpisana
+     *       do 4 kolumny macierzy wspó³czynników transformacji.
+     *       (patrz opis pola 
+     *       \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink).
+     *       
+     *       Dzia³anie metody powoduje wypisanie warto¶ci \p false
+     *       do pola 
+     *        \link MatrixH3f::__Valid__Trans _Valid__Trans\endlink.
+     */
+    void AddTrans_AfterRot(const Vector3f &dT);
+
+
+     /*!
+      * Sprowadza warto¶æ skali transformacji do (1,1,1) aktualizuj±c
+      * odpowiednio wspó³czynniki macierzy transformacji.
+      * \post Pole 
+      *  \link MatrixH3f::_Valid__Scale  _Valid__Scale\endlink
+      *  ma warto¶æ \p true.
+      */
+   MatrixH3f &Normalize();
+
+
+    /*!
+     *  Inicjalizuje dan± macierz jako macierz jednostkow±.
+     */
+    void SetUnitMtx();
+
+   /*!
+    * Operator mno¿enia macierzy (sk³adanie transformacji) przez macierz
+    * i podstawienia.
+    * Dezaktualizuj± wa¿no¶æ parametrów (warto¶æ pola 
+    * \link MatrixH3f::_Valid _Valid\endlink zostaje zmieniona na \p false).
+    */
+   MatrixH3f  &operator *= (MatrixH3f const &M)
+        { SetParamInvalid();  MatrixRT3f::MultiplyByMatrix(M);  return *this; }
+
+
+   /*!
+    * Operator mno¿enia macierzy (sk³adanie transformacji) przez macierz.
+    * Operacja nie wp³ywa na warto¶æ pola
+    * \link MatrixH3f::_Valid _Valid\endlink.
+    */
+   MatrixH3f   operator *  (MatrixH3f const &M) const 
+                  { MatrixH3f Res(*this);  return Res *= M; }
+
+
+   /*!
+    * Operator mno¿enia macierzy przez wektor.
+    * Operacja nie wp³ywa na wa¿no¶æ parametrów transformacji.
+    * \param V - (\b in) wektor, który ma byæ przemno¿ony przez dan± maicerz.
+    * \return wynikowy wektor po przemno¿eniu przez macierz.
+    */
+   Vector3f  operator *  (Vector3f const &V) const
+                       { return *(const MatrixRT3f*)this * V; }
+
+  /*!
+   * Metoda wyznacza macierz transformacji odwrotnej (rozumianej jako macierzy
+   * przekszta³cenia jednorodnego) do danej macierzy.
+   * \param FOut - (\b out) po wykonaniu operacji parametr zawiera 
+   *              wspó³czynniki macierzy odwrotnej, o ile obliczenie
+   *              takiej macierzy okaza³o siê byæ mo¿liwe.
+   * \retval false - je¶li wyznacznie macierzy odwrotnej nie jest mo¿liwe (gdy
+   *             przekszta³cenie osobliwe).
+   *        \e FOut - obiekt nie ulega zmianie.
+   *
+   * \retval true  - gdy macierz przekszta³cenia odwrotnego zosta³a wyznaczona.
+   *        \e FOut - zawiera wynik obliczeñ, tzn. macierz przekszta³cenia 
+   *                odwrotnego do danej macierzy.
+   * \post W macierzy \e FOut przyjmuje siê, ¿e aktualne warto¶ci
+   *       parametrów nie odpowiadaj± warto¶ciom rzeczywistym wynikaj±cym
+   *       ze wspó³czynników macierzy. Pierwsza próba pobrania tych warto¶ci
+   *       spowoduje ich uaktualnienie.
+   */
+   bool  InvertFrame(MatrixH3f &FOut) const {
+          if (!MatrixRT3f::InvertMtx(FOut)) return false;
+          FOut.SetParamInvalid(); 
+          return true;
+   }
+
+
+
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    /*!
+     * Inicjalizuje macierz transformacji jako przekszta³cenie to¿samo¶ciowe.
+     * \param ATyp - okre¶la sposób interpretacji warto¶ci k±tów rotacji,
+     *               które dostêpne s± w polu
+     *               \link MatrixH3f::_RotAng _RotAng\endlink.
+     * \post Zainicjalizowaniu macierzy towarzyszy zgodno¶æ parametrów
+     *    zainicjalizowanych w polach 
+     *    \link MatrixH3f::_RotAng _RotAng\endlink,
+     *    \link MatrixH3f::_Trans _Trans\endlink oraz 
+     *    \link MatrixH3f::_Scale _Scale\endlink. Dlatego te¿ pole
+     *    \link MatrixH3f::_Valid _Valid\endlink inicjalizowane jest 
+     *    warto¶ci± \p true.
+     */ 
+    MatrixH3f(AnglesType ATyp = AT_xyz);
+    /*!
+     * Inicjalizuje macierz transformacji na podstawie podanych paramterów 
+     * transformacji.
+     * \param Param - zawiera parametry transformacji (k±ty rotacji traktowane
+     *                jako obroty wokó³ osi OX, OY, OZ, wektor translacji,
+     *                wspó³czynniki skali).
+     * \param ATyp - okre¶la sposób interpretacji warto¶ci k±tów rotacji,
+     *               które dostêpne s± w polu
+     *               \link MatrixH3f::_RotAng _RotAng\endlink.
+     * \post Zainicjalizowaniu macierzy towarzyszy zgodno¶æ parametrów
+     *     zainicjalizowanych warto¶ciami udostêpnianymi przez parametr
+     *     \e Param.
+     *     Warto¶ci parametrów transformacji wpisywane s± w polach 
+     *     \link MatrixH3f::_RotAng _RotAng\endlink,
+     *     \link MatrixH3f::_Trans _Trans\endlink oraz 
+     *     \link MatrixH3f::_Scale _Scale\endlink. Dlatego te¿ pole
+     *     \link MatrixH3f::_Valid _Valid\endlink inicjalizowane jest 
+     *     warto¶ci± \p true.
+     */ 
+    MatrixH3f(Parameters const &Param, AnglesType ATyp = AT_xyz);
+
+
+
+    /*!
+     * Ustawia sposób interpretacji k±tów rotacji jako k±ty Eulera.
+     * Metoda zmienia warto¶æ pola \link MatrixH3f::_AngType _AngType\endlink
+     * na warto¶æ \p AT_Euler.
+     */
+    void SetAngType2Euler() { _AngType = AT_Euler; }
+    /*!
+     * Ustawia sposób interpretacji k±tów rotacji jako k±ty rotacji
+     * wokó³ osi OX, OY, OZ.
+     * Metoda zmienia warto¶æ pola \link MatrixH3f::_AngType _AngType\endlink
+     * na warto¶æ \p AT_xyz.
+     */
+    void SetAngType2xyz() { _AngType = AT_xyz; }
+    /*!
+     * Ustawia sposób interpretacji k±tów rotacji.
+     * \param ATyp - nowa wartosc dla pola 
+     * \link MatrixH3f::_AngType _AngType\endlink informuj±ca o sposobie
+     *  interpretacji k±tów rotacji.
+     * \post Zostaje zmodyfikowna warto¶æ pola 
+     * \link MatrixH3f::_AngType _AngType\endlink.
+     */
+    void SetAngType(AnglesType ATyp) { _AngType = ATyp; }
+    /*!
+     * Udostêpnia warto¶æ pola \link MatrixH3f::_AngType _AngType\endlink
+     * informuj±c± o sposobie interpretacji k±tów rotacji, które zapisane
+     * s± w polu \link MatrixH3f::_RotAng _RotAng\endlink.
+     */
+    AnglesType GetAngType() const { return _AngType; }
+
+
+
+
+
+
+    /*!
+     * Operator umo¿liwia podstawienie parametrów macierzy
+     * transformacji i wyliczenie wszystkich wspó³czynników tej macierzy.
+     */
+   MatrixH3f      &operator <<= (Parameters const &PF);
+       
+    /*!
+     * Metoda wyznacza macierz transformacji odwrotnej do danej macierzy.
+     * \param FOut - (\b out) po wykonaniu operacji parametr zawiera 
+     *              wspó³czynniki macierzy odwrotnej, o ile obliczenie
+     *              takiej macierzy okaza³o siê byæ mo¿liwe.
+     * \retval true - je¶li obliczenie macierzy odwrotnej by³o mo¿liwe,
+     * \retval false - w przypadku przeciwnym.
+     */
+
+
+
+     /*!
+      * Metoda udostêpnia k±ty rotacji wzglêdem osi OX, OY, OZ .
+      * Warto¶ci k±tów wyra¿one s± w radianach. 
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+   Vector3f const &GetRotAng_Rad() const 
+                                     { ValidateParameters(); return _RotAng; }
+
+     /*!
+      * Metoda udostêpnia k±ty rotacji wzglêdem osi OX, OY, OZ .
+      * Warto¶ci k±tów wyra¿one s± w stopniach.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+   Vector3f GetRotAng_Deg() const 
+     { ValidateParameters(); 
+       return Vector3f(GetRotAngX_Deg(),GetRotAngY_Deg(),GetRotAngZ_Deg()); 
+     }
+
+
+
+
+     /*!
+      * Metoda udostêpnia warto¶æ  k±ta rotacji wzgl. osi OX
+      * wyra¿onej w radianach.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+    float GetRotAngX_Rad() const 
+             {ValidateParameters(); return GetRotAng_Rad().X();}
+
+     /*!
+      * Metoda udostêpnia warto¶æ  k±ta rotacji wzgl. osi OY
+      * wyra¿onej w radianach.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+
+      */
+    float GetRotAngY_Rad() const
+             {ValidateParameters(); return GetRotAng_Rad().Y();}
+
+     /*!
+      * Metoda udostêpnia warto¶æ  k±ta rotacji wzgl. osi OZ
+      * wyra¿onej w radianach.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+
+      */
+    float GetRotAngZ_Rad() const
+             {ValidateParameters(); return GetRotAng_Rad().Z();}
+
+     /*!
+      * Metoda udostêpnia warto¶æ  k±ta rotacji wzgl. osi OX
+      * wyra¿onej w stopniach.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+    float GetRotAngX_Deg() const;
+
+     /*!
+      * Metoda udostêpnia warto¶æ  k±ta rotacji wzgl. osi OY
+      * wyra¿onej w stopniach.
+      *
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+    float GetRotAngY_Deg() const;
+
+     /*!
+      * Metoda udostêpnia warto¶æ  k±ta rotacji wzgl. osi OZ
+      * wyra¿onej w stopniach.
+      * Przed udostêpnieniem tych warto¶ci metoda doknuje aktualizacji
+      * (o ile jest ona konieczna) warto¶ci parametrów na podstawie
+      * warto¶ci wspó³czynników macierzy.
+      */
+    float GetRotAngZ_Deg() const;
+
+    /*!
+     * Metoda zmienia k±t rotacji wzglêdem danej osi OX
+     * (interpretacja tego k±ta zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink).
+     * Pozosta³e k±ty pozostaj± niezmienione. Warto¶ci k±tów wyra¿one s± 
+     * w radianach.
+     * \param ang_Rad - nowa warto¶æ k±ta wyra¿ona w radianach.
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    MatrixH3f & NewRotX(float ang_Rad);
+
+
+    /*!
+     * Metoda zmienia k±t rotacji wzglêdem danej osi OX
+     * (interpretacja tego k±ta zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink).
+     * Pozosta³e k±ty pozostaj± niezmienione. Warto¶ci k±tów wyra¿one s± 
+     * w stopniach.
+     * \param ang_Deg - nowa warto¶æ k±ta wyra¿ona w stopniach.
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    MatrixH3f & NewRotAngX_Deg(float ang_Deg) { return NewRotX(DEG2RAD(ang_Deg));} 
+
+    /*!
+     * Metoda zmienia k±t rotacji wzglêdem danej osi OY
+     * (interpretacja tego k±ta zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink).
+     * Pozosta³e k±ty pozostaj± niezmienione. Warto¶ci k±tów wyra¿one s± 
+     * w radianach.
+     * \param ang_Rad - nowa warto¶æ k±ta wyra¿ona w radianach.
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    MatrixH3f & NewRotY(float ang_Rad);
+
+
+    /*!
+     * Metoda zmienia k±t rotacji wzglêdem danej osi OY
+     * (interpretacja tego k±ta zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink).
+     * Pozosta³e k±ty pozostaj± niezmienione. Warto¶ci k±tów wyra¿one s± 
+     * w stopniach.
+     * \param ang_Deg - nowa warto¶æ k±ta wyra¿ona w stopniach.
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    MatrixH3f & NewRotAngY_Deg(float ang_Deg) {return NewRotY(DEG2RAD(ang_Deg));}
+
+
+
+    /*!
+     * Metoda zmienia k±t rotacji wzglêdem danej osi OZ
+     * (interpretacja tego k±ta zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink)
+     * Pozosta³e k±ty pozostaj± niezmienione. Warto¶ci k±tów wyra¿one s± 
+     * w radianach.
+     * \param ang_Rad - nowa warto¶æ k±ta wyra¿ona w radianach.
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    MatrixH3f & NewRotZ(float ang_Rad);
+
+    /*!
+     * Metoda zmienia k±t rotacji wzglêdem danej osi OZ
+     * (interpretacja tego k±ta zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink)
+     * Pozosta³e k±ty pozostaj± niezmienione. Warto¶ci k±tów wyra¿one s± 
+     * w stipniach.
+     * \param ang_Deg - nowa warto¶æ k±ta wyra¿ona w stopniach.
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    MatrixH3f & NewRotAngZ_Deg(float ang_Deg) {return NewRotZ(DEG2RAD(ang_Deg));}
+
+    /*!
+     * Metoda zmienia k±ty rotacji wzglêdem wszystkich osi
+     * (interpretacja k±tów zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink)
+     * Warto¶ci k±tów wyra¿one s± w radianach.
+     * \param ang_x - nowa warto¶æ k±ta rotacji wzglêdem pierwszej osi
+     *                wyra¿ona w radianach (dla 
+     *             \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz
+     *              bêdzie to o¶ \e OX).
+     * \param ang_y - nowa warto¶æ k±ta rotacji wzglêdem drugiej osi
+     *                wyra¿ona w radianach (dla 
+     *             \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz
+     *             bêdzie to o¶ \e OY).
+     * \param ang_z - nowa warto¶æ k±ta rotacji wzglêdem trzeciej osi
+     *                wyra¿ona w radianach (dla 
+     *             \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz
+     *             bêdzie to o¶ \e OZ).
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    void NewRot_Rad( float ang_x, float ang_y, float ang_z );
+
+    /*!
+     * Metoda zmienia k±ty rotacji wzglêdem wszystkich osi
+     * (interpretacja k±tów zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink)
+     * Warto¶ci k±tów wyra¿one s± w radianach.
+     * \param Ang - nowe warto¶ci k±tów rotacji wzglêdem wszstkich trzech osi
+     *               wyra¿ona w radianach  (dla 
+     *             \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz  bêd±
+     *              to osie \e OX, \e OY, \e OZ).
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    void NewRot_Rad( const Vector3f &Ang ) {  NewRot_Rad(Ang.x,Ang.y,Ang.z); }
+
+    /*!
+     * Metoda zmienia k±ty rotacji wzglêdem wszystkich osi
+     * (interpretacja k±tów zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink)
+     * Warto¶ci k±tów wyra¿one s± w stopniach.
+     * \param ang_x - nowa warto¶æ k±ta rotacji wzglêdem pierwszej osi
+     *                wyra¿ona w stopniach (dla 
+     *        \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz
+     *           bêdzie to o¶ \e OX).
+     * \param ang_y - nowa warto¶æ k±ta rotacji wzglêdem drugiej osi
+     *                wyra¿ona w stopniach (dla 
+     *        \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz  bêdzie
+     *              to o¶ \e OY).
+     * \param ang_z - nowa warto¶æ k±ta rotacji wzglêdem trzeciej osi
+     *                wyra¿ona w stopniach (dla 
+     *        \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz  bêdzie
+     *         to o¶ \e OZ).
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    void NewRot_Deg( float ang_x, float ang_y, float ang_z )
+             { NewRot_Rad(DEG2RAD(ang_x),DEG2RAD(ang_y),DEG2RAD(ang_z)); }
+
+    /*!
+     * Metoda zmienia k±ty rotacji wzglêdem wszystkich osi
+     * (interpretacja k±tów zale¿y od pola 
+     *   \link MatrixH3f::_AngType _AngType\endlink)
+     * Warto¶ci k±tów wyra¿one s± w stopniach.
+     * \param Ang - nowe warto¶ci k±tów rotacji wzglêdem wszstkich trzech osi
+     *               wyra¿ona w stopniach  (dla 
+     *             \link MatrixH3f::_AngType _AngType\endlink = \p AT_xyz  bêd±
+     *              to osie \e OX, \e OY, \e OZ).
+     * \post Modyfikacji ulegaj± wspó³czynniki macierzy transformacji.
+     *       Modyfikacji ulega równie¿ pole 
+     *   \link MatrixH3f::_RotAng _RotAng\endlink. 
+     *   Pozosta³e pola podlegaj± równie¿ modyfikacji (ze wzglêdu na to
+     *   ¿e mo¿e byæ to powodem akumulacji b³êdów obliczeñ, w przysz³o¶ci
+     *   zostanie to zmienione).
+     *   Warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink po tej operacji
+     *   jest zawsze \p true.
+     */
+    void NewRot_Deg( const Vector3f &Ang ) {  NewRot_Deg(Ang.x,Ang.y,Ang.z); }
+
+     /*!
+       * Metoda zmienia warto¶ci wektora skali wzglêdem poszczególnych 
+       *  osi. Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+       *  \param x - nowa warto¶æ wektora skali wzglêdem osi OX,
+       *  \param y - nowa warto¶æ wektora skali wzglêdem osi OY,
+       *  \param z - nowa warto¶æ wektora skali wzglêdem osi OZ,
+       *  \return udostêpnia referencjê do samego siebie (\b *this).
+       */
+    MatrixH3f & NewScale(float x, float y, float z);
+
+     /*!
+      * Metoda zmienia warto¶ci \e x-owej wspó³rzêdnej wektora skali
+      * (tzn. skali wzglêdem osi \e OX).
+      * Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+      *  \param x_S - nowa warto¶æ wektora skali wzglêdem osi OX,
+      */
+    void NewScaleX(float x_S);
+     /*!
+      * Metoda zmienia warto¶ci \e y-owej wspó³rzêdnej wektora skali
+      * (tzn. skali wzglêdem osi \e OY).
+      * Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+      *  \param y_S - nowa warto¶æ wektora skali wzglêdem osi OY,
+      */
+    void NewScaleY(float y_S);
+     /*!
+      * Metoda zmienia warto¶ci \e z-owej wspó³rzêdnej wektora skali
+      * (tzn. skali wzglêdem osi \e OZ).
+      * Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+      *  \param z_S - nowa warto¶æ wektora skali wzglêdem osi OZ,
+      */
+    void NewScaleZ(float z_S);
+
+      /*!
+       * Metoda zmienia warto¶ci wektora skali wzglêdem poszczególnych 
+       *  osi. Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+       *  \param Scale - nowa warto¶æ wektora skali.
+       *  \return udostêpnia referencjê do samego siebie (\b *this).
+       */
+    MatrixH3f & NewScale(Vector3f const &Scale);
+
+      /*!
+       * Metoda zmienia warto¶ci wektora translacji wzglêdem poszczególnych 
+       *  osi. Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+       *  \param x - nowa warto¶æ wektora translacji wzglêdem osi OX,
+       *  \param y - nowa warto¶æ wektora translacji wzglêdem osi OY,
+       *  \param z - nowa warto¶æ wektora translacji wzglêdem osi OZ,
+       *  \return udostêpnia referencjê do samego siebie (\b *this).
+       */
+    MatrixH3f & NewTrans(float x, float y, float z);
+    /*!
+     * Metoda zmienia warto¶ci wektora translacji wzglêdem poszczególnych 
+     *  osi. Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+     *  \param Trans - nowa warto¶æ wektora translacji.
+     *  \return udostêpnia referencjê do samego siebie (\b *this).
+     */
+    MatrixH3f & NewTrans(Vector3f const &Trans);
+
+   /*!
+    *  Metoda zmienia warto¶æ wspó³rzêdnej \e x-owej wektora translacji.
+    *  \param x_T - nowa warto¶æ \e x-owej wspó³rzêdnej wektora translacji.
+    */
+    void NewTransX(float x_T);
+   /*!
+    *  Metoda zmienia warto¶æ wspó³rzêdnej \e y-owej wektora translacji.
+    *  \param y_T - nowa warto¶æ \e y-owej wspó³rzêdnej wektora translacji.
+    */
+    void NewTransY(float y_T);
+   /*!
+    *  Metoda zmienia warto¶æ wspó³rzêdnej \e z-owej wektora translacji.
+    *  \param z_T - nowa warto¶æ \e z-owej wspó³rzêdnej wektora translacji.
+    */
+    void NewTransZ(float z_T);
+
+
+   /*!
+    * Ustawia wszystkie parametry macierzy i powoduje jednocze¶nie
+    * wyliczenie wszystich jej wspó³czynników.
+    * \param  Ang -  k±ty rotacji wzglêdem wszystkich osi
+    *              (ich interpretacja k±tów zale¿y od warto¶ci parametru
+    *               \e AngType).
+    * \param  Trans - wektor translacji.
+    * \param  Scale - wektor wspó³czynników skali dla ka¿dej z osi uk³adu
+    *                 wspó³rzêdnych.
+    * \param  AngType - typ k±tów rotacji 
+    *               (patrz \link MatrixH3f::AnglesType AnglesType\endlink).
+    * \param  AngUnit - typ jednostek w jakich wyra¿one s± k±ty
+    *               (patrz \link matrixH3f::AngleUnit AngleUnit\endlink).
+    * \post  Po wykonaniu metody parametry s± wa¿ne (tzn. warto¶ci parametrów
+    *        transformacji odpowiadaj± warto¶ciom wspó³czynników 
+    *        transformacji). Tym samym pole
+    *        \link MatrixH3f::_Valid _Valid\endlink wa warto¶æ \p false.
+    */
+    void SetMatrix( const Vector3f &Ang, 
+                    const Vector3f &Trans,
+                    const Vector3f &Scale,
+                    AnglesType     AngType = MatrixH3f::AT_xyz,
+                    AngleUnit      AngUnit = AU_Rad
+                  );
+
+
+
+     /*!
+      * Dodaje do warto¶ci k±ta rotacji zapisywane w polu 
+      * \link MatrixH3f::_RotAng _RotAng.x\endlink podan± warto¶æ 
+      * i aktualizuje macierz transformacji.
+      * \param angX_Rad - dodawana warto¶æ k±ta wyra¿ona w radianach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       \link MatrixH3f::_RotAng _RotAng.x\endlink dodawana jest
+      *       warto¶æ przekazana przez parametr \e angX_Rad. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶æ k±ta 
+      *       zawiera siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±ta rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAngX_Rad(float angX_Rad);
+     /*!
+      * Dodaje do warto¶ci k±ta rotacji zapisywane w polu 
+      * \link MatrixH3f::_RotAng _RotAng.y\endlink podan± warto¶æ 
+      * i aktualizuje macierz transformacji.
+      * \param angY_Rad - dodawana warto¶æ k±ta wyra¿ona w radianach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       \link MatrixH3f::_RotAng _RotAng.y\endlink dodawana jest
+      *       warto¶æ przekazana przez parametr \e angY_Rad. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶æ k±ta 
+      *       zawiera siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±ta rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAngY_Rad(float angY_Rad);
+     /*!
+      * Dodaje do warto¶ci k±ta rotacji zapisywane w polu 
+      * \link MatrixH3f::_RotAng _RotAng.z\endlink podan± warto¶æ 
+      * i aktualizuje macierz transformacji.
+      * \param angZ_Rad - dodawana warto¶æ k±ta wyra¿ona w radianach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       \link MatrixH3f::_RotAng _RotAng.z\endlink dodawana jest
+      *       warto¶æ przekazana przez parametr \e angZ_Rad. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶æ k±ta 
+      *       zawiera siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±ta rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAngZ_Rad(float angZ_Rad);
+     /*!
+      * Dodaje do warto¶ci poszczególnych k±tów rotacji zapisanych w polu 
+      * \link MatrixH3f::_RotAng _RotAng\endlink podany przez parametr
+      * wektor warto¶ci
+      * i aktualizuje macierz transformacji.
+      * \param ang_Rad - dodawany wektor warto¶ci k±tów wyra¿ony
+      *        w radianach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       do warto¶ci zawartych w polu
+      *       \link MatrixH3f::_RotAng _RotAng\endlink dodawany zostaje
+      *       wektor warto¶ci przekazany przez parametr \e ang_Rad. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶ci k±tów
+      *       zawieraj± siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±tów rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAng_Rad(Vector3f const &ang_Rad);
+
+
+     /*!
+      * Dodaje do warto¶ci k±ta rotacji zapisywane w polu 
+      * \link MatrixH3f::_RotAng _RotAng.x\endlink podan± warto¶æ 
+      * i aktualizuje macierz transformacji.
+      * \param angX_Deg - dodawana warto¶æ k±ta wyra¿ona w stopniach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       \link MatrixH3f::_RotAng _RotAng.x\endlink dodawana jest
+      *       warto¶æ przekazana przez parametr \e angX_Deg. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶æ k±ta 
+      *       zawiera siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±ta rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAngX_Deg(float angX_Deg);
+     /*!
+      * Dodaje do warto¶ci k±ta rotacji zapisywane w polu 
+      * \link MatrixH3f::_RotAng _RotAng.y\endlink podan± warto¶æ 
+      * i aktualizuje macierz transformacji.
+      * \param angY_Deg - dodawana warto¶æ k±ta wyra¿ona w stopniach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       \link MatrixH3f::_RotAng _RotAng.y\endlink dodawana jest
+      *       warto¶æ przekazana przez parametr \e angY_Deg. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶æ k±ta 
+      *       zawiera siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±ta rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAngY_Deg(float angY_Deg);
+     /*!
+      * Dodaje do warto¶ci k±ta rotacji zapisywane w polu 
+      * \link MatrixH3f::_RotAng _RotAng.z\endlink podan± warto¶æ 
+      * i aktualizuje macierz transformacji.
+      * \param angZ_Deg - dodawana warto¶æ k±ta wyra¿ona w stopniach.
+      * \return referencjê do samego siebie (\b *this). 
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       \link MatrixH3f::_RotAng _RotAng.z\endlink dodawana jest
+      *       warto¶æ przekazana przez parametr \e angZ_Deg. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶æ k±ta 
+      *       zawiera siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±ta rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAngZ_Deg(float angZ_Deg);
+     /*!
+      * Dodaje do warto¶ci poszczególnych k±tów rotacji zapisanych w polu 
+      * \link MatrixH3f::_RotAng _RotAng\endlink podany przez parametr
+      * wektor warto¶ci
+      * i aktualizuje macierz transformacji.
+      * \param ang_Deg - dodawany wektor warto¶ci k±tów wyra¿ony
+      *        w stopniach.
+      * \return referencjê do samego siebie (\b *this).
+      * \post Aktualizuje parametry transformacji, aby odpowiada³y one
+      *       wspó³czynnikom transformacji macierzy. Nastêpnie do pola
+      *       do warto¶ci zawartych w polu
+      *       \link MatrixH3f::_RotAng _RotAng\endlink dodawany zostaje
+      *       wektor warto¶ci przekazany przez parametr \e ang_Rad. Wynik
+      *       dzia³ania jest zawsze normalizowany, tzn warto¶ci k±tów
+      *       zawieraj± siê zawsze w przedziale [0,2PI).
+      *       Interpretacja k±tów rotacji zale¿y od tej jaka obowi±zuje
+      *       dla danej macierzy (patrz opis pola
+      *       \link MatrixH3f::_AngType _AngType\endlink).
+      *       Po zakoñczeniu dzia³ania metody pole 
+      *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ
+      *       \p true.
+      */
+    MatrixH3f& AddRotAng_Deg(Vector3f const &ang_Deg);
+
+    /*!
+     * Metoda dodaje do sk³adowej \e x wektora translacji zadan± warto¶æ
+     * oraz aktualizuje macierz wspó³czynników macierzy transformacji.
+     * \param x - dodawana warto¶æ do \e x-owej sk³adowej wektora translacji.
+     * \return referencjê do samego siebie (\b *this).
+     * \post Do warto¶ci sk³adowej \e x-owej wektora translacji zapisanego
+     *       w polu \link MatrixH3f::_Trans _Trans\endlink dodana zostaje
+     *       warto¶æ parametru \e x. Do macierzy wspó³czynników zostaje
+     *       podstawiony nowy wektor translacji.
+     *      
+     *       Dzia³anie metody nie wp³ywa na warto¶æ pola
+     *        \link MatrixH3f::_Valid\endlink.
+     */
+    MatrixH3f& AddTransX(float x);
+    /*!
+     * Metoda dodaje do sk³adowej \e y wektora translacji zadan± warto¶æ
+     * oraz aktualizuje macierz wspó³czynników macierzy transformacji.
+     * \param y - dodawana warto¶æ do \e y-owej sk³adowej wektora translacji.
+     * \return referencjê do samego siebie (\b *this).
+     * \post Do warto¶ci sk³adowej \e y-owej wektora translacji zapisanego
+     *       w polu \link MatrixH3f::_Trans _Trans\endlink dodana zostaje
+     *       warto¶æ parametru \e y. Do macierzy wspó³czynników zostaje
+     *       podstawiony nowy wektor translacji.
+     *      
+     *       Dzia³anie metody nie wp³ywa na warto¶æ pola
+     *        \link MatrixH3f::_Valid\endlink.
+     */
+    MatrixH3f& AddTransY(float y);
+    /*!
+     * Metoda dodaje do sk³adowej \e z wektora translacji zadan± warto¶æ
+     * oraz aktualizuje macierz wspó³czynników macierzy transformacji.
+     * \param z - dodawana warto¶æ do \e z-owej sk³adowej wektora translacji.
+     * \return referencjê do samego siebie (\b *this).
+     * \post Do warto¶ci sk³adowej \e z-owej wektora translacji zapisanego
+     *       w polu \link MatrixH3f::_Trans _Trans\endlink dodana zostaje
+     *       warto¶æ parametru \e z. Do macierzy wspó³czynników zostaje
+     *       podstawiony nowy wektor translacji.
+     *      
+     *       Dzia³anie metody nie wp³ywa na warto¶æ pola
+     *        \link MatrixH3f::_Valid\endlink.
+     */
+    MatrixH3f& AddTransZ(float z);
+    /*!
+     * Metoda dodaje do wektora translacji zadany wektor
+     * oraz aktualizuje macierz wspó³czynników macierzy transformacji.
+     * \param V - dodawana wektor od wektora translacji.
+     * \return referencjê do samego siebie (\b *this).
+     * \post Do wektora translacji reprezentowanego
+     *       przez pole \link MatrixH3f::_Trans _Trans\endlink dodany
+     *       zostaje wektor \e V. Do macierzy wspó³czynników zostaje
+     *       podstawiony nowy wektor translacji.
+     *      
+     *       Dzia³anie metody nie wp³ywa na warto¶æ pola
+     *        \link MatrixH3f::_Valid\endlink.
+     */
+    MatrixH3f& AddTrans(Vector3f const &V);
+
+     /*!
+      * Dodaj± do sk³adowej \e x wektora skali zadan± warto¶æ oraz
+      * powoduje wyliczenie macierzy transformacji dla nowych warto¶ci.
+      * \param dx - dadawana warto¶æ do sk³adowej \e x wektora skali.
+      * \post Je¿eli parametry transformacji s± niezgodne z faktycznymi
+      *       wspó³czynnikami macierzy transformacji, to czyni je wa¿nymi
+      *       wyliczaj± ich warto¶ci. Nastêpnie
+      *       do sk³adowej \e x wektora skali reprezentowanej przez
+      *       pole \link MatrixH3f::_Trans _Trans\endlink dodawana jest
+      *       warto¶æ parametru wywo³ania metody i wyliczane zostaj± nowe
+      *       wspó³czynniki macierzy transformacji. Warto¶æ pola
+      *      \link MatrixH3f::_Valid _Valid\endlink po tej operacji jest
+      *       zawsze \p true.
+      */
+    MatrixH3f& AddScaleX(float dx);
+     /*!
+      * Dodaj± do sk³adowej \e y wektora skali zadan± warto¶æ oraz
+      * powoduje wyliczenie macierzy transformacji dla nowych warto¶ci.
+      * \param dy - dadawana warto¶æ do sk³adowej \e y wektora skali.
+      * \post Je¿eli parametry transformacji s± niezgodne z faktycznymi
+      *       wspó³czynnikami macierzy transformacji, to czyni je wa¿nymi
+      *       wyliczaj± ich warto¶ci. Nastêpnie
+      *       do sk³adowej \e y wektora skali reprezentowanej przez
+      *       pole \link MatrixH3f::_Trans _Trans\endlink dodawana jest
+      *       warto¶æ parametru wywo³ania metody i wyliczane zostaj± nowe
+      *       wspó³czynniki macierzy transformacji. Warto¶æ pola
+      *      \link MatrixH3f::_Valid _Valid\endlink po tej operacji jest
+      *       zawsze \p true.
+      */
+    MatrixH3f& AddScaleY(float dy);
+     /*!
+      * Dodaj± do sk³adowej \e z wektora skali zadan± warto¶æ oraz
+      * powoduje wyliczenie macierzy transformacji dla nowych warto¶ci.
+      * \param dz - dadawana warto¶æ do sk³adowej \e z wektora skali.
+      * \post Je¿eli parametry transformacji s± niezgodne z faktycznymi
+      *       wspó³czynnikami macierzy transformacji, to czyni je wa¿nymi
+      *       wyliczaj± ich warto¶ci. Nastêpnie
+      *       do sk³adowej \e z wektora skali reprezentowanej przez
+      *       pole \link MatrixH3f::_Trans _Trans\endlink dodawana jest
+      *       warto¶æ parametru wywo³ania metody i wyliczane zostaj± nowe
+      *       wspó³czynniki macierzy transformacji. Warto¶æ pola
+      *      \link MatrixH3f::_Valid _Valid\endlink po tej operacji jest
+      *       zawsze \p true.
+      */
+    MatrixH3f& AddScaleZ(float dz);
+     /*!
+      * Dodaje do wektora skali zadan± warto¶æ oraz
+      * powoduje wyliczenie macierzy transformacji dla nowych warto¶ci.
+      * \param V - dadawany wektor do wektora skali.
+      * \post Je¿eli parametry transformacji s± niezgodne z faktycznymi
+      *       wspó³czynnikami macierzy transformacji, to czyni je wa¿nymi
+      *       wyliczaj± ich warto¶ci. Nastêpnie
+      *       do wektora skali reprezentowanej przez
+      *       pole \link MatrixH3f::_Trans _Trans\endlink dodawana jest
+      *       warto¶æ parametru wywo³ania metody i wyliczane zostaj± nowe
+      *       wspó³czynniki macierzy transformacji. Warto¶æ pola
+      *      \link MatrixH3f::_Valid _Valid\endlink po tej operacji jest
+      *       zawsze \p true.
+      */
+    MatrixH3f& AddScale(Vector3f const &V);
+
+     /*!
+      * Metoda wyznacza macierz transformacji przyjmuj±c kolejne warto¶ci
+      * k±tów rotacji w PF.Rot jako warto¶ci k±tów Eulera. 
+      * \param PF - nowe parametry macierzy transformacji.
+      * \post   Do pól 
+      * \link MatrixH3f::_RotAng _RotAng\endlink,
+      * \link MatrixH3f::_Trans _Trans\endlink oraz
+      * \link MatrixH3f::_Scale _Scale\endlink wpisane zostaj± warto¶ci
+      * udostêpione poprzez parametr \e PF.
+      * Na tej podstawie wyliczone zostaj± nowe  wspó³czynniki macierzy 
+      *   transformacji (tablica 
+      * \link MatrixRT3f::_DH MatrixRT3f::_DH\endlink),
+      * W polu \link MatrixH3f::_Valid _Valid\endlink wpisana zostaje
+      * warto¶æ \p true (tzn. parametry odpowiadaj± wyliczonym wspó³czynnikom
+      * macierzy transformacji).
+      */
+    void MakeEulerFrame(Parameters const &PF);
+
+
+   /*!
+    * Dodaje do przekszta³cenia dodatkowy wektor translacji.
+    * Metoda ma zastosowanie przy in/dekrementacyjnym obrocie bry³ w ich
+    * lokalnych lub globalnych uk³adach wspó³rzêdnych.
+    * 
+    * Przekszta³cenie wspó³rzêdnych wektora \e v we wspó³rzêdnych jednorodnych
+    * mo¿na rozbiæ na dwa etapy: najpierw rotacja: najpierw rotacja, a po¿niej
+    * translacja, tzn.:
+    * \f[  v' = T*R*v \f]
+    * Dodanie dodatkowej translacji uk³adu mo¿e byæ w tej sytuacji dokonane
+    * na dwa sposoby. Pierwszy, okre¶lany tutaj jako \e przesuniêcie \e lokalne
+    * wyra¿a siê wzorem:
+    * \f[  v' =  T*R*T'*v  \f]
+    * Drugi, okre¶lany jako \e przesuniêcie \e wzglêdem \e rodzica ma postaæ:
+    * \f[  v' =  T'*T*R*v  \f]
+    * O tym, który z tych sposobów zostanie wybrany, decyduje drugi parametr
+    * wywo³ania tej metody.
+    * \param D_trans - wektor translacji dla dodatkowej transformacji 
+    *                uk³adu wspó³rzêdnych.
+    * \param TransType - decyduje o sposobie realizacji dodatkowej translacji
+    *                  uk³adu wspó³rzêdnych.
+    * \post Po zakoñczeniu dzia³ania metody
+    *   warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink 
+    *   jest zawsze \p false.
+    */
+    void Shift(Vector3f const &D_trans, CoordSysType TransType);
+
+
+
+   /*!
+    * Zwiêksza rotacjê w transformacji o dodatkwe warto¶ci k±tów.
+    * Metoda ma zastosowanie przy in/dekrementacyjnym obrocie bry³
+    * w ich lokalnych lub globalnych uk³adach wspó³rzêdnych.
+    * 
+    * Przekszta³cenie wspó³rzêdnych wektora \e v we wspó³rzêdnych jednorodnych
+    * mo¿na rozbiæ na dwa etapy: najpierw rotacja: najpierw rotacja, a po¿niej
+    * translacja, tzn.:
+    * \f[  v' = T*R*v \f]
+    * Zwiêkszenie rotacji o dodatkowy k±t mo¿e byæ w tej sytuacji dokonane
+    * na dwa sposoby. Pierwszy, okre¶lany tutaj jako \e obrót \e lokalny 
+    * wyra¿a siê wzorem:
+    * \f[  v' =  T*R*R'*v  \f]
+    * Drugi, okre¶lany jako \e obrót \e wzglêdem \e rodzica ma postaæ:
+    * \f[  v' =  R'*T*R*v  \f]
+    * O tym, który z tych sposobów zostanie wybrany, decyduje drugi parametr
+    * wywo³ania tej metody.
+    * \param D_angle - wektor k±tów rotacji dla dodatkowej transformacji 
+    *                uk³adu wspó³rzêdnych.
+    * \param RotType - decyduje o sposobie realizacji dodatkowej rotacji
+    *                  uk³adu wspó³rzêdnych.
+    * \post Po zakoñczeniu dzia³ania metody
+    *   warto¶æ pola \link MatrixH3f::_Valid _Valid\endlink 
+    *   jest zawsze \p false.
+    */
+    void Rotate(Vector3f const &D_angle, CoordSysType RotType);
+
+
+     /*!
+      *  Zapisuje do bufora znakowe \e Descr parametry transformacji (tzn.
+      *  k±ty Eulera, wektor translacji i skalê).
+      *  Sk³adnia zapisu:
+      *  \verbatim
+      *    Angles { Euler | XYZ } { Deg | Rad }: ( k±t1, k±t2, k±t3 )
+      *    Translation: ( sk³adowa_x, sk³adowa_y, sk³adowa_z )
+      *    Scale: ( skala_x, skala_y, skala_z ); 
+      *  \endverbatim
+      *
+      *  \param Descr - (\b out) wpisywany do niego s± parametry opisuj±ce
+      *                dan± macierz transformacji.
+      *  \param  AType - okre¶la rodzaj k±tów rotacji. W tej chwili
+      *                obs³ugiwane s± k±ty Eulera oraz k±ty rotacji 
+      *                wokó³ osi OX, OY, OZ.
+      *  \param  AUnit - okre¶la w jakich jednostkach maj± byæ zapisane
+      *                warto¶ci k±tów.
+      *  \param  Margin - ilo¶æ spacji poprzedzaj±cych kolejne linie
+      *                zapisu.
+      *  \retval 0 - gdy w trakcie zapisu nie wyst±pi³ ¿aden b³±d.
+      */
+     int WriteParamTo( ExtString    &Descr, 
+                       AnglesType    AType      = AT_Euler,
+                       AngleUnit     AUnit      = AU_Deg,
+                       unsigned int  Margin     = 0
+                     ) const;
+
+
+     /*!
+      *  Zapisuje do strumienia \e ostrm parametry transformacji (tzn.
+      *  k±ty Eulera, wektor translacji i skalê).
+      *  Sk³adnia zapisu:
+      *  \verbatim
+      *    Angles { Euler | XYZ } { Deg | Rad }: ( k±t1, k±t2, k±t3 )
+      *    Translation: ( sk³adowa_x, sk³adowa_y, sk³adowa_z )
+      *    Scale: ( skala_x, skala_y, skala_z ); 
+      *  \endverbatim
+      *
+      *  \param ostrm - otwarty strumieñ wyj¶ciowy, ze wzglêdu na hierarchiê
+      *                dziedziczenia klas w bibliotece standardowej mo¿e to
+      *                byæ równie¿ strumieñ klasy \b ofstream. 
+      *  \param  LeftMargin - ilo¶æ spacji poprzedzaj±cych kolejne linie
+      *                zapisu.
+      *  \param  AType - okre¶la rodzaj k±tów rotacji. W tej chwili
+      *                obs³ugiwane s± k±ty Eulera oraz k±ty rotacji 
+      *                wokó³ osi OX, OY, OZ.
+      *  \param  AUnit - okre¶la w jakich jednostkach maj± byæ zapisane
+      *                warto¶ci k±tów.
+      *  \retval 0 - gdy w trakcie zapisu nie wyst±pi³ ¿aden b³±d.
+      */
+     int Save( ostream      &ostrm, 
+               unsigned int  LeftMargin = 0, 
+               AnglesType    AType      = AT_Euler,
+               AngleUnit     AUnit      = AU_Deg
+             ) const;
+
+
+
+};  //=============== MatrixH3f ==============================================
+
+
+
+
+/*!
+ * Umo¿liwia wy¶wietlenie na wyj¶ciu standardowym ca³ej warto¶ci
+ * parametrów transformacji.
+ */
+std::ostream &operator << ( std::ostream &, MatrixH3f::Parameters const & );
+
+/*!
+ * Umo¿liwia wy¶wietlenie na wyj¶ciu standardowym napisu okre¶laj±cego
+ * typ k±tów rotacji. Wy¶wietlany napis zgodny z nazw± warto¶ci
+ * typu \link MatrixH3f::AnglesType MatrixH3f::AnglesType\endlink.
+ */
+std::ostream &operator << ( std::ostream &, MatrixH3f::AnglesType const & );
+
+
+inline
+void MatrixH3f::SetUnitMtx()
+{
+ _RotAng.SetZero();
+ _Scale.Set(1,1,1);
+ MatrixRT3f::SetUnitMtx();
+ SetParamValid();
+}
+
+#endif
+
+

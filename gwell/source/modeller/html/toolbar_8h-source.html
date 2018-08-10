@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: toolbar.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>toolbar.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef TOOLBAR_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define TOOLBAR_H</span>
+00003 <span class="preprocessor"></span>
+00004 
+00005 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qtoolbox.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qwidgetstack.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00009 
+00010 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;filewidget.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;drawwidget.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;modifywidget.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;objectswidget.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;lightswidget.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;optionswidget.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;helpwidget.h&gt;</span>
+00018 
+00019 
+<a name="l00023"></a><a class="code" href="classToolBar.html">00023</a> <span class="keyword">class </span><a class="code" href="classToolBar.html">ToolBar</a> : <span class="keyword">public</span> QWidget
+00024 {
+00025   Q_OBJECT
+00026 
+00027   <span class="keyword">public</span>:
+00028     <a class="code" href="classToolBar.html">ToolBar</a>(QString title, QWidget *parent, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0, WFlags fl=0);
+00029     ~<a class="code" href="classToolBar.html">ToolBar</a>() {}
+00030     <span class="keyword">const</span> QWidgetStack *widgetStack()   { <span class="keywordflow">return</span> _widgetStack; }
+00031     FileWidget    *fileWidget()         { <span class="keywordflow">return</span> _fileWidget; }
+00032     DrawWidget    *drawWidget()         { <span class="keywordflow">return</span> _drawWidget; }
+00033     ModifyWidget  *modifyWidget()       { <span class="keywordflow">return</span> _modifyWidget; }
+00034     LightsWidget  *lightsWidget()       { <span class="keywordflow">return</span> _lightsWidget; }
+00035     <a class="code" href="classObjectsWidget.html">ObjectsWidget</a> *objectsWidget()      { <span class="keywordflow">return</span> _objectsWidget; }
+00036     OptionsWidget *optionsWidget()      { <span class="keywordflow">return</span> _optionsWidget; }
+00037     HelpWidget    *helpWidget()         { <span class="keywordflow">return</span> _helpWidget; }
+00038 
+00039   <span class="keyword">private</span>:
+00040     QGridLayout   *grid;
+00041     QWidgetStack  *_widgetStack;
+00042      FileWidget    *_fileWidget;
+00043      DrawWidget    *_drawWidget;
+00044      ModifyWidget  *_modifyWidget;
+00045      <a class="code" href="classObjectsWidget.html">ObjectsWidget</a> *_objectsWidget;
+00046      LightsWidget  *_lightsWidget;
+00047      OptionsWidget *_optionsWidget;
+00048      HelpWidget    *_helpWidget;
+00049 };
+00050 
+00051 
+00052 
+00053 
+00054 
+00055 
+00056 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:23 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<Scene name="" >
+ <Lighting isEnabled="true" >
+  <Light exponent="1" lightIs="positional" movesWithCamera="false" isEnabled="true" type="spotlight" name="GL_LIGHT0" cutOff="22.5" >
+   <position x="200.187" y="375.156" z="-2.35808" />
+   <direction x="0" y="-1" z="0" />
+   <attenuation linear="0" quadratic="0" constant="1" />
+   <ambientColor alpha="1" blue="0" red="0" green="0" />
+   <diffuseColor alpha="1" blue="1" red="1" green="1" />
+   <specularColor alpha="1" blue="1" red="1" green="1" />
+  </Light>
+  <Light exponent="0" lightIs="positional" movesWithCamera="false" isEnabled="false" type="bulb" name="GL_LIGHT3" cutOff="180" >
+   <position x="-280.519" y="353.917" z="-13.6215" />
+   <direction x="0" y="0" z="-1" />
+   <attenuation linear="0" quadratic="0" constant="1" />
+   <ambientColor alpha="1" blue="0" red="0" green="0" />
+   <diffuseColor alpha="1" blue="1" red="1" green="1" />
+   <specularColor alpha="1" blue="1" red="1" green="1" />
+  </Light>
+ </Lighting>
+ <Fog mode="GL_LINEAR" density="0.6" isEnabled="false" >
+  <distance end="1150" start="0" />
+  <color alpha="1" blue="0" red="0" green="0" />
+ </Fog>
+ <Elements>
+  <Object name="Podloga" fileName="/home/pjakwert/Work/myViona/mph/room.mph" >
+   <translation x="-1.22048" y="30.0649" z="-0.666733" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_rack" fileName="/home/pjakwert/Work/myViona/mph/szafka_rack.mph" >
+   <translation x="-395.458" y="34.1564" z="-237.98" />
+   <rotation x="0" y="-90" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="platforma_dla_IRB1400" fileName="/home/pjakwert/Work/myViona/mph/platforma_irb1400.mph" >
+   <translation x="-263.542" y="39.5312" z="-155.082" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_rack_" fileName="/home/pjakwert/Work/myViona/mph/szafka_rack.mph" >
+   <translation x="-385.887" y="34.8143" z="-78.0445" />
+   <rotation x="0" y="-90" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="biurko" fileName="/home/pjakwert/Work/myViona/mph/biurko.mph" >
+   <translation x="-405.807" y="65.8652" z="1.80225" />
+   <rotation x="0" y="-90" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="biurko_" fileName="/home/pjakwert/Work/myViona/mph/biurko.mph" >
+   <translation x="-405.807" y="65.8652" z="96.8187" />
+   <rotation x="0" y="-90" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafa_duza" fileName="/home/pjakwert/Work/myViona/mph/szafa_duza.mph" >
+   <translation x="-404.586" y="35.8003" z="240.994" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna.mph" >
+   <translation x="-402.182" y="214.802" z="240.436" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="IRB6" fileName="/home/pjakwert/Work/myViona/mph/irb6.mph" >
+   <translation x="323.604" y="32.329" z="-147.462" />
+   <rotation x="0" y="140" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="IRB6_" fileName="/home/pjakwert/Work/myViona/mph/irb6.mph" >
+   <translation x="108.095" y="34.1721" z="-156.002" />
+   <rotation x="0" y="30" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="kratka" fileName="/home/pjakwert/Work/myViona/mph/kratka.mph" >
+   <translation x="195.638" y="72.5988" z="-213.582" />
+   <rotation x="0" y="100" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="kratka_" fileName="/home/pjakwert/Work/myViona/mph/kratka.mph" >
+   <translation x="217.279" y="73.4287" z="-118.419" />
+   <rotation x="0" y="85" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="kratka__" fileName="/home/pjakwert/Work/myViona/mph/kratka.mph" >
+   <translation x="-9.96441" y="72.5988" z="-105.656" />
+   <rotation x="0" y="92" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafa_irb1400" fileName="/home/pjakwert/Work/myViona/mph/szafa_irb1400.mph" >
+   <translation x="-185.175" y="35.2722" z="5.35903" />
+   <rotation x="0" y="90" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafaX" fileName="/home/pjakwert/Work/myViona/mph/szafaX.mph" >
+   <translation x="-115.532" y="35.6658" z="6.77289" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_rack__" fileName="/home/pjakwert/Work/myViona/mph/szafka_rack.mph" >
+   <translation x="-50.6958" y="35.2722" z="4.02411" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="biurko__" fileName="/home/pjakwert/Work/myViona/mph/biurko.mph" >
+   <translation x="28.9094" y="64.4189" z="5.47969" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="biurko___" fileName="/home/pjakwert/Work/myViona/mph/biurko.mph" >
+   <translation x="217.676" y="64.4189" z="3.04096" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="biurko____" fileName="/home/pjakwert/Work/myViona/mph/biurko.mph" >
+   <translation x="313.884" y="64.4189" z="3.18865" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafaX_" fileName="/home/pjakwert/Work/myViona/mph/szafaX.mph" >
+   <translation x="402.507" y="34.354" z="2.96377" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="kratka___" fileName="/home/pjakwert/Work/myViona/mph/kratka.mph" >
+   <translation x="7.25959" y="72.6482" z="-209.03" />
+   <rotation x="0" y="85" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject" fileName="/home/pjakwert/Work/myViona/mph/szuflady_zamkniete.mph" >
+   <translation x="-337.069" y="32.487" z="235" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject_" fileName="/home/pjakwert/Work/myViona/mph/szuflady_otwarte.mph" >
+   <translation x="-195.319" y="34.575" z="235" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="blat" fileName="/home/pjakwert/Work/myViona/mph/blat.mph" >
+   <translation x="-75.6409" y="105.586" z="235.86" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject__" fileName="/home/pjakwert/Work/myViona/mph/szuflady_zamkniete.mph" >
+   <translation x="-51.184" y="32.452" z="235" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject___" fileName="/home/pjakwert/Work/myViona/mph/szuflady_zamkniete.mph" >
+   <translation x="76.2809" y="34.948" z="235" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject____" fileName="/home/pjakwert/Work/myViona/mph/szuflady_otwarte.mph" >
+   <translation x="191.171" y="35" z="235" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna_" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna.mph" >
+   <translation x="-321.833" y="214.64" z="240.435" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna__" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna_otwarta.mph" >
+   <translation x="-243.5" y="215.112" z="237.071" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna___" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna.mph" >
+   <translation x="-159.959" y="214.85" z="239.6" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna____" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna.mph" >
+   <translation x="-81.3726" y="215.145" z="239.438" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna_____" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna_otwarta.mph" >
+   <translation x="-2.76476" y="215.498" z="238.061" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna______" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna.mph" >
+   <translation x="77.4592" y="215.664" z="240.39" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna_______" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna.mph" >
+   <translation x="157.869" y="215.701" z="240.369" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafa_duza_" fileName="/home/pjakwert/Work/myViona/mph/szafa_duza.mph" >
+   <translation x="253.709" y="33.8332" z="242.412" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="szafka_gorna________" fileName="/home/pjakwert/Work/myViona/mph/szafka_gorna_otwarta.mph" >
+   <translation x="254.567" y="213.055" z="238.346" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="klawiatura" fileName="/home/pjakwert/Work/myViona/mph/klawiatura.mph" >
+   <translation x="-308.742" y="107.724" z="214.792" />
+   <rotation x="0" y="190" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject_____" fileName="/home/pjakwert/Work/myViona/mph/monitor.mph" >
+   <translation x="-314.341" y="126.923" z="240.836" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="obudowa" fileName="/home/pjakwert/Work/myViona/mph/obudowa.mph" >
+   <translation x="-347.478" y="124.09" z="247.295" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="obudowa_" fileName="/home/pjakwert/Work/myViona/mph/obudowa.mph" >
+   <translation x="-197.419" y="124.271" z="247.444" />
+   <rotation x="0" y="190" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject______" fileName="/home/pjakwert/Work/myViona/mph/monitor.mph" >
+   <translation x="-156.548" y="127.423" z="241.004" />
+   <rotation x="0" y="176" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="klawiatura_" fileName="/home/pjakwert/Work/myViona/mph/klawiatura.mph" >
+   <translation x="-155.599" y="105.714" z="218.77" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="klawiatura__" fileName="/home/pjakwert/Work/myViona/mph/klawiatura.mph" >
+   <translation x="162.975" y="107.481" z="216.342" />
+   <rotation x="0" y="170" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="obudowa__" fileName="/home/pjakwert/Work/myViona/mph/obudowa.mph" >
+   <translation x="198.446" y="124.68" z="248.394" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject_______" fileName="/home/pjakwert/Work/myViona/mph/monitor.mph" >
+   <translation x="161.765" y="127.17" z="239.831" />
+   <rotation x="0" y="180" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject________" fileName="/home/pjakwert/Work/myViona/mph/monitor.mph" >
+   <translation x="195.891" y="154.671" z="-5.00304" />
+   <rotation x="0" y="-30" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject_________" fileName="/home/pjakwert/Work/myViona/mph/monitor.mph" >
+   <translation x="292.088" y="154.93" z="-6.67073" />
+   <rotation x="0" y="-10" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="klawiatura___" fileName="/home/pjakwert/Work/myViona/mph/klawiatura.mph" >
+   <translation x="231.264" y="116.446" z="23.1691" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="klawiatura____" fileName="/home/pjakwert/Work/myViona/mph/klawiatura.mph" >
+   <translation x="326.294" y="115.418" z="18.2043" />
+   <rotation x="0" y="15" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="MainObject__________" fileName="/home/pjakwert/Work/myViona/mph/monitor.mph" >
+   <translation x="5.7261" y="155.058" z="-1.95005" />
+   <rotation x="0" y="-10" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="obudowa___" fileName="/home/pjakwert/Work/myViona/mph/obudowa.mph" >
+   <translation x="-3.07047" y="53.1011" z="-0.466543" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="klawiatura_____" fileName="/home/pjakwert/Work/myViona/mph/klawiatura.mph" >
+   <translation x="37.1622" y="115.774" z="20.6171" />
+   <rotation x="0" y="-10" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="obudowa____" fileName="/home/pjakwert/Work/myViona/mph/obudowa.mph" >
+   <translation x="185.693" y="53.1166" z="-2.79925" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+  <Object name="obudowa_____" fileName="/home/pjakwert/Work/myViona/mph/obudowa.mph" >
+   <translation x="282.697" y="52.1743" z="-1.39963" />
+   <rotation x="0" y="0" z="0" />
+   <scale x="1" y="1" z="1" />
+  </Object>
+ </Elements>
+</Scene>

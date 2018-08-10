@@ -1,0 +1,7 @@
+<Material materialName="calm blue" >
+ <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+ <diffuseColor alpha="1" blue="0.54902" red="0.14902" green="0.309804" />
+ <specularColor alpha="1" blue="0.0196078" red="0.0588235" green="0.0431373" />
+ <emissionColor alpha="1" blue="0.164706" red="0.164706" green="0.164706" />
+ <shininess shininess="16" />
+</Material>

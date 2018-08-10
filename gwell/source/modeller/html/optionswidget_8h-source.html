@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: optionswidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>optionswidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef OPTIONSWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define OPTIONSWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qwidget.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qcombobox.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qtoolbutton.h&gt;</span>
+00010 <span class="preprocessor">#include &lt;qhbox.h&gt;</span>
+00011 <span class="preprocessor">#include &lt;qspinbox.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qcolordialog.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qfiledialog.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qtooltip.h&gt;</span>
+00016 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00017 <span class="preprocessor">#include &lt;qapplication.h&gt;</span>
+00018 
+00019 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00020 <span class="preprocessor">#include &lt;cellframe.h&gt;</span>
+00021 
+00022 
+00023 <span class="keyword">class </span>OptionsWidget : <span class="keyword">public</span> QWidget
+00024 {
+00025   Q_OBJECT
+00026 
+00027   <span class="keyword">public</span>:
+00028     OptionsWidget( QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0 );
+00029     ~OptionsWidget() {}
+00030 
+00031   <span class="keyword">private</span>:
+00032     QStringList _langList;
+00034     QGridLayout *globalGrid;
+00035      QGroupBox   *mainGroupBox;
+00036      QGridLayout *mainGrid;
+00037      
+00038      QGroupBox*   dirBox;
+00039       QLabel*      libsLabel;
+00040       QLineEdit*   libsEdit;
+00041       QToolButton* libsButton;
+00042       QLabel*      mphLabel;
+00043       QLineEdit*   mphEdit;
+00044       QToolButton* mphButton;
+00045       QLabel*      scenesLabel;
+00046       QLineEdit*   scenesEdit;
+00047       QToolButton* scenesButton;
+00048       QLabel*      matLabel;
+00049       QLineEdit*   matEdit;
+00050       QToolButton* matButton;
+00051       QLabel*      imgLabel;
+00052       QLineEdit*   imgEdit;
+00053       QToolButton* imgButton;
+00054       QLabel*      langLabel;
+00055       QLineEdit*   langEdit;
+00056       QToolButton* langButton;
+00057      QGroupBox*   colorBox;
+00058       QLabel*      bkgLabel;
+00059       QToolButton* bkgButton;
+00060       QLabel*      wireLabel;
+00061       QToolButton* wireButton;
+00062       QLabel*      wireSelLabel;
+00063       QToolButton* wireSelButton;
+00064       QLabel*      solidLabel;
+00065       QToolButton* solidButton;
+00066       QLabel*      solidSelLabel;
+00067       QToolButton* solidSelButton;
+00068       QLabel*      gridLabel;
+00069       QToolButton* gridButton;
+00070       QLabel*      grid3DLabel;
+00071       QToolButton* grid3DButton;
+00072       QLabel*      lightsLabel;
+00073       QToolButton* lightsButton;
+00074       QLabel*      frameLabel;
+00075       QToolButton* frameButton;
+00076       QLabel*      infoLabel;
+00077       QToolButton* infoButton;
+00078      QGroupBox*   renderBox;
+00079       QLabel*      shadeLabel;
+00080       QComboBox*   shadeCombo;
+00081       QLabel*      corrLabel;
+00082       QComboBox*   corrCombo;
+00083      QGroupBox*    othersBox;
+00084       QLabel*      decLabel;
+00085       QSpinBox*    decSpin;
+00086       QLabel*      lngLabel;
+00087       QComboBox*   langCombo;
+00088      QGroupBox*    setBox;
+00089       QPushButton* saveButton;
+00090       QPushButton* restoreButton;
+00091       QPushButton* resetButton;
+00093     
+00094     <span class="keyword">private</span> slots:
+00095       <span class="keywordtype">void</span> refresh();
+00096       <span class="keywordtype">void</span> chooseDirectory();
+00097       <span class="keywordtype">void</span> chooseColor();
+00098       <span class="keywordtype">void</span> shadeChanged( <span class="keywordtype">int</span> );
+00099       <span class="keywordtype">void</span> corrChanged( <span class="keywordtype">int</span> );
+00100       <span class="keywordtype">void</span> decChanged( <span class="keywordtype">int</span> );
+00101       <span class="keywordtype">void</span> langChanged( <span class="keywordtype">int</span> );
+00102       <span class="keywordtype">void</span> fillLangCombo( <span class="keyword">const</span> QString&amp; path );
+00103       <span class="keywordtype">void</span> setTranslator( <span class="keyword">const</span> QString&amp; fileName );
+00104       <span class="keywordtype">void</span> saveSettings();
+00105       <span class="keywordtype">void</span> restoreSettings();
+00106       <span class="keywordtype">void</span> resetToDefaults();
+00107 };
+00108 
+00109 
+00110 
+00111 
+00112 
+00113 
+00114 
+00115 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:22 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

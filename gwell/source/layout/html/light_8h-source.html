@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: light.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>light.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef LIGHT_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define LIGHT_H</span>
+00010 <span class="preprocessor"></span>
+00011 
+00012 <span class="preprocessor">#include &lt;qstring.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qcolor.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qvaluelist.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qobject.h&gt;</span>
+00016 
+00017 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00018 <span class="preprocessor">#include &lt;GL/gl.h&gt;</span>
+00019 
+00020 
+00021 
+<a name="l00022"></a><a class="code" href="classLight.html">00022</a> <span class="keyword">class </span><a class="code" href="classLight.html">Light</a> : <span class="keyword">public</span> QObject
+00023 {
+00024   Q_OBJECT
+00025   
+00026   <span class="comment">// domyślne kolory dla nowo utworzonego światła</span>
+00027   <span class="keyword">static</span> <span class="keyword">const</span> GLfloat <a class="code" href="classLight.html#v1">defaultAmbientColor</a>[];
+00028   <span class="keyword">static</span> <span class="keyword">const</span> GLfloat defaultDiffuseColor[];
+00029   <span class="keyword">static</span> <span class="keyword">const</span> GLfloat defaultSpecularColor[];
+00030   <span class="keyword">static</span> <span class="keyword">const</span> Vector3f defaultPosition;
+00031   <span class="keyword">static</span> <span class="keyword">const</span> Vector3f defaultSpotDirection;
+00032   
+00033   <span class="comment">// lista zawiera wolne wartości GLenum odpowiadające nazwom świateł w OpenGL</span>
+00034   <span class="keyword">static</span> QValueList&lt;GLenum&gt; freeLightNamesList;
+00035   
+00036   <span class="keyword">public</span>:
+00037     <span class="keyword">typedef</span> <span class="keyword">enum</span> { Directional = 0, Positional } LightType;
+00038     
+00039     <a class="code" href="classLight.html">Light</a>( 
+00040             <span class="keywordtype">bool</span>            isSpotlight, <span class="comment">// jedyny wymagany parametr - żarówka czy spotlight</span>
+00041             QString         lightName             = QString::null,
+00042             <span class="keywordtype">bool</span>            isEnabled             = <span class="keyword">true</span>,
+00043             LightType       lightType             = Directional,
+00044             <span class="keywordtype">bool</span>            isMovingWithCamera    = <span class="keyword">false</span>,
+00045             <span class="keyword">const</span> GLfloat*  ambientColor          = <a class="code" href="classLight.html#v1">defaultAmbientColor</a>,
+00046             <span class="keyword">const</span> GLfloat*  diffuseColor          = defaultDiffuseColor,
+00047             <span class="keyword">const</span> GLfloat*  specularColor         = defaultSpecularColor,
+00048             Vector3f        position              = defaultPosition,
+00049             Vector3f        spotDirection         = defaultSpotDirection,
+00050             GLfloat         spotExponent          = 0.0,
+00051             GLfloat         spotCutOffAngle       = 180.0,
+00052             GLfloat         constantAttenuation   = 1.0,
+00053             GLfloat         linearAttenuation     = 0.0,
+00054             GLfloat         quadraticAttenuation  = 0.0
+00055         );
+00056     
+00057     ~<a class="code" href="classLight.html">Light</a>();
+00058   
+00059   <span class="keyword">private</span>:
+00060     QString   _name;
+00061     GLenum    _GLname;
+00062     <span class="keywordtype">bool</span>      _isEnabled;
+00063     <span class="keywordtype">bool</span>      _isSpotlight;
+00064     <span class="keywordtype">bool</span>      _isMovingWithCamera;
+00065     LightType _lightType;
+00066     GLfloat   _ambientColor[4];
+00067     GLfloat   _diffuseColor[4];
+00068     GLfloat   _specularColor[4];
+00069     GLfloat   _position[4];
+00070     GLfloat   _spotDirection[3];
+00071     GLfloat   _spotExponent;
+00072     GLfloat   _spotCutOffAngle;
+00073     GLfloat   _prevCutOff;            <span class="comment">// wcześniejsza wartość _spotCutOffAngle</span>
+00074     GLfloat   _constantAttenuation;
+00075     GLfloat   _linearAttenuation;
+00076     GLfloat   _quadraticAttenuation;
+00077     <span class="keywordtype">bool</span>      _createdSuccessfully;
+00078     
+00079     <span class="keywordtype">bool</span> findSetAndDeleteGLName();
+00080     
+00081     <span class="keyword">static</span> <span class="keywordtype">bool</span> afterInit;
+00082     <span class="keywordtype">void</span> initFreeLightNamesList();
+00083   
+00084     
+00085   <span class="keyword">public</span>:
+00086     <span class="keyword">const</span> QString   name()                 <span class="keyword">const</span> { <span class="keywordflow">return</span> _name; }
+00087     <span class="keyword">const</span> GLenum    GLname()               <span class="keyword">const</span> { <span class="keywordflow">return</span> _GLname; }
+00088     <span class="keywordtype">bool</span>            isEnabled()            <span class="keyword">const</span> { <span class="keywordflow">return</span> _isEnabled; }
+00089     <span class="keywordtype">bool</span>            isSpotlight()          <span class="keyword">const</span> { <span class="keywordflow">return</span> _isSpotlight; }
+00090     <span class="keywordtype">bool</span>            isMovingWithCamera()   <span class="keyword">const</span> { <span class="keywordflow">return</span> _isMovingWithCamera; }
+00091     LightType       lightType()            <span class="keyword">const</span> { <span class="keywordflow">return</span> _lightType; }
+00092     <span class="keyword">const</span> GLfloat*  ambientColor4fv()      <span class="keyword">const</span> { <span class="keywordflow">return</span> _ambientColor; }
+00093     <span class="keyword">const</span> GLfloat*  diffuseColor4fv()      <span class="keyword">const</span> { <span class="keywordflow">return</span> _diffuseColor; }
+00094     <span class="keyword">const</span> GLfloat*  specularColor4fv()     <span class="keyword">const</span> { <span class="keywordflow">return</span> _specularColor; }
+00095     <span class="keyword">const</span> GLfloat*  position4fv()          <span class="keyword">const</span> { <span class="keywordflow">return</span> _position; }
+00096     <span class="keyword">const</span> GLfloat*  spotDirection3fv()     <span class="keyword">const</span> { <span class="keywordflow">return</span> _spotDirection; }
+00097     GLfloat         spotExponent()         <span class="keyword">const</span> { <span class="keywordflow">return</span> _spotExponent; }
+00098     GLfloat         spotCutOffAngle()      <span class="keyword">const</span> { <span class="keywordflow">return</span> _spotCutOffAngle; }
+00099     GLfloat         constantAttenuation()  <span class="keyword">const</span> { <span class="keywordflow">return</span> _constantAttenuation; }
+00100     GLfloat         linearAttenuation()    <span class="keyword">const</span> { <span class="keywordflow">return</span> _linearAttenuation; }
+00101     GLfloat         quadraticAttenuation()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _quadraticAttenuation; }
+00102     <span class="keywordtype">bool</span>            createdSuccessfully()  <span class="keyword">const</span> { <span class="keywordflow">return</span> _createdSuccessfully; }
+00103       
+00104   <span class="keyword">public</span> slots:
+00105     <span class="keywordtype">void</span> setLightType( LightType lightType );
+00106     <span class="keywordtype">void</span> setSpotlight( <span class="keywordtype">bool</span> yes );
+00107     <span class="keywordtype">void</span> setName( QString lightName = QString::null );
+00108     <span class="keywordtype">void</span> setEnabled( <span class="keywordtype">bool</span> yes );
+00109     <span class="keywordtype">void</span> setPosition( Vector3f position );
+00110     
+00111     <span class="keywordtype">void</span> setAmbientColor( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha = -1 );
+00112     <span class="keywordtype">void</span> setAmbientColor( <span class="keyword">const</span> GLfloat* ambientColor );
+00113     <span class="keywordtype">void</span> setDiffuseColor( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha = -1 );
+00114     <span class="keywordtype">void</span> setDiffuseColor( <span class="keyword">const</span> GLfloat* diffuseColor );
+00115     <span class="keywordtype">void</span> setSpecularColor( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha = -1 );
+00116     <span class="keywordtype">void</span> setSpecularColor( <span class="keyword">const</span> GLfloat* specularColor );
+00117     
+00118     <span class="keywordtype">void</span> setMovingWithCamera( <span class="keywordtype">bool</span> yes );
+00119     <span class="keywordtype">void</span> setSpotDirection( Vector3f spotDirection );
+00120     <span class="keywordtype">void</span> setSpotExponent( GLfloat spotExponent );
+00121     <span class="keywordtype">void</span> setSpotCutOffAngle( GLfloat spotCutOff );
+00122     <span class="keywordtype">void</span> setConstantAttenuation( GLfloat ca );
+00123     <span class="keywordtype">void</span> setLinearAttenuation( GLfloat la );
+00124     <span class="keywordtype">void</span> setQuadraticAttenuation( GLfloat qa );
+00125     <span class="keywordtype">void</span> reset();
+00126     
+00127 };    
+00128 
+00129 
+00130 
+00131 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:59 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

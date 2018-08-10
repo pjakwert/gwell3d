@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer luxo example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The luxo example</h1>
+<center>
+  <img src="../images/luxo.jpg" width="300" height="200" alt="luxo"/>
+</center>
+
+<p>
+ A more complex exemple that combines <code>ManipulatedFrames</code>, selection and constraints.
+</p>
+<p>
+ This exemple illustrates different functions of the viewer. It displays a famous luxo lamp
+ (Pixar) that can be interactively manipulated with the mouse. It illustrates the use of several
+ <code>ManipulatedFrames</code> in the same scene.
+</p>
+<p>
+ Shift click on any part of the lamp to select it, and then move it with the mouse. To move the
+ camera select the background or press the <code>Control</code> key (default modifier keys are switched).
+</p>
+<p>
+ A simpler object selection example is given in <a href="select.html"><code>select</code></a>.<br/>
+ A simpler frame displacement example is given in <a href="manipulatedFrame.html"><code>manipulatedFrame</code></a>.<br/>
+ A simpler constrained frame example is given in <a href="constrainedFrame.html"><code>constrainedFrame</code></a>.<br/>
+</p>
+
+
+<h2>luxo.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Luxo
+{
+<span class="key">public </span>:
+  Luxo();
+
+  <span class="typ">void </span>draw(<span class="typ">const bool </span>names=<span class="key">false</span>);
+
+  qglviewer::ManipulatedFrame* frame(<span class="typ">const unsigned short </span>i) { <span class="key">return </span>frame_[i]; }
+  <span class="typ">void </span>setSelectedFrameNumber(<span class="typ">const unsigned short </span>nb) { selected = nb; }
+
+<span class="key">private </span>:
+  <span class="com">// The four articulations of the lamp
+</span>  qglviewer::ManipulatedFrame* frame_[<span class="num">4</span>];
+  <span class="com">// Used to draw the selected element in a different color
+</span>  <span class="typ">unsigned short </span>selected;
+
+  <span class="typ">void </span>drawCone(<span class="typ">const float </span>zMin,<span class="typ">const float </span>zMax, <span class="typ">const float </span>r1, <span class="typ">const float </span>r2, <span class="typ">const float </span>nbSub);
+  <span class="typ">void </span>drawBase();
+  <span class="typ">void </span>drawArm();
+  <span class="typ">void </span>drawCylinder();
+  <span class="typ">void </span>setColor(<span class="typ">const unsigned short </span>nb);
+  <span class="typ">void </span>drawHead();
+};
+
+
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span><span class="typ">void </span>drawWithNames();
+  <span class="key">virtual </span><span class="typ">void </span>postSelection(<span class="typ">int </span>x, <span class="typ">int </span>y);
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+
+  <span class="typ">void </span>initSpotLight();
+
+<span class="key">private </span>:
+  Luxo luxo;
+};
+</pre>
+
+
+<h2>luxo.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;luxo.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;math.h&gt;
+</span>
+<span class="key">using namespace </span>qglviewer;
+<span class="key">using namespace </span>std;
+
+<span class="com">//////////////////////////////////  V i e w e r  ////////////////////////////////////////
+</span>
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;L u x o  ©&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;This example illustrates several functionnalities of QGLViewer, &quot;</span>;
+  text += <span class="str">&quot;showing how easy it is to create a moderately complex application.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;The famous luxo® lamp (©Pixar) can interactively be manipulated &quot;</span>;
+  text += <span class="str">&quot;with the mouse. &lt;b&gt;Shift&lt;/b&gt; left click on an a part of the lamp to select it, &quot;</span>;
+  text += <span class="str">&quot;and then move it with the mouse. Select the background to move the camera, or &quot;</span>;
+  text += <span class="str">&quot;press the &lt;b&gt;Control&lt;/b&gt; key (the default shortcut modifier keys have been swapped).&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;A simpler object selection example is given in &lt;i&gt;select&lt;/i&gt;. &quot;</span>;
+  text += <span class="str">&quot;A simpler frame displacement example is given in &lt;i&gt;manipulatedFrame&lt;/i&gt;. &quot;</span>;
+  text += <span class="str">&quot;A simpler constrained frame example is given in &lt;i&gt;constrainedFrame&lt;/i&gt;.&lt;br&gt;&quot;</span>;
+  text += <span class="str">&quot;Feel free to use this code as the starting point of a multiple frame manipulation application.&quot;</span>;
+  <span class="key">return </span>text;
+}
+
+<span class="typ">void </span>Viewer::initSpotLight()
+{
+  glMatrixMode(GL_MODELVIEW);
+  glEnable(GL_LIGHT1);
+  glLoadIdentity();
+
+  <span class="com">// Light default parameters
+</span>  GLfloat spot_dir[<span class="num">3</span>]       = {<span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">1.0</span>};
+  GLfloat light_ambient[<span class="num">4</span>]  = {<span class="num">0.5</span>, <span class="num">0.5</span>, <span class="num">0.5</span>, <span class="num">1.0</span>};
+  GLfloat light_specular[<span class="num">4</span>] = {<span class="num">1.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>};
+  GLfloat light_diffuse[<span class="num">4</span>]  = {<span class="num">3.0</span>, <span class="num">3.0</span>, <span class="num">1.0</span>, <span class="num">1.0</span>};
+
+  glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_dir);
+  glLightf( GL_LIGHT1, GL_SPOT_EXPONENT,  <span class="num">3.0</span>);
+  glLightf( GL_LIGHT1, GL_SPOT_CUTOFF,    <span class="num">50.0</span>);
+  glLightf( GL_LIGHT1, GL_CONSTANT_ATTENUATION, <span class="num">0.5</span>);
+  glLightf( GL_LIGHT1, GL_LINEAR_ATTENUATION, <span class="num">1.0</span>);
+  glLightf( GL_LIGHT1, GL_QUADRATIC_ATTENUATION, <span class="num">1.5</span>);
+  glLightfv(GL_LIGHT1, GL_AMBIENT,  light_ambient);
+  glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);
+  glLightfv(GL_LIGHT1, GL_DIFFUSE,  light_diffuse);
+}
+
+<span class="typ">void </span>Viewer::init()
+{
+  restoreFromFile();
+
+  <span class="com">// Make camera the default manipulated frame.
+</span>  setManipulatedFrame( camera()-&gt;frame() );
+
+  <span class="com">// Preserve CAMERA bindings, see setMouseStateKey documentation.
+</span>  setMouseStateKey(QGLViewer::CAMERA, Qt::AltButton);
+  <span class="com">// The frames can be move without any key pressed
+</span>  setMouseStateKey(QGLViewer::FRAME, Qt::NoButton);
+  <span class="com">// The camera can always be moved with the Control key.
+</span>  setMouseStateKey(QGLViewer::CAMERA, Qt::ControlButton);
+
+  initSpotLight();
+
+  help();
+}
+
+<span class="typ">void </span>Viewer::draw()
+{
+  <span class="com">// Draw the ground
+</span>  glColor3f(.<span class="num">4</span>,.<span class="num">4</span>,.<span class="num">4</span>);
+  <span class="typ">const float </span>nbPatches = <span class="num">100</span>;
+  glNormal3f(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">1.0</span>);
+  <span class="key">for </span>(<span class="typ">int </span>j=<span class="num">0</span>; j&lt;nbPatches; ++j)
+    {
+      glBegin(GL_QUAD_STRIP);
+      <span class="key">for </span>(<span class="typ">int </span>i=<span class="num">0</span>; i&lt;=nbPatches; ++i)
+	{
+	  glVertex2f((<span class="num">2</span>*i/nbPatches-1.<span class="num">0</span>), (<span class="num">2</span>*j/nbPatches-1.<span class="num">0</span>));
+	  glVertex2f((<span class="num">2</span>*i/nbPatches-1.<span class="num">0</span>), (<span class="num">2</span>*(j+<span class="num">1</span>)/nbPatches-1.<span class="num">0</span>));
+	}
+      glEnd();
+    }
+
+  luxo.draw();
+}
+
+<span class="typ">void </span>Viewer::drawWithNames()
+{
+  <span class="com">// Render scene with objects ids
+</span>  luxo.draw(<span class="key">true</span>);
+}
+
+<span class="typ">void </span>Viewer::postSelection(<span class="typ">int</span>, <span class="typ">int</span>)
+{
+  <span class="key">if </span>(selectedName() == <span class="num">-1</span>)
+    {
+      <span class="com">// Camera will be the default frame is no object is selected.
+</span>      setManipulatedFrame( camera()-&gt;frame() );
+      luxo.setSelectedFrameNumber(<span class="num">4</span>); <span class="com">// dummy value
+</span>    }
+  <span class="key">else
+    </span>{
+      setManipulatedFrame(luxo.frame(selectedName()));
+      luxo.setSelectedFrameNumber(selectedName());
+    }
+}
+
+<span class="com">//////////////////////////////////  L u x o ////////////////////////////////////////
+</span>
+Luxo::Luxo()
+{
+  <span class="key">for </span>(<span class="typ">unsigned short </span>i=<span class="num">0</span>; i&lt;<span class="num">4</span>; ++i)
+    {
+      frame_[i] = <span class="key">new </span>ManipulatedFrame();
+
+      <span class="com">// Creates a hierarchy of frames.
+</span>      <span class="key">if </span>(i&gt;<span class="num">0</span>)
+	frame(i)-&gt;setReferenceFrame(frame(i-1));
+    }
+
+  <span class="com">// Initialize frames
+</span>  frame(<span class="num">1</span>)-&gt;setTranslation(Vec(<span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">0.08</span>)); <span class="com">// Base height
+</span>  frame(<span class="num">2</span>)-&gt;setTranslation(Vec(<span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">0.5</span>));  <span class="com">// Arm length
+</span>  frame(<span class="num">3</span>)-&gt;setTranslation(Vec(<span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">0.5</span>));  <span class="com">// Arm length
+</span>
+  frame(<span class="num">1</span>)-&gt;setRotation(Quaternion(Vec(<span class="num">1.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>), <span class="num">0.6</span>));
+  frame(<span class="num">2</span>)-&gt;setRotation(Quaternion(Vec(<span class="num">1.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>), <span class="num">-2.0</span>));
+  frame(<span class="num">3</span>)-&gt;setRotation(Quaternion(Vec(<span class="num">1.0</span>,<span class="num">-0.3</span>,<span class="num">0.0</span>), <span class="num">-1.7</span>));
+
+  <span class="com">// Set frame constraints
+</span>  WorldConstraint* baseConstraint = <span class="key">new </span>WorldConstraint();
+  baseConstraint-&gt;setTranslationConstraint(AxisPlaneConstraint::PLANE, Vec(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">1.0</span>));
+  baseConstraint-&gt;setRotationConstraint(AxisPlaneConstraint::AXIS, Vec(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">1.0</span>));
+  frame(<span class="num">0</span>)-&gt;setConstraint(baseConstraint);
+
+  LocalConstraint* XAxis = <span class="key">new </span>LocalConstraint();
+  XAxis-&gt;setTranslationConstraint(AxisPlaneConstraint::FORBIDDEN,  Vec(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>));
+  XAxis-&gt;setRotationConstraint   (AxisPlaneConstraint::AXIS, Vec(<span class="num">1.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>));
+  frame(<span class="num">1</span>)-&gt;setConstraint(XAxis);
+  frame(<span class="num">2</span>)-&gt;setConstraint(XAxis);
+
+  LocalConstraint* headConstraint = <span class="key">new </span>LocalConstraint();
+  headConstraint-&gt;setTranslationConstraint(AxisPlaneConstraint::FORBIDDEN, Vec(<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>));
+  frame(<span class="num">3</span>)-&gt;setConstraint(headConstraint);
+
+  <span class="com">// Means camera is selected.
+</span>  selected = <span class="num">4</span>;
+}
+
+<span class="typ">void </span>Luxo::draw(<span class="typ">const bool </span>names)
+{
+  <span class="com">// Luxo's local frame
+</span>  glMultMatrixd(frame(<span class="num">0</span>)-&gt;matrix());
+
+  <span class="key">if </span>(names) glPushName(<span class="num">0</span>);
+  setColor(<span class="num">0</span>);
+  drawBase();
+  <span class="key">if </span>(names) glPopName();
+
+  <span class="key">if </span>(names) glPushName(<span class="num">1</span>);
+  glMultMatrixd(frame(<span class="num">1</span>)-&gt;matrix());
+  setColor(<span class="num">1</span>);
+  drawCylinder();
+  drawArm();
+  <span class="key">if </span>(names) glPopName();
+
+  <span class="key">if </span>(names) glPushName(<span class="num">2</span>);
+  glMultMatrixd(frame(<span class="num">2</span>)-&gt;matrix());
+  setColor(<span class="num">2</span>);
+  drawCylinder();
+  drawArm();
+  <span class="key">if </span>(names) glPopName();
+
+  <span class="key">if </span>(names) glPushName(<span class="num">3</span>);
+  glMultMatrixd(frame(<span class="num">3</span>)-&gt;matrix());
+  setColor(<span class="num">3</span>);
+  drawHead();
+  <span class="key">if </span>(names) glPopName();
+
+  <span class="com">// Add light
+</span>  <span class="typ">const </span>GLfloat pos[<span class="num">4</span>] = {<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">0.0</span>,<span class="num">1.0</span>};
+  glLightfv(GL_LIGHT1, GL_POSITION, pos);
+  GLfloat spot_dir[<span class="num">3</span>]  = {<span class="num">0.0</span>, <span class="num">0.0</span>, <span class="num">1.0</span>};
+  glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_dir);
+}
+
+<span class="typ">void </span>Luxo::drawBase()
+{
+  drawCone(<span class="num">0.0</span>,<span class="num">0.03</span>, <span class="num">0.15</span>, <span class="num">0.15</span>, <span class="num">30</span>);
+  drawCone(<span class="num">0.03</span>,<span class="num">0.05</span>, <span class="num">0.15</span>, <span class="num">0.13</span>, <span class="num">30</span>);
+  drawCone(<span class="num">0.05</span>,<span class="num">0.07</span>, <span class="num">0.13</span>, <span class="num">0.01</span>, <span class="num">30</span>);
+  drawCone(<span class="num">0.07</span>,<span class="num">0.09</span>, <span class="num">0.01</span>, <span class="num">0.01</span>, <span class="num">10</span>);
+}
+
+<span class="typ">void </span>Luxo::drawArm()
+{
+  glTranslatef(<span class="num">0.02</span>, <span class="num">0.0</span>, <span class="num">0.0</span>);
+  drawCone(<span class="num">0.0</span>,<span class="num">0.5</span>, <span class="num">0.01</span>, <span class="num">0.01</span>, <span class="num">10</span>);
+  glTranslatef(<span class="num">-0.04</span>, <span class="num">0.0</span>, <span class="num">0.0</span>);
+  drawCone(<span class="num">0.0</span>,<span class="num">0.5</span>, <span class="num">0.01</span>, <span class="num">0.01</span>, <span class="num">10</span>);
+  glTranslatef(<span class="num">0.02</span>, <span class="num">0.0</span>, <span class="num">0.0</span>);
+}
+
+<span class="typ">void </span>Luxo::drawHead()
+{
+  drawCone(<span class="num">-0.02</span>,<span class="num">0.06</span>, <span class="num">0.04</span>, <span class="num">0.04</span>, <span class="num">30</span>);
+  drawCone(<span class="num">0.06</span>,<span class="num">0.15</span>, <span class="num">0.04</span>, <span class="num">0.17</span>, <span class="num">30</span>);
+  drawCone(<span class="num">0.15</span>,<span class="num">0.17</span>, <span class="num">0.17</span>, <span class="num">0.17</span>, <span class="num">30</span>);
+}
+
+<span class="typ">void </span>Luxo::drawCylinder()
+{
+  glPushMatrix();
+  glRotatef(<span class="num">90</span>, <span class="num">0.0</span>,<span class="num">1.0</span>,<span class="num">0.0</span>);
+  drawCone(<span class="num">-0.05</span>,<span class="num">0.05</span>, <span class="num">0.02</span>, <span class="num">0.02</span>, <span class="num">20</span>);
+  glPopMatrix();
+}
+
+<span class="typ">void </span>Luxo::setColor(<span class="typ">const unsigned short </span>nb)
+{
+  <span class="key">if </span>(nb == selected)
+    glColor3f(<span class="num">0.9</span>, <span class="num">0.9</span>, <span class="num">0.0</span>);
+  <span class="key">else
+    </span>glColor3f(<span class="num">0.9</span>, <span class="num">0.9</span>, <span class="num">0.9</span>);
+}
+
+<span class="com">// Draws a truncated cone aligned with the Z axis.
+</span><span class="typ">void </span>Luxo::drawCone(<span class="typ">const float </span>zMin,<span class="typ">const float </span>zMax, <span class="typ">const float </span>r1, <span class="typ">const float </span>r2, <span class="typ">const float </span>nbSub)
+{
+  <span class="typ">float </span>angle,c,s;
+  Vec normal, p1, p2;
+  glBegin(GL_QUAD_STRIP);
+  <span class="key">for </span>(<span class="typ">unsigned short </span>i=<span class="num">0</span>; i&lt;=nbSub; ++i)
+    {
+      angle = <span class="num">2.0 </span>* M_PI * i / nbSub;
+      c = cos(angle);
+      s = sin(angle);
+
+      p1 = Vec(r1*c, r1*s, zMin);
+      p2 = Vec(r2*c, r2*s, zMax);
+
+      normal = cross(Vec(-s,c,<span class="num">0.0</span>) , (p2-p1));
+      normal.normalize();
+
+      glNormal3fv(normal.address());
+      glVertex3fv(p1.address());
+      glVertex3fv(p2.address());
+    }
+  glEnd();
+}
+</pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;luxo.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the viewer.
+</span>  Viewer v;
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  v.show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(&amp;v);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

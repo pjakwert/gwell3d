@@ -1,0 +1,7 @@
+base referer
+rect $classToolBar.html 29,109 82,133
+rect $classObjectsWidget.html 6,18 105,42
+rect $classStatusBar.html 106,109 176,133
+rect $classKernel.html 280,109 328,133
+rect $classWorkspace.html 352,109 429,133
+rect $classTabs.html 485,109 522,133

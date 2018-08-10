@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libQGLViewer interface example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="../qglviewer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../images/qglviewer.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/qglviewer.icon.png" type="image/png" />
+</head>
+<body>
+
+<table class="banner">
+  <tr>
+     <td align="center"><a href="../index.html"><b>Home</b></a></td>
+     <td align="center"><a href="../refManual/hierarchy.html"><b>Documentation</b></a></td>
+     <td align="center"><a href="../download.html"><b>Download</b></a></td>
+     <td align="center" class="qindexHL"><a href="index.html"><b>Examples</b></a></td>
+     <td align="center"><a href="../developer.html"><b>Developer</b></a></td>
+   </tr>
+</table>
+
+<h1>The interface example</h1>
+<center>
+  <img src="../images/interface.jpg" width="300" height="200" alt="interface"/>
+</center>
+
+<p>
+ Adding a graphical user interface around a QGLViewer.
+</p>
+<p>
+ The same example as simpleViewer with an interface designed with <code>designer</code>. The
+ <code>interface</code>.ui file is the description of the interface resulting of designer. The
+ interface.cw file is the description of the signals and slots available. Here we use three slots
+ and three signals to connect to and from the interface and the viewer.
+</p>
+<p>
+ The designer cw files (custom widget), describing all the available signals and slots of the
+ <code>libQGLViewer</code> classes are available in the QGLViewer <code>include</code> directory.
+</p>
+
+
+<h2>interface.h</h2>
+<pre>
+
+<span class="dir">#include &lt;QGLViewer/qglviewer.h&gt;
+</span>
+<span class="key">class </span>Viewer : <span class="key">public </span>QGLViewer
+{
+<span class="key">public </span>:
+  Viewer(QWidget *parent,<span class="typ">const char </span>*name);
+
+<span class="key">protected </span>:
+  <span class="key">virtual </span><span class="typ">void </span>draw();
+  <span class="key">virtual </span><span class="typ">void </span>init();
+  <span class="key">virtual </span>QString helpString() <span class="typ">const</span>;
+};
+</pre>
+
+
+<h2>interface.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;interface.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;math.h&gt;
+</span>
+<span class="com">// Constructor must call the base class constructor.
+</span>Viewer::Viewer(QWidget *parent,<span class="typ">const char </span>*name)
+  : QGLViewer(parent, name)
+{
+  restoreFromFile();
+  help();
+}
+
+<span class="typ">void </span>Viewer::draw()
+{
+  <span class="com">// Draws a spiral
+</span>  <span class="typ">const float </span>nbSteps = <span class="num">500.0</span>;
+  glBegin(GL_QUAD_STRIP);
+  <span class="key">for </span>(<span class="typ">float </span>i=<span class="num">0</span>; i&lt;nbSteps; ++i)
+    {
+      <span class="typ">float </span>ratio = i/nbSteps;
+      <span class="typ">float </span>angle = <span class="num">21.0</span>*ratio;
+      <span class="typ">float </span>c = cos(angle);
+      <span class="typ">float </span>s = sin(angle);
+      <span class="typ">float </span>r1 = <span class="num">1.0 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>r2 = <span class="num">0.8 </span>- <span class="num">0.8</span>*ratio;
+      <span class="typ">float </span>alt = ratio <span class="num">- 0.5</span>;
+      <span class="typ">const float </span>nor = .<span class="num">5</span>;
+      <span class="typ">const float </span>up = sqrt(<span class="num">1.0</span>-nor*nor);
+      glColor3f(<span class="num">1</span>-ratio, .<span class="num">2 </span>, ratio);
+      glNormal3f(nor*c, up, nor*s);
+      glVertex3f(r1*c, alt, r1*s);
+      glVertex3f(r2*c, alt+<span class="num">0.05</span>, r2*s);
+    }
+  glEnd();
+}
+
+<span class="typ">void </span>Viewer::init()
+{
+  restoreFromFile();
+}
+
+QString Viewer::helpString() <span class="typ">const
+</span>{
+  QString text(<span class="str">&quot;&lt;h2&gt;I n t e r f a c e&lt;/h2&gt;&quot;</span>);
+  text += <span class="str">&quot;A GUI can be added to a QGLViewer widget using Qt's &lt;i&gt;designer&lt;/i&gt;. &quot;</span>;
+  text += <span class="str">&quot;All the available QGLViewer signals and slots are listed in a &lt;b&gt;qglviewer.cw&lt;/b&gt; file, &quot;</span>;
+  text += <span class="str">&quot;located in the QGLViewer &lt;i&gt;include&lt;/i&gt; directory.&quot;</span>;
+  <span class="key">return </span>text;
+}</pre>
+
+
+<h2>myInterface.h</h2>
+<pre>
+
+<span class="com">/****************************************************************************
+** Form interface generated from reading ui file 'myInterface.ui'
+**
+** Created: Tue Sep 23 11:32:03 2003
+**      by:  The User Interface Compiler (uic)
+**
+** WARNING! All changes made in this file will be lost!
+****************************************************************************/</span>
+<span class="dir">#ifndef FORM1_H
+</span><span class="dir">#define FORM1_H
+</span>
+<span class="dir">#include &lt;qvariant.h&gt;
+</span><span class="dir">#include &lt;qwidget.h&gt;
+</span><span class="key">class </span>QVBoxLayout;
+<span class="key">class </span>QHBoxLayout;
+<span class="key">class </span>QGridLayout;
+<span class="key">class </span>QCheckBox;
+<span class="key">class </span>QPushButton;
+<span class="key">class </span>Viewer;
+
+<span class="key">class </span>myInterface : <span class="key">public </span>QWidget
+{
+    Q_OBJECT
+
+<span class="key">public</span>:
+    myInterface( QWidget* parent = <span class="num">0</span>, <span class="typ">const char</span>* name = <span class="num">0</span>, WFlags fl = <span class="num">0 </span>);
+    ~myInterface();
+
+    Viewer* Viewer1;
+    QCheckBox* CheckBox1;
+    QCheckBox* CheckBox3;
+    QPushButton* PushButton1;
+    QCheckBox* CheckBox2;
+
+
+<span class="key">protected</span>:
+    QGridLayout* Form1Layout;
+};
+
+<span class="dir">#endif </span><span class="com">// FORM1_H</span><span class="dir"></span></pre>
+
+
+<h2>main.cpp</h2>
+<pre>
+
+<span class="dir">#include </span><span class="dstr">&quot;interface.h&quot;</span><span class="dir">
+</span><span class="dir">#include </span><span class="dstr">&quot;myInterface.h&quot;</span><span class="dir">
+</span><span class="dir">#include &lt;qapplication.h&gt;
+</span>
+<span class="typ">int </span>main(<span class="typ">int </span>argc, <span class="typ">char</span>** argv)
+{
+  <span class="com">// Read command lines arguments.
+</span>  QApplication application(argc,argv);
+
+  <span class="com">// Instantiate the interface.
+</span>  myInterface *main_window = <span class="key">new </span>myInterface(NULL);
+
+  <span class="com">// Make the viewer window visible on screen.
+</span>  main_window-&gt;setCaption(<span class="str">&quot;Interface Example&quot;</span>);
+  main_window-&gt;show();
+
+  <span class="com">// Set the viewer as the application main widget.
+</span>  application.setMainWidget(main_window);
+
+  <span class="com">// Run main loop.
+</span>  <span class="key">return </span>application.exec();
+}</pre>
+
+
+<h2>myInterface.cpp</h2>
+<pre>
+
+<span class="com">/****************************************************************************
+** Form implementation generated from reading ui file 'myInterface.ui'
+**
+** Created: Tue Sep 23 12:38:27 2003
+**      by:  The User Interface Compiler (uic)
+**
+** WARNING! All changes made in this file will be lost!
+****************************************************************************/</span>
+<span class="dir">#include </span><span class="dstr">&quot;myInterface.h&quot;</span><span class="dir">
+</span>
+<span class="dir">#include &lt;qvariant.h&gt;
+</span><span class="dir">#include &lt;qcheckbox.h&gt;
+</span><span class="dir">#include &lt;qpushbutton.h&gt;
+</span><span class="dir">#include &lt;qlayout.h&gt;
+</span><span class="dir">#include &lt;qtooltip.h&gt;
+</span><span class="dir">#include &lt;qwhatsthis.h&gt;
+</span><span class="dir">#include &lt;qimage.h&gt;
+</span><span class="dir">#include &lt;qpixmap.h&gt;
+</span>
+<span class="dir">#include </span><span class="dstr">&quot;interface.h&quot;</span><span class="dir">
+</span><span class="typ">static const char</span>* <span class="typ">const </span>image0_data[] = {
+<span class="str">&quot;22 22 203 2&quot;</span>,
+<span class="str">&quot;Qt c None&quot;</span>,
+<span class="str">&quot;.f c #292c10&quot;</span>,
+<span class="str">&quot;.b c #293010&quot;</span>,
+<span class="str">&quot;.c c #293018&quot;</span>,
+<span class="str">&quot;.a c #313018&quot;</span>,
+<span class="str">&quot;a3 c #313429&quot;</span>,
+<span class="str">&quot;b# c #313820&quot;</span>,
+<span class="str">&quot;.W c #393829&quot;</span>,
+<span class="str">&quot;#I c #393831&quot;</span>,
+<span class="str">&quot;bi c #393c20&quot;</span>,
+<span class="str">&quot;bg c #393c29&quot;</span>,
+<span class="str">&quot;#o c #393c31&quot;</span>,
+<span class="str">&quot;bf c #394020&quot;</span>,
+<span class="str">&quot;bh c #394029&quot;</span>,
+<span class="str">&quot;## c #413c31&quot;</span>,
+<span class="str">&quot;#A c #413c39&quot;</span>,
+<span class="str">&quot;.D c #414431&quot;</span>,
+<span class="str">&quot;.E c #414818&quot;</span>,
+<span class="str">&quot;.# c #414820&quot;</span>,
+<span class="str">&quot;.n c #414839&quot;</span>,
+<span class="str">&quot;.d c #414c20&quot;</span>,
+<span class="str">&quot;#S c #4a4839&quot;</span>,
+<span class="str">&quot;#. c #4a4841&quot;</span>,
+<span class="str">&quot;a4 c #4a4c39&quot;</span>,
+<span class="str">&quot;.V c #4a4c41&quot;</span>,
+<span class="str">&quot;#n c #525541&quot;</span>,
+<span class="str">&quot;.U c #52554a&quot;</span>,
+<span class="str">&quot;be c #525d20&quot;</span>,
+<span class="str">&quot;b. c #525d29&quot;</span>,
+<span class="str">&quot;#z c #5a554a&quot;</span>,
+<span class="str">&quot;.9 c #5a594a&quot;</span>,
+<span class="str">&quot;.C c #5a5952&quot;</span>,
+<span class="str">&quot;#H c #5a5d41&quot;</span>,
+<span class="str">&quot;#u c #5a5d4a&quot;</span>,
+<span class="str">&quot;#t c #5a5d52&quot;</span>,
+<span class="str">&quot;#0 c #5a614a&quot;</span>,
+<span class="str">&quot;.T c #5a6152&quot;</span>,
+<span class="str">&quot;#8 c #625d52&quot;</span>,
+<span class="str">&quot;aX c #626152&quot;</span>,
+<span class="str">&quot;#m c #62654a&quot;</span>,
+<span class="str">&quot;aD c #626552&quot;</span>,
+<span class="str">&quot;aN c #62694a&quot;</span>,
+<span class="str">&quot;aF c #626952&quot;</span>,
+<span class="str">&quot;.S c #62695a&quot;</span>,
+<span class="str">&quot;.o c #626d29&quot;</span>,
+<span class="str">&quot;.e c #626d31&quot;</span>,
+<span class="str">&quot;#E c #626d41&quot;</span>,
+<span class="str">&quot;ar c #626d4a&quot;</span>,
+<span class="str">&quot;bd c #627129&quot;</span>,
+<span class="str">&quot;.m c #6a695a&quot;</span>,
+<span class="str">&quot;af c #6a6d4a&quot;</span>,
+<span class="str">&quot;.8 c #6a6d52&quot;</span>,
+<span class="str">&quot;.R c #6a6d62&quot;</span>,
+<span class="str">&quot;an c #6a7141&quot;</span>,
+<span class="str">&quot;ae c #6a714a&quot;</span>,
+<span class="str">&quot;a5 c #6a7531&quot;</span>,
+<span class="str">&quot;#9 c #6a7541&quot;</span>,
+<span class="str">&quot;a2 c #6a7920&quot;</span>,
+<span class="str">&quot;aq c #737552&quot;</span>,
+<span class="str">&quot;#s c #737939&quot;</span>,
+<span class="str">&quot;#1 c #737941&quot;</span>,
+<span class="str">&quot;aj c #737952&quot;</span>,
+<span class="str">&quot;aJ c #737d31&quot;</span>,
+<span class="str">&quot;#M c #737d39&quot;</span>,
+<span class="str">&quot;ba c #738120&quot;</span>,
+<span class="str">&quot;az c #738129&quot;</span>,
+<span class="str">&quot;#R c #738131&quot;</span>,
+<span class="str">&quot;bc c #738520&quot;</span>,
+<span class="str">&quot;a7 c #738529&quot;</span>,
+<span class="str">&quot;.B c #7b7973&quot;</span>,
+<span class="str">&quot;.A c #7b7d73&quot;</span>,
+<span class="str">&quot;.H c #7b8173&quot;</span>,
+<span class="str">&quot;aU c #7b8531&quot;</span>,
+<span class="str">&quot;#7 c #7b8539&quot;</span>,
+<span class="str">&quot;aV c #7b8939&quot;</span>,
+<span class="str">&quot;.Q c #7b8941&quot;</span>,
+<span class="str">&quot;a9 c #7b8d20&quot;</span>,
+<span class="str">&quot;#y c #7b8d31&quot;</span>,
+<span class="str">&quot;.z c #83817b&quot;</span>,
+<span class="str">&quot;aa c #838562&quot;</span>,
+<span class="str">&quot;.l c #83857b&quot;</span>,
+<span class="str">&quot;aK c #838962&quot;</span>,
+<span class="str">&quot;.y c #83896a&quot;</span>,
+<span class="str">&quot;aT c #838d31&quot;</span>,
+<span class="str">&quot;#v c #839139&quot;</span>,
+<span class="str">&quot;aY c #839529&quot;</span>,
+<span class="str">&quot;aO c #839541&quot;</span>,
+<span class="str">&quot;#2 c #839920&quot;</span>,
+<span class="str">&quot;aS c #839931&quot;</span>,
+<span class="str">&quot;aW c #839d20&quot;</span>,
+<span class="str">&quot;#a c #8b8983&quot;</span>,
+<span class="str">&quot;#4 c #8b8d73&quot;</span>,
+<span class="str">&quot;.g c #8b8d83&quot;</span>,
+<span class="str">&quot;.k c #8b9183&quot;</span>,
+<span class="str">&quot;#F c #8b9952&quot;</span>,
+<span class="str">&quot;#h c #8ba120&quot;</span>,
+<span class="str">&quot;bb c #8ba518&quot;</span>,
+<span class="str">&quot;#f c #8ba520&quot;</span>,
+<span class="str">&quot;#g c #8ba529&quot;</span>,
+<span class="str">&quot;#l c #8baa18&quot;</span>,
+<span class="str">&quot;a1 c #8bae08&quot;</span>,
+<span class="str">&quot;a8 c #8bae10&quot;</span>,
+<span class="str">&quot;.p c #949183&quot;</span>,
+<span class="str">&quot;.j c #94918b&quot;</span>,
+<span class="str">&quot;.h c #94958b&quot;</span>,
+<span class="str">&quot;.x c #94996a&quot;</span>,
+<span class="str">&quot;a6 c #94a520&quot;</span>,
+<span class="str">&quot;#i c #94a529&quot;</span>,
+<span class="str">&quot;.7 c #94aa20&quot;</span>,
+<span class="str">&quot;ax c #94aa29&quot;</span>,
+<span class="str">&quot;aG c #94aa39&quot;</span>,
+<span class="str">&quot;aR c #94ae18&quot;</span>,
+<span class="str">&quot;ag c #94b210&quot;</span>,
+<span class="str">&quot;#D c #94b218&quot;</span>,
+<span class="str">&quot;.G c #9c9994&quot;</span>,
+<span class="str">&quot;.s c #9c9d8b&quot;</span>,
+<span class="str">&quot;.r c #9c9d94&quot;</span>,
+<span class="str">&quot;.i c #9c9d9c&quot;</span>,
+<span class="str">&quot;#V c #9ca17b&quot;</span>,
+<span class="str">&quot;#N c #9ca573&quot;</span>,
+<span class="str">&quot;aC c #9cae41&quot;</span>,
+<span class="str">&quot;#3 c #9cb220&quot;</span>,
+<span class="str">&quot;a# c #9cb229&quot;</span>,
+<span class="str">&quot;.P c #9cb239&quot;</span>,
+<span class="str">&quot;a0 c #9cb610&quot;</span>,
+<span class="str">&quot;#r c #9cb618&quot;</span>,
+<span class="str">&quot;aZ c #9cba08&quot;</span>,
+<span class="str">&quot;aI c #9cba10&quot;</span>,
+<span class="str">&quot;a. c #9cba18&quot;</span>,
+<span class="str">&quot;aM c #9cba20&quot;</span>,
+<span class="str">&quot;aQ c #9cbe08&quot;</span>,
+<span class="str">&quot;#Q c #9cbe10&quot;</span>,
+<span class="str">&quot;#G c #9cc210&quot;</span>,
+<span class="str">&quot;.X c #a4a194&quot;</span>,
+<span class="str">&quot;#b c #a4a594&quot;</span>,
+<span class="str">&quot;aA c #a4b262&quot;</span>,
+<span class="str">&quot;aE c #a4ba39&quot;</span>,
+<span class="str">&quot;ay c #a4be10&quot;</span>,
+<span class="str">&quot;#j c #a4be31&quot;</span>,
+<span class="str">&quot;#x c #a4c210&quot;</span>,
+<span class="str">&quot;av c #a4c239&quot;</span>,
+<span class="str">&quot;.6 c #a4c610&quot;</span>,
+<span class="str">&quot;#L c #a4c618&quot;</span>,
+<span class="str">&quot;.F c #acaea4&quot;</span>,
+<span class="str">&quot;.q c #acaeac&quot;</span>,
+<span class="str">&quot;#B c #acb294&quot;</span>,
+<span class="str">&quot;ai c #acbe4a&quot;</span>,
+<span class="str">&quot;.w c #acbe6a&quot;</span>,
+<span class="str">&quot;am c #acc239&quot;</span>,
+<span class="str">&quot;#w c #acc610&quot;</span>,
+<span class="str">&quot;aL c #acc629&quot;</span>,
+<span class="str">&quot;ad c #acc639&quot;</span>,
+<span class="str">&quot;#q c #acca20&quot;</span>,
+<span class="str">&quot;#Z c #acca29&quot;</span>,
+<span class="str">&quot;aP c #acce29&quot;</span>,
+<span class="str">&quot;#e c #acce31&quot;</span>,
+<span class="str">&quot;.O c #b4ca41&quot;</span>,
+<span class="str">&quot;as c #b4ca5a&quot;</span>,
+<span class="str">&quot;#k c #b4ce29&quot;</span>,
+<span class="str">&quot;.2 c #b4ce31&quot;</span>,
+<span class="str">&quot;aw c #b4ce39&quot;</span>,
+<span class="str">&quot;aH c #b4ce4a&quot;</span>,
+<span class="str">&quot;ap c #b4ce52&quot;</span>,
+<span class="str">&quot;.3 c #b4d239&quot;</span>,
+<span class="str">&quot;.4 c #b4d241&quot;</span>,
+<span class="str">&quot;.v c #bdca7b&quot;</span>,
+<span class="str">&quot;ao c #bdce62&quot;</span>,
+<span class="str">&quot;.5 c #bdd241&quot;</span>,
+<span class="str">&quot;.1 c #bdd24a&quot;</span>,
+<span class="str">&quot;au c #bdd252&quot;</span>,
+<span class="str">&quot;aB c #bdd64a&quot;</span>,
+<span class="str">&quot;#U c #bdd652&quot;</span>,
+<span class="str">&quot;#Y c #bdd65a&quot;</span>,
+<span class="str">&quot;.t c #c5caa4&quot;</span>,
+<span class="str">&quot;.u c #c5ce8b&quot;</span>,
+<span class="str">&quot;.I c #c5ceac&quot;</span>,
+<span class="str">&quot;.N c #c5d65a&quot;</span>,
+<span class="str">&quot;at c #c5d662&quot;</span>,
+<span class="str">&quot;ah c #c5d67b&quot;</span>,
+<span class="str">&quot;#P c #c5da5a&quot;</span>,
+<span class="str">&quot;.M c #c5da62&quot;</span>,
+<span class="str">&quot;.0 c #c5da6a&quot;</span>,
+<span class="str">&quot;#K c #c5de6a&quot;</span>,
+<span class="str">&quot;.L c #cdde7b&quot;</span>,
+<span class="str">&quot;#T c #cdde8b&quot;</span>,
+<span class="str">&quot;#O c #cde27b&quot;</span>,
+<span class="str">&quot;al c #cde283&quot;</span>,
+<span class="str">&quot;#J c #d5daa4&quot;</span>,
+<span class="str">&quot;#p c #d5e283&quot;</span>,
+<span class="str">&quot;#d c #d5e28b&quot;</span>,
+<span class="str">&quot;ab c #d5e2a4&quot;</span>,
+<span class="str">&quot;#X c #d5e68b&quot;</span>,
+<span class="str">&quot;.K c #d5e694&quot;</span>,
+<span class="str">&quot;#5 c #dee2b4&quot;</span>,
+<span class="str">&quot;ak c #dee694&quot;</span>,
+<span class="str">&quot;#C c #dee69c&quot;</span>,
+<span class="str">&quot;.J c #dee6ac&quot;</span>,
+<span class="str">&quot;.Z c #deeaa4&quot;</span>,
+<span class="str">&quot;#W c #deeaac&quot;</span>,
+<span class="str">&quot;ac c #e6eaac&quot;</span>,
+<span class="str">&quot;#c c #e6eabd&quot;</span>,
+<span class="str">&quot;#6 c #e6eeac&quot;</span>,
+<span class="str">&quot;.Y c #eeeec5&quot;</span>,
+<span class="str">&quot;QtQtQt.#.a.b.c.b.a.b.c.b.a.b.c.b.a.b.dQtQtQt&quot;</span>,
+<span class="str">&quot;Qt.e.f.g.h.i.h.j.k.j.k.j.k.j.g.g.l.m.n.b.oQt&quot;</span>,
+<span class="str">&quot;Qt.b.p.q.r.g.p.s.t.u.v.w.x.y.z.A.B.m.C.D.cQt&quot;</span>,
+<span class="str">&quot;.E.g.F.G.H.s.I.J.K.L.M.N.O.P.Q.R.S.T.U.V.W.#&quot;</span>,
+<span class="str">&quot;.a.h.r.z.X.Y.Z.0.1.2.3.4.5.2.6.7.8.9.9#.##.b&quot;</span>,
+<span class="str">&quot;.f.i#a#b#c#d#e.6#f#g#h#i#j#k.6.6#l#m#n.V#o.c&quot;</span>,
+<span class="str">&quot;.c.h.X#c#p#q#r#s#t#u#t#u#m#v#w#x#x#y#z#.#A.b&quot;</span>,
+<span class="str">&quot;.f.j#B#C.2#D#E#t.9#t.9#F.Q#t#y#x#G#r#H#.#I.b&quot;</span>,
+<span class="str">&quot;.a.j#J#K#L#M#t#u#t#u#N#O#P.Q#t#f.6#Q#R#S#A.b&quot;</span>,
+<span class="str">&quot;.f.j#T#U#D#t.9#t.9#V#W#X#Y#Z#0#1#G#x#2#.#I.c&quot;</span>,
+<span class="str">&quot;.c.j#d.1#3#u#t#u#4#5#6.L.1#7#8#9#x#Qa.#.#o.b&quot;</span>,
+<span class="str">&quot;.f.j.L#Pa##t.9aaabac#d.Madae.9af#D#xag#.#I.b&quot;</span>,
+<span class="str">&quot;.a.jah.Mai#uaj.Lakal.0.5.3amaean.6#Q.7#S#A.b&quot;</span>,
+<span class="str">&quot;.f.jao.Mapaqarasatauavaw.4.1avax#Gayaz#.#I.c&quot;</span>,
+<span class="str">&quot;.c.kaA.1aBaCaDaeaE.QaFaGaH.5.2#x#xaIaJ#.#o.b&quot;</span>,
+<span class="str">&quot;.f.gaKaL#q#qaMaN.9#t.9#taOaP#x#xaQaR#H#.#I.b&quot;</span>,
+<span class="str">&quot;.a.l.BaS.6#x.6a.aTaUaV#7ax#x#x#QayagaW#S#I.b&quot;</span>,
+<span class="str">&quot;.f.m.SaXaY#x#G#x#G.6#G#x#QayaZaIaIa0a1a2a3.c&quot;</span>,
+<span class="str">&quot;.da4.C.U.9a5a6#Q#x#Q#x#Q#QaI#ha7a0a8a9b.b#.#&quot;</span>,
+<span class="str">&quot;Qt.b.D.V#S.V#S.eba#lbbbbbc.ea4#.bda9bebf.fQt&quot;</span>,
+<span class="str">&quot;Qt.o.cbg###o#A#o#A#o#o#o#A#o#o#I#Ibhbi.b.dQt&quot;</span>,
+<span class="str">&quot;QtQtQt.#.f.c.f.b.f.c.f.b.f.c.f.b.f.c.EQtQtQt&quot;</span>};
+
+
+<span class="com">/*
+ *  Constructs a myInterface which is a child of 'parent', with the
+ *  name 'name' and widget flags set to 'f'.
+ */</span>
+myInterface::myInterface( QWidget* parent,  <span class="typ">const char</span>* name, WFlags fl )
+    : QWidget( parent, name, fl )
+{
+    QPixmap image0( ( <span class="typ">const char</span>** ) image0_data );
+    <span class="key">if </span>( !name )
+	setName( <span class="str">&quot;Form1&quot;</span> );
+    resize( <span class="num">673</span>, <span class="num">438 </span>);
+    setCaption( trUtf8( <span class="str">&quot;Form1&quot;</span> ) );
+    Form1Layout = <span class="key">new </span>QGridLayout( <span class="key">this</span>, <span class="num">1</span>, <span class="num">1</span>, <span class="num">6</span>, <span class="num">2</span>, <span class="str">&quot;Form1Layout&quot;</span>);
+
+    Viewer1 = <span class="key">new </span>Viewer( <span class="key">this</span>, <span class="str">&quot;Viewer1&quot;</span> );
+
+    Form1Layout-&gt;addMultiCellWidget( Viewer1, <span class="num">0</span>, <span class="num">0</span>, <span class="num">0</span>, <span class="num">5 </span>);
+
+    CheckBox1 = <span class="key">new </span>QCheckBox( <span class="key">this</span>, <span class="str">&quot;CheckBox1&quot;</span> );
+    CheckBox1-&gt;setText( trUtf8( <span class="str">&quot;FPS&quot;</span> ) );
+
+    Form1Layout-&gt;addWidget( CheckBox1, <span class="num">1</span>, <span class="num">0 </span>);
+
+    CheckBox3 = <span class="key">new </span>QCheckBox( <span class="key">this</span>, <span class="str">&quot;CheckBox3&quot;</span> );
+    CheckBox3-&gt;setText( trUtf8( <span class="str">&quot;Axis&quot;</span> ) );
+
+    Form1Layout-&gt;addWidget( CheckBox3, <span class="num">1</span>, <span class="num">2 </span>);
+
+    PushButton1 = <span class="key">new </span>QPushButton( <span class="key">this</span>, <span class="str">&quot;PushButton1&quot;</span> );
+    PushButton1-&gt;setText( trUtf8( <span class="str">&quot;Quit&quot;</span> ) );
+
+    Form1Layout-&gt;addWidget( PushButton1, <span class="num">1</span>, <span class="num">5 </span>);
+
+    CheckBox2 = <span class="key">new </span>QCheckBox( <span class="key">this</span>, <span class="str">&quot;CheckBox2&quot;</span> );
+    CheckBox2-&gt;setText( trUtf8( <span class="str">&quot;Grid&quot;</span> ) );
+
+    Form1Layout-&gt;addWidget( CheckBox2, <span class="num">1</span>, <span class="num">1 </span>);
+
+    <span class="com">// signals and slots connections
+</span>    connect( CheckBox1, SIGNAL( toggled(<span class="typ">bool</span>) ), Viewer1, SLOT( setDisplayFPS(<span class="typ">bool</span>) ) );
+    connect( CheckBox2, SIGNAL( toggled(<span class="typ">bool</span>) ), Viewer1, SLOT( setDrawGrid(<span class="typ">bool</span>) ) );
+    connect( CheckBox3, SIGNAL( toggled(<span class="typ">bool</span>) ), Viewer1, SLOT( setDrawAxis(<span class="typ">bool</span>) ) );
+    connect( Viewer1, SIGNAL(  axisDrawn(<span class="typ">bool</span>)  ), CheckBox3, SLOT( setChecked(<span class="typ">bool</span>) ) );
+    connect( Viewer1, SIGNAL(  gridDrawn(<span class="typ">bool</span>)  ), CheckBox2, SLOT( setChecked(<span class="typ">bool</span>) ) );
+    connect( Viewer1, SIGNAL(  fpsDisplayed(<span class="typ">bool</span>)  ), CheckBox1, SLOT( setChecked(<span class="typ">bool</span>) ) );
+    connect( PushButton1, SIGNAL( released() ), <span class="key">this</span>, SLOT( close() ) );
+}
+
+<span class="com">/*
+ *  Destroys the object and frees any allocated resources
+ */</span>
+myInterface::~myInterface()
+{
+    <span class="com">// no need to delete child widgets, Qt does it all for us
+</span>}
+</pre>
+
+
+
+<p>
+  <a href="index.html">Go back</a> to the examples main page
+</p>
+
+<p>
+  <a href="http://validator.w3.org/check/referer"><img src="../images/xhtml.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0"/></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.png" width="88" height="31" alt="Valid CSS!" border="0"/></a>
+<i>Last modified on Friday, April 30, 2004.</i>
+</p>
+
+</body>
+</html>

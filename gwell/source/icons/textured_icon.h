@@ -1,0 +1,51 @@
+
+const char* const Icons::textured_data[] = {
+"21 18 24 1",
+". c None",
+"s c #000000",
+"n c #0e0e0e",
+"r c #1a1a1a",
+"j c #262626",
+"t c #323232",
+"p c #3e3e3e",
+"q c #4a4a4a",
+"m c #505000",
+"c c #565656",
+"g c #626262",
+"i c #6e6e6e",
+"k c #737300",
+"u c #7a7a7a",
+"o c #808000",
+"b c #808080",
+"a c #868686",
+"v c #929292",
+"f c #969600",
+"l c #9e9e9e",
+"h c #a0a0a4",
+"# c #aaaaaa",
+"d c #ffb848",
+"e c #ffc66b",
+".....................",
+".........#..a........",
+"........bcdeefgh.....",
+"....cidde#gafffbb....",
+"....cjfdffagkeeelcl..",
+"....amncdeeefk#opnc..",
+"....aoqroeedojnjqmi..",
+"....akkgncqrjjpkkmb..",
+"....amgogstckqqkkqg#.",
+".....gpoongkkqmcpjgu.",
+".##h.kmmongkgtjpcpiu.",
+".hhhlggcmnmppjmkkpil.",
+".#hh#vqkgntmkpckmpl..",
+"..#hh#ugorckktmqq....",
+"...hhh#ikrckmjc......",
+"...#hhhhgnppgh.......",
+"....#hh#lpg#.........",
+"....................."};
+
+const char** Icons::texturedIcon()
+{
+  return ((const char**) textured_data);
+}
+

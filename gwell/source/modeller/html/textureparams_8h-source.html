@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: textureparams.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>textureparams.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef TEXTURE_PARAMS_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define TEXTURE_PARAMS_H</span>
+00010 <span class="preprocessor"></span>
+00011 <span class="preprocessor">#include &lt;GL/gl.h&gt;</span>
+00012 
+00013 
+00014 
+<a name="l00015"></a><a class="code" href="classTextureParams.html">00015</a> <span class="keyword">class </span><a class="code" href="classTextureParams.html">TextureParams</a>
+00016 {
+00017   <span class="keyword">public</span>:
+00018     <a class="code" href="classTextureParams.html">TextureParams</a>(                                              <span class="comment">// konstruktor</span>
+00019                   GLuint  GLTexID   = 0,
+00020                   GLenum  magFilter = GL_NEAREST,
+00021                   GLenum  minFilter = GL_NEAREST,
+00022                   GLenum  wrapS     = GL_REPEAT,
+00023                   GLenum  wrapT     = GL_REPEAT,
+00024                   GLenum  envMode   = GL_DECAL,
+00025                   <span class="keywordtype">bool</span>    blendingEnabled = <span class="keyword">false</span>,
+00026                   GLenum  blendSrcFactor  = GL_SRC_ALPHA,
+00027                   GLenum  blendDestFactor = GL_ONE,
+00028                   <span class="keywordtype">bool</span>    reflectingEnabled = <span class="keyword">false</span>,
+00029                   GLfloat minW = 0.0,
+00030                   GLfloat minH = 0.0,
+00031                   GLfloat maxW = 1.0,
+00032                   GLfloat maxH = 1.0
+00033                  );
+00034     
+00035     ~<a class="code" href="classTextureParams.html">TextureParams</a>() {};  <span class="comment">// destruktor</span>
+00036         
+00037     GLuint    GLTexID()        { <span class="keywordflow">return</span> _glTexID; }
+00038     GLenum    magFilter()      { <span class="keywordflow">return</span> _magFilter; } <span class="comment">// parametry filtrów</span>
+00039     GLenum    minFilter()      { <span class="keywordflow">return</span> _minFilter; }
+00040     GLenum    wrapS()          { <span class="keywordflow">return</span> _wrapS; }
+00041     GLenum    wrapT()          { <span class="keywordflow">return</span> _wrapT; }
+00042     GLenum    envMode()        { <span class="keywordflow">return</span> _envMode; }    
+00043     <span class="keywordtype">bool</span>      blendingEnabled()   { <span class="keywordflow">return</span> _blendingEnabled; } <span class="comment">// blending</span>
+00044     GLenum    blendSrcFactor()    { <span class="keywordflow">return</span> _srcFactor; }
+00045     GLenum    blendDestFactor()   { <span class="keywordflow">return</span> _destFactor; }
+00046     <span class="keywordtype">bool</span>      reflectingEnabled() { <span class="keywordflow">return</span> _reflectingEnabled; } <span class="comment">// reflecting</span>
+00047     GLfloat   minW()  { <span class="keywordflow">return</span> _minW; }   <span class="comment">// współrzędne mapowania tekstury</span>
+00048     GLfloat   minH()  { <span class="keywordflow">return</span> _minH; }
+00049     GLfloat   maxW()  { <span class="keywordflow">return</span> _maxW; }
+00050     GLfloat   maxH()  { <span class="keywordflow">return</span> _maxH; }
+00051 
+00052     <span class="keywordtype">void</span> setGLTexID( GLuint glTexID )             { _glTexID = glTexID; }
+00053     <span class="keywordtype">void</span> setMagFilter( GLenum magFilter )         { _magFilter = magFilter; }
+00054     <span class="keywordtype">void</span> setMinFilter( GLenum minFilter )         { _minFilter = minFilter; }
+00055     <span class="keywordtype">void</span> setWrapS( GLenum wrapS )                 { _wrapS = wrapS; }
+00056     <span class="keywordtype">void</span> setWrapT( GLenum wrapT )                 { _wrapT = wrapT; }
+00057     <span class="keywordtype">void</span> setEnvMode( GLenum envMode )             { _envMode = envMode; }
+00058     <span class="keywordtype">void</span> setBlendingEnabled ( <span class="keywordtype">bool</span> yes )          { _blendingEnabled = yes; }
+00059     <span class="keywordtype">void</span> setBlendSrcFactor  ( GLenum srcFactor )  { _srcFactor = srcFactor; }
+00060     <span class="keywordtype">void</span> setBlendDestFactor ( GLenum destFactor ) { _destFactor = destFactor; }
+00061     <span class="keywordtype">void</span> setReflectingEnabled( <span class="keywordtype">bool</span> yes )         { _reflectingEnabled = yes; }   
+00062     <span class="keywordtype">void</span> setMinWH( GLfloat minW, GLfloat minH );
+00063     <span class="keywordtype">void</span> setMaxWH( GLfloat maxW, GLfloat maxH );
+00064     
+00065     <span class="keywordtype">void</span> setTextureParams( <a class="code" href="classTextureParams.html">TextureParams</a>&amp; tp )    { (*this) = tp; }
+00066     
+00067     <a class="code" href="classTextureParams.html">TextureParams</a>&amp; operator=(<a class="code" href="classTextureParams.html">TextureParams</a>&amp; tp);
+00068     <span class="keywordtype">bool</span> operator==(<a class="code" href="classTextureParams.html">TextureParams</a>&amp; tp);
+00069     
+00070   <span class="keyword">private</span>:
+00071     GLuint    _glTexID;
+00072     
+00073     GLenum    _magFilter;
+00074     GLenum    _minFilter;
+00075     GLenum    _wrapS;
+00076     GLenum    _wrapT;
+00077     GLenum    _envMode;
+00078     <span class="keywordtype">bool</span>      _blendingEnabled;
+00079     GLenum    _srcFactor;
+00080     GLenum    _destFactor;
+00081     <span class="keywordtype">bool</span>      _reflectingEnabled;
+00082     
+00083     GLfloat   _minW, _minH;
+00084     GLfloat   _maxW, _maxH;
+00085 };
+00086 
+00087 
+00088 
+00089 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:22 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

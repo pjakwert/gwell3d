@@ -1,0 +1,1018 @@
+/*------------------------------------------------------------------------
+ * \file        matrixh3f.cpp
+ * Plik zawiera implementacjê metod klasy MatrixH3f. Jest ona podstaw±
+ * wszystkich transforacji miêdzy poszczególnymi uk³adami wspó³rzêdnych.
+ * \author	Bogdan Kreczmer
+ * \date        2004.01
+ */
+
+#ifdef __GNUG__
+#pragma implementation
+#endif
+
+#include <iostream>
+#include <cmath>
+#include <cstring>
+#include "extstring.hh"
+#include "streamutils.hh"
+#include "matrixh3f.hh"
+#include "vi-keywords.hh"
+#include "keywords.h"
+#include "sgn.hh"
+
+//#define  TEST
+
+#define USE(Type)    (*(Type*)this)
+/*
+#define RAD2DEG(x) ((180*x)/M_PI)
+#define DEG2RAD(x) ((M_PI*x)/180)
+*/
+
+inline 
+void AddAngle(float &Angle, float dA)
+{
+  Angle += dA;
+  while (Angle >  2*M_PI) { Angle -= 2*M_PI; }
+  while (Angle < -2*M_PI) { Angle += 2*M_PI; }
+}
+
+
+
+inline 
+void AddAngle(Vector3f &Angle, Vector3f const &dA)
+{
+  AddAngle(Angle.X(),dA.X());
+  AddAngle(Angle.Y(),dA.Y());
+  AddAngle(Angle.Z(),dA.Z());
+}
+
+
+
+
+
+
+std::ostream &operator << ( std::ostream &ostr, MatrixH3f::AnglesType const &Val )
+{
+  switch (Val) {
+   case MatrixH3f::AT_xyz:   ostr << "AT_xyz";    break;
+   case MatrixH3f::AT_Euler: ostr << "AT_Euler";  break;
+  }  
+}
+
+
+
+std::ostream &operator << ( std::ostream &ostr, MatrixH3f::Parameters const &Param )
+{
+  ostr << std::endl;
+  ostr << " -----------------------------" << std::endl;
+  Vector3f  Ang(RAD2DEG(Param.GetRot().x),
+                RAD2DEG(Param.GetRot().y),
+                RAD2DEG(Param.GetRot().z));
+  ostr << "   Ang Type: " << Param.GetAngType() << endl;
+  ostr << "   RotAn: " << Param.GetRot() << endl;
+  ostr << "   Trans: " << Param.GetTran() << endl;
+  ostr << "   Scale: " << Param.GetScale() << endl;
+  ostr << " -----------------------------" << std::endl;
+  return ostr;
+}
+
+
+
+
+
+//###########################################################################
+//........................... MatrixH3f .....................................
+
+void MatrixH3f::UpdateParam__Trans_AfterRot()
+{
+  if (_Trans__After && _Valid__Trans)  return;
+  _Trans = MatrixRT3f::GetTrans_AfterRot();
+  ValidParam__Trans_AfterRot();
+}
+
+
+const Vector3f &MatrixH3f::GetTrans_AfterRot() const
+{
+  USE(MatrixH3f).UpdateParam__Trans_AfterRot();
+  return _Trans;
+}
+
+
+
+void MatrixH3f::SetTrans_AfterRot(Vector3f const &T)
+{
+  MatrixRT3f::SetTrans_AfterRot(_Trans = T);
+  ValidParam__Trans_AfterRot();
+}
+
+
+void MatrixH3f::AddTrans_AfterRot(const Vector3f &dT)
+{ 
+  MatrixRT3f::AddTrans_AfterRot(dT);
+  InvalidParam__Trans();
+}
+
+
+
+const Vector3f &MatrixH3f::GetScale() const
+{
+  USE(MatrixH3f).UpdateParam__Scale();
+  return _Scale;
+}
+
+
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+MatrixH3f::MatrixH3f(AnglesType ATyp)
+{
+ int x,y;
+
+ _Valid__Trans = true;
+ _Trans__After = true;
+ _Valid__Scale = true;
+ _Valid__RotAng = true;
+ SetAngType(ATyp);
+ 
+ SetParamValid();
+ _Scale.Set(1,1,1);
+ MatrixRT3f::SetUnitMtx();
+}
+
+
+
+void MatrixH3f::SetMatrix( const Vector3f &Ang, 
+                           const Vector3f &Trans,
+                           const Vector3f &Scale,
+                           AnglesType     AngType,
+                           AngleUnit      AngUnit
+                         )
+{
+  SetAngType(AngType);
+  SetRotAng_OnlyParam(Ang,AngUnit);
+  SetScale_OnlyParam(Scale);
+  SetTrans_OnlyParam(Trans);
+  UpdateMatrix();
+}
+
+
+
+
+// Te metody trzeba jeszcze zoptymalizowac
+MatrixH3f &MatrixH3f::NewRotX(float ang)
+{
+#ifdef TEST
+  cerr << "  NewRot  --- Start --------" << endl;
+#endif
+  MatrixH3f::Parameters FP;
+
+#ifdef TEST
+  cerr << "   _____ Przed _____" << endl;
+  cerr << *this << endl;
+#endif
+
+  FP <<= *this;
+
+#ifdef TEST
+  cerr << "  Param: " << FP << endl;
+  cerr << "  ...... Nowa wartosc kata: ...." << endl;
+#endif
+
+  FP.SetRotX_Rad(ang);
+
+#ifdef TEST
+  cerr <<  FP << endl;
+#endif
+
+  *this <<= FP;
+
+#ifdef TEST
+  cerr << "   _____ Po ________" << endl;
+  cerr << *this << endl;
+#endif
+
+  FP <<= *this;
+
+#ifdef TEST
+  cerr << "  Param: " << FP << endl;
+  cerr << "  NewRot  --- End ----------" << endl;
+#endif
+
+  return *this;
+}
+
+
+
+
+
+MatrixH3f &MatrixH3f::NewRotY(float ang)
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetRotY_Rad(ang);
+  *this <<= FP;
+  return *this;
+}
+
+
+
+MatrixH3f &MatrixH3f::NewRotZ(float ang)
+{
+  MatrixH3f::Parameters FP;
+
+#ifdef TEST
+  cerr << "   _____ Przed (kat Z) _____" << endl;
+#endif
+
+  FP <<= *this;
+
+#ifdef TEST
+  cerr << "      Kat Z: " << RAD2DEG(FP.GetRot().z) << " ---> " << endl;
+  cerr << "        Katy: " << RAD2DEG(FP.GetRot().x) << ", " 
+       << RAD2DEG(FP.GetRot().y) << ", " <<  RAD2DEG(FP.GetRot().z) << endl;
+#endif
+
+  FP.SetRotZ_Rad(ang);
+  *this <<= FP;
+
+#ifdef TEST
+  cerr << "  _____ Po (kat Z) _________" << endl;
+#endif
+
+  FP <<= *this;
+
+#ifdef TEST
+  cerr << "      Kat Z: " << RAD2DEG(FP.GetRot().z) << " ---> " 
+       << RAD2DEG(ang) << endl;  
+  cerr << "        Katy: " << RAD2DEG(FP.GetRot().x) << ", " 
+       << RAD2DEG(FP.GetRot().y) << ", " <<  RAD2DEG(FP.GetRot().z) << endl;
+  cerr << *this << endl;
+#endif
+
+  return *this;
+}
+
+
+void MatrixH3f::NewRot_Rad( float ang_x, float ang_y, float ang_z )
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetRot(ang_x,ang_y,ang_z);
+  *this <<= FP;    
+}
+
+
+ //========================================================================
+ // Metody zmieniaj± warto¶ci wektora translacji wzglêdem poszczególnych  
+ // osi. Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+ //
+MatrixH3f &MatrixH3f::NewScale(Vector3f const &Scale)
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetScale(Scale);
+  *this <<= FP;
+  return *this;
+}
+
+
+void MatrixH3f::NewScaleX(float x_S)
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetScaleX(x_S);
+  *this <<= FP;
+}
+
+
+void MatrixH3f::NewScaleY(float y_S)
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetScaleY(y_S);
+  *this <<= FP;
+}
+
+
+void MatrixH3f::NewScaleZ(float z_S)
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetScaleZ(z_S);
+  *this <<= FP;
+}
+
+
+
+MatrixH3f &MatrixH3f::NewScale(float x, float y, float z)
+{
+  return NewScale(Vector3f(x,y,z));
+}
+
+ //==========================================================================
+ // Metody zmieniaj± warto¶ci wektora translacji wzglêdem poszczególnych  
+ //  osi. Pozosta³e wspó³czynniki transformacji pozostaj± niezmienione.
+ //
+MatrixH3f &MatrixH3f::NewTrans(Vector3f const &Trans)
+{
+  MatrixH3f::Parameters FP;
+  
+  FP <<= *this;
+  FP.SetTran(Trans);
+  *this <<= FP;
+  return *this;
+}
+
+
+MatrixH3f &MatrixH3f::NewTrans(float x, float y, float z)
+{
+  return NewTrans(Vector3f(x,y,z));
+}
+
+
+
+void MatrixH3f::UpdateTrans()
+{
+  MatrixRT3f::SetTrans_AfterRot(_Trans);
+}
+
+
+void MatrixH3f::UpdateTransX()
+{
+  MatrixRT3f::SetTrans_AfterRot(_Trans);
+}
+
+void MatrixH3f::UpdateTransY()
+{
+  MatrixRT3f::SetTrans_AfterRot(_Trans);
+  //  _DH[1][3]=_Trans[1];
+}
+
+void MatrixH3f::UpdateTransZ()
+{
+  MatrixRT3f::SetTrans_AfterRot(_Trans);
+  //  _DH[2][3]=_Trans[2];
+}
+
+
+void MatrixH3f::SetTransX_Update(float x_T)
+{
+  _Trans.x = x_T;
+  UpdateTransX();
+}
+
+
+void MatrixH3f::SetTransY_Update(float y_T)
+{
+  _Trans.y = y_T;
+  UpdateTransY();
+}
+
+
+void MatrixH3f::SetTransZ_Update(float z_T)
+{
+  _Trans.z = z_T;
+  UpdateTransZ();
+}
+
+
+void MatrixH3f::NewTransX(float x_T)
+{
+  SetTransX_Update(x_T);
+}
+
+
+void MatrixH3f::NewTransY(float y_T)
+{
+  SetTransY_Update(y_T);
+}
+
+
+void MatrixH3f::NewTransZ(float z_T)
+{
+  SetTransY_Update(z_T);
+}
+
+
+
+
+MatrixH3f::MatrixH3f( MatrixH3f::Parameters const &FP, 
+                                    AnglesType ATyp
+                                  )
+{ 
+  SetAngType(ATyp);
+  *this <<= FP; 
+}
+
+
+
+
+
+/*=========================================================================
+ * Operator umo¿liwia podstawienie w³a¶ciwych parametrów macierzy
+ * transformacji i wyliczenie wszystkich wspó³czynników tej macierzy.
+ *
+ * PRE:  PF - zawiera warto¶ci k±tów rotacji, wektor translacji i wektor
+ *            skali.
+ *
+ * POST: Macierz tego obiektu zawiera wspó³czynniki transformacji oraz
+ *       warto¶ci wspó³czynników transformacji.
+ */
+MatrixH3f &MatrixH3f::operator <<= (MatrixH3f::Parameters const &PF)
+{
+ _RotAng = PF.GetRot();
+ _Trans = PF.GetTran();
+ _Scale = PF.GetScale();
+ SetAngType(PF.GetAngType());
+
+ UpdateMatrix();
+ SetParamValid();
+ return *this;
+}
+
+
+
+
+
+/*============================================================================
+ * Metody udostêpniaj± warto¶ci poszczególnych k±tów rotacji wzgl. 
+ * poszczególnych osi wyra¿one w radianach.
+ */
+float MatrixH3f::GetRotAngX_Deg() const
+{ 
+  return RAD2DEG(GetRotAng_Rad().x); 
+}
+
+float MatrixH3f::GetRotAngY_Deg() const
+{ 
+  return RAD2DEG(GetRotAng_Rad().y);
+}
+
+float MatrixH3f::GetRotAngZ_Deg() const
+{ 
+  return RAD2DEG(GetRotAng_Rad().z); 
+}
+
+
+/*
+const Vector3f &MatrixH3f::GetAng_Euler_Deg() const
+{
+  if ()
+}
+*/
+
+
+//....................... MatrixH3f ..........................................
+//############################################################################
+
+
+
+//############################################################################
+//....................... MatrixH3f::Parameters ..............................
+
+
+MatrixH3f::Parameters 
+         &MatrixH3f::Parameters::operator = (MatrixH3f::Parameters const &FP)
+{
+ SetAngType(FP.GetAngType());
+ _Rot   = FP.GetRot();
+ _Tran  = FP.GetTran();
+ _Scale = FP.GetScale();
+ return *this;
+}
+
+
+
+MatrixH3f::Parameters &
+                MatrixH3f::Parameters::operator <<= (MatrixH3f const &Mtx)
+{
+  // cerr << "__Start:  P <<= Mtx " << endl;
+ SetAngType(Mtx.GetAngType());
+ /*----------------------------------------------
+   To jest docelowy kod tej metody. Jednak 
+   pojawily sie niezgodnosci poprzednia wersja.
+   Prawdopodobne wystepuja gdzies bledy.
+ */
+
+ _Tran  = Mtx.GetTrans_AfterRot();
+ _Scale = Mtx.GetScale();
+ _Rot = Mtx.GetRotAng_Rad();
+ return *this;
+}
+
+
+
+
+void MatrixH3f::UpdateParam__Scale__XYZ_Angles()
+{
+  UpdateParam__Scale();
+  _RotAng[2]=atan2((*this)(1,0),(*this)(0,0));
+  if (_RotAng[2]>0) _RotAng[2]-=M_PI;
+  _RotAng[1]=atan2(-(*this)(2,0),
+             (*this)(0,0)*cos(_RotAng[2])+(*this)(1,0)*sin(_RotAng[2]));
+  _RotAng[0]=atan2(((*this)(0,2)*sin(_RotAng[2])
+                 -(*this)(1,2)*cos(_RotAng[2]))/_Scale[2],
+                (-(*this)(0,1)*sin(_RotAng[2])
+		 +(*this)(1,1)*cos(_RotAng[2]))/_Scale[1]);
+}
+
+
+
+
+void MatrixH3f::UpdateParam__Scale__Euler_Angles()
+{
+  GetEuler__Angles_Scale(_RotAng,_Scale);
+}
+
+
+/*============================================================================
+ * Metoda dokonuje normalizacji macierzy rotacji (bez kolumny translacji).
+ * Sprowadza w ten sposób wspó³czynniki skali wzd³u¿ osi OX, OY, OZ do 
+ * warto¶ci 1. 
+ */
+MatrixH3f &MatrixH3f::Normalize()
+{
+ MatrixRT3f::Normalize();
+ _Scale.Set(1,1,1);
+ _Valid__Scale = true;
+ return *this;
+}
+
+
+/*===============================================================================
+ *  Metody dodaj± do poszczególnych k±tów rotacji zadan± warto¶æ oraz
+ *  powoduj± wyliczenie macierzy transformacji dla nowych warto¶ci.
+ *  Warto¶ci k±tów podane s± w radianach.
+ */
+MatrixH3f &MatrixH3f::AddRotAngX_Rad(float angX_Rad)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.x,angX_Rad);
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f &MatrixH3f::AddRotAngY_Rad(float angY_Rad)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.y,angY_Rad);
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f &MatrixH3f::AddRotAngZ_Rad(float angZ_Rad)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.z,angZ_Rad);
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f &MatrixH3f::AddRotAng_Rad(Vector3f const &ang_Rad)
+{
+  ValidateParameters();
+  AddAngle(_RotAng,ang_Rad);
+  UpdateMatrix();
+  return *this;
+}
+
+
+
+/*===============================================================================
+ *  Metody dodaj± do poszczególnych k±tów rotacji zadan± warto¶æ oraz
+ *  powoduj± wyliczenie macierzy transformacji dla nowych warto¶ci.
+ *  Warto¶ci k±tów podane s± w stopniach.
+ */
+MatrixH3f &MatrixH3f::AddRotAngX_Deg(float angX_Deg)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.x,DEG2RAD(angX_Deg));
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f &MatrixH3f::AddRotAngY_Deg(float angY_Deg)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.y,DEG2RAD(angY_Deg));
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f &MatrixH3f::AddRotAngZ_Deg(float angZ_Deg)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.z,DEG2RAD(angZ_Deg));
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f &MatrixH3f::AddRotAng_Deg(Vector3f const &ang_Deg)
+{
+  ValidateParameters();
+  AddAngle(_RotAng.x,DEG2RAD(ang_Deg.x));
+  AddAngle(_RotAng.y,DEG2RAD(ang_Deg.y));
+  AddAngle(_RotAng.z,DEG2RAD(ang_Deg.z));
+  UpdateMatrix();
+  return *this;
+}
+
+
+
+/*============================================================================
+ * Metody dodaj± do poszczególnych sk³adowych translacji zadan± warto¶æ 
+ * oraz powoduj± wyliczenie macierzy transformacji dla nowych warto¶ci. 
+ */
+MatrixH3f& MatrixH3f::AddTransX(float x)
+{
+  _Trans.x += x;
+  UpdateMatrix_Trans();
+  return *this;
+}
+
+MatrixH3f& MatrixH3f::AddTransY(float y)
+{
+  _Trans.y += y;
+  UpdateMatrix_Trans();
+  return *this;
+}
+
+MatrixH3f& MatrixH3f::AddTransZ(float z)
+{
+  _Trans.z += z;
+  UpdateMatrix_Trans();
+  return *this;
+}
+
+MatrixH3f& MatrixH3f::AddTrans(Vector3f const &V)
+{
+  _Trans += V;
+  UpdateMatrix_Trans();
+  return *this;
+}
+
+
+
+/*=============================================================================
+ * Metody dodaj± do poszczególnych sk³adowych skali zadan± warto¶æ 
+ * oraz powoduj± wyliczenie macierzy transformacji dla nowych warto¶ci. 
+ */
+MatrixH3f& MatrixH3f::AddScaleX(float x)
+{
+  ValidateParameters();
+  _Scale.x += x;
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f& MatrixH3f::AddScaleY(float y)
+{
+  ValidateParameters();
+  _Scale.y += y;
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f& MatrixH3f::AddScaleZ(float z)
+{
+  ValidateParameters();
+  _Scale.z += z;
+  UpdateMatrix();
+  return *this;
+}
+
+MatrixH3f& MatrixH3f::AddScale(Vector3f const &V)
+{
+  ValidateParameters();
+  _Scale += V;
+  UpdateMatrix();
+  return *this;
+}
+
+
+
+
+
+/*!
+ * Metoda wyznacza macierz transformacji przyjmuj±c kolejne warto¶ci k±tów
+ * rotacji w _RotAng jako warto¶ci k±tów Eulera. Metoda ta nie powinna
+ * byæ bezpo¶rednio wywo³ywana. Jest ona wywo³ywania po¶rednia za pomoc±
+ * metody \link MatrixH3f::UpdateMatrix UpdateMatrix\endlink.
+ * \pre Pola
+ *    \link MatrixH3f::_RotAng _RotAng\endlink,
+ *    \link MatrixH3f::_Trans _Trans\endlink,
+ *    \link MatrixH3f::_Scale _Scale\endlink zawieraj± warto¶ci k±tów rotacji, 
+ *    wektor translacji i wektor skali.
+ *
+ * Macierz Eulera ma postaæ
+ * \f[
+ *     \left[\begin{array}{ccc}
+ *              \cos\varphi\cos\theta\cos\psi - sin\varphi\sin\psi &
+ *                \sin\varphi\cos\theta\cos\psi+\cos\varphi\sin\psi & 
+ *               -\sin\theta\cos\psi\\
+                -\cos\varphi\cos\theta\sin\psi-\sin\varphi\cos\psi &
+                -\sin\varphi\cos\theta\sin\psi+\cos\varphi\cos\psi &
+                 \sin\theta\sin\psi \\
+                 \cos\varphi\sin\theta &
+                 \sin\varphi\sin\theta & \cos\theta
+ *             \end{array}\right]
+ * \f]
+ * Powy¿sza transformacja jest z³o¿eniem trzech obrotów, gdzie:
+ *  \li \f$\varphi\f$ - obrót wokó³ osi \e OZ (w kierunku przeciwnym do 
+ *                      kierunku ruchu wskazówek zegara),
+ *  \li \f$\theta\f$ -  obrót wokó³ chwilowej osi \f$ OY'\f$ (w kierunku
+ *                      zgodnym z ruchem wskazówek zegara),
+ *  \li \f$\psi\f$ - obrót wokó³ chwilowej osi \f$ OZ''\f$ (w kierunku 
+ *                      przeciwnym do kierunku ruchu wskazówek zegara).
+ *
+ * \post Zostaj± wyliczone wspó³czynniki macierzy transformacji, które
+ *       umieszczone zostaj± w polu \link MatrixH3f::_DH _DH\endlink.
+ *       Po zakoñczeniu dzia³ania metody pole 
+ *       \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ \p true.
+ * \warning Skala nie jest mno¿ona przez wspó³rzêdne wektora translacji.
+ *          Mno¿ona s± jedynie wspó³czynniki macerzy rotacji.
+ */
+void MatrixH3f::UpdateMatrix__Euler_Angles()
+{
+  /*
+ float sinPhi = sin(_RotAng[0]);  // sin(phi)
+ float cosPhi = cos(_RotAng[0]);  // cos(phi)
+ float sinThe = sin(_RotAng[1]);  // sin(theta)
+ float cosThe = cos(_RotAng[1]);  // cos(theta)
+ float sinPsi = sin(_RotAng[2]);  // sin(psi)
+ float cosPsi = cos(_RotAng[2]);  // cos(psi)
+
+ _DH[2][2]=_Scale[0]*cosThe;             // b11 (0,0) -> a33 (2,2)
+ _DH[1][2]=_Scale[0]*sinThe*sinPsi;      // b21 (1,0) -> a23 (1,2)
+ _DH[0][2]=-(_Scale[0])*(sinThe*cosPsi); // b31 (2,0) -> a13 (0,2)
+
+ _DH[2][1]=_Scale[1]*sinPhi*sinThe;                           // b12 (0,1) -> a32 (2,1)
+ _DH[1][1]=_Scale[1]*(-sinPhi*cosThe*sinPsi+cosPhi*cosPsi);   // b22 (1,1) -> a22 (1,1)
+ _DH[0][1]=_Scale[1]*(sinPhi*cosThe*cosPsi+cosPhi*sinPsi);    // b32 (2,1) -> a12 (0,1)
+
+ _DH[2][0]=_Scale[2]*cosPhi*sinThe;                           // b13 (0,2) -> a31 (2,0)
+ _DH[1][0]=-(_Scale[2])*(cosPhi*cosThe*sinPsi+sinPhi*cosPsi); // b23 (1,2) -> a21 (1,0)
+ _DH[0][0]=_Scale[2]*(cosPhi*cosThe*cosPsi-sinPhi*sinPsi);    // b33 (2,2) -> a11 (0,0)
+   // UpdateTrans();
+  */
+  SetMatrix_Euler_TAfter_Rad(_RotAng,_Trans,_Scale);
+}
+
+/*!
+ * Metoda wyznacza macierz transformacji przyjmuj±c kolejne warto¶ci k±tów
+ * rotacji w _RotAng jako warto¶ci k±tów Eulera. Metoda ta nie powinna
+ * byæ bezpo¶rednio wywo³ywana. Jest ona wywo³ywania po¶rednia za pomoc±
+ * metody \link MatrixH3f::UpdateMatrix UpdateMatrix\endlink.
+ * \pre Pola
+ *    \link MatrixH3f::_RotAng _RotAng\endlink,
+ *    \link MatrixH3f::_Trans _Trans\endlink,
+ *    \link MatrixH3f::_Scale _Scale\endlink zawieraj± warto¶ci k±tów rotacji, 
+ *    wektor translacji i wektor skali.
+ *
+ * \post Zostaj± wyliczone wspó³czynniki macierzy transformacji, które
+ *       umieszczone zostaj± w polu \link MatrixH3f::_DH _DH\endlink.
+ *        Po zakoñczeniu dzia³ania metody pole 
+ *        \link MatrixH3f::_Valid _Valid\endlink ma zawsze warto¶æ \p true.
+ * \warning Skala nie jest mno¿ona przez wspó³rzêdne wektora translacji.
+ *          Mno¿ona s± jedynie wspó³czynniki macerzy rotacji.
+ */
+void MatrixH3f::UpdateMatrix__XYZ_Angles()
+{
+#ifdef TEST
+  cerr << "------------- Update XYZ ----------" << endl;
+#endif
+  SetMatrix_XYZ_TAfter_Rad(_RotAng,_Trans,_Scale);
+}
+
+
+
+void MatrixH3f::UpdateMatrix()
+{
+  switch (_AngType) {
+    case AT_xyz:   UpdateMatrix__XYZ_Angles();    return;
+    case AT_Euler: UpdateMatrix__Euler_Angles();  return;
+  }
+}
+
+
+
+/*=============================================================================
+ * Metoda wyznacza macierz transformacji przyjmuj±c kolejne warto¶ci k±tów
+ * rotacji w PF.Rot jako warto¶ci k±tów Eulera.
+ *
+ * PRE:  PF - zawiera warto¶ci k±tów rotacji, wektor translacji i wektor
+ *            skali.
+ *
+ * POST: Macierz tego obiektu zawiera wspó³czynnik transformacji oraz
+ *       warto¶ci parametrów transformacji.
+ */
+void MatrixH3f::MakeEulerFrame(MatrixH3f::Parameters const &PF)
+{
+  SetAngType2Euler();
+  _Scale = PF.GetScale();
+  _Trans = PF.GetTran();
+  _RotAng = PF.GetRot();
+  UpdateMatrix();
+  SetParamValid();
+}
+
+
+
+void MatrixH3f::UpdateParameters()
+{
+  MatrixH3f::Parameters  FP;
+
+  switch (GetAngType()) {
+    case AT_xyz:    UpdateParam__XYZ_Frame();    break;
+    case AT_Euler:  UpdateParam__Euler_Frame();  break;
+  }
+  FP <<= *this;
+  _Scale = FP.GetScale();
+  _Trans = FP.GetTran();
+  _RotAng = FP.GetRot();
+}
+
+
+void MatrixH3f::UpdateParam__XYZ_Frame()
+{
+  UpdateParam__Scale__XYZ_Angles();
+  UpdateParam__Trans();
+  SetParamValid();
+}
+
+
+void MatrixH3f::UpdateParam__Euler_Frame()
+{
+  UpdateParam__Scale__Euler_Angles();
+  UpdateParam__Trans();
+  SetParamValid();
+}
+
+
+
+void MatrixH3f::Shift(Vector3f const &D_trans, CoordSysType TransType)
+{
+  MatrixH3f::Parameters Par;
+  MatrixH3f Fr;
+
+  switch (TransType) { 
+   case CS_Parent: {
+       Par.SetTran(D_trans);
+       Fr <<= Par;
+       //      MatrixH3f Frpom = *this;
+       *this = Fr * *this;
+      }
+      break;
+   case CS_Local: {
+       Vector3f Sca;
+
+       Par <<= *this;
+       Sca=Par.GetScale();
+       Par.SetScale(1, 1, 1);
+       Fr <<= Par;
+       Par.SetScale(Sca);
+       Par.SetRot(0,0,0);
+       Par.SetTran(D_trans);
+
+       MatrixH3f Frpom;
+       Frpom <<= Par;
+       *this = Fr*Frpom;
+      }
+      break;
+  }
+}
+
+
+
+void MatrixH3f::Rotate(Vector3f const &D_angle, CoordSysType RotType)
+{ 
+  MatrixH3f::Parameters Par;
+  MatrixH3f Fr; //, Frpom;
+
+     switch (RotType) {                 // Global transformation
+       case CS_Parent: { 
+           Par.SetRot(D_angle);
+           Fr <<= Par;
+           *this = Fr * *this;
+         } 
+         break;
+       case CS_Local: { 
+           Par <<= *this;
+
+           Vector3f Sca(D_angle);
+           Par.SetScale(1, 1, 1);
+           *this <<=Par;
+           Par.SetRot(D_angle);
+           Par.SetTran(0, 0, 0);
+           Fr <<= Par;
+           *this *= Fr;
+           Par.SetRot(0, 0, 0);
+           Par.SetScale(Sca);
+           Fr<<=Par;
+           *this *=  Fr;
+         }
+         break; 
+    }
+
+}
+
+
+//........................... MatrixH3f ..................................
+//#############################################################################
+
+
+
+
+
+//#############################################################################
+//........................... MatrixH3f::Parameters ...........................
+
+/*----------------------------------------------------------------------------
+ *  Zapisuje w pliku parametry transformacji.
+ *
+ *  PRE:   f - plik musi byc otwarty do zpisu.
+ */
+int MatrixH3f::Parameters::Save(FILE *f)
+{
+ fprintf(f," %s ",KW_POSITION);
+
+ fprintf(f," (%f, %f, %f)",_Scale.x,_Scale.y,_Scale.z);
+ fprintf(f," (%f, %f, %f)",_Rot.x,_Rot.y,_Rot.z);
+ fprintf(f," (%f, %f, %f);\n",_Tran.x,_Tran.y,_Tran.z);
+ return 0;
+}
+
+
+
+
+int  MatrixH3f::WriteParamTo( ExtString    &Descr, 
+                              AnglesType    AType,
+                              AngleUnit     AUnit,
+                              unsigned int  Margin
+                            ) const
+{
+  AnglesType AType_Old = GetAngType();
+  ((MatrixH3f*)this)->SetAngType(AType);
+  Descr.AddSpace(Margin);
+  Descr << KW_ANGLES << " ";
+  switch (AType) {
+   case AT_Euler:  Descr << KW_ANG_EULER << " ";  break;
+   case AT_xyz:    Descr << KW_ANG_XYZ << " ";  break;
+  };
+  switch (AUnit) {
+   case AU_Rad: Descr << KW_ANG_RAD << ": " << GetRotAng_Rad();  break;
+   case AU_Deg: Descr << KW_ANG_DEG << " " << GetRotAng_Deg();  break;
+  }
+  (Descr << "\n").AddSpace(Margin);
+  //  Descr << "xxxx\n";
+  //  return 0;
+
+  Descr << KW_TRANSLATION << ": " << GetTrans_AfterRot() << '\n';
+  Descr.AddSpace(Margin);
+  Descr << KW_SCALE << ": " << GetScale() << '\n';
+  ((MatrixH3f*)this)->SetAngType(AType_Old);
+  return 0;
+}
+
+
+
+
+
+int  MatrixH3f::Save( ostream      &ostrm, 
+                      unsigned int  LeftMargin, 
+                      AnglesType    AType,
+                      AngleUnit     AUnit
+                    ) const
+{
+  AnglesType AType_Old = GetAngType();
+  ((MatrixH3f*)this)->SetAngType(AType);
+  Space(ostrm,LeftMargin) << KW_ANGLES << " ";
+  switch (AType) {
+   case AT_Euler:  ostrm << KW_ANG_EULER << " ";  break;
+   case AT_xyz:    ostrm << KW_ANG_XYZ << " ";  break;
+  };
+  switch (AUnit) {
+   case AU_Rad: ostrm << KW_ANG_RAD << ": " << GetRotAng_Rad();  break;
+   case AU_Deg: ostrm << KW_ANG_DEG << " " << GetRotAng_Deg();  break;
+  }
+  Space(ostrm << endl, LeftMargin) << KW_TRANSLATION << ": "
+              << GetTrans_AfterRot() << endl;
+  Space(ostrm,LeftMargin) << KW_SCALE << ": " << GetScale() << endl;
+  ((MatrixH3f*)this)->SetAngType(AType_Old);
+  return 0;
+}
+
+//.......................... MatrixH3f::Parameters ............................
+//#############################################################################

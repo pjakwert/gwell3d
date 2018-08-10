@@ -1,0 +1,7 @@
+<Material materialName="OpenGL default" >
+ <ambientColor alpha="1" blue="0.2" red="0.2" green="0.2" />
+ <diffuseColor alpha="1" blue="0.8" red="0.8" green="0.8" />
+ <specularColor alpha="1" blue="0" red="0" green="0" />
+ <emissionColor alpha="1" blue="0" red="0" green="0" />
+ <shininess shininess="0" />
+</Material>

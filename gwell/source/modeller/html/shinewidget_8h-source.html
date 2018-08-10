@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: shinewidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>shinewidget.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 <span class="preprocessor">#ifndef SHINEWIDGET_H</span>
+00009 <span class="preprocessor"></span><span class="preprocessor">#define SHINEWIDGET_H</span>
+00010 <span class="preprocessor"></span>
+00011 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;qlineedit.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;qslider.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;qvalidator.h&gt;</span>
+00016 
+<a name="l00020"></a><a class="code" href="classShineWidget.html">00020</a> <span class="keyword">class </span><a class="code" href="classShineWidget.html">ShineWidget</a> : <span class="keyword">public</span> QGroupBox
+00021 {
+00022   Q_OBJECT
+00023 
+00024   <span class="keyword">public</span>:
+00025     <a class="code" href="classShineWidget.html">ShineWidget</a>(QWidget *parent, QString title, <span class="keywordtype">int</span> <a class="code" href="classShineWidget.html#a1">shininess</a>=0);
+00026     ~<a class="code" href="classShineWidget.html">ShineWidget</a>();
+00027     <span class="keywordtype">int</span> <a class="code" href="classShineWidget.html#a1">shininess</a>();
+00028 
+00029   <span class="keyword">private</span>:
+00030     <span class="keywordtype">int</span>     _shine;
+00031 
+00032     QSlider *sSlide;
+00033     QLineEdit *sEdit;
+00034     QIntValidator *intValidator;
+00035 
+00036   <span class="keyword">public</span> slots:
+00037     <span class="keywordtype">void</span> <a class="code" href="classShineWidget.html#i0">setShininess</a>(<span class="keywordtype">int</span> shininess);
+00038 
+00039   <span class="keyword">private</span> slots:
+00040     <span class="keywordtype">void</span> <a class="code" href="classShineWidget.html#k1">setShine</a>(<span class="keywordtype">int</span> unused);
+00041     <span class="keywordtype">void</span> setShine(<span class="keyword">const</span> QString&amp; unused);
+00042 
+00043   signals:
+00044     <span class="keywordtype">void</span> shininessChanged(<span class="keywordtype">int</span> shininess);
+00045 };
+00046 
+00047 
+00048 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:22 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

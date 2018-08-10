@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: hierlistviewitem.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>hierlistviewitem.h</h1><pre class="fragment"><div>00001 
+00002 
+00003 
+00004 
+00005 
+00006 
+00007 
+00008 
+00009 <span class="preprocessor">#ifndef HIERLISTVIEWITEM_H</span>
+00010 <span class="preprocessor"></span><span class="preprocessor">#define HIERLISTVIEWITEM_H</span>
+00011 <span class="preprocessor"></span>
+00012 <span class="preprocessor">#include &lt;qlistview.h&gt;</span>
+00013 
+00014 <span class="preprocessor">#include &lt;kernel.h&gt;</span>
+00015 
+00016 
+<a name="l00017"></a><a class="code" href="classHierListViewItem.html">00017</a> <span class="keyword">class </span><a class="code" href="classHierListViewItem.html">HierListViewItem</a> : <span class="keyword">public</span> QListViewItem
+00018 {
+00019   <span class="keyword">public</span>:
+00020     <a class="code" href="classHierListViewItem.html">HierListViewItem</a>(QListView *parent, QString label, <span class="keyword">const</span> ViMultiPolyh *mp);
+00021     <a class="code" href="classHierListViewItem.html">HierListViewItem</a>(<a class="code" href="classHierListViewItem.html">HierListViewItem</a> *parent, QString label, <span class="keyword">const</span> ViMultiPolyh *mp);
+00022     ~<a class="code" href="classHierListViewItem.html">HierListViewItem</a>();
+00023     <span class="keyword">const</span> ViMultiPolyh* mp();
+00024     <span class="keyword">const</span> ViNodeAddress address();
+00025 
+00026   <span class="keyword">private</span>:
+00027     <span class="keyword">const</span> ViMultiPolyh *_mp;
+00028     ViNodeAddress _address;
+00029 };  
+00030 
+00031 
+00032 
+00033 
+00034 
+00035 
+00036 
+00037 
+00038 
+00039 
+00040 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:59 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

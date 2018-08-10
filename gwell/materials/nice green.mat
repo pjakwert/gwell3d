@@ -1,0 +1,7 @@
+<Material materialName="nice green">
+ <ambientColor alpha="1" blue="0" red="0.180392" green="0.180392" />
+ <diffuseColor alpha="1" blue="0" red="0" green="0.627451" />
+ <specularColor alpha="1" blue="0.0784314" red="0.0784314" green="0.0784314" />
+ <emissionColor alpha="1" blue="0.0156863" red="0.0156863" green="0.0117647" />
+ <shininess shininess="0" />
+</Material>

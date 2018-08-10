@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Layout: fogwidget.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>fogwidget.h</h1><pre class="fragment"><div>00001 <span class="preprocessor">#ifndef FOGWIDGET_H</span>
+00002 <span class="preprocessor"></span><span class="preprocessor">#define FOGWIDGET_H</span>
+00003 <span class="preprocessor"></span>
+00004 <span class="preprocessor">#include &lt;qgroupbox.h&gt;</span>
+00005 <span class="preprocessor">#include &lt;qlayout.h&gt;</span>
+00006 <span class="preprocessor">#include &lt;qgrid.h&gt;</span>
+00007 <span class="preprocessor">#include &lt;qlabel.h&gt;</span>
+00008 <span class="preprocessor">#include &lt;qcombobox.h&gt;</span>
+00009 <span class="preprocessor">#include &lt;qpushbutton.h&gt;</span>
+00010 
+00011 <span class="preprocessor">#include &lt;const.h&gt;</span>
+00012 <span class="preprocessor">#include &lt;GL/gl.h&gt;</span>
+00013 <span class="preprocessor">#include &lt;options.h&gt;</span>
+00014 <span class="preprocessor">#include &lt;colorwidget.h&gt;</span>
+00015 <span class="preprocessor">#include &lt;floatspinbox.h&gt;</span>
+00016 
+00017 
+00018 
+<a name="l00022"></a><a class="code" href="structFogStruct.html">00022</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structFogStruct.html">FogStruct</a>
+00023 {
+<a name="l00027"></a><a class="code" href="structFogStruct.html#a0">00027</a>   <a class="code" href="structFogStruct.html#a0">FogStruct</a>()
+00028   {
+00029     <a class="code" href="structFogStruct.html#o2">fogEnabled</a> = <span class="keyword">false</span>;
+00030     <a class="code" href="structFogStruct.html#o4">fogMode</a> = GL_LINEAR;
+00031     <a class="code" href="structFogStruct.html#o1">fogDensity</a> = 0.35;
+00032     <a class="code" href="structFogStruct.html#o5">fogStart</a> = 0.0;
+00033     <a class="code" href="structFogStruct.html#o3">fogEnd</a> = 1000.0;
+00034     <a class="code" href="structFogStruct.html#o0">fogColor</a> = <span class="keyword">new</span> GLfloat[4];
+00035      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;4; i++) *(<a class="code" href="structFogStruct.html#o0">fogColor</a>+i) = 0.0;
+00036   }
+00037   ~<a class="code" href="structFogStruct.html">FogStruct</a>() { <span class="keyword">delete</span> [] fogColor; }
+00038   
+<a name="l00042"></a><a class="code" href="structFogStruct.html#o2">00042</a>   <span class="keywordtype">bool</span>      <a class="code" href="structFogStruct.html#o2">fogEnabled</a>;
+<a name="l00046"></a><a class="code" href="structFogStruct.html#o4">00046</a>   GLuint    <a class="code" href="structFogStruct.html#o4">fogMode</a>;
+<a name="l00050"></a><a class="code" href="structFogStruct.html#o1">00050</a>   GLfloat   <a class="code" href="structFogStruct.html#o1">fogDensity</a>;
+<a name="l00054"></a><a class="code" href="structFogStruct.html#o5">00054</a>   GLfloat   <a class="code" href="structFogStruct.html#o5">fogStart</a>;
+<a name="l00058"></a><a class="code" href="structFogStruct.html#o3">00058</a>   GLfloat   <a class="code" href="structFogStruct.html#o3">fogEnd</a>;
+<a name="l00062"></a><a class="code" href="structFogStruct.html#o0">00062</a>   GLfloat*  <a class="code" href="structFogStruct.html#o0">fogColor</a>;
+00063 };
+00064 
+00065 
+00066 
+00067 
+<a name="l00071"></a><a class="code" href="classFogWidget.html">00071</a> <span class="keyword">class </span><a class="code" href="classFogWidget.html">FogWidget</a> : <span class="keyword">public</span> QWidget
+00072 {
+00073   Q_OBJECT
+00074 
+00075   <span class="keyword">public</span>:
+00079     <a class="code" href="classFogWidget.html">FogWidget</a>( QString title, QWidget *parent=0, <span class="keyword">const</span> <span class="keywordtype">char</span> *name=0 );
+00080     ~<a class="code" href="classFogWidget.html">FogWidget</a>() { <span class="keyword">delete</span> <a class="code" href="classFogWidget.html#v0">_fog</a>; }
+<a name="l00084"></a><a class="code" href="classFogWidget.html#e0">00084</a>     <span class="keyword">static</span> <a class="code" href="structFogStruct.html">FogStruct</a>* <a class="code" href="classFogWidget.html#e0">fog</a>() { <span class="keywordflow">return</span> <a class="code" href="classFogWidget.html#v0">_fog</a>; }
+00085     
+00086   <span class="keyword">private</span>:
+00090     <span class="keyword">static</span> <a class="code" href="structFogStruct.html">FogStruct</a>*      _fog;
+00091     
+00092     QGridLayout*    globalGrid;
+00093     QGroupBox*      mainGroupBox;
+00094     QGridLayout*    mainGrid;
+00095      QLabel*        fogModeLabel;
+00096      QComboBox*     fogModeCombo;
+00097      QLabel*        fogDensityLabel;
+00098      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>*  fogDensitySpinBox;
+00099      QLabel*        fogStartLabel;
+00100      QLabel*        fogEndLabel;
+00101      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>*  fogStartSpinBox;
+00102      <a class="code" href="classFloatSpinBox.html">FloatSpinBox</a>*  fogEndSpinBox;
+00103      <a class="code" href="classColorWidget.html">ColorWidget</a>*   fogColorBox;
+00104     QPushButton*    getBkgColorButton;
+00105 
+00106   <span class="keyword">private</span> slots:
+00110     <span class="keywordtype">void</span> fogToggled( <span class="keywordtype">bool</span> );
+00114     <span class="keywordtype">void</span> fogModeChanged( <span class="keywordtype">int</span> );
+00118     <span class="keywordtype">void</span> fogDensityChanged( <span class="keywordtype">float</span> );
+00122     <span class="keywordtype">void</span> fogStartChanged( <span class="keywordtype">float</span> );
+00126     <span class="keywordtype">void</span> fogEndChanged( <span class="keywordtype">float</span> );
+00132     <span class="keywordtype">void</span> fogColorChanged( <span class="keyword">const</span> QColor&amp; color, <span class="keywordtype">int</span> alpha );
+00136     <span class="keywordtype">void</span> <a class="code" href="classFogWidget.html#k6">getBackgroundColor</a>();
+00137     
+00138   <span class="keyword">public</span> slots:
+00142     <span class="keywordtype">void</span> <a class="code" href="classFogWidget.html#i0">updateWidgets</a>();
+00143     
+00144   signals:
+00150     <span class="keywordtype">void</span> fogChanged( <a class="code" href="structFogStruct.html">FogStruct</a>* fog, FogParamsEnum whichParamChanged );
+00151 };
+00152 
+00153 
+00154 
+00155 
+00156 <span class="preprocessor">#endif</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:58 2004 dla Gwell Layout programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>

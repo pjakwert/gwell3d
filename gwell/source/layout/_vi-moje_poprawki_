@@ -1,0 +1,29 @@
+POPRAWKI (PROPOZYCJE) do oryginalnego kodu Viony:
+
+klasa:    ViScene
+plik:     viscene.cpp
+problem:  metoda ViScene::ReadPatteLib() nie zwraca nazwy wczytanej biblioteki (*pLibName)
+miejsce:  przed intrukcj± "return 0;" (linia 526)
+proponowany kod: "*pLibName = pPPolyhSet->GetLibName_str();"
+
+klasa:    MatrixH3f
+plik:     matrixh3f.cpp
+problem:  metoda AddAngle() u¿ywana we wszystkich metodach dodawania k±tów, sprawdza zakres
+          podanego k±ta i "obcina" go do wielko¶ci PI, czyli nie mo¿na za jej pomoc± zadaæ
+          k±ta np. 190 stopni; takich problemów nie robi± metody NewRot()  (i s³usznie)
+proponowany kod: zmiana zakresu do 2*PI
+
+klasa:    ViElemePolyh
+plik:     vielemepolyh.cpp
+problem:  destruktor klasy dziedzicz±cej ViElemePolyh przez makro DEFPOLYHCLASS nie jest wogle wywo³ywany
+
+klasa:    MatrixH3f
+plik:     matrixh3f.hh
+problem:  przyda³aby siê metoda NewRot(const Vector3f&), (NewScale i NewTrans maj± taki parametr)
+
+klasa:    ViMultiPolyh
+plik:     vimultipolyh.hh
+problem:  klasa nie posiada metody umo¿liwiaj±cej modyfikacjê indywidualnych uk³adów wspó³rzêdnych:
+          setMtx2IndivCoord(), jak± posiada klasa ViElemePolyh; modyfikowanie tego parametru mog³oby byæ
+          ca³kiem przydatne
+          

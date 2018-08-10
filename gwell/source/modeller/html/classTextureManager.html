@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-2">
+<title>Gwell Modeler: TextureManager class Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.3.7 -->
+<div class="qindex"><a class="qindex" href="main.html">Strona&nbsp;główna</a> | <a class="qindex" href="classes.html">Lista&nbsp;alfabetyczna</a> | <a class="qindex" href="annotated.html">Lista&nbsp;klas</a> | <a class="qindex" href="files.html">Lista&nbsp;plików</a> | <a class="qindex" href="functions.html">Składowe&nbsp;klas</a></div>
+<h1>Dokumentacja klasy TextureManager</h1><code>#include &lt;<a class="el" href="texturemanager_8h-source.html">texturemanager.h</a>&gt;</code>
+<p>
+Diagram współpracy dla TextureManager:<p><center><img src="classTextureManager__coll__graph.png" border="0" usemap="#TextureManager__coll__map" alt="Collaboration graph"></center>
+<map name="TextureManager__coll__map">
+<area href="classCellFrame.html" shape="rect" coords="65,109,137,133" alt="">
+<area href="classCellWidget.html" shape="rect" coords="6,18,84,42" alt="">
+<area href="classStartWidget.html" shape="rect" coords="117,18,197,42" alt="">
+</map>
+<center><font size="2">[<a target="top" href="graph_legend.html">legenda</a>]</font></center><a href="classTextureManager-members.html">Lista wszystkich składowych.</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Statyczne metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e0" doxytag="TextureManager::addTextureToObject" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>addTextureToObject</b> (ViElemePolyhExt *elem, <a class="el" href="classTextureParams.html">TextureParams</a> *textureParams)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e1" doxytag="TextureManager::addTextureToObject" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>addTextureToObject</b> (ViElemePolyhExt *elem, QString fileName, QImage::ScaleMode scaleMode, bool mipmapEnabled, const QImage *image)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e2" doxytag="TextureManager::addTextureToObjects" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>addTextureToObjects</b> (QPtrList&lt; ViNTreeNode &gt; *selectedList, QString fileName, QImage::ScaleMode scaleMode, bool mipmapEnabled, const QImage *inputImage)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e3" doxytag="TextureManager::addTextureToObjectsFromCombo" ></a>
+GLint&nbsp;</td><td class="memItemRight" valign=bottom><b>addTextureToObjectsFromCombo</b> (QPtrList&lt; ViNTreeNode &gt; *selectedList)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e4">autoRemoveUnusedTextures</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e5" doxytag="TextureManager::deleteTextureFromObject" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>deleteTextureFromObject</b> (ViElemePolyhExt *elem)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e6" doxytag="TextureManager::deleteTexturesFromObjects" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>deleteTexturesFromObjects</b> (QPtrList&lt; ViNTreeNode &gt; *selectedList)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e7" doxytag="TextureManager::getTexture" ></a>
+const <a class="el" href="classTexture.html">Texture</a> &amp;&nbsp;</td><td class="memItemRight" valign=bottom><b>getTexture</b> (GLuint GLTextureID, bool *found=0L)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e8">howManyTexturesLoaded</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e9" doxytag="TextureManager::loadTexturesFromObjects" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>loadTexturesFromObjects</b> (ViMultiPolyh *mph)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="e10" doxytag="TextureManager::removeUnusedTextures" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>removeUnusedTextures</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e11">safeMode</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>GLint&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e12">safeSize</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e13">setAutoRemoveUnusedTextures</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e14">setComboBox</a> (QComboBox *loadedTexCombo)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e15">setHostFrame</a> (<a class="el" href="classCellFrame.html">CellFrame</a> *frame)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e16">setSafeMode</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e17">setSafeSize</a> (GLint size)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e18">setVerboseMode</a> (bool yes)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#e19">verboseMode</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h0" doxytag="TextureManager::addTextureToObject" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>addTextureToObject</b> (ViElemePolyhExt *elem, GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h1" doxytag="TextureManager::addTextureToObjects" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>addTextureToObjects</b> (QPtrList&lt; ViNTreeNode &gt; *selectedList, GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h2" doxytag="TextureManager::createTexture" ></a>
+GLuint&nbsp;</td><td class="memItemRight" valign=bottom><b>createTexture</b> (QString fileName, QImage::ScaleMode scaleMode, bool mipmapEnabled, const QImage *image)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h3" doxytag="TextureManager::decHowManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>decHowManyUsers</b> (GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h4" doxytag="TextureManager::findTexture" ></a>
+<a class="el" href="classTexture.html">Texture</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>findTexture</b> (GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h5" doxytag="TextureManager::incHowManyUsers" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>incHowManyUsers</b> (GLuint GLTextureID)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#h6">makeCurrent</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="h7" doxytag="TextureManager::printInfo" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>printInfo</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#h8">updateComboBox</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Statyczne atrybuty prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v0" doxytag="TextureManager::_autoRemoveUnusedTextures" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_autoRemoveUnusedTextures</b> = false</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v1" doxytag="TextureManager::_safeMode" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_safeMode</b> = false</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v2" doxytag="TextureManager::_safeSize" ></a>
+GLint&nbsp;</td><td class="memItemRight" valign=bottom><b>_safeSize</b> = 512</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v3" doxytag="TextureManager::_verbose" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><b>_verbose</b> = false</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v4" doxytag="TextureManager::hostFrame" ></a>
+<a class="el" href="classCellFrame.html">CellFrame</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>hostFrame</b> = 0L</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="v5" doxytag="TextureManager::loadedTexturesCombo" ></a>
+QComboBox *&nbsp;</td><td class="memItemRight" valign=bottom><b>loadedTexturesCombo</b> = 0L</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>QPtrList&lt; <a class="el" href="classTexture.html">Texture</a> &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="classTextureManager.html#v6">textureList</a> = QPtrList&lt;<a class="el" href="classTexture.html">Texture</a>&gt;()</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+Klasa zarządza mechanizmem teksturowania w całej aplikacji. 
+<p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="e4" doxytag="TextureManager::autoRemoveUnusedTextures" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool TextureManager::autoRemoveUnusedTextures           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca flagę stosowania automatycznego usuwania nieużywanych tekstur.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e8" doxytag="TextureManager::howManyTexturesLoaded" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int TextureManager::howManyTexturesLoaded           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca ilość tekstur znajdujących się w pamięci.     </td>
+  </tr>
+</table>
+<a class="anchor" name="h6" doxytag="TextureManager::makeCurrent" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::makeCurrent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static, private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia obowiązujący kontekst OpenGL, do którego ładowane będą tekstury.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e11" doxytag="TextureManager::safeMode" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool TextureManager::safeMode           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca flagę stosowania bezpiecznego teksturowania.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e12" doxytag="TextureManager::safeSize" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> GLint TextureManager::safeSize           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca bezpieczny dopuszczalny rozmiar tekstury.     </td>
+  </tr>
+</table>
+<a class="anchor" name="e13" doxytag="TextureManager::setAutoRemoveUnusedTextures" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::setAutoRemoveUnusedTextures           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia automatyczne usuwanie nieużywanych tekstur. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_e13_cgraph.png" border="0" usemap="#classTextureManager_e13_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e14" doxytag="TextureManager::setComboBox" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::setComboBox           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">QComboBox *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>loadedTexCombo</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia comboBox, w którym będą wyświetlane używane tekstury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_e14_cgraph.png" border="0" usemap="#classTextureManager_e14_cgraph_map" alt=""></center>
+<map name="classTextureManager_e14_cgraph_map">
+<area href="classTextureManager.html#h8" shape="rect" coords="263,79,484,102" alt="">
+<area href="classTexture.html#a1" shape="rect" coords="564,7,676,31" alt="">
+<area href="classTexture.html#a6" shape="rect" coords="533,55,706,79" alt="">
+<area href="classTexture.html#a9" shape="rect" coords="566,102,673,126" alt="">
+<area href="classTexture.html#a10" shape="rect" coords="557,150,682,174" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e15" doxytag="TextureManager::setHostFrame" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::setHostFrame           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="classCellFrame.html">CellFrame</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>frame</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia widok bazowy (kontekst), do którego ładowane będą wszystkie tekstury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_e15_cgraph.png" border="0" usemap="#classTextureManager_e15_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e16" doxytag="TextureManager::setSafeMode" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::setSafeMode           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda włącza/wyłącza stosowanie bezpiecznego teksturowania. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_e16_cgraph.png" border="0" usemap="#classTextureManager_e16_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e17" doxytag="TextureManager::setSafeSize" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::setSafeSize           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">GLint&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>size</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia bezpieczny dopuszczalny rozmiar tekstury. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_e17_cgraph.png" border="0" usemap="#classTextureManager_e17_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e18" doxytag="TextureManager::setVerboseMode" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::setVerboseMode           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>yes</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda ustawia tryb wyświetlania komunikatów (do celów debuggowania). 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_e18_cgraph.png" border="0" usemap="#classTextureManager_e18_cgraph_map" alt=""></center>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="h8" doxytag="TextureManager::updateComboBox" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void TextureManager::updateComboBox           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static, private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda odświeża używany comboBox. 
+<p>
+Here is the call graph for this function:<p><center><img src="classTextureManager_h8_cgraph.png" border="0" usemap="#classTextureManager_h8_cgraph_map" alt=""></center>
+<map name="classTextureManager_h8_cgraph_map">
+<area href="classTexture.html#a1" shape="rect" coords="318,7,430,31" alt="">
+<area href="classTexture.html#a6" shape="rect" coords="287,55,461,79" alt="">
+<area href="classTexture.html#a9" shape="rect" coords="321,102,427,126" alt="">
+<area href="classTexture.html#a10" shape="rect" coords="311,150,437,174" alt="">
+</map>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e19" doxytag="TextureManager::verboseMode" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool TextureManager::verboseMode           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [inline, static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Metoda zwraca tryb wyświetlania komunikatów.     </td>
+  </tr>
+</table>
+<hr><h2>Dokumentacja atrybutów składowych</h2>
+<a class="anchor" name="v6" doxytag="TextureManager::textureList" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> QPtrList&lt; <a class="el" href="classTexture.html">Texture</a> &gt; <a class="el" href="classTextureManager.html#v6">TextureManager::textureList</a> = QPtrList&lt;<a class="el" href="classTexture.html">Texture</a>&gt;()<code> [static, private]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+class: TextureManager (.cpp)<p>
+klasa zarządza kolejką tekstur, wszystkie metody statyczne     </td>
+  </tr>
+</table>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="texturemanager_8h-source.html">texturemanager.h</a><li>texturemanager.cpp</ul>
+<hr size="1"><address style="align: right;"><small>Wygenerowano Mon Oct 18 15:28:29 2004 dla Gwell Modeler programem
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.7 </small></address>
+</body>
+</html>
