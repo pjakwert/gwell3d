@@ -13,5 +13,9 @@ Application's interface is flexible and fully customizable, with multiple transl
 
 For full information, documentation, manuals, and screenshots please visit: <a href="https://gwell3d.appspot.com">gwell3d.appspot.com</a>
 
-
 <a href="http://velia-systems.com">velia-systems.com</a>
+
+<img src="https://gwell3d.appspot.com/gfx/large/interfejs_010.jpg" width="480" />
+<img src="http://gwell3d.appspot.com/gfx/large/interfejs.jpg" width="480" />
+
+
