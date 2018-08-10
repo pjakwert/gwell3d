@@ -3,7 +3,7 @@
 Gwell is an open-source (GNU-GPL license) interactive 3D modelling application based on <a href="https://opengl.org">OpenGL</a> for UNIX/Linux platforms, using XWindow and <a href="https://www.qt.io/">Qt framework</a>.
 
 Its purpose is to provide fully integrated graphical environment for creating and simulating robots, and their
-working area. Application uses open kinematic chain architecture representing objects' hierarchy. Complex models
+working area. Application uses open kinematic chain architecture to represent objects' hierarchy. Complex models
 consist of elementary 3D primitives grouped in custom, expandable libraries.
 
 Gwell offers objects and material creation/manipulation, texture mapping, blending, lighting, shadows and fog effects. 
